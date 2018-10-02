@@ -2595,6 +2595,10 @@ public class PersistenciaParranderos
 			Vende vende = sqlVende.darVendePorProductoSucursal(pm, producto, sucursal);
 			double costo = vende.getPrecioUnitario() * cantidad;
 			tx.commit();
+			
+			tx.begin();
+			sqlEstante.disminuirExistenciasEstantes(pm, cantidad, sucursal, producto);
+			tx.commit();
 
 			tx.begin();
 			long tuplasInsertadas2 = sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion);
@@ -2602,7 +2606,7 @@ public class PersistenciaParranderos
 
 			log.trace ("Inserción de la transacción: " + tuplasInsertadas2 + " tuplas insertadas");
 
-			return new Factura();
+			return new Factura(idFactura, sucursal, fecha, cliente);
 		}
 		catch (Exception e)
 		{

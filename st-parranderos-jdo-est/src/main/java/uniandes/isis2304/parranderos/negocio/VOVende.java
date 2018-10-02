@@ -15,12 +15,12 @@ public interface VOVende {
 	/**
 	 * @return El identificador de la sucursal que vende los productos
 	 */
-	public long getSucursal();
+	public long getIdSucursal();
 	
 	/**
 	 * @return El identificador del producto que se vende
 	 */
-	public long getProducto();
+	public long getIdProducto();
 	
 	/**
 	 * @return La cantidad m�nima de productos antes de pedir m�s a los proveedores
@@ -35,5 +35,5 @@ public interface VOVende {
 	/**
 	 * @return El precio por unidad de medida de un producto en una sucursal
 	 */
-	public double getPrecioPorUnidadMedida();
+	public double getPrecioUnidadMedida();
 }

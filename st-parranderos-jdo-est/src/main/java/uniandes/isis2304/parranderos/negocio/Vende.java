@@ -2,10 +2,10 @@ package uniandes.isis2304.parranderos.negocio;
 
 /**
 * Clase para modelar la relaci�n VENDE del negocio de SuperAndes:
-* Cada objeto de esta clase representa el hecho que una sucursal vende un producto y viceversa.
-* Se modela mediante los identificadores de la sucursal y del producto respectivamente.
-* Debe existir una sucursal con el identificador dado
-* Debe existir un producto con el identificador dado 
+* Cada objeto de esta clase representa el hecho que una idIdSucursal vende un idProducto y viceversa.
+* Se modela mediante los identificadores de la idIdSucursal y del idProducto respectivamente.
+* Debe existir una idIdSucursal con el identificador dado
+* Debe existir un idProducto con el identificador dado 
 * 
 * @author n.cobos, jf.torresp
 */
@@ -16,29 +16,29 @@ public class Vende implements VOVende{
 	 * 			Atributos 
 	 *****************************************************************/
 	/**
-	 *  El identificador de la sucursal que vende los productos
+	 *  El identificador de la idIdSucursal que vende los idProductos
 	 */
-	private long sucursal;
+	private long idSucursal;
 	
 	/**
-	 *  El identificador del producto que se vende
+	 *  El identificador del idProducto que se vende
 	 */
-	private long producto;
+	private long idProducto;
 	
 	/**
-	 *  La cantidad m�nima de productos antes de pedir m�s a los proveedores
+	 *  La cantidad m�nima de idProductos antes de pedir m�s a los proveedores
 	 */
 	private int nivelReorden;
 	
 	/**
-	 *  El precio unitario de un producto en una sucursal
+	 *  El precio unitario de un idProducto en una idIdSucursal
 	 */
 	private double precioUnitario;
 	
 	/**
-	 *  El precio por unidad de medida de un producto en una sucursal
+	 *  El precio por unidad de medida de un idProducto en una idIdSucursal
 	 */
-	private double precioPorUnidadMedida;
+	private double precioUnidadMedida;
 
 	
 	/* ****************************************************************
@@ -49,56 +49,56 @@ public class Vende implements VOVende{
 	 * Constructor por defecto
 	 */
 	public Vende() {
-		this.sucursal = 0;
-		this.producto = 0;
+		this.idSucursal = 0;
+		this.idProducto = 0;
 		this.nivelReorden = 0;
 		this.precioUnitario = 0;
-		this.precioPorUnidadMedida = 0;
+		this.precioUnidadMedida = 0;
 	}
 	
 	
 	/**
 	 * Constructor con valores
-	 * @param sucursal
-	 * @param producto
+	 * @param idIdSucursal
+	 * @param idProducto
 	 * @param nivelReorden
 	 * @param precioUnitario
-	 * @param precioPorUnidadMedida
+	 * @param precioUnidadMedida
 	 */
-	public Vende(long sucursal, long producto, int nivelReorden, double precioUnitario, double precioPorUnidadMedida) {
-		this.sucursal = sucursal;
-		this.producto = producto;
+	public Vende(long idIdSucursal, long idProducto, int nivelReorden, double precioUnitario, double precioUnidadMedida) {
+		this.idSucursal = idIdSucursal;
+		this.idProducto = idProducto;
 		this.nivelReorden = nivelReorden;
 		this.precioUnitario = precioUnitario;
-		this.precioPorUnidadMedida = precioPorUnidadMedida;
+		this.precioUnidadMedida = precioUnidadMedida;
 	}
 
 	/**
-	 * @return the sucursal
+	 * @return the idIdSucursal
 	 */
-	public long getSucursal() {
-		return sucursal;
+	public long getIdSucursal() {
+		return idSucursal;
 	}
 
 	/**
-	 * @param sucursal the sucursal to set
+	 * @param idIdSucursal the idIdSucursal to set
 	 */
-	public void setSucursal(long sucursal) {
-		this.sucursal = sucursal;
+	public void setIdSucursal(long idIdSucursal) {
+		this.idSucursal = idIdSucursal;
 	}
 
 	/**
-	 * @return the producto
+	 * @return the idProducto
 	 */
-	public long getProducto() {
-		return producto;
+	public long getIdProducto() {
+		return idProducto;
 	}
 
 	/**
-	 * @param producto the producto to set
+	 * @param idProducto the idProducto to set
 	 */
-	public void setProducto(long producto) {
-		this.producto = producto;
+	public void setIdProducto(long idProducto) {
+		this.idProducto = idProducto;
 	}
 
 	/**
@@ -130,24 +130,24 @@ public class Vende implements VOVende{
 	}
 
 	/**
-	 * @return the precioPorUnidadMedida
+	 * @return the precioUnidadMedida
 	 */
-	public double getPrecioPorUnidadMedida() {
-		return precioPorUnidadMedida;
+	public double getPrecioUnidadMedida() {
+		return precioUnidadMedida;
 	}
 
 	/**
-	 * @param precioPorUnidadMedida the precioPorUnidadMedida to set
+	 * @param precioUnidadMedida the precioUnidadMedida to set
 	 */
-	public void setPrecioPorUnidadMedida(double precioPorUnidadMedida) {
-		this.precioPorUnidadMedida = precioPorUnidadMedida;
+	public void setPrecioUnidadMedida(double precioUnidadMedida) {
+		this.precioUnidadMedida = precioUnidadMedida;
 	}
 
 	
 	@Override
 	public String toString() {
-		return "Vende [sucursal=" + sucursal + ", producto=" + producto + ", nivelReorden=" + nivelReorden
-				+ ", precioUnitario=" + precioUnitario + ", precioPorUnidadMedida=" + precioPorUnidadMedida + "]";
+		return "Vende [idIdSucursal=" + idSucursal + ", idProducto=" + idProducto + ", nivelReorden=" + nivelReorden
+				+ ", precioUnitario=" + precioUnitario + ", precioUnidadMedida=" + precioUnidadMedida + "]";
 	}
 	
 }

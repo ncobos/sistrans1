@@ -51,6 +51,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.parranderos.negocio.Parranderos;
+import uniandes.isis2304.parranderos.negocio.VOFactura;
 import uniandes.isis2304.parranderos.negocio.VOPromocion;
 import uniandes.isis2304.parranderos.negocio.VOSupermercado;
 import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
@@ -762,18 +763,31 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     {
     	try 
     	{
-    		String nombreTipo = JOptionPane.showInputDialog (this, "Nombre del supermercado", "Adicionar supermercado", JOptionPane.QUESTION_MESSAGE);
+    		String cliente = JOptionPane.showInputDialog (this, "Identificación del cliente", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		String fecha2 = JOptionPane.showInputDialog (this, "Fecha de la creación de la factura. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    		Date date = dateFormat.parse(fecha2);
+    		long time = date.getTime();
+    		Timestamp fecha = new Timestamp(time);
+    		String sucursal2 = JOptionPane.showInputDialog (this, "Identificación de la sucursal donde se realiza la venta", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		long sucursal = Long.parseLong(sucursal2);
+    		String producto2 = JOptionPane.showInputDialog (this, "Identificación del producto", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		long producto = Long.parseLong(producto2);
+    		String promocion2 = JOptionPane.showInputDialog (this, "Identificación de la promoción, si no existe poner 0", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		long promocion = Long.parseLong(promocion2);
+    		String cantidad2 = JOptionPane.showInputDialog (this, "Cantidad de unidades vendidas", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		int cantidad = Integer.parseInt(cantidad2);
     		
     		
-    		if (nombreTipo != null)
+    		if ( cliente != null && fecha2!= null && sucursal2 != null && producto2 != null && cantidad2 != null  )
     		{
-        		VOSupermercado tb = parranderos.adicionarSupermercado(nombreTipo);
+        		VOFactura tb = parranderos.adicionarVenta(fecha, cliente, sucursal, producto, promocion, cantidad);
         		if (tb == null)
         		{
-        			throw new Exception ("No se pudo crear un supermercado con nombre: " + nombreTipo);
+        			throw new Exception ("No se pudo crear una factura para el cliente: " + cliente);
         		}
-        		String resultado = "En adicionarSupermercado\n\n";
-        		resultado += "Supermercado adicionado exitosamente: " + tb;
+        		String resultado = "En adicionarVenta\n\n";
+        		resultado += "Venta adicionada exitosamente: " + tb;
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}

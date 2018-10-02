@@ -1414,11 +1414,11 @@ public class Parranderos
 	}
 	
 	
-	public Factura adicionarVenta()
+	public Factura adicionarVenta(Timestamp fecha, String cliente, long sucursal, long producto, long promocion, int cantidad)
 	{
-		log.info ("Adicionando producto: " + nombre);
-        Factura factura = pp.adicionar
-        log.info ("Adicionando promocion: " + promocion);
+		log.info ("Adicionando factura de cliente: " + cliente);
+        Factura factura = pp.adicionarVenta(fecha, cliente, sucursal, producto, promocion, cantidad);
+		log.info ("Adicionando factura de cliente: " + cliente);
         return factura;
 	}
 	
