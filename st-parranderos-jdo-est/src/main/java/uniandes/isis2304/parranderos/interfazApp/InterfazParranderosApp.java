@@ -763,7 +763,8 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     {
     	try 
     	{
-    		String cliente = JOptionPane.showInputDialog (this, "Identificación del cliente", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		String cliente2 = JOptionPane.showInputDialog (this, "Identificación del cliente", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
+    		long cliente = Long.parseLong(cliente2);
     		String fecha2 = JOptionPane.showInputDialog (this, "Fecha de la creación de la factura. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
     		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     		Date date = dateFormat.parse(fecha2);
@@ -779,7 +780,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     		int cantidad = Integer.parseInt(cantidad2);
     		
     		
-    		if ( cliente != null && fecha2!= null && sucursal2 != null && producto2 != null && cantidad2 != null  )
+    		if ( cliente2 != null && fecha2!= null && sucursal2 != null && producto2 != null && cantidad2 != null  )
     		{
         		VOFactura tb = parranderos.adicionarVenta(fecha, cliente, sucursal, producto, promocion, cantidad);
         		if (tb == null)

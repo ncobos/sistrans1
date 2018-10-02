@@ -27,7 +27,7 @@ public class Factura implements VOFactura{
 	/**
 	 * Cliente de la factura 
 	 */
-	private String cliente;
+	private long cliente;
 	
 	/**
 	 * Sucursal donde se emiti� la factura
@@ -44,7 +44,7 @@ public class Factura implements VOFactura{
 	{
 		this.numero = 0;
 		this.fecha = new Timestamp(0);
-		this.cliente = "";
+		this.cliente = 0;
 		this.sucursal = 0;
 	}
 
@@ -55,7 +55,7 @@ public class Factura implements VOFactura{
 	 * @param pCliente - El identificador del cliente. Debe existir un cliente con dicho identificador. 
 	 * @param pSucursal - El identificador de la sucursal. Debe existir una sucursal con dicho identificador.
 	 */
-	public Factura(long pNumero, long pSucursal, Timestamp pFecha, String pCliente) 
+	public Factura(long pNumero, long pSucursal, Timestamp pFecha, long pCliente) 
 	{
 		this.numero = pNumero;
 		this.cliente = pCliente;
@@ -80,11 +80,11 @@ public class Factura implements VOFactura{
 		this.fecha = fecha;
 	}
 
-	public String getCliente() {
+	public long getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(String cliente) {
+	public void setCliente(long cliente) {
 		this.cliente = cliente;
 	}
 

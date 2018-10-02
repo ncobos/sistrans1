@@ -27,7 +27,7 @@ public interface VOFactura {
 	/**
 	 * @return El cliente de la factura
 	 */
-	public String getCliente();
+	public long getCliente();
 	
 	/**
 	 * @return La sucursal de la factura

@@ -1,4 +1,4 @@
-{
+﻿{
 	"title": "Aplicación transaccional de Parranderos Uniandes",
 	"frameH": 600,
 	"frameW": 800,
@@ -23,7 +23,20 @@
 				{
 					"label": "Buscar por Nombre",
 					"event": "buscarTipoBebidaPorNombre"
+				},
+				{
+					"label": "AdicionarSupermarket",
+					"event": "adicionarSupermercado"
+				},
+				{
+					"label": "Adicionar Promoción",
+					"event": "adicionarPromocion"
+				},
+				{
+					"label": "Adicionar Venta",
+					"event": "adicionarVenta"
 				}
+
 			]
 		},
 		{ "menuTitle": "Mantenimiento",

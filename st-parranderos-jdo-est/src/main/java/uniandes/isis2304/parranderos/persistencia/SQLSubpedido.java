@@ -6,6 +6,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.parranderos.negocio.Pedido;
 import uniandes.isis2304.parranderos.negocio.Subpedido;
 
 /**
@@ -53,7 +54,7 @@ class SQLSubpedido {
 	 * @param costo - El costo del subpedido
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarPedido (PersistenceManager pm, long id, long producto, int cantidad, double costo) 
+	public long adicionarSubPedido (PersistenceManager pm, long id, long producto, int cantidad, double costo) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPedido() + "(idpedido, idproducto, cantidad, costo) values (?, ?, ?, ?)");
         q.setParameters(id, producto, cantidad, costo);
@@ -115,6 +116,19 @@ class SQLSubpedido {
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaSubpedido() + " WHERE idproducto = ?");
 		q.setResultClass(Subpedido.class);
 		q.setParameters(producto);
+		return (List<Subpedido>) q.executeList();
+	}
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS SUBPEDIDOS de la 
+	 * base de datos de Superandes
+	 * @param pm - El manejador de persistencia
+	 * @return Una lista de objetos SUBPEDIDO
+	 */
+	public List<Subpedido> darSubPedidos(PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaSubpedido());
+		q.setResultClass(Subpedido.class);
 		return (List<Subpedido>) q.executeList();
 	}
 }

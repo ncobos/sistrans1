@@ -53,7 +53,7 @@ class SQLFactura {
 	 * @param idSucursal - El identificador de la sucursal donde se generó la factura
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarFactura (PersistenceManager pm, long numero, Timestamp fecha, String idCliente, long sucursal) 
+	public long adicionarFactura (PersistenceManager pm, long numero, Timestamp fecha, long idCliente, long sucursal) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaFactura() + "(numero, fecha, idcliente, sucursal) values (?, ?, ?, ?)");
         q.setParameters(numero, fecha, idCliente, sucursal);
@@ -110,7 +110,7 @@ class SQLFactura {
 	 * @param idCliente - El cliente de la factura
 	 * @return Una lista de objetos FACTURA que tienen el cliente dado
 	 */
-	public List<Factura> darFacturasPorCliente (PersistenceManager pm, String idCliente) 
+	public List<Factura> darFacturasPorCliente (PersistenceManager pm, long idCliente) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaFactura() + " WHERE idcliente = ?");
 		q.setResultClass(Factura.class);
@@ -156,7 +156,7 @@ class SQLFactura {
 	 * @param sucursal - La sucursal de la factura
 	 * @return Una lista de objetos FACTURA que tienen un cliente y una sucursal dada
 	 */
-	public List<Factura> darFacturasPorClienteYSucursal(PersistenceManager pm, String idCliente, long sucursal) 
+	public List<Factura> darFacturasPorClienteYSucursal(PersistenceManager pm, long idCliente, long sucursal) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaFactura() + " WHERE idcliente = ? AND sucursal = ?");
 		q.setResultClass(Factura.class);

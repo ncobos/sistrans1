@@ -68,7 +68,7 @@ class SQLCliente {
 	 * @param nombreCliente - El nombre del cliente
 	 * @return EL número de tuplas eliminadas
 	 */
-	public long eliminarClientesPorNombre (PersistenceManager pm, String nombreCliente)
+	public long eliminarClientePorNombre (PersistenceManager pm, String nombreCliente)
 	{
         Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente () + " WHERE nombre = ?");
         q.setParameters(nombreCliente);

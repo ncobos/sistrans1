@@ -1377,6 +1377,633 @@ public class Parranderos
 	 * 			Métodos para manejar los PEDIDOS
 	 *****************************************************************/
 	
+	/**
+	 * Adiciona de manera persistente un pedido
+	 * Adiciona entradas al log de la aplicación 
+	 * @param proveedor - El proveedor del pedido
+	 * @param sucursal - La sucursal que hace el pedido
+	 * @param fechaEntrega - La fecha de entrega del pedido
+	 * @param estadoOrden - El estado de orden del pedido
+	 * @param cantidad - El numero de unidades solicitadas
+	 * @param calificacion - La calificacion del pedido
+	 * @param costoTotal - El costo total del pedido
+	 * @return El objeto Pedido adicionado. null si ocurre alguna Excepción
+	 */
+	public Pedido adicionarPedido(long idPedido, long proveedor, long sucursal, Timestamp fechaEntrega, String estadoOrden, int cantidad, int calificacion, double costoTotal, long producto, int cantidadSub, double costo)
+	{
+        log.info ("Adicionando pedido: " + idPedido);
+        Pedido pedido = pp.adicionarPedido(proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, costoTotal, producto, cantidadSub, costo);
+        log.info ("Adicionando pedido: " + pedido);
+        return pedido;
+	}
+	
+	/**
+	 * Elimina un pedido por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPedido - El id del pedido a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarPedidoPorId (long idPedido)
+	{
+		log.info ("Eliminando Pedido por id: " + idPedido);
+        long resp = pp.eliminarPedidoPorId(idPedido);
+        log.info ("Eliminando Pedido por id: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 * Encuentra un pedido y su información básica, según su identificador
+	 * @param idPedido - El identificador del pedido buscado
+	 * @return Un objeto Pedido que corresponde con el id buscado y lleno con su información básica
+	 * 			null, si un pedido con dicho id no existe
+	 */
+	public Pedido darPedidoPorId(long idPedido)
+	{
+        log.info ("Dar información de un pedido por id: " + idPedido);
+        Pedido pedido = pp.darPedidoPorId(idPedido);
+        log.info ("Buscando pedido por id: " + pedido != null ? pedido : "NO EXISTE");
+        return pedido;
+	}
+	
+	/**
+	 * Encuentra la información básica de los pedidos, según su id
+	 * @param idPedido - El identificador del pedido
+	 * @return Una lista de Pedidos con su información básica, donde todos tienen el id buscado.
+	 * 	La lista vacía indica que no existen pedidos con ese id.
+	 */
+	public List<Pedido> darPedidosPorId(long idPedido)
+	{
+        log.info ("Dar información de pedidos por id: " + idPedido);
+        List<Pedido> pedidos = pp.darPedidosPorId(idPedido);
+        log.info ("Dar información de Pedidos por id: " + pedidos.size() + " pedidos con ese id existentes");
+        return pedidos;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de los pedidos, según su sucursal
+	 * @param idSucursal - El identificador de la sucursal desde donde se realia el pedido
+	 * @return Una lista de Pedidos con su información básica, donde todos tienen la sucursal buscada.
+	 * 	La lista vacía indica que no existen pedidos con esa sucursal.
+	 */
+	public List<Pedido> darPedidosPorSucursal(long idSucursal)
+	{
+        log.info ("Dar información de pedidos por sucursal: " + idSucursal);
+        List<Pedido> pedidos = pp.darPedidosPorSucursal(idSucursal);
+        log.info ("Dar información de Pedidos por sucursal: " + pedidos.size() + " pedidos con esa sucursal existentes");
+        return pedidos;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de los pedidos, según su proveedor
+	 * @param idProveedor - El identificador del proveedor que realiza el pedidos
+	 * @return Una lista de Pedidos con su información básica, donde todos tienen el proveedor buscado.
+	 * 	La lista vacía indica que no existen pedidos con ese proveedor.
+	 */
+	public List<Pedido> darPedidosPorProveedor(long idProveedor)
+	{
+        log.info ("Dar información de pedidos por proveedor: " + idProveedor);
+        List<Pedido> pedidos = pp.darPedidosPorProveedor(idProveedor);
+        log.info ("Dar información de Pedidos por proveedor: " + pedidos.size() + " pedidos con ese proveedor existentes");
+        return pedidos;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de los pedidos, según su proveedor y su sucursal
+	 * @param idProveedor - El identificador del proveedor que realiza el pedidos
+	 * @param idSucursal - El identificador de la sucursal desde donde se realia el pedido
+	 * @return Una lista de Pedidos con su información básica, donde todos tienen el proveedor y sucursal buscada.
+	 * 	La lista vacía indica que no existen pedidos con ese proveedor y sucursal.
+	 */
+	public List<Pedido> darPedidosPorProveedorYSucursal(long idProveedor, long idSucursal)
+	{
+        log.info ("Dar información de pedidos por proveedor y sucursal: " + idProveedor + "," + idSucursal);
+        List<Pedido> pedidos = pp.darPedidosPorProveedorYSucursal(idProveedor, idSucursal);
+        log.info ("Dar información de Pedidos por proveedor y sucursal: " + pedidos.size() + " pedidos con ese proveedor y esa sucursal existentes");
+        return pedidos;
+ 	}
+	
+	public long cambiarEstadoOrdenPedido(long idPedido, String estadoOrden)
+	{
+		log.info("Cambiando estado de orden del pedido:" + idPedido + "al estado de orden:" + estadoOrden);
+		long estado = pp.cambiarEstadoOrdenPedido(idPedido, estadoOrden);
+		log.info("Estado de orden del pedido:" + idPedido + "actualizado");
+		return estado;
+	}
+	
+	/**
+	 * Encuentra la información básica de los pedidos, según su calificacion
+	 * @param calificacion - La calificacion del pedido
+	 * @return Una lista de Pedidos con su información básica, donde todos tienen la calificacion buscada.
+	 * 	La lista vacía indica que no existen pedidos con esa calificacion
+	 */
+	public List<Pedido> darPedidosPorCalificacion(int calificacion)
+	{
+        log.info ("Dar información de pedidos por calificacion: " + calificacion);
+        List<Pedido> pedidos = pp.darPedidosPorCalificacion(calificacion);
+        log.info ("Dar información de Pedidos por calificacion: " + pedidos.size() + " pedidos con esa califiacion existentes");
+        return pedidos;
+ 	}
+	
+	public long cambiarCalificacionPedido(long idPedido, int calificacion)
+	{
+		log.info("Cambiando califiacion del pedido:" + idPedido + "a una calificacion:" + calificacion);
+		long estado = pp.cambiarCalificacionPedido(idPedido, calificacion);
+		log.info("Calificsacion del pedido:" + idPedido + "actualizada");
+		return estado;
+	}
+	
+	/**
+	 * Encuentra la información básica de los pedidos, según su fecha de entrega
+	 * @param fechaEntrega - La fecha de entrega del pedido
+	 * @return Una lista de Pedidos con su información básica, donde todos tienen la fecha de entrega buscada.
+	 * 	La lista vacía indica que no existen pedidos con esa fecha de entrega
+	 */
+	public List<Pedido> darPedidosPorFechaEntrega(Timestamp fechaEntrega)
+	{
+        log.info ("Dar información de pedidos por fecha de entrega: " + fechaEntrega);
+        List<Pedido> pedidos = pp.darPedidosPorFechaEntrega(fechaEntrega);
+        log.info ("Dar información de Pedidos por fecha de entrega: " + pedidos.size() + " pedidos con esa fecha de entrega existentes");
+        return pedidos;
+ 	}
+	
+	/**
+	 * Elimina un pedido terminado (estado de orden: entregado)
+	 * Adiciona entradas al log de la aplicación
+	 * @param estadoOrden - El estado de orden del pedido
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarPedidosTerminados()
+	{
+		String estadoOrden = "Entregado";
+		log.info ("Eliminando Pedidos terminados con estado de orden: " + estadoOrden);
+        long resp = pp.eliminarPedidosTerminados(estadoOrden);
+        log.info ("Eliminando Pedidos terminados: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 * Encuentra todos los pedidos en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Pedido con todos los pedidos que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Pedido> darPedidos()
+	{
+		log.info ("Consultando Pedidos");
+        List<Pedido> pedidos = pp.darPedidos();	
+        log.info ("Consultando Pedidos: " + pedidos.size() + " existentes");
+        return pedidos;
+	}
+	
+	/**
+	 * Encuentra todos los pedidos en SuperAndes y los devuelve como una lista de VOPedido
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOPedido con todas los pedidos que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOPedido> darVOPedido()
+	{
+		log.info ("Generando los VO de pedidos");        
+        List<VOPedido> voPedidos = new LinkedList<VOPedido> ();
+        for (Pedido pedido : pp.darPedidos())
+        {
+        	voPedidos.add (pedido);
+        }
+        log.info ("Generando los VO de Pedidos: " + voPedidos.size() + " existentes");
+        return voPedidos;
+	}
+	
+	/* ****************************************************************
+	 * 			M�todos para manejar los SUBPEDIDOS
+	 *****************************************************************/
+	
+	/**
+	 * Adiciona de manera persistente un subpedido
+	 * Adiciona entradas al log de la aplicación 
+	 * @param producto - El producto del subpedido
+	 * @param cantidad - La cantidad de unidades pedidas por producto
+	 * @param costo - El costo del subpedido
+	 * @return El objeto Subpedido adicionado. null si ocurre alguna Excepción
+	 */
+	public Subpedido adicionarSubPedido(long idPedido, long producto, int cantidadSub, double costo)
+	{
+        log.info ("Adicionando pedido: " + idPedido);
+        Subpedido subpedido = pp.adicionarSubPedido(producto, cantidadSub, costo);
+        log.info ("Adicionando pedido: " + subpedido);
+        return subpedido;
+	}
+	
+	/**
+	 * Elimina un subpedido por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @param idPedido - El id del pedido a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarSubPedidoPorId (long idPedido)
+	{
+		log.info ("Eliminando SubPedido por id: " + idPedido);
+        long resp = pp.eliminarSubPedidoPorId(idPedido);
+        log.info ("Eliminando SubPedido por id: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 * Encuentra un subpedido y su información básica, según su identificador
+	 * @param idEstante - El identificador del estante buscado
+	 * @return Un objeto Estante que corresponde con el id buscado y lleno con su información básica
+	 * 			null, si un subpedido con dicho id no existe
+	 */
+	public Subpedido darSubPedidoPorId(long idPedido)
+	{
+        log.info ("Dar información de un subpedido por id: " + idPedido);
+        Subpedido subpedido = pp.darSubPedidoPorId(idPedido);
+        log.info ("Buscando subpedido por id: " + subpedido != null ? subpedido : "NO EXISTE");
+        return subpedido;
+	}
+	
+	/**
+	 * Encuentra la información básica de los subpedidos, según su producto
+	 * @param idProducto - El identificador del producto pedido
+	 * @return Una lista de SubPedidos con su información básica, donde todos tienen el producto buscado.
+	 * 	La lista vacía indica que no existen subpedidos con ese producto.
+	 */
+	public List<Subpedido> darSubPedidosPorProducto(long idProducto)
+	{
+        log.info ("Dar información de subpedidos por producto: " + idProducto);
+        List<Subpedido> subpedidos = pp.darSubPedidosPorProducto(idProducto);
+        log.info ("Dar información de SubPedidos por producto: " + subpedidos.size() + " pedidos con ese producto existentes");
+        return subpedidos;
+ 	}
+	
+	/**
+	 * Encuentra todos los subpedidos en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Subpedido con todos los subpedidos que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Subpedido> darSubPedidos()
+	{
+		log.info ("Consultando SubPedidos");
+        List<Subpedido> subpedidos = pp.darSubPedidos();	
+        log.info ("Consultando SubPedidos: " + subpedidos.size() + " existentes");
+        return subpedidos;
+	}
+	
+	/**
+	 * Encuentra todos los subpedidos en SuperAndes y los devuelve como una lista de VOSubpedido
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOSubpedido con todas los subpedidos que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOSubpedido> darVOSubPedido()
+	{
+		log.info ("Generando los VO de subpedidos");        
+        List<VOSubpedido> voSubPedidos = new LinkedList<VOSubpedido> ();
+        for (Subpedido subpedido : pp.darSubPedidos())
+        {
+        	voSubPedidos.add (subpedido);
+        }
+        log.info ("Generando los VO de SubPedidos: " + voSubPedidos.size() + " existentes");
+        return voSubPedidos;
+	}
+	
+	/* ****************************************************************
+	 * 			M�todos para manejar la relación OFRECEN
+	 *****************************************************************/
+	
+	/**
+	 * Adiciona de manera persistente el hecho de que un producto es ofrecido por un proveedor
+	 * Adiciona entradas al log de la aplicación 
+	 * @param idProducto - El identificador del producto
+	 * @param idProveedor - El identificador del proveedor
+	 * @param costo - el costo del producto según el proveedor
+	 * @return El objeto Ofrecen adicionado. null si ocurre alguna Excepción
+	 */
+	public Ofrecen adicionarOfrecen(long idProducto, long idProveedor, double costo)
+	{
+        log.info ("Adicionando ofrecen: [" + idProducto + ", " + idProveedor + "]");
+        Ofrecen ofrecen = pp.adicionarOfrecen(idProducto, idProveedor, costo);
+        log.info ("Adicionando ofrecen: " + ofrecen);
+        return ofrecen;
+	}
+	
+	/**
+	 * Elimina de manera persistente el hecho de que un producto es ofrecido por un proveedor
+	 * Adiciona entradas al log de la aplicación
+	 * @param idProducto - El identificador del producto
+	 * @param idProveedor - El identificador del proveedor
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarOfrecen(long idProducto, long idProveedor)
+	{
+		log.info ("Eliminando ofrecen");
+        long resp = pp.eliminarOfrecen(idProducto, idProveedor);
+        log.info ("Eliminando ofrecen: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 * Encuentra todos los OFRECEN en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Ofrecen con todos los ofrecen que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Ofrecen> darOfrecen()
+	{
+		log.info ("Listando Ofrecen");
+        List<Ofrecen> ofrecen = pp.darOfrecen();
+        log.info ("Listando ofrecen: Listo!");
+        return ofrecen;
+	}
+	
+	/**
+	 * Encuentra todos los proveedores y la cantidad de productos que ofrecen en Superandes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos con todos los proveedores y la cantidad de productos que ofrecen y que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Object []> darProveedorYCantidadProductosOfrecen()
+	{
+		log.info ("Listando los proveedores y la cantidad de productos que ofrecen");
+        List<Object []> pYp = pp.darProveedorYCantidadProductosOfrecen();
+        log.info ("Listando proveedores y la cantidad de productos que ofrecen: Listo!");
+        return pYp;
+	}
+	
+	/**
+	 * Encuentra todos los ofrecen en SuperAndes y los devuelve como VO
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOOfrecen con todas los Ofrecen que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOOfrecen> darVOOfrecen()
+	{
+		log.info ("Generando los VO de ofrecen");        
+        List<VOOfrecen> voOfrecen = new LinkedList<VOOfrecen> ();
+        for (Ofrecen ofrecen : pp.darOfrecen())
+        {
+        	voOfrecen.add (ofrecen);
+        }
+        log.info ("Generando los VO de Ofrecen: " + voOfrecen.size() + " existentes");
+        return voOfrecen;
+	}
+	
+	/* ****************************************************************
+	 * 			M�todos para manejar los CLIENTES
+	 *****************************************************************/
+	
+	/**
+	 * Adiciona de manera persistente un cliente
+	 * Adiciona entradas al log de la aplicación 
+	 * @param nombre - El nombre del cliente
+	 * @param correo - El correo del cliente
+	 * @param tipo - El tipo de cliente(PERSONA, EMPRESA)
+	 * @param direccion - La direccion del cliente
+	 * @param unidadesdisponibles de la promocion
+	 * @return El objeto Cliente adicionado. null si ocurre alguna Excepción
+	 */
+	public Cliente adicionarCliente(String nombre, String correo, String tipo, String direccion)
+	{
+        log.info ("Adicionando producto: " + nombre);
+        Cliente cliente = pp.adicionarCliente(nombre, correo, tipo, direccion);
+        log.info ("Adicionando cliente: " + cliente);
+        return cliente;
+	}
+	
+	/**
+	 * Elimina un cliente por su identificador
+	 * Adiciona entradas al log de la aplicación
+	 * @param idCliente - El id del cliente a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarClientePorId (long idCliente)
+	{
+		log.info ("Eliminando Cliente por id: " + idCliente);
+        long resp = pp.eliminarClientePorId(idCliente);
+        log.info ("Eliminando Cliente por id: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 * Elimina un cliente por su nombre
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre del cliente que se va a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarClientePorNombre (String nombre)
+	{
+		log.info ("Eliminando Cliente por nombre: " + nombre);
+        long resp = pp.eliminarClientePorNombre(nombre);
+        log.info ("Eliminando Cliente por nombre: " + resp + " tuplas eliminadas");
+        return resp;
+	}
+	
+	/**
+	 * Encuentra un cliente y su información básica, según su identificador
+	 * @param idCliente - El identificador del cliente buscado
+	 * @return Un objeto Cliente que corresponde con el id buscado y lleno con su información básica
+	 * 			null, si un cliente con dicho id no existe
+	 */
+	public Cliente darClientePorId(long idCliente)
+	{
+        log.info ("Dar información de un subpedido por id: " + idCliente);
+        Cliente cliente = pp.darClientePorId(idCliente);
+        log.info ("Buscando cliente por id: " + cliente != null ? cliente : "NO EXISTE");
+        return cliente;
+	}
+	
+	/**
+	 * Encuentra la información básica de los clientes, según su nombre
+	 * @param nombre - El nombre del cliente
+	 * @return Una lista de Clientes con su información básica, donde todos tienen el nombre buscado.
+	 * 	La lista vacía indica que no existen clientes con ese nombre.
+	 */
+	public List<Cliente> darClientesPorNombre(String nombre)
+	{
+        log.info ("Dar información de clientes por nombre: " + nombre);
+        List<Cliente> clientes = pp.darClientesPorNombre(nombre);
+        log.info ("Dar información de clientes por nombre: " + clientes.size() + " clientes con ese nombre existentes");
+        return clientes;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de los clientes, según su tipo
+	 * @param tipo - El tipo del cliente
+	 * @return Una lista de Clientes con su información básica, donde todos tienen el tipo buscado.
+	 * 	La lista vacía indica que no existen clientes con ese tipo.
+	 */
+	public List<Cliente> darClientesPorTipo(String tipo)
+	{
+        log.info ("Dar información de clientes por tipo: " + tipo);
+        List<Cliente> clientes = pp.darClientesPorTipo(tipo);
+        log.info ("Dar información de clientes por tipo: " + clientes.size() + " clientes con ese tipo existentes");
+        return clientes;
+ 	}
+	
+	/**
+	 * Encuentra todos los clientes en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Cliente con todos los clientes que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Cliente> darClientes()
+	{
+		log.info ("Consultando Clientes");
+        List<Cliente> clientes = pp.darClientes();	
+        log.info ("Consultando Clientes: " + clientes.size() + " existentes");
+        return clientes;
+	}
+	
+	/**
+	 * Encuentra todos los clientes en SuperAndes y los devuelve como una lista de VOCliente
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOCliente con todas los clientes que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOCliente> darVOCliente()
+	{
+		log.info ("Generando los VO de pedidos");        
+        List<VOCliente> voClientes = new LinkedList<VOCliente> ();
+        for (Cliente cliente : pp.darClientes())
+        {
+        	voClientes.add (cliente);
+        }
+        log.info ("Generando los VO de Clientes: " + voClientes.size() + " existentes");
+        return voClientes;
+	}
+	
+	/* ****************************************************************
+	 * 			M�todos para manejar las FACTURAS
+	 *****************************************************************/
+	
+	/**
+	 * Adiciona de manera persistente un cliente
+	 * Adiciona entradas al log de la aplicación 
+	 * @param idFactura - El identificador de la factura
+	 * @param fecha - Fecha de la factura
+	 * @param idCliente - El identificador del cliente de la factura
+	 * @param idSucursal - El identificador de la sucursal donde se generó la factura
+	 * @return El objeto Factura adicionado. null si ocurre alguna Excepción
+	 */
+	public Factura adicionarFactura(long idFactura, Timestamp fecha, long idCliente, long idSucursal)
+	{
+        log.info ("Adicionando producto: " + idFactura);
+        Factura factura = pp.adicionarFactura(fecha, idCliente, idSucursal);
+        log.info ("Adicionando cliente: " + factura);
+        return factura;
+	}
+	
+	/**
+	 * Encuentra una factura y su información básica, según su identificador
+	 * @param idFactura - El identificador de la factura buscada
+	 * @return Un objeto Factura que corresponde con el id buscado y lleno con su información básica
+	 * 			null, si uturana fac con dicho id no existe
+	 */
+	public Factura darFacturaPorId(long idFactura)
+	{
+        log.info ("Dar información de una factura por id: " + idFactura);
+        Factura factura = pp.darFacturaPorId(idFactura);
+        log.info ("Buscando factura por id: " + factura != null ? factura : "NO EXISTE");
+        return factura;
+	}
+	
+	/**
+	 * Encuentra la información básica de las facturas, según su id
+	 * @param idFactura - El identificador de la factura
+	 * @return Una lista de Facturas con su información básica, donde todos tienen el id buscado.
+	 * 	La lista vacía indica que no existen facturas con ese id.
+	 */
+	public List<Factura> darFacturasPorId(long idFactura)
+	{
+        log.info ("Dar información de facturas por id: " + idFactura);
+        List<Factura> facturas = pp.darFacturasPorId(idFactura);
+        log.info ("Dar información de facturas por id: " + facturas.size() + " facturas con ese id existentes");
+        return facturas;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de las facturas, según su cliente
+	 * @param idCliente- El identificador del cliente de la factura
+	 * @return Una lista de Facturas con su información básica, donde todos tienen el cliente buscado.
+	 * 	La lista vacía indica que no existen facturas con ese cliente.
+	 */
+	public List<Factura> darFacturasPorCliente(long idCliente)
+	{
+        log.info ("Dar información de facturas por cliente: " + idCliente);
+        List<Factura> facturas = pp.darFacturasPorCliente(idCliente);
+        log.info ("Dar información de facturas por cliente: " + facturas.size() + " facturas con ese id existentes");
+        return facturas;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de las facturas, según su sucursal
+	 * @param idSucursal- El identificador de la sucursal de la factura
+	 * @return Una lista de Facturas con su información básica, donde todos tienen la sucursal buscada.
+	 * 	La lista vacía indica que no existen facturas con esa sucursal.
+	 */
+	public List<Factura> darFacturasPorSucursal(long idSucursal)
+	{
+        log.info ("Dar información de facturas por sucursal: " + idSucursal);
+        List<Factura> facturas = pp.darFacturasPorId(idSucursal);
+        log.info ("Dar información de facturas por sucursal: " + facturas.size() + " facturas con esa sucursal existentes");
+        return facturas;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de las facturas, según su fecha
+	 * @param fecha- La fecha de la factura
+	 * @return Una lista de Facturas con su información básica, donde todos tienen la fecha buscada.
+	 * 	La lista vacía indica que no existen facturas con esa fecha.
+	 */
+	public List<Factura> darFacturasPorFecha(Timestamp fecha)
+	{
+        log.info ("Dar información de facturas por fecha: " + fecha);
+        List<Factura> facturas = pp.darFacturasPorFecha(fecha);
+        log.info ("Dar información de facturas por fecha: " + facturas.size() + " facturas con esa fecha existentes");
+        return facturas;
+ 	}
+	
+	/**
+	 * Encuentra la información básica de las facturas, según su cliente y su sucursal
+	 * @param idSucursal- El identificador de la sucursal de la factura
+	 * @param idCliente - El identificador del cliente de la factura
+	 * @return Una lista de Facturas con su información básica, donde todos tienen la sucursal buscada.
+	 * 	La lista vacía indica que no existen facturas con ese cliente y esa sucursal.
+	 */
+	public List<Factura> darFacturasPorClienteYSucursal(long idCliente, long idSucursal)
+	{
+        log.info ("Dar información de facturas por cliente y sucursal: " + idCliente + "," + idSucursal);
+        List<Factura> facturas = pp.darFacturasPorClienteYSucursal(idCliente, idSucursal);
+        log.info ("Dar información de facturas por cliente y sucursal: " + facturas.size() + " facturas con ese cliente y sucursal existentes");
+        return facturas;
+ 	}
+	
+	/**
+	 * Encuentra todos las facturas en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Factura con todas las facturas que conoce la aplicación, llenos con su información básica
+	 */
+	public List<Factura> darFacturas()
+	{
+		log.info ("Consultando Facturas");
+        List<Factura> facturas = pp.darFacturas();	
+        log.info ("Consultando Facturas: " + facturas.size() + " existentes");
+        return facturas;
+	}
+	
+	/**
+	 * Encuentra todos los facturas en SuperAndes y los devuelve como una lista de VOFactura
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos VOFactura con todas las facturas que conoce la aplicación, llenos con su información básica
+	 */
+	public List<VOFactura> darVOFactura()
+	{
+		log.info ("Generando los VO de facturas");        
+        List<VOFactura> voFacturas = new LinkedList<VOFactura> ();
+        for (Factura factura : pp.darFacturas())
+        {
+        	voFacturas.add (factura);
+        }
+        log.info ("Generando los VO de Facturas: " + voFacturas.size() + " existentes");
+        return voFacturas;
+	}
+	
+	/* ****************************************************************
+	 * 			M�todos para manejar las PROMOCIONES
+	 *****************************************************************/
+	
+	
 	/* ****************************************************************
 	 * 			M�todos para manejar las PROMOCIONES
 	 *****************************************************************/
@@ -1414,7 +2041,7 @@ public class Parranderos
 	}
 	
 	
-	public Factura adicionarVenta(Timestamp fecha, String cliente, long sucursal, long producto, long promocion, int cantidad)
+	public Factura adicionarVenta(Timestamp fecha, long cliente, long sucursal, long producto, long promocion, int cantidad)
 	{
 		log.info ("Adicionando factura de cliente: " + cliente);
         Factura factura = pp.adicionarVenta(fecha, cliente, sucursal, producto, promocion, cantidad);
