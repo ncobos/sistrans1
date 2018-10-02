@@ -14,12 +14,12 @@ public class Subpedido implements VOSubpedido{
 	/**
 	 *  El producto del que se hace el pedido
 	 */
-	private long idproducto;
+	private long idProducto;
 	
 	/**
 	 *  El pedido al que est� asociado
 	 */
-	private long idpedido;
+	private long idPedido;
 	
 	/**
 	 *  El numero de unidades solicitadas
@@ -38,8 +38,8 @@ public class Subpedido implements VOSubpedido{
 	 * Constructor por defecto
 	 */
 	public Subpedido() {
-		this.idproducto = 0;
-		this.idpedido = 0;
+		this.idProducto = 0;
+		this.idPedido = 0;
 		this.cantidad = 0;
 		this.costo = 0;
 	}
@@ -52,8 +52,8 @@ public class Subpedido implements VOSubpedido{
 	 * @param costo
 	 */
 	public Subpedido(long producto, long pedido, int cantidad, double costo) {
-		this.idproducto = producto;
-		this.idpedido = pedido;
+		this.idProducto = producto;
+		this.idPedido = pedido;
 		this.cantidad = cantidad;
 		this.costo = costo;
 	}
@@ -61,29 +61,29 @@ public class Subpedido implements VOSubpedido{
 	/**
 	 * @return the producto
 	 */
-	public long getidproducto() {
-		return idproducto;
+	public long getIdProducto() {
+		return idProducto;
 	}
 
 	/**
 	 * @param producto the producto to set
 	 */
-	public void setidproducto(long producto) {
-		this.idproducto = producto;
+	public void setIdProducto(long producto) {
+		this.idProducto = producto;
 	}
 
 	/**
 	 * @return the pedido
 	 */
-	public long getidpedido() {
-		return idpedido;
+	public long getIdPedido() {
+		return idPedido;
 	}
 
 	/**
 	 * @param pedido the pedido to set
 	 */
-	public void setidpedido(long pedido) {
-		this.idpedido = pedido;
+	public void setIdPedido(long pedido) {
+		this.idPedido = pedido;
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class Subpedido implements VOSubpedido{
 	 */
 	@Override
 	public String toString() {
-		return "Subpedido [producto=" + idproducto + ", pedido=" + idpedido + ", cantidad=" + cantidad + ", costo=" + costo
+		return "Subpedido [producto=" + idProducto + ", pedido=" + idPedido + ", cantidad=" + cantidad + ", costo=" + costo
 				+ "]";
 	}
 	

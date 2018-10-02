@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 public interface VOPedido {
 	
 	/* ****************************************************************
-	 * 			M�todos
+	 * 			Métodos
 	 *****************************************************************/
 	/**
 	 * @return El id del pedido
@@ -22,13 +22,13 @@ public interface VOPedido {
 	/**
 	 * @return La sucursal que hace el pedido
 	 */
-	public long getSucursal();
+	public long getIdSucursal();
 	
 	
 	/**
 	 * @return El proveedor al que se le hace el pedido
 	 */
-	public long getProveedor();
+	public long getIdProveedor();
 
 	/**
 	 * @return La fecha de entrega
@@ -44,7 +44,7 @@ public interface VOPedido {
 	/**
 	 * @return La calificaci�n del pedido y el proveedor
 	 */
-	public int getCalificacion();
+	public int getCalificacionServicio();
 
 	/**
 	 * @return Costo total del pedido

@@ -2624,9 +2624,9 @@ public class PersistenciaParranderos
 	 * @param estadoOrden - El estado de orden del pedido (pendiente, entregado)
 	 * @return El número de tuplas modificadas
 	 */
-	public long cambiarEstadoOrdenPedido(long idPedido, String estadoOrden)
+	public long cambiarEstadoOrdenPedido(long idPedido)
 	{
-		return sqlPedido.cambiarEstadoOrdenPedido(pmf.getPersistenceManager(), idPedido, estadoOrden);
+		return sqlPedido.cambiarEstadoOrdenPedido(pmf.getPersistenceManager(), idPedido);
 	}
 
 	/**
@@ -3306,6 +3306,59 @@ public class PersistenciaParranderos
 		catch (Exception e)
 		{
 			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	public Pedido recibirPedido(long idPedido, int calificacion)
+	{
+
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			Subpedido sub = sqlSubPedido.darSubPedidoPorId(pm, idPedido);
+			int cantidad = sub.getCantidad();
+			long producto = sub.getIdProducto();
+			tx.commit();
+
+			log.trace ("Recepcion de pedido: " + idPedido);
+
+			tx.begin();
+			long tuplas = sqlPedido.cambiarEstadoOrdenPedido(pm, idPedido);
+			tx.commit();
+
+			tx.begin();
+			Pedido pedido = sqlPedido.darPedidoPorId(pm, idPedido);
+			long sucursal = pedido.getIdSucursal();
+			tx.commit();
+			
+			tx.begin();
+			long tupla2 = sqlPedido.cambiarCalificacionPedido(pm, idPedido, calificacion);
+			tx.commit();
+
+			tx.begin();
+			long tuplasInsertadas2 = sqlBodega.aumentarExistenciasBodega(pm, cantidad, sucursal, producto);
+			tx.commit();
+
+			log.trace ("Se recibió el pedido. " + tuplasInsertadas2 + " tuplas insertadas");
+			Pedido pedido2 = sqlPedido.darPedidoPorId(pm, idPedido);
+
+			return pedido2;
+		}
+		catch (Exception e)
+		{
+        	e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return null;
 		}

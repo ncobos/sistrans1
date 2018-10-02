@@ -854,4 +854,39 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 	}
     
+    public void recibirPedido()
+    {
+    	try 
+    	{
+    		String idPedido2 = JOptionPane.showInputDialog (this, "Identificación del pedido que se quiere recibir", "Recibir pedido", JOptionPane.QUESTION_MESSAGE);
+    		long idPedido = Long.parseLong(idPedido2);
+    		String calificacion2 = JOptionPane.showInputDialog (this, "Calificación del servicio prestado por el proveedor (1-10)", "Recibir pedido", JOptionPane.QUESTION_MESSAGE);
+    		int calificacion = Integer.parseInt(calificacion2);
+    		
+    		
+    		if ( idPedido2!=null && calificacion2!= null)
+    		{
+        		VOPedido tb = parranderos.recibirPedido(idPedido, calificacion);
+    			if (tb == null)
+        		{
+        			throw new Exception ("No se pudo recibir el pedido: " + idPedido);
+        		}
+        		String resultado = "En recibirPedido\n\n";
+        		resultado += "Pedido recibido exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
 }

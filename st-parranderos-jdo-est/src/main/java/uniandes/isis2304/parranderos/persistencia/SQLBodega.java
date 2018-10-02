@@ -135,4 +135,18 @@ class SQLBodega
         return (long) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para aumentar en uno el número de sedes de los bares de la 
+	 * base de datos de Parranderos
+	 * @param pm - El manejador de persistencia
+	 * @param ciudad - La ciudad a la cual se le quiere realizar el proceso
+	 * @return El número de tuplas modificadas
+	 */
+	public long aumentarExistenciasBodega(PersistenceManager pm, int cantidad, long sucursal, long producto)
+	{
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaBodega() + " SET existencias = existencias + ? WHERE producto = ? AND sucursal = ?");
+        q.setParameters(cantidad, producto, sucursal);
+        return (long) q.executeUnique();
+	}
+	
 }

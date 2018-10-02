@@ -15,12 +15,12 @@ public interface VOSubpedido {
 	/**
 	 * @return El producto del que se hace el pedido
 	 */
-	public long getidproducto();
+	public long getIdProducto();
 	
 	/**
 	 * @return El pedido al que est� asociado
 	 */
-	public long getidpedido();
+	public long getIdPedido();
 	
 	/**
 	 * @return El numero de unidades solicitadas

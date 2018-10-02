@@ -35,6 +35,10 @@
 				{
 					"label": "Registrar un pedido",
 					"event": "registrarPedido"
+				},
+				{
+					"label": "Recibir un pedido",
+					"event": "recibirPedido"
 				}
 			]
 		},

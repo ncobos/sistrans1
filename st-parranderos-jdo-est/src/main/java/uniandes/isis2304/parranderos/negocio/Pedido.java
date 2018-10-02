@@ -21,12 +21,12 @@ public class Pedido implements VOPedido{
 	/**
 	 * El identificador del proveedor encargado del pedido
 	 */
-	private long proveedor;
+	private long idProveedor;
 
 	/**
 	 * El identificador de la sucursal que hizo el pedido
 	 */
-	private long sucursal;
+	private long idSucursal;
 
 	/**
 	 * La fecha de entrega
@@ -48,7 +48,7 @@ public class Pedido implements VOPedido{
 	/**
 	 *  La calificaci�n del pedido y el proveedor
 	 */
-	private int calificacion;
+	private int calificacionServicio;
 
 	/**
 	 *  Costo total del pedido
@@ -64,12 +64,12 @@ public class Pedido implements VOPedido{
 	
 	public Pedido() {
 		this.id = 0;
-		this.proveedor = 0;
-		this.sucursal = 0;
+		this.idProveedor = 0;
+		this.idSucursal = 0;
 		this.fechaEntrega = new Timestamp(0);
 		this.estadoOrden = "";
 		this.cantidad = 0;
-		this.calificacion = 0;
+		this.calificacionServicio = 0;
 		this.costoTotal = 0;
 	}
 	
@@ -87,12 +87,12 @@ public class Pedido implements VOPedido{
 	public Pedido(long id, long proveedor, long sucursal, Timestamp fechaEntrega, String estadoOrden,
 			int cantidad, int calificacion, double costoTotal) {
 		this.id = id;
-		this.proveedor = proveedor;
-		this.sucursal = sucursal;
+		this.idProveedor = proveedor;
+		this.idSucursal = sucursal;
 		this.fechaEntrega = fechaEntrega;
 		this.estadoOrden = estadoOrden;
 		this.cantidad = cantidad;
-		this.calificacion = calificacion;
+		this.calificacionServicio = calificacion;
 		this.costoTotal = costoTotal;
 	}
 
@@ -107,20 +107,20 @@ public class Pedido implements VOPedido{
 		this.id = id;
 	}
 
-	public long getProveedor() {
-		return proveedor;
+	public long getIdProveedor() {
+		return idProveedor;
 	}
 
-	public void setProveedor(long proveedor) {
-		this.proveedor = proveedor;
+	public void setIdProveedor(long proveedor) {
+		this.idProveedor = proveedor;
 	}
 
-	public long getSucursal() {
-		return sucursal;
+	public long getIdSucursal() {
+		return idSucursal;
 	}
 
-	public void setSucursal(long sucursal) {
-		this.sucursal = sucursal;
+	public void setIdSucursal(long sucursal) {
+		this.idSucursal = sucursal;
 	}
 
 	public Timestamp getFechaEntrega() {
@@ -147,12 +147,12 @@ public class Pedido implements VOPedido{
 		this.cantidad = cantidad;
 	}
 
-	public int getCalificacion() {
-		return calificacion;
+	public int getCalificacionServicio() {
+		return calificacionServicio;
 	}
 
-	public void setCalificacion(int calificacion) {
-		this.calificacion = calificacion;
+	public void setCalificacionServicio(int calificacion) {
+		this.calificacionServicio = calificacion;
 	}
 
 	public double getCostoTotal() {
@@ -165,9 +165,9 @@ public class Pedido implements VOPedido{
 
 	@Override
 	public String toString() {
-		return "Pedido [id=" + id + ", proveedor=" + proveedor + ", sucursal=" + sucursal
+		return "Pedido [id=" + id + ", proveedor=" + idProveedor + ", sucursal=" + idSucursal
 				+ ", fechaEntrega=" + fechaEntrega + ", estadoOrden=" + estadoOrden + ", cantidad=" + cantidad
-				+ ", calificacion=" + calificacion + ", costoTotal=" + costoTotal + "]";
+				+ ", calificacion=" + calificacionServicio + ", costoTotal=" + costoTotal + "]";
 	}
 
 

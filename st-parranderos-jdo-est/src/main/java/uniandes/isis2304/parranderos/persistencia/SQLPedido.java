@@ -34,7 +34,7 @@ class SQLPedido {
 	 * El manejador de persistencia general de la aplicación
 	 */
 	PersistenciaParranderos pp;
-	
+
 	/* ****************************************************************
 	 * 			Métodos
 	 *****************************************************************/
@@ -45,7 +45,7 @@ class SQLPedido {
 	public SQLPedido(PersistenciaParranderos pp) {
 		this.pp = pp;
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un PEDIDO a la base de datos de Superandes
 	 * @param pm - El manejador de persistencia
@@ -61,11 +61,11 @@ class SQLPedido {
 	 */
 	public long adicionarPedido (PersistenceManager pm, long idPedido, long proveedor, long sucursal, Timestamp fechaEntrega, String estadoOrden, int cantidad, int calificacion, double costoTotal) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPedido() + "(id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (?, ?, ?, ?, ?, ?, ?)");
-        q.setParameters(idPedido, proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, costoTotal);
-        return (long) q.executeUnique();            
+		Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPedido() + "(id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (?, ?, ?, ?, ?, ?, ?)");
+		q.setParameters(idPedido, proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, costoTotal);
+		return (long) q.executeUnique();            
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar PEDIDOS de la base de datos de Superandes, por su nombre
 	 * @param pm - El manejador de persistencia
@@ -74,11 +74,11 @@ class SQLPedido {
 	 */
 	public long eliminarPedidoPorId(PersistenceManager pm, long idPedido)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPedido() + " WHERE id = ?");
-        q.setParameters(idPedido);
-        return (long) q.executeUnique();
+		Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPedido() + " WHERE id = ?");
+		q.setParameters(idPedido);
+		return (long) q.executeUnique();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de UN PEDIDO de la 
 	 * base de datos de Superandes, por su identificador
@@ -93,7 +93,7 @@ class SQLPedido {
 		q.setParameters(idPedido);
 		return (Pedido) q.executeUnique();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de PEDIDOS de la 
 	 * base de datos de Superandes, por su identificador
@@ -108,7 +108,7 @@ class SQLPedido {
 		q.setParameters(idPedido);
 		return (List<Pedido>) q.executeList();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de PEDIDOS de la 
 	 * base de datos de Superandes, por su sucursal
@@ -123,7 +123,7 @@ class SQLPedido {
 		q.setParameters(sucursal);
 		return (List<Pedido>) q.executeList();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de PEDIDOS de la 
 	 * base de datos de Superandes, por su proveedor
@@ -138,7 +138,7 @@ class SQLPedido {
 		q.setParameters(proveedor);
 		return (List<Pedido>) q.executeList();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de PEDIDOS de la 
 	 * base de datos de Superandes, por su proveedor y sucursal
@@ -154,7 +154,7 @@ class SQLPedido {
 		q.setParameters(proveedor, sucursal);
 		return (List<Pedido>) q.executeList();
 	}
-		
+
 	/**
 	 * 
 	 * Crea y ejecuta la sentencia SQL para cambiar el estado de orden de un pedido en la 
@@ -164,13 +164,14 @@ class SQLPedido {
 	 * @param estadoOrden - El estado de orden modificado a entregado o pendiente
 	 * @return El número de tuplas modificadas
 	 */
-	public long cambiarEstadoOrdenPedido(PersistenceManager pm, long idPedido, String estadoOrden) 
+	public long cambiarEstadoOrdenPedido(PersistenceManager pm, long idPedido) 
 	{
-		 Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaPedido() + " SET estadoorden = ? WHERE id = ?");
-	     q.setParameters(estadoOrden, idPedido);
-	     return (long) q.executeUnique();            
+		String estadoOrden = "entregado";
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaPedido() + " SET estadoorden = ? WHERE id = ?");
+		q.setParameters(estadoOrden, idPedido);
+		return (long) q.executeUnique();            
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de PEDIDOS de la 
 	 * base de datos de Superandes, por su calificacion
@@ -185,7 +186,7 @@ class SQLPedido {
 		q.setParameters(calificacion);
 		return (List<Pedido>) q.executeList();
 	}
-	
+
 	/**
 	 * 
 	 * Crea y ejecuta la sentencia SQL para cambiar la calificacion de un pedido en la 
@@ -197,11 +198,11 @@ class SQLPedido {
 	 */
 	public long cambiarCalificacionPedido(PersistenceManager pm, long idPedido, int calificacion) 
 	{
-		 Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaPedido() + " SET calificacionservicio = ? WHERE id = ?");
-	     q.setParameters(calificacion, idPedido);
-	     return (long) q.executeUnique();            
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaPedido() + " SET calificacionservicio = ? WHERE id = ?");
+		q.setParameters(calificacion, idPedido);
+		return (long) q.executeUnique();            
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de PEDIDOS de la 
 	 * base de datos de Superandes, por su fecha de entrega
@@ -216,7 +217,7 @@ class SQLPedido {
 		q.setParameters(fechaEntrega);
 		return (List<Pedido>) q.executeList();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar PEDIDOS de la base de datos de Superandes dado el estado de orden: entregado
 	 * @param pm - El manejador de persistencia
@@ -225,11 +226,11 @@ class SQLPedido {
 	 */
 	public long eliminarPedidosTerminados(PersistenceManager pm, String estadoOrden)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPedido() + " WHERE estadoorden = 'Entregado'");
-        q.setParameters(estadoOrden);
-        return (long) q.executeUnique();
+		Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPedido() + " WHERE estadoorden = 'Entregado'");
+		q.setParameters(estadoOrden);
+		return (long) q.executeUnique();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS PEDIDOS de la 
 	 * base de datos de Superandes

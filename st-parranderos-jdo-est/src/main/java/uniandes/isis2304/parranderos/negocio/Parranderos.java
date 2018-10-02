@@ -1482,10 +1482,10 @@ public class Parranderos
         return pedidos;
  	}
 	
-	public long cambiarEstadoOrdenPedido(long idPedido, String estadoOrden)
+	public long cambiarEstadoOrdenPedido(long idPedido)
 	{
-		log.info("Cambiando estado de orden del pedido:" + idPedido + "al estado de orden:" + estadoOrden);
-		long estado = pp.cambiarEstadoOrdenPedido(idPedido, estadoOrden);
+		log.info("Cambiando estado de orden del pedido:" + idPedido);
+		long estado = pp.cambiarEstadoOrdenPedido(idPedido);
 		log.info("Estado de orden del pedido:" + idPedido + "actualizado");
 		return estado;
 	}
@@ -1500,7 +1500,7 @@ public class Parranderos
 	{
         log.info ("Dar información de pedidos por calificacion: " + calificacion);
         List<Pedido> pedidos = pp.darPedidosPorCalificacion(calificacion);
-        log.info ("Dar información de Pedidos por calificacion: " + pedidos.size() + " pedidos con esa califiacion existentes");
+        log.info ("Dar información de Pedidos por calificacion: " + pedidos.size() + " pedidos con esa calificacion existentes");
         return pedidos;
  	}
 	
@@ -2055,6 +2055,14 @@ public class Parranderos
         Factura factura = pp.adicionarVenta(fecha, cliente, sucursal, producto, promocion, cantidad);
 		log.info ("Adicionando factura de cliente: " + cliente);
         return factura;
+	}
+	
+	public Pedido recibirPedido (long idPedido, int calificacion)
+	{
+		log.info ("Recibiendo pedido: " + idPedido);
+        Pedido pedido= pp.recibirPedido(idPedido, calificacion);
+		log.info ("Recibiendo pedido: " + idPedido);
+        return pedido;
 	}
 	
 }
