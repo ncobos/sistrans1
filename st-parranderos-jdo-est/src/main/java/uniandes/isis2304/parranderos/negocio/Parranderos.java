@@ -1389,10 +1389,10 @@ public class Parranderos
 	 * @param costoTotal - El costo total del pedido
 	 * @return El objeto Pedido adicionado. null si ocurre alguna Excepción
 	 */
-	public Pedido adicionarPedido(long idPedido, long proveedor, long sucursal, Timestamp fechaEntrega, String estadoOrden, int cantidad, int calificacion, double costoTotal, long producto, int cantidadSub, double costo)
+	public Pedido adicionarPedido(long proveedor, long sucursal, Timestamp fechaEntrega, String estadoOrden, int cantidad, int calificacion, long producto)
 	{
-        log.info ("Adicionando pedido: " + idPedido);
-        Pedido pedido = pp.adicionarPedido(proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, costoTotal, producto, cantidadSub, costo);
+        log.info ("Adicionando pedido de producto con id: " + producto);
+        Pedido pedido = pp.adicionarPedido(proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, producto);
         log.info ("Adicionando pedido: " + pedido);
         return pedido;
 	}
@@ -1864,7 +1864,7 @@ public class Parranderos
 	}
 	
 	/* ****************************************************************
-	 * 			M�todos para manejar las FACTURAS
+	 * 			Métodos para manejar las FACTURAS
 	 *****************************************************************/
 	
 	/**
@@ -1876,7 +1876,7 @@ public class Parranderos
 	 * @param idSucursal - El identificador de la sucursal donde se generó la factura
 	 * @return El objeto Factura adicionado. null si ocurre alguna Excepción
 	 */
-	public Factura adicionarFactura(long idFactura, Timestamp fecha, long idCliente, long idSucursal)
+	public Factura adicionarFactura(long idFactura, Timestamp fecha, String idCliente, long idSucursal)
 	{
         log.info ("Adicionando producto: " + idFactura);
         Factura factura = pp.adicionarFactura(fecha, idCliente, idSucursal);
@@ -1999,13 +1999,11 @@ public class Parranderos
         return voFacturas;
 	}
 	
-	/* ****************************************************************
-	 * 			M�todos para manejar las PROMOCIONES
-	 *****************************************************************/
+	
 	
 	
 	/* ****************************************************************
-	 * 			M�todos para manejar las PROMOCIONES
+	 * 			Métodos para manejar las PROMOCIONES
 	 *****************************************************************/
 	/**
 	 * Adiciona de manera persistente una promocion
@@ -2040,8 +2038,18 @@ public class Parranderos
         return promocion;
 	}
 	
-	
-	public Factura adicionarVenta(Timestamp fecha, long cliente, long sucursal, long producto, long promocion, int cantidad)
+	/**
+	 * Adiciona de manera persistente un proceso de venta
+	 * Adiciona entradas al log de la aplicación 
+	 * @param fecha de la venta
+	 * @param cliente que compra el producto
+	 * @param sucursal en donde se realiza el proceso
+	 * @param producto que se compra
+	 * @param promocion si existe, si no se pone cero.
+	 * @param cantidad de productos a comprar
+	 * @return El objeto Factura adicionado. null si ocurre alguna excepción 
+	 */
+	public Factura adicionarVenta(Timestamp fecha, String cliente, long sucursal, long producto, long promocion, int cantidad)
 	{
 		log.info ("Adicionando factura de cliente: " + cliente);
         Factura factura = pp.adicionarVenta(fecha, cliente, sucursal, producto, promocion, cantidad);

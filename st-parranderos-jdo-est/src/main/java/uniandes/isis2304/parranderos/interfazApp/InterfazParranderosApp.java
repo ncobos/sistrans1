@@ -52,6 +52,7 @@ import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.parranderos.negocio.Parranderos;
 import uniandes.isis2304.parranderos.negocio.VOFactura;
+import uniandes.isis2304.parranderos.negocio.VOPedido;
 import uniandes.isis2304.parranderos.negocio.VOPromocion;
 import uniandes.isis2304.parranderos.negocio.VOSupermercado;
 import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
@@ -763,8 +764,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     {
     	try 
     	{
-    		String cliente2 = JOptionPane.showInputDialog (this, "Identificación del cliente", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
-    		long cliente = Long.parseLong(cliente2);
+    		String cliente = JOptionPane.showInputDialog (this, "Identificación del cliente", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
     		String fecha2 = JOptionPane.showInputDialog (this, "Fecha de la creación de la factura. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Adicionar venta", JOptionPane.QUESTION_MESSAGE);
     		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     		Date date = dateFormat.parse(fecha2);
@@ -780,7 +780,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     		int cantidad = Integer.parseInt(cantidad2);
     		
     		
-    		if ( cliente2 != null && fecha2!= null && sucursal2 != null && producto2 != null && cantidad2 != null  )
+    		if ( cliente != null && fecha2!= null && sucursal2 != null && producto2 != null && cantidad2 != null  )
     		{
         		VOFactura tb = parranderos.adicionarVenta(fecha, cliente, sucursal, producto, promocion, cantidad);
         		if (tb == null)
@@ -803,7 +803,55 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
+   	
     }
     
+    /**
+     *  Adiciona una pedido con la información dada por el usuario
+     * Se crea una nueva tupla de pedido en la base de datos.
+     */
+    public void registrarPedido()
+	{
+    	try 
+    	{
+    		String proveedor2 = JOptionPane.showInputDialog (this, "Identificación del proveedor al cual se le solicita el producto", "Adicionar pedido", JOptionPane.QUESTION_MESSAGE);
+    		long proveedor = Long.parseLong(proveedor2);
+    		String fecha2 = JOptionPane.showInputDialog (this, "Fecha de recepción del producto. Recuerde que existe un tiempo hábil para que los proveedores procesen la orden. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Adicionar pedido", JOptionPane.QUESTION_MESSAGE);
+    		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    		Date date = dateFormat.parse(fecha2);
+    		long time = date.getTime();
+    		Timestamp fechaEntrega = new Timestamp(time);
+    		String sucursal2 = JOptionPane.showInputDialog (this, "Identificación de la sucursal donde se realiza el pedido", "Adicionar pedido", JOptionPane.QUESTION_MESSAGE);
+    		long sucursal = Long.parseLong(sucursal2);
+    		String producto2 = JOptionPane.showInputDialog (this, "Identificación del producto a pedir", "Adicionar pedido", JOptionPane.QUESTION_MESSAGE);
+    		long producto = Long.parseLong(producto2);
+    		String cantidad2 = JOptionPane.showInputDialog (this, "Cantidad de unidades solicitadas", "Adicionar pedido", JOptionPane.QUESTION_MESSAGE);
+    		int cantidad = Integer.parseInt(cantidad2);
+    		
+    		
+    		if ( proveedor2 != null && fecha2!= null && sucursal2 != null && producto2 != null && cantidad2 != null  )
+    		{
+        		VOPedido tb = parranderos.adicionarPedido(proveedor, sucursal, fechaEntrega, "pendiente", cantidad, 1, producto);
+    			if (tb == null)
+        		{
+        			throw new Exception ("No se pudo crear un pedido del producto: " + producto);
+        		}
+        		String resultado = "En adicionarPedido\n\n";
+        		resultado += "Pedido registrado exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
     
 }

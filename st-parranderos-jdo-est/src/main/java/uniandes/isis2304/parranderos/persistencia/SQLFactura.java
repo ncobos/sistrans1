@@ -53,7 +53,7 @@ class SQLFactura {
 	 * @param idSucursal - El identificador de la sucursal donde se generó la factura
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarFactura (PersistenceManager pm, long numero, Timestamp fecha, long idCliente, long sucursal) 
+	public long adicionarFactura (PersistenceManager pm, long numero, Timestamp fecha, String idCliente, long sucursal) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaFactura() + "(numero, fecha, idcliente, sucursal) values (?, ?, ?, ?)");
         q.setParameters(numero, fecha, idCliente, sucursal);

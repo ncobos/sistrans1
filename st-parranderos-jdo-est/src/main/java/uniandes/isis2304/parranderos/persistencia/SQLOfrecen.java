@@ -6,6 +6,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Ofrecen;
+import uniandes.isis2304.parranderos.negocio.Vende;
 import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 
 /**
@@ -34,7 +35,7 @@ class SQLOfrecen {
 	private PersistenciaParranderos pp;
 
 	/* ****************************************************************
-	 * 			M�todos
+	 * 			Métodos
 	 *****************************************************************/
 
 	/**
@@ -100,5 +101,13 @@ class SQLOfrecen {
        	sql	+= " GROUP BY idProveedor";
 		Query q = pm.newQuery(SQL, sql);
 		return q.executeList();
+	}
+	
+	public Ofrecen darOfrecenPorProveedorYProducto (PersistenceManager pm, long proveedor, long producto)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOfrecen () + " WHERE idproducto = ? AND idproveedor = ?");
+		q.setResultClass(Ofrecen.class);
+		q.setParameters(producto, proveedor);
+		return (Ofrecen) q.executeUnique();
 	}
 }

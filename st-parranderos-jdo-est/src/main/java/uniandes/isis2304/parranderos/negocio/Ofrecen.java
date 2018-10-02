@@ -20,12 +20,12 @@ public class Ofrecen implements VOOfrecen{
 	/**
 	 * El identificador del producto
 	 */
-	private long producto;
+	private long idProducto;
 	
 	/**
 	 * El identificador del proveedor
 	 */
-	private long proveedor;
+	private long idProveedor;
 	
 	/**
 	 * El costo del producto
@@ -40,8 +40,8 @@ public class Ofrecen implements VOOfrecen{
 	 */
 	public Ofrecen() 
 	{
-		this.producto = 0;
-		this.proveedor = 0;
+		this.idProducto = 0;
+		this.idProveedor = 0;
 		this.costo = 0;
 	}
 	
@@ -53,25 +53,25 @@ public class Ofrecen implements VOOfrecen{
 	 */
 
 	public Ofrecen(long producto, long proveedor, double costo) {
-		this.producto = producto;
-		this.proveedor = proveedor;
+		this.idProducto = producto;
+		this.idProveedor = proveedor;
 		this.costo = costo;
 	}
 
-	public long getProducto() {
-		return producto;
+	public long getIdProducto() {
+		return idProducto;
 	}
 
-	public void setProducto(long producto) {
-		this.producto = producto;
+	public void setIdProducto(long producto) {
+		this.idProducto = producto;
 	}
 
-	public long getProveedor() {
-		return proveedor;
+	public long getIdProveedor() {
+		return idProveedor;
 	}
 
-	public void setProveedor(long proveedor) {
-		this.proveedor = proveedor;
+	public void setIdProveedor(long proveedor) {
+		this.idProveedor = proveedor;
 	}
 
 	public double getCosto() {
@@ -84,6 +84,6 @@ public class Ofrecen implements VOOfrecen{
 	
 	@Override
 	public String toString() {
-		return "Ofrecen [producto=" + producto + ", proveedor=" + proveedor + ", costo=" + costo + "]";
+		return "Ofrecen [producto=" + idProducto + ", proveedor=" + idProveedor + ", costo=" + costo + "]";
 	}
 }

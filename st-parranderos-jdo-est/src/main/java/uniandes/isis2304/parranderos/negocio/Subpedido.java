@@ -14,12 +14,12 @@ public class Subpedido implements VOSubpedido{
 	/**
 	 *  El producto del que se hace el pedido
 	 */
-	private long producto;
+	private long idproducto;
 	
 	/**
 	 *  El pedido al que est� asociado
 	 */
-	private long pedido;
+	private long idpedido;
 	
 	/**
 	 *  El numero de unidades solicitadas
@@ -38,8 +38,8 @@ public class Subpedido implements VOSubpedido{
 	 * Constructor por defecto
 	 */
 	public Subpedido() {
-		this.producto = 0;
-		this.pedido = 0;
+		this.idproducto = 0;
+		this.idpedido = 0;
 		this.cantidad = 0;
 		this.costo = 0;
 	}
@@ -52,8 +52,8 @@ public class Subpedido implements VOSubpedido{
 	 * @param costo
 	 */
 	public Subpedido(long producto, long pedido, int cantidad, double costo) {
-		this.producto = producto;
-		this.pedido = pedido;
+		this.idproducto = producto;
+		this.idpedido = pedido;
 		this.cantidad = cantidad;
 		this.costo = costo;
 	}
@@ -61,29 +61,29 @@ public class Subpedido implements VOSubpedido{
 	/**
 	 * @return the producto
 	 */
-	public long getProducto() {
-		return producto;
+	public long getidproducto() {
+		return idproducto;
 	}
 
 	/**
 	 * @param producto the producto to set
 	 */
-	public void setProducto(long producto) {
-		this.producto = producto;
+	public void setidproducto(long producto) {
+		this.idproducto = producto;
 	}
 
 	/**
 	 * @return the pedido
 	 */
-	public long getPedido() {
-		return pedido;
+	public long getidpedido() {
+		return idpedido;
 	}
 
 	/**
 	 * @param pedido the pedido to set
 	 */
-	public void setPedido(long pedido) {
-		this.pedido = pedido;
+	public void setidpedido(long pedido) {
+		this.idpedido = pedido;
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class Subpedido implements VOSubpedido{
 	 */
 	@Override
 	public String toString() {
-		return "Subpedido [producto=" + producto + ", pedido=" + pedido + ", cantidad=" + cantidad + ", costo=" + costo
+		return "Subpedido [producto=" + idproducto + ", pedido=" + idpedido + ", cantidad=" + cantidad + ", costo=" + costo
 				+ "]";
 	}
 	

@@ -48,16 +48,16 @@ class SQLSubpedido {
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un SUBPEDIDO a la base de datos de Superandes
 	 * @param pm - El manejador de persistencia
-	 * @param id - El identificador del subpedido
+	 * @param idPedido - El identificador del pedido
 	 * @param producto - El producto del subpedido
 	 * @param cantidad - La cantidad de unidades pedidas por producto
 	 * @param costo - El costo del subpedido
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarSubPedido (PersistenceManager pm, long id, long producto, int cantidad, double costo) 
+	public long adicionarSubPedido (PersistenceManager pm, long idPedido, long producto, int cantidad, double costo) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPedido() + "(idpedido, idproducto, cantidad, costo) values (?, ?, ?, ?)");
-        q.setParameters(id, producto, cantidad, costo);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaSubpedido() + "(idpedido, idproducto, cantidad, costo) values (?, ?, ?, ?)");
+        q.setParameters(idPedido, producto, cantidad, costo);
         return (long) q.executeUnique();            
 	}
 	

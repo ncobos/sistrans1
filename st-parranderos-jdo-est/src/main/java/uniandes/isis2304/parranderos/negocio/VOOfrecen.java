@@ -17,12 +17,12 @@ public interface VOOfrecen {
      /**
 	 * @return El identificador del producto.
 	 */
-	public long getProducto();
+	public long getIdProducto();
 	
 	/**
 	 * @return El identificador del proveedor.
 	 */
-	public long getProveedor();
+	public long getIdProveedor();
 	
 	/**
 	 * @return El costo unitario del producto

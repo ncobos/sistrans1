@@ -27,7 +27,7 @@ public interface VOFactura {
 	/**
 	 * @return El cliente de la factura
 	 */
-	public long getCliente();
+	public String getCliente();
 	
 	/**
 	 * @return La sucursal de la factura
@@ -35,7 +35,7 @@ public interface VOFactura {
 	public long getSucursal();
 	
 	/** 
-	 * @return Una cadena con la informaci�n b�sica
+	 * @return Una cadena con la información bádsica
 	 */
 	@Override
 	public String toString();

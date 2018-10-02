@@ -33,10 +33,9 @@
 					"event": "adicionarPromocion"
 				},
 				{
-					"label": "Adicionar Venta",
-					"event": "adicionarVenta"
+					"label": "Registrar un pedido",
+					"event": "registrarPedido"
 				}
-
 			]
 		},
 		{ "menuTitle": "Mantenimiento",
