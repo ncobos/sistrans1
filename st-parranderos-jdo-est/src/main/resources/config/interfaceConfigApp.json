@@ -1,31 +1,15 @@
 ﻿{
-	"title": "Aplicación transaccional de Parranderos Uniandes",
-	"frameH": 600,
-	"frameW": 800,
+	"title": "Aplicación transaccional de SuperAndes",
+	"frameH": 650,
+	"frameW": 850,
 	"bannerPath": "./src/main/resources/config/logo.png",
 	"menuBar":
 	[
-		{ "menuTitle": "ReqFuncionalesM",
+		{ "menuTitle": "ReqFuncionalesMod",
 		  "options":
 			[
 				{
-					"label": "Adicionar",
-					"event": "adicionarTipoBebida"
-				},
-				{
-					"label": "Listar",
-					"event": "listarTipoBebida"
-				},
-				{
-					"label": "Borrar por Id",
-					"event": "eliminarTipoBebidaPorId"
-				},
-				{
-					"label": "Buscar por Nombre",
-					"event": "buscarTipoBebidaPorNombre"
-				},
-				{
-					"label": "AdicionarSupermarket",
+					"label": "AdicionarSupermercado",
 					"event": "adicionarSupermercado"
 				},
 				{
