@@ -48,7 +48,7 @@ public interface VOPromocion {
 	/**
 	 * @return El identificador del producto en promoci�n.
 	 */
-	public long getProducto();
+	public long getIdProducto();
 	
 	/** 
 	 * @return Una cadena con la informaci�n b�sica

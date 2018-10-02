@@ -2057,12 +2057,32 @@ public class Parranderos
         return factura;
 	}
 	
+	/**
+	 * Recepción de un pedido
+	 * @param idPedido a recibir
+	 * @param calificacion del servicio prestado por el proveedor
+	 * @return El objeto pedido que se recibió
+	 */
 	public Pedido recibirPedido (long idPedido, int calificacion)
 	{
 		log.info ("Recibiendo pedido: " + idPedido);
         Pedido pedido= pp.recibirPedido(idPedido, calificacion);
 		log.info ("Recibiendo pedido: " + idPedido);
         return pedido;
+	}
+	
+	/**
+	 * Elimina una promoción por su id. Primero se elimina la promoción y luego se elimina el producto asociado a esa promoción.
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre del tipo de bebida a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
+	public long eliminarPromocionPorId (long id)
+	{
+		log.info ("Eliminando promoción por ID: " + id);
+        long resp = pp.eliminarPromocionPorId(id);
+        log.info ("Eliminando promoción por ID: " + resp + " tuplas eliminadas");
+        return resp;
 	}
 	
 }

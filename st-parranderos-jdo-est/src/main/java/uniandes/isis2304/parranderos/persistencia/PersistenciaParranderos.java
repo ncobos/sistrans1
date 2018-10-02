@@ -3291,10 +3291,17 @@ public class PersistenciaParranderos
 			double costo = vende.getPrecioUnitario() * cantidad;
 			tx.commit();
 
-			tx.begin();
-			sqlEstante.disminuirExistenciasEstantes(pm, cantidad, sucursal, producto);
-			tx.commit();
-
+			if(promocion == 0)
+			{
+				tx.begin();
+				sqlEstante.disminuirExistenciasEstantes(pm, cantidad, sucursal, producto);
+				tx.commit();
+			}
+			else
+			{
+				tx.begin();
+				sqlPromocion.disminuirExistenciasPromocion(pm, promocion, cantidad);
+			}
 			tx.begin();
 			long tuplasInsertadas2 = sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion);
 			tx.commit();
@@ -3361,6 +3368,49 @@ public class PersistenciaParranderos
         	e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Promocion, dado el identificador de la promocion
+	 * Adiciona entradas al log de la aplicación
+	 * @param idProm - El identificador de la promoción
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromocionPorId (long idProm) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			Promocion prom = sqlPromocion.darPromocionPorId(pm, idProm);
+			long prod = prom.getIdProducto();
+			tx.commit();
+			
+			tx.begin();
+			long resp = sqlPromocion.eliminarPromocionPorId(pm, idProm);
+			tx.commit();
+		
+			tx.begin();
+			long resp2 = sqlProducto.eliminarProductoPorId(pm, prod);
+			tx.commit();
+			
+			return resp;
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
 		}
 		finally
 		{

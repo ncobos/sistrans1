@@ -5,7 +5,7 @@
 	"bannerPath": "./src/main/resources/config/logo.png",
 	"menuBar":
 	[
-		{ "menuTitle": "TipoBebida",
+		{ "menuTitle": "ReqFuncionalesM",
 		  "options":
 			[
 				{
@@ -31,6 +31,10 @@
 				{
 					"label": "Adicionar Promoción",
 					"event": "adicionarPromocion"
+				},
+				{
+					"label": "Eliminar promoción",
+					"event": "eliminarPromocion"
 				},
 				{
 					"label": "Registrar un pedido",

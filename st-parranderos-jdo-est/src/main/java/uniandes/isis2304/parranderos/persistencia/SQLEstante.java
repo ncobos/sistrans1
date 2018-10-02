@@ -137,10 +137,12 @@ package uniandes.isis2304.parranderos.persistencia;
 		}
 		
 		/**
-		 * Crea y ejecuta la sentencia SQL para aumentar en uno el número de sedes de los bares de la 
+		 * Crea y ejecuta la sentencia SQL para disminuir las existencias de los estantes de 
 		 * base de datos de Parranderos
 		 * @param pm - El manejador de persistencia
-		 * @param ciudad - La ciudad a la cual se le quiere realizar el proceso
+		 * @param cantidad a disminuir
+		 * @param sucursal del estante
+		 * @param producto que almacena el estante
 		 * @return El número de tuplas modificadas
 		 */
 		public long disminuirExistenciasEstantes(PersistenceManager pm, int cantidad, long sucursal, long producto)

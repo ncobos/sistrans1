@@ -854,6 +854,10 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 	}
     
+    /**
+     * Se recibe un pedido
+     * Se actualizan las existencias en la base de datos
+     */
     public void recibirPedido()
     {
     	try 
@@ -873,6 +877,40 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
         		}
         		String resultado = "En recibirPedido\n\n";
         		resultado += "Pedido recibido exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		} 
+    	catch (Exception e) 
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
+    
+    /**
+     * Se elimina una promocion dado un id
+     * Se elimina una tupla de promoción en la base de datos.
+     */
+    public void eliminarPromocion()
+    {
+    	try 
+    	{
+    		String idProm2 = JOptionPane.showInputDialog (this, "Identificador de la promoción que se quiere eliminar", "Eliminar promoción", JOptionPane.QUESTION_MESSAGE);
+    		long idProm = Long.parseLong(idProm2);
+    		
+    		
+    		if ( idProm2!=null)
+    		{
+    			long tbEliminados = parranderos.eliminarPromocionPorId(idProm);
+
+    			String resultado = "En eliminar Promocion\n\n";
+    			resultado += tbEliminados + " Promociones eliminadas\n";
     			resultado += "\n Operación terminada";
     			panelDatos.actualizarInterfaz(resultado);
     		}

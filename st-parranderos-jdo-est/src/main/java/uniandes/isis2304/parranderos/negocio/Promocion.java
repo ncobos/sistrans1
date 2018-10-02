@@ -46,7 +46,7 @@ public class Promocion implements VOPromocion{
 	/**
 	 *  El identificador del producto en promoci�n.
 	 */
-	private long producto;
+	private long idProducto;
 	
 	
 
@@ -63,7 +63,7 @@ public class Promocion implements VOPromocion{
 		this.fechaInicio = new Timestamp(0);
 		this.fechaFin = new Timestamp(0);
 		this.unidadesDisponibles = 0;
-		this.producto = 0;
+		this.idProducto = 0;
 	}
 	
 	/**
@@ -84,7 +84,7 @@ public class Promocion implements VOPromocion{
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.unidadesDisponibles = unidadesDisponibles;
-		this.producto = producto;
+		this.idProducto = producto;
 	}
 	
 	
@@ -178,21 +178,21 @@ public class Promocion implements VOPromocion{
 	/**
 	 * @return the producto
 	 */
-	public long getProducto() {
-		return producto;
+	public long getIdProducto() {
+		return idProducto;
 	}
 
 	/**
 	 * @param producto the producto to set
 	 */
-	public void setProducto(long producto) {
-		this.producto = producto;
+	public void setIdProducto(long producto) {
+		this.idProducto = producto;
 	}
 
 	@Override
 	public String toString() {
 		return "Promocion [id=" + id + ", precio=" + precio + ", descripcion=" + descripcion + ", fechaInicio="
 				+ fechaInicio + ", fechaFin=" + fechaFin + ", unidadesDisponibles=" + unidadesDisponibles
-				+ ", producto=" + producto + "]";
+				+ ", producto=" + idProducto + "]";
 	}
 }
