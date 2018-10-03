@@ -62,14 +62,29 @@
 					"event": "limpiarBD"
 				}
 			]
-		},		
+		},
+		{ "menuTitle": "Log",
+		  "options":
+			[
+				
+				{
+					"label": "Limpiar log de superandes",
+					"event": "limpiarLogParranderos"
+				},
+				{
+					"label": "Limpiar log de datanucleus",
+					"event": "limpiarLogDatanucleus"
+				},
+				{
+					"label": "Limpiar Base de Datos",
+					"event": "limpiarBD"
+				}
+			]
+		},				
 		{ "menuTitle": "Documentación",
 		  "options":
 			[
-				{
-					"label": "Presentación general",
-					"event": "mostrarPresentacionGeneral"
-				},
+				
 				{
 					"label": "Modelo conceptual",
 					"event": "mostrarModeloConceptual"
@@ -85,11 +100,8 @@
 				{
 					"label": "Arquitectura de referencia",
 					"event": "mostrarArqRef"
-				},
-				{
-					"label": "Javadoc Parranderos",
-					"event": "mostrarJavadoc"
 				}
+				
 			]
 		},		
 		{ "menuTitle": "Acerca de ...",

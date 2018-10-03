@@ -357,7 +357,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	 */
 	public void mostrarEsquemaBD ()
 	{
-		mostrarArchivo ("data/Esquema BD Parranderos.pdf");
+		mostrarArchivo ("data/Base de datos superandes.pdf");
 	}
 	
 	/**
