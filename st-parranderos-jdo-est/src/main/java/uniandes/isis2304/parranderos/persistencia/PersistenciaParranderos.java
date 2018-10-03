@@ -1652,19 +1652,19 @@ public class PersistenciaParranderos
 	}
 
 	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Producto de superandes
-	 */
-	public String darTablaProducto()
-	{
-		return tablas.get (3);
-	}
-
-	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Bodega de superandes
 	 */
 	public String darTablaBodega()
 	{
 		return tablas.get (4);
+	}
+
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de Producto de superandes
+	 */
+	public String darTablaProducto()
+	{
+		return tablas.get (3);
 	}
 
 	/**
@@ -2504,12 +2504,12 @@ public class PersistenciaParranderos
 			Ofrecen of = sqlOfrecen.darOfrecenPorProveedorYProducto(pm, proveedor, producto);
 			double costoP = of.getCosto()*cantidad;
 			tx.commit();
-			
+
 			tx.begin();
 			long idPedido = nextval ();
 			long tuplasInsertadas = sqlPedido.adicionarPedido(pm, idPedido, proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, costoP);
 			tx.commit();
-			
+
 			tx.begin();
 			long tuplasInsertadas2 = sqlSubPedido.adicionarSubPedido(pm, idPedido, producto, cantidad, costoP);
 			tx.commit();
@@ -3325,7 +3325,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	public Pedido recibirPedido(long idPedido, int calificacion)
 	{
 
@@ -3349,7 +3349,7 @@ public class PersistenciaParranderos
 			Pedido pedido = sqlPedido.darPedidoPorId(pm, idPedido);
 			long sucursal = pedido.getIdSucursal();
 			tx.commit();
-			
+
 			tx.begin();
 			long tupla2 = sqlPedido.cambiarCalificacionPedido(pm, idPedido, calificacion);
 			tx.commit();
@@ -3365,7 +3365,7 @@ public class PersistenciaParranderos
 		}
 		catch (Exception e)
 		{
-        	e.printStackTrace();
+			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return null;
 		}
@@ -3378,7 +3378,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla Promocion, dado el identificador de la promocion
 	 * Adiciona entradas al log de la aplicación
@@ -3395,20 +3395,20 @@ public class PersistenciaParranderos
 			Promocion prom = sqlPromocion.darPromocionPorId(pm, idProm);
 			long prod = prom.getIdProducto();
 			tx.commit();
-			
+
 			tx.begin();
 			long resp = sqlPromocion.eliminarPromocionPorId(pm, idProm);
 			tx.commit();
-		
+
 			tx.begin();
 			long resp2 = sqlProducto.eliminarProductoPorId(pm, prod);
 			tx.commit();
-			
+
 			return resp;
 		}
 		catch (Exception e)
 		{
-			//        	e.printStackTrace();
+			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return -1;
 		}
@@ -3422,4 +3422,43 @@ public class PersistenciaParranderos
 		}
 	}
 
+	/**
+	 * Método que consulta las sucursales y las ventas de esa sucursal
+	 * @return La lista de parejas de objetos, construidos con base en las tuplas de la tabla SUCURSAL y FACTURA. 
+	 * El primer elemento de la pareja es una sucursal; 
+	 * el segundo elemento es el numero total de dinero que se ha adquirido por ventas (0 en el caso que no haya realizado ventas)
+	 */
+	public List<long []> darSucursalesYVentasRealizadas (Timestamp fechainicio, Timestamp fechafin)
+	{
+		List<long []> resp = new LinkedList<long []> ();
+		List<Object []> tuplas = sqlSucursal.darSucursalesYVentas(pmf.getPersistenceManager(), fechainicio, fechafin);
+		for ( Object [] tupla : tuplas)
+		{
+			long [] datosResp = new long [2];
+
+			datosResp [0] = ((BigDecimal) tupla [0]).longValue ();
+			datosResp [1] = ((BigDecimal) tupla [1]).longValue ();
+			resp.add (datosResp);
+		}
+		return resp;
+	}
+
+	/**
+	 * Método que encuentra el identificador de las promociones y sus ventas
+	 * @return Una lista de arreglos de 2 números. El primero corresponde al identificador de la promocion, el segundo corresponde al ratio ventas/dias
+	 */
+	public List<long []> darPromocionVentas()
+	{
+		List<long []> resp = new LinkedList<long []> ();
+		List<Object []> tuplas =  sqlPromocion.darPromocionesMasVendidas(pmf.getPersistenceManager());
+		for ( Object [] tupla : tuplas)
+		{
+			long [] datosResp = new long [2];
+
+			datosResp [0] = ((BigDecimal) tupla [0]).longValue ();
+			datosResp [1] = ((BigDecimal) tupla [1]).longValue ();
+			resp.add (datosResp);
+		}
+		return resp;
+	}
 }

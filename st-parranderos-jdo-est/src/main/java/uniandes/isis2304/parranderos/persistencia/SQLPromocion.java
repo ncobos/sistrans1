@@ -1,12 +1,12 @@
 package uniandes.isis2304.parranderos.persistencia;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.parranderos.negocio.Promocion;
 import uniandes.isis2304.parranderos.negocio.Promocion;
 import uniandes.isis2304.parranderos.negocio.Subpedido;
 
@@ -191,6 +191,26 @@ class SQLPromocion {
         Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaPromocion() + " SET unidadesdisponibles = unidadesdisponibles - ? WHERE id = ?");
         q.setParameters(cantidad, idPromocion);
         return (long) q.executeUnique();
+	}
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar las promociones y ventas/dias
+	 * @param pm - El manejador de persistencia
+	 * @return Una lista de parejas de objetos, el primer elemento de cada pareja representa el identificador la promocion,
+	 * 	el segundo elemento representa el ratio ventas/días  
+	 */
+	public List<Object []> darPromocionesMasVendidas(PersistenceManager pm)
+	{
+		Date date = new Date();
+		Timestamp fechaactual = new Timestamp(date.getTime());
+        String sql = "SELECT promocion, (numero/fecha) as ratio";
+        sql += " FROM(SELECT promocion, (fechafin - ?) as fecha, COUNT (promocion) as numero";
+        sql+= "  FROM a_transaccion t, a_promocion p";
+        sql+= " WHERE t.promocion = p.id AND ROWNUM <= 20";
+       	sql	+= "  GROUP BY promocion, (fechafin - ?))";
+		Query q = pm.newQuery(SQL, sql);
+		q.setParameters(fechaactual, fechaactual);
+		return q.executeList();
 	}
 	
 }

@@ -805,4 +805,74 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
     }
     
+    /**
+     * Genera una cadena de caracteres con la lista de parejas de números recibida: una línea por cada pareja
+     * @param lista - La lista con las pareja
+     * @return La cadena con una líea para cada pareja recibido
+     */
+    private String listarSucursalesyVentas() 
+    {
+    	String resp = "Las sucursales y sus ventas son:\n";
+
+    	try 
+    	{
+    		String fecha2 = JOptionPane.showInputDialog (this, "Fecha inicio de ventas. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Ventas sucursal", JOptionPane.QUESTION_MESSAGE);
+    		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    		Date date = dateFormat.parse(fecha2);
+    		long time = date.getTime();
+    		Timestamp fechainicio = new Timestamp(time);
+    		
+    		String fecha22 = JOptionPane.showInputDialog (this, "Fecha fin de ventas. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Ventas sucursal", JOptionPane.QUESTION_MESSAGE);
+    		DateFormat dateFormat2 = new SimpleDateFormat("dd/MM/yyyy");
+    		Date date2 = dateFormat2.parse(fecha22);
+    		long time2 = date2.getTime();
+    		Timestamp fechafin = new Timestamp(time2);
+    		
+    		List<long[]> lista = parranderos.darSucursalYVentas(fechainicio, fechafin);
+    		
+    	int i = 1;
+        for ( long [] tupla : lista)
+        {
+			long [] datos = tupla;
+	        String resp1 = i++ + ". " + "[";
+			resp1 += "idSucursal: " + datos [0] + ", ";
+			resp1 += "ventas: " + datos [1];
+	        resp1 += "]";
+	        resp += resp1 + "\n";
+        }
+        return resp;
+	}
+    	
+    	catch (Exception e) 
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	return resp;
+    }
+    
+    /**
+     * Genera una cadena de caracteres con la lista de parejas de números recibida: una línea por cada pareja
+     * @param lista - La lista con las pareja
+     * @return La cadena con una líea para cada pareja recibido
+     */
+    private String mostrarPromocionesPopulares() 
+    {
+		List<long[]> lista = parranderos.darPromocionesPopulares();
+
+    	String resp = "Las promociones y sus ventas son:\n";
+    	int i = 1;
+        for ( long [] tupla : lista)
+        {
+			long [] datos = tupla;
+	        String resp1 = i++ + ". " + "[";
+			resp1 += "idPromocion: " + datos [0] + ", ";
+			resp1 += "ratio ventas: " + datos [1];
+	        resp1 += "]";
+	        resp += resp1 + "\n";
+        }
+        return resp;
+	}
+    
 }

@@ -1,5 +1,6 @@
 package uniandes.isis2304.parranderos.persistencia;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -134,6 +135,24 @@ import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 			return (List<Sucursal>) q.executeList();
 		}
 
+		/**
+		 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS BEBEDORES Y DE CUÁNTAS VISITAS HA REALIZADO de la 
+		 * base de datos de Parranderos. Incluye, con 0, los bebedores que no han realizado visitas 
+		 * @param pm - El manejador de persistencia
+		 * @return Una lista de arreglos de objetos, de tamaño 5. Los elementos del arreglo corresponden a los datos del bebedor,
+		 * y del número de visitas realizadas:
+		 * 		(id, nombre, ciudad, presupuesto) del bebedor y numVisitas
+		 */
+		public List<Object[]> darSucursalesYVentas (PersistenceManager pm, Timestamp fechainicio, Timestamp fechafin)
+		{
+		    String sql = "SELECT sucursal, SUM(costo) as ventas";
+		    sql += " FROM " + pp.darTablaTransaccion() + " t, "+ pp.darTablaFactura() + " f " ;
+		    sql += " WHERE t.numerofactura = f.numero AND f.fecha BETWEEN ? AND ?";
+		    sql	+= " GROUP BY sucursal";
 			
+		    Query q = pm.newQuery(SQL, sql);
+		    q.setParameters(fechainicio, fechafin);
+			return q.executeList();
+		}
 
 }

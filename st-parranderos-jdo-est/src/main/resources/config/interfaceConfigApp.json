@@ -30,16 +30,16 @@
 				}
 			]
 		},
-		{ "menuTitle": "Mantenimiento",
+		{ "menuTitle": "ReqFuncionalesCons",
 		  "options":
 			[
 				{
-					"label": "Mostrar log Parranderos",
-					"event": "mostrarLogParranderos"
+					"label": "RequerimientoVentasSucursal",
+					"event": "listarSucursalesyVentas"
 				},
 				{
-					"label": "Mostrar log datanucleus",
-					"event": "mostrarLogDatanuecleus"
+					"label": "Mostrar promociones populares",
+					"event": "mostrarPromocionesPopulares"
 				},
 				{
 					"label": "Limpiar log de parranderos",

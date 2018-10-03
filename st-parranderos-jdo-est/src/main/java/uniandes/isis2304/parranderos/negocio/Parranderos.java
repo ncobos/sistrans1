@@ -2085,4 +2085,31 @@ public class Parranderos
         return resp;
 	}
 	
+	/**
+	 * Encuentra las sucursales y sus respectivas ventas.
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de parejas [IdSucursal, ventas]
+	 */
+	public List<long []> darSucursalYVentas(Timestamp fechainicio, Timestamp fechafin)
+	{
+        log.info ("Listando sucursales y cuánto han vendido");
+        List<long []> tuplas = pp.darSucursalesYVentasRealizadas(fechainicio, fechafin);
+        log.info ("Listando sucursales y ventas: Listo!");
+        return tuplas;
+	}
+	
+	/**
+	 * Encuentra las promociones y sus respectivas ventas.
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de parejas [promocion, ventas/dias]
+	 */
+	public List<long []> darPromocionesPopulares()
+	{
+        log.info ("Listando promociones y cuánto han vendido");
+        List<long []> tuplas = pp.darPromocionVentas();
+        log.info ("Listando promociones y ventas: Listo!");
+        return tuplas;
+	}
+	
+	
 }
