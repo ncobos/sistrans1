@@ -1686,3 +1686,72 @@ ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - ch
 15:55:34,837 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
 15:55:34,838 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
 15:55:34,866 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:21:02,643 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+16:21:02,791 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+16:21:05,427 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:05,678 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+16:21:05,678 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+16:21:06,085 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+16:21:06,200 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+16:21:06,200 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:06,337 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+16:21:06,338 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+16:21:06,451 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+16:21:06,592 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+16:21:06,592 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+16:21:06,766 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+16:21:06,880 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+16:21:07,032 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+16:21:07,032 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+16:21:07,711 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:07,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+16:21:07,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+16:21:08,358 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Supermercado [nombre=PriceSmart]
+16:21:08,358 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:08,497 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+16:21:08,497 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: 
+16:21:08,584 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
+
+16:21:08,701 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+16:21:08,701 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:08,837 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+16:21:08,837 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+16:21:08,989 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: 1 tuplas eliminadas
+16:21:08,989 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:09,129 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+16:21:09,129 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+16:21:09,243 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+16:21:09,366 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+16:21:09,482 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+16:21:09,482 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+16:21:09,983 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:10,137 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+16:21:10,137 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+16:21:10,522 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+16:21:10,637 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+16:21:10,637 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+16:21:10,759 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+16:21:10,759 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+16:21:10,883 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+16:21:11,005 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+16:21:59,195 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+16:21:59,197 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+16:21:59,236 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:22:24,768 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Dar información de productos por ciudad: Bogotá
+16:22:25,110 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Dar información de productos por ciudad: 6 productos con esa ciudad existentes
+16:27:55,419 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+16:27:55,421 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+16:27:55,473 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
