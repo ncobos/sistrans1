@@ -368,13 +368,6 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		mostrarArchivo ("Datos sql/EsquemaSuperAndes.sql");
 	}
 	
-	/**
-	 * Muestra la arquitectura de referencia para Parranderos
-	 */
-	public void mostrarArqRef ()
-	{
-		mostrarArchivo ("data/ArquitecturaReferencia.pdf");
-	}
 	
 	/**
 	 * Muestra la documentación Javadoc del proyectp
@@ -392,39 +385,18 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		String resultado = "\n\n ************************************\n\n";
 		resultado += " * Universidad	de	los	Andes	(Bogotá	- Colombia)\n";
 		resultado += " * Departamento	de	Ingeniería	de	Sistemas	y	Computación\n";
-		resultado += " * Licenciado	bajo	el	esquema	Academic Free License versión 2.1\n";
 		resultado += " * \n";		
 		resultado += " * Curso: isis2304 - Sistemas Transaccionales\n";
-		resultado += " * Proyecto: Parranderos Uniandes\n";
-		resultado += " * @version 1.0\n";
-		resultado += " * @author Germán Bravo\n";
-		resultado += " * Julio de 2018\n";
+		resultado += " * Proyecto: SuperAndes \n";
+		resultado += " * @author n.cobos, jf.torresp\n";
 		resultado += " * \n";
-		resultado += " * Revisado por: Claudia Jiménez, Christian Ariza\n";
 		resultado += "\n ************************************\n\n";
 
 		panelDatos.actualizarInterfaz(resultado);		
     }
     
 
-	/* ****************************************************************
-	 * 			Métodos privados para la presentación de resultados y otras operaciones
-	 *****************************************************************/
-    /**
-     * Genera una cadena de caracteres con la lista de los tipos de bebida recibida: una línea por cada tipo de bebida
-     * @param lista - La lista con los tipos de bebida
-     * @return La cadena con una líea para cada tipo de bebida recibido
-     */
-    private String listarTiposBebida(List<VOTipoBebida> lista) 
-    {
-    	String resp = "Los tipos de bebida existentes son:\n";
-    	int i = 1;
-        for (VOTipoBebida tb : lista)
-        {
-        	resp += i++ + ". " + tb.toString() + "\n";
-        }
-        return resp;
-	}
+	
 
     /**
      * Genera una cadena de caracteres con la descripción de la excepcion e, haciendo énfasis en las excepcionsde JDO
