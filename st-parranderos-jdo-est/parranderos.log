@@ -88,3 +88,1592 @@ ORA-00904: "CODIGOPRODUCTORAS": invalid identifier
 08:50:17,720 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
 08:50:26,773 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Dar información de productos por ciudad: Bogotá
 08:50:26,967 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Dar información de productos por ciudad: 6 productos con esa ciudad existentes
+09:27:22,014 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:27:22,197 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:27:24,911 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:27:25,093 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:27:25,094 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:27:25,412 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:27:25,447 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:27:25,494 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:27:25,495 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:27:26,430 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:27:26,485 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:27:26,486 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:27:26,765 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:27:26,801 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:28:00,343 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:28:00,498 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:28:03,342 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:28:03,546 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:28:03,547 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:28:03,879 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:28:03,918 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:28:03,979 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:28:03,980 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:28:04,423 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:28:04,518 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:28:04,519 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:28:04,944 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:28:04,976 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:29:10,808 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:29:10,911 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:29:13,650 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:29:13,821 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:29:13,822 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:29:14,119 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:29:14,175 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:29:14,212 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:29:14,212 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:29:14,548 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:29:14,602 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:29:14,603 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:29:14,880 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:29:14,913 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:29:48,287 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:29:48,406 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:29:51,191 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:29:51,353 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:29:51,353 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:29:51,613 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:29:51,677 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:29:51,677 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:29:51,741 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:29:51,741 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:29:51,824 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:29:51,868 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:29:51,915 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:29:51,916 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:29:52,271 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:29:52,322 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:29:52,322 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:29:52,535 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:29:52,575 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:29:52,575 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:29:52,631 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:29:52,631 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:29:52,703 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:29:52,748 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:32:07,739 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:32:07,884 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:32:10,859 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:11,015 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 5 existentes
+09:32:11,015 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:32:11,305 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Supermercado [nombre=Metro]
+09:32:11,305 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:11,359 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:32:11,359 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:32:11,446 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:32:11,479 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:32:11,533 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:32:11,534 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:32:11,871 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:11,925 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:32:11,925 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:32:12,481 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:32:12,514 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:32:12,514 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:12,567 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:32:12,567 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:32:12,647 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:32:12,683 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:32:39,090 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:32:39,306 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:32:42,368 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:42,531 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:32:42,531 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:32:42,800 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:32:42,832 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:32:42,832 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:42,880 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:32:42,881 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:32:42,917 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:32:42,951 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:32:42,951 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:32:43,396 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:32:43,434 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:32:43,473 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:32:43,474 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:32:43,864 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:43,926 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:32:43,926 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:32:44,177 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:32:44,205 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:32:44,205 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:32:44,254 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:32:44,255 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:32:44,323 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:32:44,357 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:33:53,371 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:33:53,512 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:33:56,311 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:33:56,548 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:33:56,548 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:33:57,141 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:33:57,176 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:33:57,176 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:33:57,247 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:33:57,247 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:33:57,287 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:33:57,316 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:33:57,316 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:33:57,398 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:33:57,438 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:33:57,471 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:33:57,472 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:33:58,429 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:33:58,486 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:33:58,489 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:34:01,416 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:34:01,494 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:34:01,494 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:34:01,554 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:34:01,554 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:34:01,647 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:34:01,685 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:34:38,314 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:34:38,432 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:34:40,370 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:34:40,510 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:34:40,510 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:34:40,760 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:34:40,792 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:34:40,793 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:34:40,840 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:34:40,840 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:34:40,877 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:34:40,915 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:34:40,915 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:34:40,985 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:34:41,016 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:34:41,052 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:34:41,052 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:34:41,422 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:34:41,480 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:34:41,480 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:34:41,728 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:34:41,758 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:34:41,758 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:34:41,815 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:34:41,815 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:34:41,882 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:34:41,974 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:35:10,948 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:35:11,046 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:35:13,327 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:13,532 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:13,532 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:35:13,796 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:35:13,829 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:35:13,829 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:13,884 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:13,885 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:35:13,919 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:35:13,953 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:35:13,953 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:35:14,042 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:35:14,075 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:35:14,121 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:35:14,121 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:35:14,531 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:14,581 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:14,582 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Ara
+09:35:14,836 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:35:14,881 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:35:14,881 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:14,953 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:14,953 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:35:15,049 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:35:15,196 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:35:42,489 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:35:42,608 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:35:44,982 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:45,152 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:45,152 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:35:45,414 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:35:45,445 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:35:45,446 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:45,496 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:45,496 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:35:45,528 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:35:45,565 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:35:45,565 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:35:45,642 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:35:45,675 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:35:45,717 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:35:45,717 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:35:46,061 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:46,110 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:46,110 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Ara
+09:35:46,352 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:35:46,384 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:35:46,384 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:35:46,436 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:35:46,436 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:35:46,506 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:35:46,541 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:36:53,945 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:36:54,051 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:36:56,636 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:36:56,767 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:36:56,767 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:36:56,997 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:36:57,036 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:36:57,036 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:36:57,087 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:36:57,087 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:36:57,119 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:36:57,153 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:36:57,153 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:36:57,227 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:36:57,264 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:36:57,322 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:36:57,323 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:36:57,662 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:36:57,722 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:36:57,722 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Ara
+09:36:57,959 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:36:57,990 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:36:57,990 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:36:58,036 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:36:58,037 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:36:58,102 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:36:58,128 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:37:24,292 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:37:24,393 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:37:26,284 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:37:26,416 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:37:26,416 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:37:26,640 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:37:26,671 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:37:26,671 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:37:26,719 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:37:26,719 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:37:26,753 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:37:26,789 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:37:26,790 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:37:26,864 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:37:26,894 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:37:26,930 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:37:26,931 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:37:27,674 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:37:27,727 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:37:27,727 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:37:27,971 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:37:28,002 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:37:28,002 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:37:28,045 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:37:28,046 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:37:28,111 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:37:28,146 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:38:11,840 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:38:11,977 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:38:14,682 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:14,932 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:14,932 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:38:15,271 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:38:15,306 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:38:15,306 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:15,363 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:15,363 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:38:15,396 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:38:15,429 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:38:15,429 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:38:15,499 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:38:15,539 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:38:15,575 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:38:15,575 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:38:15,958 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:16,009 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:16,009 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:38:16,255 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:38:16,286 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:38:16,286 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:16,341 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:16,342 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:38:16,405 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:38:16,436 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:38:28,209 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:38:28,360 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:38:30,775 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:30,953 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:30,954 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:38:31,513 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:38:31,554 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:38:31,554 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:31,601 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:31,601 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:38:31,652 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:38:31,693 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:38:31,693 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:38:31,760 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:38:31,795 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:38:31,839 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:38:31,839 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:38:32,193 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:32,290 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:32,290 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:38:32,542 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:38:32,579 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:38:32,579 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:38:32,634 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:38:32,634 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:38:32,702 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:38:32,737 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:39:26,816 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:39:26,907 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:39:29,531 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:39:29,692 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:39:29,692 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:39:29,947 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:39:29,982 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:39:29,982 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:39:30,040 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:39:30,040 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:39:30,079 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:39:30,111 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:39:30,111 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:39:30,176 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:39:30,210 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:39:30,262 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:39:30,262 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:39:30,935 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:39:31,006 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:39:31,008 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:39:31,276 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:39:31,302 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:39:31,302 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:39:31,582 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:39:31,582 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:39:31,663 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:39:31,699 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:40:28,118 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:40:28,241 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:40:31,026 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:31,266 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:31,266 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:40:31,916 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:40:31,954 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:40:31,954 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:32,011 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:32,011 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:40:32,049 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:40:32,084 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:40:32,085 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:40:32,157 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:40:32,199 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:40:32,236 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:40:32,236 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:40:32,909 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:32,956 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:32,956 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:40:33,554 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:40:33,580 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:40:33,580 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:33,626 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:33,626 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:40:33,711 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:40:33,766 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:40:43,783 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:40:43,908 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:40:46,732 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:46,944 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:46,944 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:40:47,226 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:40:47,267 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:40:47,267 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:47,331 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:47,331 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:40:47,360 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:40:47,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:40:47,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:40:47,456 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:40:47,495 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:40:47,533 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:40:47,533 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:40:48,278 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:48,328 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:48,328 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:40:48,573 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:40:48,608 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:40:48,608 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:40:48,657 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:40:48,658 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:40:48,722 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:40:48,761 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:41:07,740 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:41:07,891 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:41:10,502 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:41:10,850 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:41:10,851 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:41:11,171 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:41:11,203 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:41:11,203 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:41:11,260 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:41:11,260 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:41:11,291 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:41:11,326 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:41:11,326 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:41:11,424 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:41:11,484 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:41:11,525 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:41:11,526 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:41:11,974 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:41:12,035 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:41:12,036 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Éxito
+09:41:12,280 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:41:12,318 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:41:12,318 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:41:12,371 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:41:12,372 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:41:12,439 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:41:12,475 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:44:05,793 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:44:05,927 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:44:08,723 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:08,897 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:08,897 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:44:09,484 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:44:09,526 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:44:09,526 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:09,593 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:09,593 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:44:09,632 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:44:09,665 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:44:09,665 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:44:09,744 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:44:09,778 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:44:09,823 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:44:09,824 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:44:10,162 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:10,214 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:10,214 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:44:10,464 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:44:10,496 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:44:10,496 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:10,548 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:10,548 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:44:10,627 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:44:10,668 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:44:31,945 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:44:32,048 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:44:44,588 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:44,795 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:44,795 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:44:45,056 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:44:45,094 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:44:45,094 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:45,141 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:45,142 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:44:45,177 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:44:45,209 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:44:45,210 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:44:45,284 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:44:45,316 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:44:45,352 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:44:45,361 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:44:45,688 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:45,738 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:45,738 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:44:45,974 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:44:46,013 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:44:46,013 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:46,065 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:46,065 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Éxito
+09:44:46,103 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:44:46,128 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:44:46,129 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:44:46,182 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:44:46,182 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:44:46,257 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:44:46,300 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:45:04,457 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:45:04,578 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:45:07,128 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:45:07,271 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:45:07,272 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:45:07,559 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:45:07,596 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:45:07,596 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:45:07,655 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:45:07,655 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:45:07,686 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:45:07,721 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:45:07,721 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:45:07,786 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:45:07,824 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:45:07,868 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:45:07,868 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:45:08,276 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:45:08,333 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:45:08,334 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:45:08,568 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:45:08,624 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:45:08,625 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:45:08,671 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:45:08,671 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Éxito
+09:45:08,704 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:45:08,738 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:45:08,738 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:45:08,784 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:45:08,784 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:45:08,885 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:45:08,912 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:47:22,222 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:47:22,376 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:47:24,741 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:24,914 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:47:24,914 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:47:25,160 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:47:25,203 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:47:25,203 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:25,270 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:47:25,271 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:47:25,305 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:47:25,350 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:47:25,350 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:47:25,422 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:47:25,459 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:47:25,496 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:47:25,497 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:47:26,680 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:26,736 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:47:26,737 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:47:26,994 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:47:27,025 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:47:27,025 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:27,082 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 6 existentes
+09:47:27,082 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:47:27,149 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Supermercado [nombre=Jumbo2]
+09:47:27,149 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:27,203 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:47:27,203 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:47:27,273 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:47:27,312 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:47:42,704 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:47:42,842 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:47:45,152 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:45,287 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:47:45,287 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:47:45,859 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:47:45,891 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:47:45,891 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:45,939 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:47:45,939 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:47:46,012 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:47:46,040 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:47:46,081 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:47:46,081 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:47:46,404 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:46,450 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:47:46,450 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:47:46,691 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:47:46,725 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:47:46,725 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:47:46,782 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:47:46,782 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:47:46,876 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:47:46,910 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:48:35,446 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:48:35,589 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:48:38,178 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:48:38,353 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:48:38,353 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:48:38,617 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:48:38,647 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:48:38,647 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:48:38,706 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:48:38,706 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:48:38,755 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:48:38,794 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:48:38,794 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:48:38,881 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:48:38,910 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:48:38,953 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:48:38,953 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:48:39,314 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:48:39,373 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:48:39,373 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:48:39,625 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:48:39,660 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:48:39,660 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:48:39,725 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:48:39,726 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:48:39,767 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:48:39,796 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:48:39,796 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:48:39,847 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:48:39,847 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:48:39,927 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:48:39,960 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:48:56,959 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:48:57,069 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:48:59,304 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:48:59,460 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:48:59,460 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:48:59,707 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:48:59,742 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:48:59,742 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:48:59,834 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:48:59,835 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:48:59,873 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:48:59,910 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:48:59,910 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:48:59,977 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:49:00,012 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:49:00,050 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:49:00,050 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:49:00,374 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:49:00,426 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:49:00,426 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:49:00,650 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:49:00,680 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:49:00,680 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:49:00,740 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:49:00,741 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:49:00,821 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:49:00,856 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:49:18,051 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:49:18,164 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:49:20,588 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:49:20,779 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:49:20,779 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:49:21,035 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:49:21,070 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:49:21,070 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:49:21,123 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:49:21,123 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:49:21,160 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:49:21,197 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:49:21,197 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:49:21,268 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:49:21,309 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:49:21,347 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:49:21,348 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:49:21,713 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:49:21,772 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:49:21,772 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:49:22,024 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:49:22,066 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:49:22,066 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:49:22,111 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:49:22,111 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:49:22,144 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:49:22,180 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:49:22,180 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:49:22,235 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:49:22,236 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:49:22,302 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:49:22,336 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:53:02,283 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:53:02,372 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:53:04,673 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:53:04,831 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:53:04,832 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:53:05,079 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:53:05,113 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:53:05,113 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:53:05,173 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:53:05,173 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:53:05,217 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:53:05,249 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:53:05,249 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:53:05,319 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:53:05,355 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:53:05,417 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:53:05,419 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:53:05,922 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:53:05,982 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:53:05,983 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:53:06,320 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:53:06,356 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:53:06,356 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:53:06,403 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:53:06,403 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:53:06,437 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:53:06,469 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:53:06,469 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:53:06,520 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:53:06,520 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:53:06,592 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:53:06,627 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:56:18,745 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:56:18,876 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:56:21,488 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:22,069 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:22,069 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:56:22,598 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:56:22,632 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:56:22,632 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:22,685 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:22,685 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:56:22,717 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:56:22,750 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:56:22,750 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:56:22,820 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:56:22,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:56:22,891 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:56:22,891 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:56:23,584 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:23,946 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:23,970 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:56:24,558 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:56:24,587 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:56:24,587 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:24,645 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:24,645 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:56:24,672 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:56:24,703 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:56:24,703 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:24,762 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:24,762 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:56:24,829 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:56:24,890 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:56:43,819 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:56:43,932 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:56:46,527 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:46,702 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:46,706 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:56:47,329 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:56:47,362 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:56:47,362 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:47,421 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:47,422 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:56:47,457 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:56:47,494 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:56:47,494 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:56:47,914 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:56:47,948 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:56:47,992 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+09:56:47,992 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:56:49,024 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:49,074 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+09:56:49,074 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+09:56:49,670 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Supermercado [nombre=PriceSmart]
+09:56:49,670 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:49,764 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:56:49,765 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:56:50,160 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:56:50,193 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:56:50,228 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:56:50,228 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:56:50,566 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:50,610 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:56:50,611 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:56:55,074 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:56:55,152 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:56:55,152 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:56:55,218 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:56:55,219 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:56:55,293 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:56:55,321 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:57:03,820 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:57:03,950 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:57:06,752 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:07,225 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:07,225 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:57:09,071 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:57:09,104 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:57:09,104 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:09,170 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:09,170 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:57:09,237 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:57:09,276 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:57:09,325 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+09:57:09,326 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:57:09,693 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:09,744 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:09,745 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+09:57:09,988 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:57:10,025 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:57:10,026 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:10,090 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:10,091 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:57:10,159 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:57:10,193 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:57:10,232 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:57:10,232 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:57:10,965 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:11,495 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:11,495 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:57:11,766 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:57:11,799 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:57:11,799 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:11,855 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:11,855 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:57:11,929 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:57:11,964 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:57:29,680 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:57:29,786 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:57:31,959 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:32,224 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:32,225 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:57:32,503 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:57:32,539 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:57:32,539 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:32,600 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:32,600 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:57:32,664 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:57:32,693 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:57:32,693 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:57:32,783 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:57:32,816 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:57:32,865 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+09:57:32,866 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:57:33,595 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:33,641 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:33,642 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+09:57:34,257 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:57:34,294 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:57:34,294 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:34,342 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:34,342 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:57:34,410 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:57:34,467 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:57:34,512 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:57:34,512 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:57:35,137 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:35,541 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:35,541 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:57:35,792 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:57:35,825 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:57:35,825 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:57:35,899 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:57:35,899 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:57:35,966 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:57:36,003 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:58:01,004 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:58:01,256 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:58:04,307 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:04,470 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:04,471 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:58:04,758 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:04,788 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:04,788 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:04,850 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:04,851 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:58:04,882 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:04,920 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:04,920 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:58:04,992 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:58:05,031 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:58:05,081 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+09:58:05,082 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:58:05,473 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:05,533 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:05,534 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+09:58:05,768 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:05,801 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:05,801 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:05,867 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:05,868 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:58:05,937 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:58:05,970 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:58:06,005 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:58:06,006 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:58:06,786 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:06,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:06,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:58:07,110 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:07,143 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:07,143 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:07,201 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:07,201 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:58:07,231 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:07,268 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:07,268 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:07,619 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:07,620 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:58:07,940 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:58:07,975 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:58:24,247 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:58:24,344 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:58:27,063 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:27,204 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:27,204 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:58:28,100 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:28,128 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:28,128 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:28,180 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:28,181 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:58:28,218 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:28,254 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:28,254 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:58:28,636 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:58:28,676 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:58:28,718 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+09:58:28,718 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:58:29,402 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:29,463 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:29,463 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+09:58:29,694 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:29,726 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:29,726 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:29,788 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:29,788 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:58:29,867 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:58:29,914 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:58:29,950 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:58:29,951 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:58:30,286 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:30,332 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:30,338 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:58:30,565 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:30,595 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:30,595 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:30,656 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:30,656 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:58:30,695 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:58:30,736 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:58:30,736 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:58:30,815 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:58:30,815 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:58:30,888 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:58:30,918 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:59:30,223 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+09:59:30,354 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:59:32,870 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:33,031 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:33,031 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:59:40,616 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:59:40,935 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:59:40,936 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:41,053 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:41,053 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+09:59:41,131 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:59:41,253 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:59:41,253 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:59:41,577 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:59:41,770 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:59:41,883 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+09:59:41,892 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:59:42,391 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:42,468 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:42,468 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+09:59:42,789 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:59:42,841 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:59:42,841 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:42,890 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:42,890 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: 
+09:59:42,921 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
+
+09:59:42,958 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:59:42,958 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:43,013 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:43,013 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:59:43,082 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:59:43,121 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+09:59:43,157 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+09:59:43,157 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+09:59:43,513 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:43,572 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:43,572 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+09:59:43,831 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:59:43,867 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:59:43,867 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:43,916 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:43,917 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+09:59:43,950 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+09:59:43,986 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+09:59:43,986 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+09:59:44,041 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+09:59:44,041 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+09:59:44,101 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+09:59:44,132 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:00,479 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+10:03:00,681 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:03,238 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:03,406 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:03:03,406 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+10:03:03,660 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:03,691 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:03,691 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:03,748 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:03:03,748 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+10:03:03,783 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:03,811 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:03,811 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:03:03,899 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:03:03,935 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:03,976 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+10:03:03,976 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:04,305 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:04,358 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:03:04,358 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+10:03:04,606 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:04,642 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:04,642 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:04,692 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:03:04,692 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: 
+10:03:04,727 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
+
+10:03:04,757 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:04,757 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:04,812 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:03:04,812 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+10:03:04,880 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: 1 tuplas eliminadas
+10:03:04,880 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:05,283 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:05,283 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:03:05,605 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:03:05,648 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:05,684 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+10:03:05,685 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:06,011 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:06,063 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:06,063 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+10:03:06,314 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:06,346 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:06,346 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:06,402 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:06,402 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:03:06,477 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:03:06,506 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:27,410 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+10:03:27,534 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:30,468 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:30,652 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:30,653 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+10:03:31,209 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:31,240 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:31,241 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:31,296 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:31,297 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:03:31,369 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:03:31,411 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:31,456 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+10:03:31,456 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:31,785 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:31,837 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:31,837 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+10:03:32,095 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Supermercado [nombre=PriceSmart]
+10:03:32,095 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:32,491 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:03:32,491 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: 
+10:03:32,528 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
+
+10:03:32,559 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:32,559 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:32,611 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:03:32,611 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+10:03:32,664 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: 1 tuplas eliminadas
+10:03:32,664 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:32,720 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:32,720 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:03:32,792 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:03:32,826 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:32,864 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+10:03:32,864 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:33,180 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:33,227 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:33,227 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+10:03:34,354 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:34,387 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:34,387 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:34,450 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:34,450 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Jumbo2
+10:03:34,504 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:34,541 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:34,541 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:34,612 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:34,612 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:03:34,685 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:03:34,726 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:55,010 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+10:03:55,119 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:58,089 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:58,255 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:58,255 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+10:03:58,827 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:03:58,863 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:03:58,863 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:58,916 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:58,917 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:03:58,993 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:03:59,027 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:03:59,074 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+10:03:59,074 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:03:59,468 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:03:59,527 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:03:59,527 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+10:04:00,380 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Supermercado [nombre=PriceSmart]
+10:04:00,380 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:00,432 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:04:00,433 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: 
+10:04:00,477 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
+
+10:04:00,742 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:04:00,742 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:00,803 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:04:00,803 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+10:04:00,855 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: 1 tuplas eliminadas
+10:04:00,855 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:00,905 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:00,905 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:04:00,972 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:04:01,004 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:04:01,037 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+10:04:01,038 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:04:01,371 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:01,428 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:01,428 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+10:04:01,650 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:04:01,684 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:04:01,684 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:01,749 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:01,749 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:04:01,828 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:04:01,870 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:04:18,203 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de UNICIDAD del nombre del supermercado
+10:04:18,357 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:04:20,918 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:21,081 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:21,081 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+10:04:21,347 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:04:21,384 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:04:21,384 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:21,449 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:21,449 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Carulla
+10:04:21,480 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:04:21,514 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:04:21,514 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:04:21,594 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:04:21,628 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:04:21,665 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD del supermercado
+10:04:21,666 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:04:22,000 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:22,055 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:22,055 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: PriceSmart
+10:04:22,325 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Supermercado [nombre=PriceSmart]
+10:04:22,325 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:22,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:04:22,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: 
+10:04:22,420 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
+
+10:04:22,447 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:04:22,447 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:22,502 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
+10:04:22,502 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+10:04:22,558 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: 1 tuplas eliminadas
+10:04:22,559 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:22,619 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:22,620 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:04:22,692 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:04:22,730 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+10:04:22,774 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando las operaciones CRD sobre Supermercado
+10:04:22,774 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+10:04:23,176 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:23,227 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:23,227 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: Metro
+10:04:23,463 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUPERMERCADO(nombre) values (?)".
+ORA-00001: unique constraint (ISIS2304A101820.A_SUPERMERCADO_PK) violated
+
+10:04:23,494 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando Supermercado: null
+10:04:23,494 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
+10:04:23,553 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 7 existentes
+10:04:23,554 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+10:04:23,626 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_PROVEEDOR".
+ORA-02292: integrity constraint (ISIS2304A101820.FK_PED_PROVEEDOR) violated - child record found
+
+10:04:23,658 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
