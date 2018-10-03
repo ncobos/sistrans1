@@ -1,31 +1,15 @@
 ﻿{
-	"title": "Aplicación transaccional de Parranderos Uniandes",
-	"frameH": 600,
-	"frameW": 800,
+	"title": "Aplicación transaccional de SuperAndes",
+	"frameH": 650,
+	"frameW": 850,
 	"bannerPath": "./src/main/resources/config/logo.png",
 	"menuBar":
 	[
-		{ "menuTitle": "TipoBebida",
+		{ "menuTitle": "ReqFuncionalesMod",
 		  "options":
 			[
 				{
-					"label": "Adicionar",
-					"event": "adicionarTipoBebida"
-				},
-				{
-					"label": "Listar",
-					"event": "listarTipoBebida"
-				},
-				{
-					"label": "Borrar por Id",
-					"event": "eliminarTipoBebidaPorId"
-				},
-				{
-					"label": "Buscar por Nombre",
-					"event": "buscarTipoBebidaPorNombre"
-				},
-				{
-					"label": "AdicionarSupermarket",
+					"label": "AdicionarSupermercado",
 					"event": "adicionarSupermercado"
 				},
 				{
@@ -33,22 +17,37 @@
 					"event": "adicionarPromocion"
 				},
 				{
-					"label": "Adicionar Venta",
-					"event": "adicionarVenta"
+					"label": "Eliminar promoción",
+					"event": "eliminarPromocion"
+				},
+				{
+					"label": "Registrar un pedido",
+					"event": "registrarPedido"
+				},
+				{
+					"label": "Recibir un pedido",
+					"event": "recibirPedido"
 				}
-
 			]
 		},
-		{ "menuTitle": "Mantenimiento",
+		{ "menuTitle": "ReqFuncionalesCons",
 		  "options":
 			[
 				{
-					"label": "Mostrar log Parranderos",
-					"event": "mostrarLogParranderos"
+					"label": "RequerimientoVentasSucursal",
+					"event": "listarSucursalesyVentas"
 				},
 				{
-					"label": "Mostrar log datanucleus",
-					"event": "mostrarLogDatanuecleus"
+					"label": "Mostrar promociones populares",
+					"event": "mostrarPromocionesPopulares"
+				},
+				{
+					"label": "Dar indice ocupacion de bodegas y estantes",
+					"event": "darIndiceOcupacionBodegasEstantes"
+				},
+				{
+					"label": "Dar productos por ciudad",
+					"event": "darProductosPorCiudad"
 				},
 				{
 					"label": "Limpiar log de parranderos",

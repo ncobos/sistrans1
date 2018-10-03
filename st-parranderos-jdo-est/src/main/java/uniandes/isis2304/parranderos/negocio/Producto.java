@@ -34,6 +34,11 @@ public class Producto implements VOProducto{
 	private String unidadMedida;
 	
 	/**
+	 *  Codigo de barras del producto
+	 */
+	private String codigobarras;
+	
+	/**
 	 *  La categor�a del producto
 	 */
 	private String categoria;
@@ -55,6 +60,7 @@ public class Producto implements VOProducto{
 		this.nombre = "";
 		this.marca = "";
 		this.presentacion = "";
+		this.codigobarras = "";
 		this.unidadMedida = "";
 		this.categoria = "";
 		this.tipo = "";
@@ -67,16 +73,18 @@ public class Producto implements VOProducto{
 	 * @param nombre
 	 * @param marca
 	 * @param presentacion
+	 * @param codigobarras
 	 * @param unidadMedida
 	 * @param categoria
 	 * @param tipo
 	 */
-	public Producto(long id, String nombre, String marca, String presentacion, String unidadMedida, String categoria,
+	public Producto(long id, String nombre, String marca, String presentacion, String codigobarras, String unidadMedida, String categoria,
 			String tipo) {
 		this.id = id;
 		this.nombre = nombre;
 		this.marca = marca;
 		this.presentacion = presentacion;
+		this.codigobarras = codigobarras;
 		this.unidadMedida = unidadMedida;
 		this.categoria = categoria;
 		this.tipo = tipo;
@@ -120,6 +128,15 @@ public class Producto implements VOProducto{
 
 	public void setPresentacion(String presentacion) {
 		this.presentacion = presentacion;
+	}
+	
+	public String getCodigobarras() {
+		return codigobarras;
+	}
+
+
+	public void setCodigobarras(String codigobarras) {
+		this.codigobarras = codigobarras;
 	}
 
 

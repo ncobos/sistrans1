@@ -42,6 +42,14 @@
 					"event": "mostrarPromocionesPopulares"
 				},
 				{
+					"label": "Dar indice ocupacion de bodegas y estantes",
+					"event": "darIndiceOcupacionBodegasEstantes"
+				},
+				{
+					"label": "Dar productos por ciudad",
+					"event": "darProductosPorCiudad"
+				},
+				{
 					"label": "Limpiar log de parranderos",
 					"event": "limpiarLogParranderos"
 				},

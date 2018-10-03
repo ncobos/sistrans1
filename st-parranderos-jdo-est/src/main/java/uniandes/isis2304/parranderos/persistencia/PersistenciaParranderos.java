@@ -2011,7 +2011,7 @@ public class PersistenciaParranderos
 
 			log.trace ("Inserciï¿½n de producto: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
 
-			return new Producto(idProducto, nombre, marca, presentacion, unidadmedida, categoria, tipo);
+			return new Producto(idProducto, nombre, marca, presentacion, codigobarras, unidadmedida, categoria, tipo);
 		}
 		catch (Exception e)
 		{
@@ -3442,6 +3442,31 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
+	
+	/**
+	 * Método que consulta los indices de ocupacion de bodegas y estantes por una sucursal
+	 * @return La lista de parejas de objetos, construidos con base en los valores de la tabla SUCURSAL.
+	 * El primer elemento del arreglo es el id de la bodega.
+	 * El segundo elemento del arreglo es el indice de ocupación del estante.
+	 * El tercer elemento del arreglo es el id del estante
+	 * El cuarto elemento del arreglo es el indice de ocupación del estante.
+	 */
+	public List<long[]> darIndiceOcupacionBodegasEstantes (long idSucursal)
+	{
+		List<long []> resp = new LinkedList<long []>();
+		List<Object []> tuplas = sqlSucursal.darIndiceOcupacionBodegasEstantes(pmf.getPersistenceManager(), idSucursal);
+		for(Object [] tupla : tuplas)
+		{
+			long [] datos = new long [4];
+			
+			datos [0] = ((BigDecimal) tupla [0]).longValue();
+			datos [1] = ((BigDecimal) tupla [1]).longValue();
+			datos [2] = ((BigDecimal) tupla [2]).longValue();
+			datos [3] = ((BigDecimal) tupla [3]).longValue();
+			resp.add(datos);
+		}
+		return resp;
+	}
 
 	/**
 	 * Método que encuentra el identificador de las promociones y sus ventas
@@ -3461,4 +3486,16 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla Productos y Sucursal que tienen una ciudad dada
+	 * @param ciudad - La ciudad de donde proviene el producto
+	 * @return La lista de objetos Producto, construidos con base en las tuplas de las tablas PRODUCTO y SUCURSAL
+	 */
+	public List<Producto> darProductosPorCiudad(String ciudad)
+	{
+		return sqlProducto.darProductosPorCiudad(pmf.getPersistenceManager(), ciudad);
+	}
+	
+
 }

@@ -2099,6 +2099,19 @@ public class Parranderos
 	}
 	
 	/**
+	 * Calcula el indice de ocupacion de bodegas y estantes por id
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de datos de 4 valores [IdBodega, indice bodega, idEstante, indice estante]
+	 */
+	public List<long []> darIndiceOcupacionBodegasEstantes(long idSucursal)
+	{
+		log.info("Calculando indice de ocupacion de bodegas y estantes");
+		List<long []> datos = pp.darIndiceOcupacionBodegasEstantes(idSucursal);
+		log.info("Calculando indice de ocupacion de bodegas y estantes: Listo!");
+		return datos;
+	}
+	
+	/**
 	 * Encuentra las promociones y sus respectivas ventas.
 	 * Adiciona entradas al log de la aplicación
 	 * @return Una lista de parejas [promocion, ventas/dias]
@@ -2109,6 +2122,19 @@ public class Parranderos
         List<long []> tuplas = pp.darPromocionVentas();
         log.info ("Listando promociones y ventas: Listo!");
         return tuplas;
+	}
+	
+	/**
+	 * Consulta todas las tuplas en la tabla Productos y Sucursal que tienen una ciudad dada
+	 * @param ciudad - La ciudad de donde proviene el producto
+	 * @return La lista de objetos Producto, construidos con base en las tuplas de las tablas PRODUCTO y SUCURSAL
+	 */
+	public List<Producto> darProductosPorCiudad(String ciudad)
+	{
+        log.info ("Dar información de productos por ciudad: " + ciudad);
+        List<Producto> productos = pp.darProductosPorCiudad(ciudad);
+        log.info ("Dar información de productos por ciudad: " + productos.size() + " productos con esa ciudad existentes");
+        return productos;
 	}
 	
 	

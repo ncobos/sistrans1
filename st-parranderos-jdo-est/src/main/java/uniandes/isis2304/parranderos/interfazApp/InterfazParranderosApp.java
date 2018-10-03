@@ -51,6 +51,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.parranderos.negocio.Parranderos;
+import uniandes.isis2304.parranderos.negocio.Producto;
 import uniandes.isis2304.parranderos.negocio.VOFactura;
 import uniandes.isis2304.parranderos.negocio.VOPedido;
 import uniandes.isis2304.parranderos.negocio.VOPromocion;
@@ -364,7 +365,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	 */
 	public void mostrarScriptBD ()
 	{
-		mostrarArchivo ("data/EsquemaParranderos.sql");
+		mostrarArchivo ("Datos sql/EsquemaSuperAndes.sql");
 	}
 	
 	/**
@@ -810,7 +811,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
      * @param lista - La lista con las pareja
      * @return La cadena con una líea para cada pareja recibido
      */
-    private String listarSucursalesyVentas() 
+    public String listarSucursalesyVentas() 
     {
     	String resp = "Las sucursales y sus ventas son:\n";
 
@@ -840,6 +841,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	        resp1 += "]";
 	        resp += resp1 + "\n";
         }
+        panelDatos.actualizarInterfaz(resp);
         return resp;
 	}
     	
@@ -852,12 +854,47 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     	return resp;
     }
     
+    public String darIndiceOcupacionBodegasEstantes()
+    {
+    	String resp = "Las bodegas y estantes con su respectivo indice de ocupación son:\n";
+    	try 
+    	{
+    		String idSucursal = JOptionPane.showInputDialog(this, "Ingrese el id de la sucursal que desea:", "Indice de ocupación", JOptionPane.QUESTION_MESSAGE);
+    		long id = Long.parseLong(idSucursal);
+    		List<long []> lista = parranderos.darIndiceOcupacionBodegasEstantes(id);
+    		
+    	  	int i = 1;
+            for ( long [] tupla : lista)
+            {
+    			long [] datos = tupla;
+    	        String resp1 = i++ + ". " + "[";
+    			resp1 += "idBodega: " + datos [0] + ", ";
+    			resp1 += "indice ocupación: " + datos [1];
+    			resp1 += "idEstante" + datos[2] + ",";
+    			resp1 += "indice ocupación:" + datos[3];
+    	        resp1 += "]";
+    	        resp += resp1 + "\n";
+            }
+            panelDatos.actualizarInterfaz(resp);
+            return resp;
+			
+		} 
+    	catch (Exception e) 
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	
+    	return resp;
+    }
+    
     /**
      * Genera una cadena de caracteres con la lista de parejas de números recibida: una línea por cada pareja
      * @param lista - La lista con las pareja
      * @return La cadena con una líea para cada pareja recibido
      */
-    private String mostrarPromocionesPopulares() 
+    public String mostrarPromocionesPopulares() 
     {
 		List<long[]> lista = parranderos.darPromocionesPopulares();
 
@@ -874,5 +911,41 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
         }
         return resp;
 	}
+    
+    public String darProductosPorCiudad()
+    {
+    	String resp = "Los productos con la ciudad dada son:\n";
+    	try 
+    	{
+    		String ciudad = JOptionPane.showInputDialog(this, "Ingrese la ciudad de donde desea conocer los productos:", "Productos por ciudad", JOptionPane.QUESTION_MESSAGE);
+    		List<Producto> lista = parranderos.darProductosPorCiudad(ciudad);
+    		
+    	  	int i = 1;
+            for ( Producto producto : lista)
+            {
+    			Producto datos = producto;
+    	        String resp1 = i++ + ". " + "[";
+    			resp1 += "id: " + datos.getId() + ", ";
+    			resp1 += "nombre: " + datos.getNombre();
+    			resp1 += "marca:" + datos.getMarca() + ",";
+    			resp1 += "presentacion:" + datos.getPresentacion();
+    			resp1 += "código barras:" + datos.getCodigobarras();
+    			resp1 += "unidad medida:" + datos.getUnidadMedida();
+    			resp1 += "categoria:" + datos.getCategoria();
+    			resp1 += "tipo:" + datos.getTipo();
+    	        resp1 += "]";
+    	        resp += resp1 + "\n";
+            }
+            panelDatos.actualizarInterfaz(resp);
+            return resp;
+    		
+		} catch (Exception e) 
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    	return resp;
+    }
     
 }

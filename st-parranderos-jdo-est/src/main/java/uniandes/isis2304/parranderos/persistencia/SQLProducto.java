@@ -59,10 +59,10 @@ class SQLProducto
 	 * @param tipo - el tipo del producto
 	 * @return El n�mero de tuplas insertadas
 	 */
-	public long adicionarProducto (PersistenceManager pm, long id, String nombre, String marca, String presentacion, String codigoproductoras, String unidadmedida, String categoria, String tipo) 
+	public long adicionarProducto (PersistenceManager pm, long id, String nombre, String marca, String presentacion, String codigobarras, String unidadmedida, String categoria, String tipo) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProducto () + "(id, nombre, marca, presentacion, codigoproductoras, unidadmedida, categoria, tipo) values (?, ?, ?, ?, ?, ?, ?, ?)");
-        q.setParameters(id, nombre, marca, presentacion, codigoproductoras, unidadmedida, categoria, tipo);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaProducto () + "(id, nombre, marca, presentacion, codigobarras, unidadmedida, categoria, tipo) values (?, ?, ?, ?, ?, ?, ?, ?)");
+        q.setParameters(id, nombre, marca, presentacion, codigobarras, unidadmedida, categoria, tipo);
         return (long) q.executeUnique();            
 	}
 
@@ -132,6 +132,14 @@ class SQLProducto
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProducto ());
 		q.setResultClass(Producto.class);
+		return (List<Producto>) q.executeList();
+	}
+	
+	public List<Producto> darProductosPorCiudad(PersistenceManager pm, String ciudad)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProducto () + " p, " + pp.darTablaSucursal() + " s " + " WHERE s.ciudad = ?");
+		q.setResultClass(Producto.class);
+		q.setParameters(ciudad);
 		return (List<Producto>) q.executeList();
 	}
 	
