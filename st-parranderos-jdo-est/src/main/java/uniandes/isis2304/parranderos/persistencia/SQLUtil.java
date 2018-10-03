@@ -63,7 +63,7 @@ class SQLUtil
 	 */
 	public long nextval (PersistenceManager pm)
 	{
-        Query q = pm.newQuery(SQL, "SELECT "+ pp.darSeqParranderos () + ".nextval FROM DUAL");
+        Query q = pm.newQuery(SQL, "SELECT "+ pp.darSeqSuperandes() + ".nextval FROM DUAL");
         q.setResultClass(Long.class);
         long resp = (long) q.executeUnique();
         return resp;
@@ -77,23 +77,38 @@ class SQLUtil
 	 */
 	public long [] limpiarParranderos (PersistenceManager pm)
 	{
-        Query qGustan = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaGustan ());          
-        Query qSirven = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaSirven ());
-        Query qVisitan = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaVisitan ());
-        Query qBebida = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBebida ());
-        Query qTipoBebida = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaTipoBebida ());
-        Query qBebedor = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBebedor ());
-        Query qBar = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBar ());
+        Query qBodega = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBodega());          
+        Query qCliente = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente());
+        Query qEstante = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaEstante ());
+        Query qFactura = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaFactura ());
+        Query qOfrecen = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaOfrecen ());
+        Query qPedido = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPedido ());
+        Query qProducto = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProducto ());
+        Query qPromocion = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocion ());
+        Query qProveedor = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaProveedor ());
+        Query qSubpedido = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaSubpedido ());
+        Query qSucursal = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaSucursal ());
+        Query qSupermercado = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaSupermercado ());
+        Query qTransaccion = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaTransaccion ());
+        Query qVende = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaVende ());
 
-        long gustanEliminados = (long) qGustan.executeUnique ();
-        long sirvenEliminados = (long) qSirven.executeUnique ();
-        long visitanEliminadas = (long) qVisitan.executeUnique ();
-        long bebidasEliminadas = (long) qBebida.executeUnique ();
-        long tiposBebidaEliminados = (long) qTipoBebida.executeUnique ();
-        long bebedoresEliminados = (long) qBebedor.executeUnique ();
-        long baresEliminados = (long) qBar.executeUnique ();
-        return new long[] {gustanEliminados, sirvenEliminados, visitanEliminadas, bebidasEliminadas, 
-        		tiposBebidaEliminados, bebedoresEliminados, baresEliminados};
+
+        long bodegaEliminados = (long) qBodega.executeUnique ();
+        long clienteEliminados = (long) qCliente.executeUnique ();
+        long estanteEliminadas = (long) qEstante.executeUnique ();
+        long facturaEliminadas = (long) qFactura.executeUnique ();
+        long ofrecenEliminados = (long) qOfrecen.executeUnique ();
+        long pedidoEliminados = (long) qPedido.executeUnique ();
+        long productoEliminados = (long) qProducto.executeUnique ();
+        long promocionEliminados = (long) qPromocion.executeUnique ();
+        long proveedorEliminados = (long) qProveedor.executeUnique ();
+        long subpedidoEliminados = (long) qSubpedido.executeUnique ();
+        long sucursalEliminados = (long) qSucursal.executeUnique ();
+        long supermercadoEliminados = (long) qSupermercado.executeUnique ();
+        long transaccionEliminados = (long) qTransaccion.executeUnique ();
+        long vendeEliminados = (long) qVende.executeUnique ();
+
+        return new long[] {bodegaEliminados, clienteEliminados, estanteEliminadas, facturaEliminadas, ofrecenEliminados, pedidoEliminados, productoEliminados, promocionEliminados, proveedorEliminados, subpedidoEliminados, sucursalEliminados, supermercadoEliminados, transaccionEliminados, vendeEliminados};
 	}
 
 }
