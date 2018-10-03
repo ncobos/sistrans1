@@ -3486,7 +3486,7 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+		
 	/**
 	 * Método que consulta todas las tuplas en la tabla Productos y Sucursal que tienen una ciudad dada
 	 * @param ciudad - La ciudad de donde proviene el producto

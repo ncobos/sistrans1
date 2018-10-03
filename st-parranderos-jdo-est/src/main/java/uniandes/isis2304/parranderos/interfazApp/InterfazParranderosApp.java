@@ -911,7 +911,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
         }
         return resp;
 	}
-    
+        
     public String darProductosPorCiudad()
     {
     	String resp = "Los productos con la ciudad dada son:\n";
@@ -926,12 +926,12 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
     			Producto datos = producto;
     	        String resp1 = i++ + ". " + "[";
     			resp1 += "id: " + datos.getId() + ", ";
-    			resp1 += "nombre: " + datos.getNombre();
-    			resp1 += "marca:" + datos.getMarca() + ",";
-    			resp1 += "presentacion:" + datos.getPresentacion();
-    			resp1 += "código barras:" + datos.getCodigobarras();
-    			resp1 += "unidad medida:" + datos.getUnidadMedida();
-    			resp1 += "categoria:" + datos.getCategoria();
+    			resp1 += "nombre: " + datos.getNombre() + ", ";
+    			resp1 += "marca:" + datos.getMarca() + ", ";
+    			resp1 += "presentacion:" + datos.getPresentacion() + ", ";
+    			resp1 += "código barras:" + datos.getCodigobarras() + ", ";
+    			resp1 += "unidad medida:" + datos.getUnidadMedida() + ", ";
+    			resp1 += "categoria:" + datos.getCategoria() + ", ";
     			resp1 += "tipo:" + datos.getTipo();
     	        resp1 += "]";
     	        resp += resp1 + "\n";

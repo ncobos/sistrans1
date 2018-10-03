@@ -137,12 +137,14 @@ class SQLProducto
 	
 	public List<Producto> darProductosPorCiudad(PersistenceManager pm, String ciudad)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaProducto () + " p, " + pp.darTablaSucursal() + " s " + " WHERE s.ciudad = ?");
+        String sql = "SELECT DISTINCT p.id, p.nombre, p.marca, p.presentacion, p.codigobarras, p.unidadmedida, p.categoria, p.tipo";
+        sql += " FROM " + pp.darTablaProducto() + " p, " + pp.darTablaSucursal() + " s, " + pp.darTablaVende() + " v ";
+		sql += " WHERE p.id = v.idproducto AND s.ciudad = ? ";		
+		
+		Query q = pm.newQuery(SQL, sql);
 		q.setResultClass(Producto.class);
 		q.setParameters(ciudad);
 		return (List<Producto>) q.executeList();
 	}
-	
-	
 }
 
