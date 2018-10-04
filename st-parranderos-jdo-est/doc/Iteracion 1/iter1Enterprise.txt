@@ -1,0 +1,2 @@
+Debido a que el modelo creado en Enterprise Architect era muy grande y complejo, decidimos no ponerlo en un
+archivo aparte por lo poco práctico que era. 
