@@ -1,0 +1,19 @@
+Casos de uso:
+
+Los supermercados se han convertido en actores de la vida diaria de todos pues estos ofrecen productos que necesitamos tanto para sobrevivir, como para tener una vida
+cómoda. Existen muchos tipos de supermercados, dependiendo de lo que ofrezcan y de cómo tratan a sus clientes. En este caso, la aplicación SuperAndes trata de replicar un 
+sistema que facilitaría los procesos de estas grandes empresas. 
+
+El principal usuario para el cual se pensó la aplicación fue un supermercado, pero dados los requerimientos no funcionales de privacidad, existe un administrador que 
+tiene acceso a todos los servicios y a toda la información de la aplicación. La aplicación SuperAndes permite agregar diferentes supermercados a su base de datos y 
+asociarla con diferentes productos, sucursales, proveedores, bodegas y estantes. Supermercado: esta aplicación al cumplir con estas funciones, permite establecer y crear 
+diferentes promociones a gusto del administrador del supermercado, para así proveer diferentes promociones a los clientes, desde un descuento del 20%, hasta una oferta
+2x1, incluso estableciendo la duración de estas promociones. Además, la aplicación permite consultar las mejores promociones realizadas por el supermercado, esto quiere 
+decir las promociones que tivieron mayor número de ventas en el menor tiempo posible.
+
+Supermercado: otro posible caso de uso es en el evento de una compra de un producto. La aplicación permite que se genere la factura correspondiente, asociada al cliente 
+y a una sucursal, lo que permite que exista un registro de este acontecimiento. Luego de este proceso, la aplicación puede restar estas cantidades de sus estantes y/o 
+bodegas, y permite que, en el caso de déficit de productos para satisfacer la demanda de los clientes, se genere un pedido del producto correspondiente a un proveedor.
+
+Supermercado: así mismo, cuando el proveedor entregue el pedido, el sistema puede hacer recepción de este e incrementar las existencias de este en la bodega 
+correspondiente.
