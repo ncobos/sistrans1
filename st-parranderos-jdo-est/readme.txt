@@ -46,7 +46,7 @@ reemplazando las clases de Parranderos con las de SuperAndes para así implementa
  
 
 
-7. En este momento ya dispone de las funciones principales de la aplicación. El menú se divide en 5 funcionalidades:
+7. En este momento ya dispone de las funciones principales de la aplicación. El menú se divide en 4 funcionalidades:
 
 -Requerimientos Funcionales:
  -Adicionar un supermercado

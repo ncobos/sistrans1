@@ -1837,3 +1837,6 @@ ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
 19:25:43,713 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
 19:25:43,922 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
 19:25:43,922 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+19:43:17,803 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD de sucursal
+19:43:17,909 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+19:43:20,127 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de sucursales
