@@ -1,7 +1,6 @@
 package uniandes.isis2304.parranderos.test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -20,8 +19,6 @@ import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.parranderos.negocio.Parranderos;
 import uniandes.isis2304.parranderos.negocio.VOSucursal;
-import uniandes.isis2304.parranderos.negocio.VOSupermercado;
-
 /**
  * Clase con los métdos de prueba de funcionalidad sobre SUCURSAL
  * @author n.cobos, jf.torresp

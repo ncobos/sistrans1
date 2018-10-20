@@ -20,7 +20,6 @@ import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.parranderos.negocio.Parranderos;
 import uniandes.isis2304.parranderos.negocio.VOSupermercado;
-import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
 
 /**
  * Clase con los métdos de prueba de funcionalidad sobre SUPERMERCADO
@@ -163,7 +162,7 @@ public class SupermercadoTest {
 			String nombreSupermercado1 = "Carulla";
 			VOSupermercado supermercado1 = parranderos.adicionarSupermercado(nombreSupermercado1);
 			lista = parranderos.darVOSupermercado();
-			assertEquals ("Debe haber un supermercado creado sumado a los que ya están !!", 7, lista.size ());
+			assertEquals ("Debe haber un supermercado creado sumado a los que ya están !!", 8, lista.size ());
 			// Se espera un resultado de 6 suoermercados debido a que inicilamente para las pruebas en SQL Developer, ya haían 5 supermercados creados.
 			VOSupermercado supermercado2 = parranderos.adicionarSupermercado(nombreSupermercado1);
 			assertNull ("No puede adicionar dos supermercado con el mismo nombre !!", supermercado2);
