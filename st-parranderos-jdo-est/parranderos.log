@@ -1837,6 +1837,7 @@ ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
 19:25:43,713 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
 19:25:43,922 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
 19:25:43,922 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+<<<<<<< HEAD
 19:35:17,424 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
 19:35:18,159 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_CLIENTE".
 ORA-02292: integrity constraint (ISIS2304A101820.FK_FACTURA_CLIENTE) violated - child record found
@@ -1952,3 +1953,13 @@ ORA-01400: cannot insert NULL into ("ISIS2304A101820"."A_SUPERMERCADO"."NOMBRE")
 19:59:33,896 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de supermercados
 19:59:34,028 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de Supermercados: 8 existentes
 19:59:34,028 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Eliminando Supermercado por nombre: PriceSmart
+=======
+19:43:17,803 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Probando la restricción de INTEGRIDAD de sucursal
+19:43:17,909 (main) INFO  [uniandes.isis2304.parranderos.test.SupermercadoTest] - Se encontró un archivo de configuración de tablas válido
+19:43:20,127 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Generando los VO de sucursales
+20:03:36,630 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos
+20:03:55,244 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM A_CLIENTE".
+ORA-02292: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) violada - registro secundario encontrado
+
+20:03:56,651 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Limpiando la BD de Parranderos: Listo!
+>>>>>>> 5b42595b867785d5208b173daf4759cfea45840b

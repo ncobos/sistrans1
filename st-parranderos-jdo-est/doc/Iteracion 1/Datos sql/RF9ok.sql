@@ -1,0 +1,2 @@
+INSERT INTO A_PEDIDO (id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (10, 1, 1, '30/10/2018', 'pendiente', 1, 1000);
+INSERT INTO A_SUBPEDIDO (idpedido, idproducto, cantidad, costo) values (10, 1, 5, 5000);

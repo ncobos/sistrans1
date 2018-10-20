@@ -136,8 +136,8 @@ import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 		}
 
 		/**
-		 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS BEBEDORES Y DE CUÁNTAS VISITAS HA REALIZADO de la 
-		 * base de datos de Parranderos. Incluye, con 0, los bebedores que no han realizado visitas 
+		 * Crea y ejecuta la sentencia SQL para encontrar la información de las sucursales Y DE cuanto en ventas HA REALIZADO de la 
+		 * base de datos de superandes. 
 		 * @param pm - El manejador de persistencia
 		 * @return Una lista de arreglos de objetos, de tamaño 5. Los elementos del arreglo corresponden a los datos del bebedor,
 		 * y del número de visitas realizadas:
