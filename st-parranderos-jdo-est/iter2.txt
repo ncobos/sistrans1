@@ -1,0 +1,7 @@
+1. En este caso, modificamos el modelo del mundo. Las clases eliminadas fueron: bodega y estante; se creó la clase almacenamiento. Basados en los comentarios del monitor que nos corrigió la 
+iteración, nos dimos cuenta que las clases eran muy parecidas, entonces decidimos hacer una clase que los juntara a los dos. Para ello vamos a tener un atributo de tipo String con una condición: 
+debe ser ‘Bodega’ o ‘Estante’. Para el atributo de nivel de reabastecimiento de bodega, para los estantes seguirá normal y para las bodegas lo ideal es que siempre fuera cero. 
+
+2. Para el cumplimiento de los nuevos requerimientos, existió la necesidad de la creación de una nueva tabla. Esta nueva tabla se llama Carrito y consta de varias transacciones y un cliente. Estas
+transacciones se refieren a los productos y las cantidades que se pretenden comprar. Transacción tendrá un estado de tipo String con restricción de valores ('Pendiente' o 'Pagado'). Es decir que 
+cuando se añada un producto al carrito esta transacción iniciará con estado 'Pendiente' y cuando se haga la compra, cambiará su estado. 
