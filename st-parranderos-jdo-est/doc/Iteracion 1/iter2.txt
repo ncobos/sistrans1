@@ -1,0 +1,5 @@
+1.	En este caso, modificamos el modelo del mundo. Las clases eliminadas fueron: bodega y estante; se creó la clase almacenamiento. Basados en los comentarios del monitor que nos corrigió la 
+iteración, nos dimos cuenta que las clases eran muy parecidas, entonces decidimos hacer una clase que los juntara a los dos. Para ello vamos a tener un atributo de tipo String con una condición: 
+debe ser ‘Bodega’ o ‘Estante’. Para el atributo de nivel de reabastecimiento de bodega, para los estantes seguirá normal y para las bodegas lo ideal es que siempre fuera cero. 
+
+2.	A) 
