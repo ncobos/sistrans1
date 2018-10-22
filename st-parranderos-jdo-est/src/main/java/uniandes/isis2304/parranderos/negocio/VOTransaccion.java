@@ -39,6 +39,16 @@ public interface VOTransaccion {
 	 */
 	public long getPromocion();
 	
+	/**
+	 * @return El Id del carrito de la transacci�n
+	 */
+	public long getIdCarrito();
+	
+	/**
+	 * @return El estado de la transacci�n
+	 */
+	public String getEstado();
+	
 	/** 
 	 * @return Una cadena con la informaci�n b�sica
 	 */

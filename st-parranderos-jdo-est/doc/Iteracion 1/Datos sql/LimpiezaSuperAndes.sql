@@ -16,6 +16,7 @@ DROP TABLE "A_PEDIDO" CASCADE CONSTRAINTS;
 DROP TABLE "A_CLIENTE" CASCADE CONSTRAINTS;
 DROP TABLE "A_OFRECEN" CASCADE CONSTRAINTS;
 DROP TABLE "A_FACTURA" CASCADE CONSTRAINTS;
+DROP TABLE "A_CARRITO" CASCADE CONSTRAINTS;
 DROP TABLE "A_PROMOCION" CASCADE CONSTRAINTS;
 DROP TABLE "A_TRANSACCION" CASCADE CONSTRAINTS;
 
@@ -27,6 +28,7 @@ COMMIT;
 delete from a_subpedido;
 delete from a_transaccion;
 delete from a_promocion;
+delete from a_carrito;
 delete from a_factura;
 delete from a_ofrecen;
 delete from a_cliente;

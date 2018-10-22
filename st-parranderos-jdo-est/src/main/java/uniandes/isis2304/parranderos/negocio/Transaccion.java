@@ -41,6 +41,17 @@ public class Transaccion implements VOTransaccion{
 	private long promocion;
 	
 	/**
+	 *  El carrito al cual está asociado la transacci�n
+	 */
+	private long idCarrito;
+	
+	/**
+	 *  El estado de la transacci�n
+	 */
+	private String estado;
+	
+	
+	/**
 	 * Constructor por defecto
 	 */
 	public Transaccion() {
@@ -49,6 +60,8 @@ public class Transaccion implements VOTransaccion{
 		this.costo = 0;
 		this.producto = 0;
 		this.promocion = 0;
+		this.idCarrito = 0;
+		this.estado = "";
 	}
 	
 	
@@ -61,12 +74,14 @@ public class Transaccion implements VOTransaccion{
 	 * @param producto
 	 * @param promocion
 	 */
-	public Transaccion(long numeroFactura, int cantidad, double costo, long producto, long promocion) {
+	public Transaccion(long numeroFactura, int cantidad, double costo, long producto, long promocion, long carrito, String estado) {
 		this.numeroFactura = numeroFactura;
 		this.cantidad = cantidad;
 		this.costo = costo;
 		this.producto = producto;
 		this.promocion = promocion;
+		this.idCarrito = carrito;
+		this.estado = estado;
 	}
 
 	/**
@@ -139,15 +154,50 @@ public class Transaccion implements VOTransaccion{
 		this.promocion = promocion;
 	}
 
+	/**
+	 * @return the idCarrito
+	 */
+	public long getIdCarrito() {
+		return idCarrito;
+	}
+
+
+
+	/**
+	 * @param idCarrito the idCarrito to set
+	 */
+	public void setIdCarrito(long idCarrito) {
+		this.idCarrito = idCarrito;
+	}
+
+
+
+	/**
+	 * @return the estado
+	 */
+	public String getEstado() {
+		return estado;
+	}
+
+
+
+	/**
+	 * @param estado the estado to set
+	 */
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Transaccion [numeroFactura=" + numeroFactura + ", cantidad=" + cantidad + ", costo=" + costo
-				+ ", producto=" + producto + ", promocion=" + promocion + "]";
+				+ ", producto=" + producto + ", promocion=" + promocion + ", idCarrito=" + idCarrito + ", estado="
+				+ estado + "]";
 	}
-
-
 	
 }
