@@ -31,6 +31,8 @@ import org.apache.log4j.Logger;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
+import uniandes.isis2304.parranderos.negocio.Almacenamiento;
 import uniandes.isis2304.parranderos.negocio.Bodega;
 import uniandes.isis2304.parranderos.negocio.Estante;
 import uniandes.isis2304.parranderos.negocio.Factura;
@@ -110,16 +112,11 @@ public class PersistenciaParranderos
 	 * Atributo para el acceso a la tabla PRODUCTO de la base de datos
 	 */
 	private SQLProducto sqlProducto;
-
+	
 	/**
-	 * Atributo para el acceso a la tabla BODEGA de la base de datos
+	 * Atributo para el acceso a la tabla ALMACENAMIENTO de la base de datos
 	 */
-	private SQLBodega sqlBodega;
-
-	/**
-	 * Atributo para el acceso a la tabla ESTANTE de la base de datos
-	 */
-	private SQLEstante sqlEstante;
+	private SQLAlmacenamiento sqlAlmacenamiento;
 
 	/**
 	 * Atributo para el acceso a la tabla VENDE de la base de datos
@@ -157,6 +154,11 @@ public class PersistenciaParranderos
 	private SQLFactura sqlFactura;
 
 	/**
+	 * Atributo para el acceso a la tabla CARRITO de la base de datos
+	 */
+	private SQLCarrito sqlCarrito;
+	
+	/**
 	 * Atributo para el acceso a la tabla PROMOCION de la base de datos
 	 */
 	private SQLPromocion sqlPromocion;
@@ -184,8 +186,7 @@ public class PersistenciaParranderos
 		tablas.add ("SUPERMERCADO");
 		tablas.add ("SUCURSAL");
 		tablas.add ("PRODUCTO");
-		tablas.add ("BODEGA");
-		tablas.add ("ESTANTE");
+		tablas.add("ALMACENAMIENTO");
 		tablas.add ("VENDE");
 		tablas.add ("PROVEEDOR");
 		tablas.add ("PEDIDO");
@@ -193,6 +194,7 @@ public class PersistenciaParranderos
 		tablas.add ("OFRECEN");
 		tablas.add ("CLIENTE");
 		tablas.add ("FACTURA");
+		tablas.add ("CARRITO");
 		tablas.add ("PROMOCION");
 		tablas.add ("TRANSACCION");
 	}
@@ -273,8 +275,7 @@ public class PersistenciaParranderos
 		sqlSupermercado = new SQLSupermercado(this);
 		sqlSucursal = new SQLSucursal(this);
 		sqlProducto = new SQLProducto(this);
-		sqlBodega = new SQLBodega(this);
-		sqlEstante = new SQLEstante(this);
+		sqlAlmacenamiento = new SQLAlmacenamiento(this);
 		sqlVende = new SQLVende(this);
 		sqlProveedor = new SQLProveedor(this);
 		sqlPedido = new SQLPedido(this);
@@ -282,6 +283,7 @@ public class PersistenciaParranderos
 		sqlOfrecen = new SQLOfrecen(this);
 		sqlCliente = new SQLCliente(this);
 		sqlFactura = new SQLFactura(this);
+		sqlCarrito = new SQLCarrito (this);
 		sqlPromocion = new SQLPromocion(this);
 		sqlTransaccion = new SQLTransaccion(this);
 	}
@@ -377,14 +379,7 @@ public class PersistenciaParranderos
 		return tablas.get (2);
 	}
 
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Bodega de superandes
-	 */
-	public String darTablaBodega()
-	{
-		return tablas.get (4);
-	}
-
+	
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Producto de superandes
 	 */
@@ -394,11 +389,11 @@ public class PersistenciaParranderos
 	}
 
 	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de Estante de superandes
+	 * @return La cadena de caracteres con el nombre de la tabla de Almacenamiento de superandes
 	 */
-	public String darTablaEstante()
+	public String darTablaAlmacenamiento()
 	{
-		return tablas.get (5);
+		return tablas.get (4);
 	}
 
 	/**
@@ -406,7 +401,7 @@ public class PersistenciaParranderos
 	 */
 	public String darTablaVende()
 	{
-		return tablas.get (6);
+		return tablas.get (5);
 	}
 
 	/**
@@ -414,7 +409,7 @@ public class PersistenciaParranderos
 	 */
 	public String darTablaProveedor()
 	{
-		return tablas.get (7);
+		return tablas.get (6);
 	}
 
 	/**
@@ -422,7 +417,7 @@ public class PersistenciaParranderos
 	 */
 	public String darTablaPedido()
 	{
-		return tablas.get (8);
+		return tablas.get (7);
 	}
 
 	/**
@@ -430,7 +425,7 @@ public class PersistenciaParranderos
 	 */
 	public String darTablaSubpedido()
 	{
-		return tablas.get (9);
+		return tablas.get (8);
 	}
 
 	/**
@@ -438,7 +433,7 @@ public class PersistenciaParranderos
 	 */
 	public String darTablaOfrecen()
 	{
-		return tablas.get (10);
+		return tablas.get (9);
 	}
 
 	/**
@@ -446,13 +441,21 @@ public class PersistenciaParranderos
 	 */
 	public String darTablaCliente()
 	{
-		return tablas.get (11);
+		return tablas.get (10);
 	}
 
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Factura de superandes
 	 */
 	public String darTablaFactura()
+	{
+		return tablas.get (11);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de Carrito de superandes
+	 */
+	public String darTablaCarrito()
 	{
 		return tablas.get (12);
 	}
@@ -961,7 +964,7 @@ public class PersistenciaParranderos
 	 *****************************************************************/
 
 	/**
-	 * MÃ©todo que inserta, de manera transaccional, una tupla en la tabla ESTANTE
+	 * MÃ©todo que inserta, de manera transaccional, una tupla en la tabla ALMACENAMIENTO
 	 * Adiciona entradas al log de la aplicaciÃ³n
 	 * @param capacidadVolumen - La capacidad en volumen del estante(metros cÃºbicos)
 	 * @param capacidadPeso - La capacidad en peso del estante (en kg)
@@ -969,22 +972,24 @@ public class PersistenciaParranderos
 	 * @param sucursal - La sucursal a la que pertenece el estante
 	 * @param nivelabastecimientobodega - Cantidad de unidades mÃ­nimas que debe tener en la bodega por producto
 	 * @param existencias - Las existencias disponibles en la bodega
+	 * @param capacidadproductos numero de productos que se pueden almacenar
+	 * @param tipo Tipo de almacenamiento (bodega o estante)
 	 * @return El objeto Estante adicionado. null si ocurre alguna ExcepciÃ³n
 	 */
-	public Estante adicionarEstante(double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int nivelabastecimientobodega, int existencias)
+	public Almacenamiento adicionarEstante(double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int nivelabastecimientobodega, int existencias, int capacidadproductos, String tipo)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long idEstante = nextval ();
-			long tuplasInsertadas = sqlEstante.adicionarEstante(pm, idEstante, capacidadVolumen, capacidadPeso, producto, sucursal, nivelabastecimientobodega, existencias);
+			long idAlmacenamiento = nextval ();
+			long tuplasInsertadas = sqlAlmacenamiento.adicionarAlmacenamiento(pm, idAlmacenamiento, capacidadVolumen, capacidadPeso, producto, sucursal, nivelabastecimientobodega, existencias, capacidadproductos, tipo);
 			tx.commit();
 
-			log.trace ("InserciÃ³n del estante: " + idEstante + ": " + tuplasInsertadas + " tuplas insertadas");
+			log.trace ("InserciÃ³n del almacenamiento: " + idAlmacenamiento + ": " + tuplasInsertadas + " tuplas insertadas");
 
-			return new Estante(idEstante, capacidadVolumen, capacidadPeso, existencias, producto, sucursal, nivelabastecimientobodega);
+			return new Almacenamiento(idAlmacenamiento, capacidadVolumen, capacidadPeso, existencias, producto, sucursal, nivelabastecimientobodega, capacidadproductos, tipo);
 		}
 		catch (Exception e)
 		{
