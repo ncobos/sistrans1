@@ -21,11 +21,6 @@ public class Carrito implements VOCarrito{
 	
 	
 	/**
-	 * Cliente del carrito 
-	 */
-	private String idCliente;
-	
-	/**
 	 * Estado del carrito
 	 */
 	private String estado;
@@ -39,7 +34,6 @@ public class Carrito implements VOCarrito{
 	public Carrito() 
 	{
 		this.id = 0;
-		this.idCliente = "";
 		this.estado = "";
 	}
 
@@ -49,10 +43,9 @@ public class Carrito implements VOCarrito{
 	 * @param pCliente - El identificador del idCliente. Debe existir un cliente con dicho identificador. 
 	 * @param pEstado - El estado del carrito (en uso, abandonado, 
 	 */
-	public Carrito(long pNumero, String pCliente, String pEstado) 
+	public Carrito(long pNumero, String pEstado) 
 	{
 		this.id = pNumero;
-		this.idCliente = pCliente;
 		this.estado = pEstado;
 	}
 
@@ -70,20 +63,7 @@ public class Carrito implements VOCarrito{
 		this.id = id;
 	}
 
-	/**
-	 * @return the idCliente
-	 */
-	public String getIdCliente() {
-		return idCliente;
-	}
-
-	/**
-	 * @param idCliente the idCliente to set
-	 */
-	public void setIdCliente(String idCliente) {
-		this.idCliente = idCliente;
-	}
-
+	
 	/**
 	 * @return the estado
 	 */
@@ -101,7 +81,7 @@ public class Carrito implements VOCarrito{
 	
 	@Override
 	public String toString() {
-		return "Carrito [id=" + id + ", idCliente=" + idCliente + ", estado=" + estado + "]";
+		return "Carrito [id=" + id + ",  estado=" + estado + "]";
 	}
 
 }

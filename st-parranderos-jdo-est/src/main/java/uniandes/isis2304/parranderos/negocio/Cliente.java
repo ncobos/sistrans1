@@ -1,6 +1,5 @@
 package uniandes.isis2304.parranderos.negocio;
 
-import java.util.LinkedList;
 
 /**
  * Clase para modelar el concepto Cliente del negocio de SuperAndes

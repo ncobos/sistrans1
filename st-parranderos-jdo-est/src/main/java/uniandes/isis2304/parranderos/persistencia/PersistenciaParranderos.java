@@ -159,6 +159,11 @@ public class PersistenciaParranderos
 	private SQLCarrito sqlCarrito;
 	
 	/**
+	 * Atributo para el acceso a la tabla CONTIENE de la base de datos
+	 */
+	private SQLContiene sqlContiene;
+	
+	/**
 	 * Atributo para el acceso a la tabla PROMOCION de la base de datos
 	 */
 	private SQLPromocion sqlPromocion;
@@ -195,6 +200,7 @@ public class PersistenciaParranderos
 		tablas.add ("CLIENTE");
 		tablas.add ("FACTURA");
 		tablas.add ("CARRITO");
+		tablas.add ("CONTIENE");
 		tablas.add ("PROMOCION");
 		tablas.add ("TRANSACCION");
 	}
@@ -284,6 +290,7 @@ public class PersistenciaParranderos
 		sqlCliente = new SQLCliente(this);
 		sqlFactura = new SQLFactura(this);
 		sqlCarrito = new SQLCarrito (this);
+		sqlContiene = new SQLContiene(this);
 		sqlPromocion = new SQLPromocion(this);
 		sqlTransaccion = new SQLTransaccion(this);
 	}
@@ -459,13 +466,21 @@ public class PersistenciaParranderos
 	{
 		return tablas.get (12);
 	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de Contiene de superandes
+	 */
+	public String darTablaContiene()
+	{
+		return tablas.get (13);
+	}
 
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Promocion de superandes
 	 */
 	public String darTablaPromocion()
 	{
-		return tablas.get (13);
+		return tablas.get (14);
 	}
 
 	/**
@@ -473,7 +488,7 @@ public class PersistenciaParranderos
 	 */
 	public String darTablaTransaccion()
 	{
-		return tablas.get (14);
+		return tablas.get (15);
 	}
 
 

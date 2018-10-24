@@ -54,10 +54,10 @@ class SQLCarrito {
 	 * @param idSucursal - El identificador de la sucursal donde se generó la carrito
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarCarrito (PersistenceManager pm, long id, String estado, String idCliente)
+	public long adicionarCarrito (PersistenceManager pm, long id, String estado)
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCarrito() + "(id, estado, idcliente) values (?, ?, ?)");
-        q.setParameters(id, estado, idCliente);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCarrito() + "(id, estado) values (?, ?)");
+        q.setParameters(id, estado);
         return (long) q.executeUnique();            
 	}
 	
@@ -104,20 +104,7 @@ class SQLCarrito {
 		return (List<Carrito>) q.executeList();
 	}
 	
-	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de FACTURAS de la 
-	 * base de datos de Superandes, por su cliente
-	 * @param pm - El manejador de persistencia
-	 * @param idCliente - El cliente de la carrito
-	 * @return Una lista de objetos FACTURA que tienen el cliente dado
-	 */
-	public List<Carrito> darCarritosPorCliente (PersistenceManager pm, long idCliente) 
-	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarrito() + " WHERE idcliente = ?");
-		q.setResultClass(Carrito.class);
-		q.setParameters(idCliente);
-		return (List<Carrito>) q.executeList();
-	}
+	
 	
 
 	/**

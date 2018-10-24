@@ -2,31 +2,38 @@ package uniandes.isis2304.parranderos.negocio;
 
 
 /**
- * Interfaz para los m�todos get de Carrito.
+ * Interfaz para los m�todos get de CONTIENE.
  * Sirve para proteger la informaci�n del negocio de posibles manipulaciones desde la interfaz 
  * 
  * @author n.cobos, jf.torresp
  */
 
-public interface VOCarrito {
+public interface VOContiene {
 	
 	/* ****************************************************************
 	 * 			M�todos 
 	 *****************************************************************/
-     /**
-	 * @return El Id del carrito
+	/**
+	 * @return el id del carrito
 	 */
-	public long getId();
-	
+	public long getIdCarrito();
 	
 	/**
-	 * @return El estado del carrito
+	 * @return La cantidad de productos
 	 */
-	public String getEstado();
+	public int getCantidad();
+	
+	/**
+	 * @return El producto de la transacci�n
+	 */
+	public long getProducto();
+
 	
 	/** 
-	 * @return Una cadena con la información básica del carrito
+	 * @return Una cadena con la informaci�n b�sica
 	 */
 	@Override
 	public String toString();
+
+
 }
