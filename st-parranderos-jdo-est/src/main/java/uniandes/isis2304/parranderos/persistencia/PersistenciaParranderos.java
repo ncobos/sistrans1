@@ -2040,7 +2040,7 @@ public class PersistenciaParranderos
 			if(promocion == 0)
 			{
 				tx.begin();
-				sqlEstante.disminuirExistenciasEstantes(pm, cantidad, sucursal, producto);
+//				sqlEstante.disminuirExistenciasEstantes(pm, cantidad, sucursal, producto);
 				tx.commit();
 			}
 			else
