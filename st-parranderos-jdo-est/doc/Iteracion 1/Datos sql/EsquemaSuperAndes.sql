@@ -571,7 +571,7 @@ ALTER TABLE A_CARRITO
 	
 	ADD CONSTRAINT CK_CARRITO_ESTADO
 	
-	CHECK (estado IN ('en uso', 'abandonado', 'pagado'))
+	CHECK (estado IN ('en uso', 'abandonado', 'pagado', 'libre'))
 
 ENABLE;
 
