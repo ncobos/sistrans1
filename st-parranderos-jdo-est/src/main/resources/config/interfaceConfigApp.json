@@ -31,6 +31,10 @@
 				{
 					"label": "Solicitar un carrito de compras",
 					"event": "solicitarCarrito"
+				},
+				{
+					"label": "Devolver un producto del carrito de compras",
+					"event": "devolverProductoCarrito"
 				}
 			]
 		},

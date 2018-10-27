@@ -18,7 +18,7 @@ public class Contiene implements VOContiene{
 	/**
 	 *  El numero del carrito
 	 */
-	private long idCarrito;
+	private long carrito;
 	
 	/**
 	 *  La cantidad de productos 
@@ -38,7 +38,7 @@ public class Contiene implements VOContiene{
 	 * Constructor por defecto
 	 */
 	public Contiene() {
-		this.idCarrito = 0;
+		this.carrito = 0;
 		this.cantidad = 0;
 		this.producto = 0;
 		
@@ -48,30 +48,30 @@ public class Contiene implements VOContiene{
 
 	/**
 	 * Constructor con valores
-	 * @param idCarrito
+	 * @param carrito
 	 * @param cantidad
 	 * @param costo
 	 * @param producto
 	 * @param promocion
 	 */
-	public Contiene(long idCarrito, int cantidad, long producto) {
-		this.idCarrito = idCarrito;
+	public Contiene(long carrito, int cantidad, long producto) {
+		this.carrito = carrito;
 		this.cantidad = cantidad;
 		this.producto = producto;
 	}
 
 	/**
-	 * @return the idCarrito
+	 * @return the carrito
 	 */
-	public long getIdCarrito() {
-		return idCarrito;
+	public long getCarrito() {
+		return carrito;
 	}
 
 	/**
-	 * @param idCarrito the idCarrito to set
+	 * @param carrito the carrito to set
 	 */
-	public void setIdCarrito(long idCarrito) {
-		this.idCarrito = idCarrito;
+	public void setCarrito(long carrito) {
+		this.carrito = carrito;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class Contiene implements VOContiene{
 	 */
 	@Override
 	public String toString() {
-		return "Contiene [idCarrito=" + idCarrito + ", cantidad=" + cantidad + 
+		return "Contiene [carrito=" + carrito + ", cantidad=" + cantidad + 
 				", producto=" + producto + "]";
 	}
 	

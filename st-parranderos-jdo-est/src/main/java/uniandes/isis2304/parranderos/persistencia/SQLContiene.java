@@ -64,32 +64,35 @@ class SQLContiene
 
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para eliminar UN CONTIENE de la base de datos de Parranderos, por su identificador
+	 * Crea y ejecuta la sentencia SQL para eliminar UN CONTIENE de la base de datos de Superandes
+	 * por carrito y producto
 	 * @param pm - El manejador de persistencia
-	 * @param numerofactura - numero de factura de la transacci�n
+	 * @param idCarrito carrito asociado
+	 * @param idProducto producto contenido en el carrito
 	 * @return EL n�mero de tuplas eliminadas
 	 */
-	public long eliminarContienePorNumeroFactura (PersistenceManager pm, long numerofactura)
+	public long eliminarContienePorCarritoProducto (PersistenceManager pm, long idCarrito, long idProducto)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaContiene () + " WHERE numerofactura = ?");
-        q.setParameters(numerofactura);
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaContiene () + " WHERE carrito = ? AND producto = ?");
+        q.setParameters(idCarrito, idProducto);
         return (long) q.executeUnique();
 	}
 
 
 	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la informaci�n de LOS CONTIENEES de la 
-	 * base de datos de Parranderos, por su nombre
+	 * Crea y ejecuta la sentencia SQL para encontrar la informaci�n del CONTIENE de la 
+	 * base de datos de SUPERANES, por su carrito y producto asociado
 	 * @param pm - El manejador de persistencia
-	 * @param nombreSupermercado - El nombre del supermercado que posee esa contiene 
-	 * @return Una lista de objetos CONTIENE que son del supermercado de 
+	 * @param idCarrito carrito asociado
+	 * @param idProducto producto contenido en el carrito
+	 * @return Un objeto CONTIENE asociado a cierto carrito
 	 */
-	public List<Contiene> darContieneesPorNumeroFactura (PersistenceManager pm, long numerofactura) 
+	public Contiene darContienePorCarritoProducto(PersistenceManager pm, long idCarrito, long idProducto)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaContiene () + " WHERE numerofactura= ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaContiene () + " WHERE carrito = ? AND producto = ?");
 		q.setResultClass(Contiene.class);
-		q.setParameters(numerofactura);
-		return (List<Contiene>) q.executeList();
+		q.setParameters(idCarrito, idProducto);
+		return (Contiene) q.executeUnique();
 	}
 
 	/**

@@ -45,6 +45,7 @@ import uniandes.isis2304.parranderos.negocio.Sucursal;
 import uniandes.isis2304.parranderos.negocio.Supermercado;
 import uniandes.isis2304.parranderos.negocio.Vende;
 import uniandes.isis2304.parranderos.negocio.Cliente;
+import uniandes.isis2304.parranderos.negocio.Contiene;
 import uniandes.isis2304.parranderos.negocio.Ofrecen;
 import uniandes.isis2304.parranderos.negocio.Subpedido;
 
@@ -2295,4 +2296,59 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
+	
+	/**
+	 * Busca el carrito dado, y elimina la tupla de la tabla contiene que se asocia al carrito y al producto
+	 * @param idCarrito
+	 * @param clave
+	 * @param idProducto
+	 * @return
+	 */
+	public Contiene devolverProducto (long idCarrito, long clave, long idProducto, long sucursal)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
+			tx.commit();
+			
+			if(car == null)
+			{
+				throw new Exception ("La contraseña del carrito es incorrecta");
+			}
+
+			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
+
+			tx.begin();
+			Contiene con1 = sqlContiene.darContienePorCarritoProducto(pm, idCarrito, idProducto);
+			int cantidad = con1.getCantidad();
+			long can = sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pm, cantidad, sucursal, idProducto, "Estante");
+			log.trace ("Devolviendo " + cantidad + " productos " + idProducto + "  al estante de la sucursal " + sucursal );
+			
+			long dev = sqlContiene.eliminarContienePorCarritoProducto(pm, idCarrito, idProducto);
+			log.trace ("Eliminando " + dev + "de la tabla contiene"  );
+
+			
+			tx.commit();
+
+			return con1;
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+
 }

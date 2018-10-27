@@ -1465,7 +1465,20 @@ public class Parranderos
 			Carrito car2 = asignarCarrito(clave);
 			return car2;
 		}
-		
-		
+	}
+	
+	/**
+	 * Proceso de devolver un producto que está en un carrito de compras.
+	 * @param idCarrito del cual se quiere sacar el producto
+	 * @param clave del carrito seleccionado.
+	 * @param idProducto que se quiere devolver
+	 * @return
+	 */
+	public Contiene devolverProducto (long idCarrito, long clave, long idProducto, long sucursal)
+	{
+		log.info ("Devolviendo producto: " + idProducto + " del carrito: " + idCarrito);
+        Contiene contiene = pp.devolverProducto(idCarrito, clave, idProducto, sucursal);
+		log.info ("Devolviendo producto: " + idProducto + " del carrito: " + idCarrito);
+        return contiene;
 	}
 }

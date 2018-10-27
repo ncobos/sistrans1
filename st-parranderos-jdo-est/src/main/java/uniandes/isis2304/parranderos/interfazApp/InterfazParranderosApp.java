@@ -51,6 +51,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.parranderos.negocio.Carrito;
+import uniandes.isis2304.parranderos.negocio.Contiene;
 import uniandes.isis2304.parranderos.negocio.Parranderos;
 import uniandes.isis2304.parranderos.negocio.Producto;
 import uniandes.isis2304.parranderos.negocio.VOFactura;
@@ -827,40 +828,40 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
-//	public String darIndiceOcupacionBodegasEstantes()
-//	{
-//		String resp = "Las bodegas y estantes con su respectivo indice de ocupación son:\n";
-//		try 
-//		{
-//			String idSucursal = JOptionPane.showInputDialog(this, "Ingrese el id de la sucursal que desea:", "Indice de ocupación", JOptionPane.QUESTION_MESSAGE);
-//			long id = Long.parseLong(idSucursal);
-//			List<long []> lista = parranderos.darIndiceOcupacionBodegasEstantes(id);
-//
-//			int i = 1;
-//			for ( long [] tupla : lista)
-//			{
-//				long [] datos = tupla;
-//				String resp1 = i++ + ". " + "[";
-//				resp1 += "idBodega: " + datos [0] + ", ";
-//				resp1 += "indice ocupación: " + datos [1];
-//				resp1 += "idEstante" + datos[2] + ",";
-//				resp1 += "indice ocupación:" + datos[3];
-//				resp1 += "]";
-//				resp += resp1 + "\n";
-//			}
-//			panelDatos.actualizarInterfaz(resp);
-//			return resp;
-//
-//		} 
-//		catch (Exception e) 
-//		{
-//			e.printStackTrace();
-//			String resultado = generarMensajeError(e);
-//			panelDatos.actualizarInterfaz(resultado);
-//		}
-//
-//		return resp;
-//	}
+	//	public String darIndiceOcupacionBodegasEstantes()
+	//	{
+	//		String resp = "Las bodegas y estantes con su respectivo indice de ocupación son:\n";
+	//		try 
+	//		{
+	//			String idSucursal = JOptionPane.showInputDialog(this, "Ingrese el id de la sucursal que desea:", "Indice de ocupación", JOptionPane.QUESTION_MESSAGE);
+	//			long id = Long.parseLong(idSucursal);
+	//			List<long []> lista = parranderos.darIndiceOcupacionBodegasEstantes(id);
+	//
+	//			int i = 1;
+	//			for ( long [] tupla : lista)
+	//			{
+	//				long [] datos = tupla;
+	//				String resp1 = i++ + ". " + "[";
+	//				resp1 += "idBodega: " + datos [0] + ", ";
+	//				resp1 += "indice ocupación: " + datos [1];
+	//				resp1 += "idEstante" + datos[2] + ",";
+	//				resp1 += "indice ocupación:" + datos[3];
+	//				resp1 += "]";
+	//				resp += resp1 + "\n";
+	//			}
+	//			panelDatos.actualizarInterfaz(resp);
+	//			return resp;
+	//
+	//		} 
+	//		catch (Exception e) 
+	//		{
+	//			e.printStackTrace();
+	//			String resultado = generarMensajeError(e);
+	//			panelDatos.actualizarInterfaz(resultado);
+	//		}
+	//
+	//		return resp;
+	//	}
 
 	/**
 	 * Genera una cadena de caracteres con la lista de parejas de números recibida: una línea por cada pareja
@@ -923,7 +924,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 
 	public String solicitarCarrito()
 	{
-		String resp = "El identificador del carrito asignado es: ";
+		String resp = "El identificador y la contraseña del carrito asignado es: ";
 		try 
 		{
 			String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña para su carrito de mercado:", "Asignar carrito", JOptionPane.QUESTION_MESSAGE);
@@ -944,5 +945,51 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	public String devolverProductoCarrito()
+	{
+		String resp = "El producto devuelto es: ";
+		Boolean hola = false;
+		try 
+		{
+			String id = JOptionPane.showInputDialog(this, "Ingrese el identificador de su carrito de mercado:", "Devolver producto", JOptionPane.QUESTION_MESSAGE);
+			if(id == null) {hola = true;}
+			String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña de su carrito de mercado:", "Devolver producto", JOptionPane.QUESTION_MESSAGE);
+			if(pass == null) {hola = true;}
+			String producto = JOptionPane.showInputDialog(this, "Ingrese el identificador del producto que desea devolver:", "Devolver producto", JOptionPane.QUESTION_MESSAGE);
+			if(producto == null) {hola = true;}
+			String sucursal = JOptionPane.showInputDialog(this, "Ingrese la sucursal que vende el producto que desea devolver:", "Devolver producto", JOptionPane.QUESTION_MESSAGE);
+			if( sucursal == null) {hola = true;}
+			
+			if(!hola)
+			{
+				long idCarrito = Long.parseLong(id);
+				long clave = Long.parseLong(pass);
+				long idProducto  = Long.parseLong(producto);
+				long idSucursal= Long.parseLong(sucursal);
+
+				Contiene con = parranderos.devolverProducto(idCarrito,clave, idProducto, idSucursal);
+				if(con == null)
+				{
+					throw new Exception ("Los datos del carrito no son correctos");
+				}
+				System.out.println(con);
+				long id2 = con.getProducto();
+				resp+=id2;
+				panelDatos.actualizarInterfaz(resp);
+				return resp;
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
 
 }

@@ -16,7 +16,7 @@ public interface VOContiene {
 	/**
 	 * @return el id del carrito
 	 */
-	public long getIdCarrito();
+	public long getCarrito();
 	
 	/**
 	 * @return La cantidad de productos
