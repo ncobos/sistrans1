@@ -125,7 +125,7 @@ class SQLCarrito {
 	 * Crea y ejecuta la sentencia SQL para cambiar el estado de un carrito en la 
 	 * base de datos de Superandes
 	 * @param pm - El manejador de persistencia
-	 * @param idPedido - El identificador del carrito
+	 * @param idCarrito - El identificador del carrito
 	 * @param estadoOrden - El estado de orden modificado a entregado o pendiente
 	 * @return El número de tuplas modificadas
 	 */
@@ -133,6 +133,22 @@ class SQLCarrito {
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaCarrito() + " SET estado = ? WHERE id = ?");
 		q.setParameters(estado, idCarrito);
+		return (long) q.executeUnique();            
+	}
+	
+	/**
+	 * 
+	 * Crea y ejecuta la sentencia SQL para cambiar la clave de un carrito en la 
+	 * base de datos de Superandes
+	 * @param pm - El manejador de persistencia
+	 * @param idPedido - El identificador del carrito
+	 * @param clave - La nueva clave del carrito
+	 * @return El número de tuplas modificadas
+	 */
+	public long cambiarClaveCarrito(PersistenceManager pm, long idCarrito, long clave) 
+	{
+		Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaCarrito() + " SET clave = ? WHERE id = ?");
+		q.setParameters(clave, idCarrito);
 		return (long) q.executeUnique();            
 	}
 }

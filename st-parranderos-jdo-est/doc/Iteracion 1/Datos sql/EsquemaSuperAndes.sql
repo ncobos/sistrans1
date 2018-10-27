@@ -6,775 +6,385 @@
 -- Ejec�telo como un script - Utilice el bot�n correspondiente de la pesta�a utilizada
 
 -- Creaci�n del secuenciador
-create sequence superandes_sequence;
+CREATE SEQUENCE superandes_sequence;
 
 -- Creaci�n de la tabla supermercado y especificaci�n de sus restricciones.
-CREATE TABLE A_SUPERMERCADO
-   (NOMBRE VARCHAR2(255 BYTE),
-   CONSTRAINT A_SUPERMERCADO_PK PRIMARY KEY (NOMBRE));
+
+CREATE TABLE a_supermercado (
+    nombre   VARCHAR2(255 BYTE),
+    CONSTRAINT a_supermercado_pk PRIMARY KEY ( nombre )
+);
    
 -- Creaci�n de la tabla SUCURSAL y especificaci�n de sus restricciones
 
-CREATE TABLE A_SUCURSAL
+CREATE TABLE a_sucursal (
+    id                NUMBER,
+    nombre            VARCHAR2(255 BYTE) NOT NULL,
+    ciudad            VARCHAR2(255 BYTE) NOT NULL,
+    direccion         VARCHAR2(255 BYTE) NOT NULL,
+    segmentomercado   VARCHAR2(255 BYTE) NOT NULL,
+    tamano            NUMBER NOT NULL,
+    supermercado      VARCHAR2(255 BYTE) NOT NULL,
+    CONSTRAINT a_sucursal_pk PRIMARY KEY ( id )
+);
 
-   (ID NUMBER,
-	
-	NOMBRE VARCHAR2(255 BYTE) NOT NULL,
-	
-	CIUDAD VARCHAR2(255 BYTE) NOT NULL,
-	
-	DIRECCION VARCHAR2(255 BYTE) NOT NULL,
-	
-	SEGMENTOMERCADO VARCHAR2(255 BYTE) NOT NULL,
-	
-	TAMANO NUMBER NOT NULL,
-	
-	SUPERMERCADO VARCHAR2(255 BYTE) NOT NULL,
-	
-	CONSTRAINT A_SUCURSAL_PK PRIMARY KEY (ID));
+ALTER TABLE a_sucursal
+    ADD CONSTRAINT fk_s_supermercado FOREIGN KEY ( supermercado )
+        REFERENCES a_supermercado ( nombre )
+    ENABLE;
 
-
-
-ALTER TABLE A_SUCURSAL
-
-	ADD CONSTRAINT fk_s_supermercado
-	
-	FOREIGN KEY (supermercado)
-	
-	REFERENCES a_supermercado(nombre)
-
-ENABLE;
-
-
-
-ALTER TABLE A_SUCURSAL
-	
-	ADD CONSTRAINT CK_S_TAMANO
-	
-	CHECK (tamano > 0)
-
-ENABLE;
+ALTER TABLE a_sucursal ADD CONSTRAINT ck_s_tamano CHECK ( tamano > 0 ) ENABLE;
 
 
 
 -- Creaci�n de la tabla producto y especificaci�n de sus restricciones.
 
-CREATE TABLE A_PRODUCTO
-   
-	(ID NUMBER,
-	
-	NOMBRE VARCHAR2(255 BYTE) NOT NULL,
-	
-	MARCA VARCHAR2(255 BYTE) NOT NULL,
-	
-	PRESENTACION VARCHAR2(255 BYTE) NOT NULL,
-	
-	CODIGOBARRAS VARCHAR2 (255 BYTE) NOT NULL,
-	
-	UNIDADMEDIDA VARCHAR2(255 BYTE) NOT NULL,
-	
-	CATEGORIA VARCHAR2(255 BYTE) NOT NULL,
-	
-	TIPO VARCHAR2(255 BYTE) NOT NULL,
-	
-	CONSTRAINT A_PRODUCTO_PK PRIMARY KEY (ID));
-
-
+CREATE TABLE a_producto (
+    id             NUMBER,
+    nombre         VARCHAR2(255 BYTE) NOT NULL,
+    marca          VARCHAR2(255 BYTE) NOT NULL,
+    presentacion   VARCHAR2(255 BYTE) NOT NULL,
+    codigobarras   VARCHAR2(255 BYTE) NOT NULL,
+    unidadmedida   VARCHAR2(255 BYTE) NOT NULL,
+    categoria      VARCHAR2(255 BYTE) NOT NULL,
+    tipo           VARCHAR2(255 BYTE) NOT NULL,
+    CONSTRAINT a_producto_pk PRIMARY KEY ( id )
+);
 
 
 -- Creaci�n de la tabla almacenamiento y especificaci�n de sus restricciones.
 
-CREATE TABLE A_ALMACENAMIENTO
-   
-	(ID NUMBER,
-	
-	CAPACIDADVOLUMEN NUMBER NOT NULL,
-	
-	CAPACIDADPESO NUMBER NOT NULL,
-	
-	PRODUCTO NUMBER NOT NULL,
-	
-	SUCURSAL NUMBER NOT NULL,
-	
-	NIVELABASTECIMIENTOBODEGA NUMBER NOT NULL,
-	
-	EXISTENCIAS NUMBER NOT NULL, 
-	
-	CAPACIDADPRODUCTOS NUMBER NOT NULL, 
-	
-	TIPO VARCHAR2(255 BYTE) NOT NULL, 
-	
-	CONSTRAINT A_ALMACENAMIENTO_PK PRIMARY KEY (ID));
+CREATE TABLE a_almacenamiento (
+    id                          NUMBER,
+    capacidadvolumen            NUMBER NOT NULL,
+    capacidadpeso               NUMBER NOT NULL,
+    producto                    NUMBER NOT NULL,
+    sucursal                    NUMBER NOT NULL,
+    nivelabastecimientobodega   NUMBER NOT NULL,
+    existencias                 NUMBER NOT NULL,
+    capacidadproductos          NUMBER NOT NULL,
+    tipo                        VARCHAR2(255 BYTE) NOT NULL,
+    CONSTRAINT a_almacenamiento_pk PRIMARY KEY ( id )
+);
 
+ALTER TABLE a_almacenamiento
+    ADD CONSTRAINT fk_al_producto FOREIGN KEY ( producto )
+        REFERENCES a_producto ( id )
+    ENABLE;
 
+ALTER TABLE a_almacenamiento
+    ADD CONSTRAINT fk_al_sucursal FOREIGN KEY ( sucursal )
+        REFERENCES a_sucursal ( id )
+    ENABLE;
 
-ALTER TABLE A_ALMACENAMIENTO
-	
-ADD CONSTRAINT fk_al_producto
-	
-	FOREIGN KEY (producto)
-		
-	REFERENCES a_producto(id)
+ALTER TABLE a_almacenamiento ADD CONSTRAINT ck_al_volumen CHECK ( capacidadvolumen > 0 ) ENABLE;
 
-ENABLE;
+ALTER TABLE a_almacenamiento ADD CONSTRAINT ck_al_peso CHECK ( capacidadpeso > 0 ) ENABLE;
 
+ALTER TABLE a_almacenamiento ADD CONSTRAINT ck_al_capprod CHECK ( capacidadproductos > 0 ) ENABLE;
 
+ALTER TABLE a_almacenamiento
+    ADD CONSTRAINT ck_al_abastecimiento CHECK ( nivelabastecimientobodega >-1 ) ENABLE;
 
-ALTER TABLE A_ALMACENAMIENTO
-	
-ADD CONSTRAINT fk_al_sucursal
-	
-	FOREIGN KEY (sucursal)
-	
-	REFERENCES a_sucursal(id)
+ALTER TABLE a_almacenamiento
+    ADD CONSTRAINT ck_al_existencias CHECK ( existencias >-1 ) ENABLE;
 
-ENABLE;
-
-
-
-ALTER TABLE A_ALMACENAMIENTO
-	
-	ADD CONSTRAINT CK_AL_VOLUMEN
-	
-	CHECK (capacidadvolumen > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_ALMACENAMIENTO
-	
-	ADD CONSTRAINT CK_AL_PESO
-	
-	CHECK (capacidadpeso > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_ALMACENAMIENTO
-	
-	ADD CONSTRAINT CK_AL_CAPPROD
-	
-	CHECK (capacidadproductos > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_ALMACENAMIENTO
-	
-	ADD CONSTRAINT CK_AL_ABASTECIMIENTO
-	
-	CHECK (nivelabastecimientobodega > -1)
-
-ENABLE;
-
-
-
-ALTER TABLE A_ALMACENAMIENTO
-	
-	ADD CONSTRAINT CK_AL_EXISTENCIAS
-	
-	CHECK (existencias > -1)
-
-ENABLE;
-
-
-
-ALTER TABLE A_ALMACENAMIENTO
-	
-	ADD CONSTRAINT CK_ALMACENAMIENTO_TIPO
-	
-	CHECK (tipo IN ('Bodega', 'Estante'))
-
-ENABLE;
+ALTER TABLE a_almacenamiento
+    ADD CONSTRAINT ck_almacenamiento_tipo CHECK ( tipo IN (
+        'Bodega',
+        'Estante'
+    ) ) ENABLE;
 
 
 
 -- Creaci�n de la tabla vende y especificaci�n de sus restricciones.
 
-CREATE TABLE A_VENDE
-   
-	(IDSUCURSAL NUMBER,
-	
-	IDPRODUCTO NUMBER NOT NULL,
-	
-	NIVELREORDEN NUMBER NOT NULL,
-	
-	PRECIOUNITARIO NUMBER NOT NULL,
-	
-	PRECIOUNIDADMEDIDA NUMBER NOT NULL,
-	
-	CONSTRAINT A_VENDE_PK PRIMARY KEY (IDSUCURSAL, IDPRODUCTO, NIVELREORDEN, PRECIOUNITARIO, PRECIOUNIDADMEDIDA));
+CREATE TABLE a_vende (
+    idsucursal           NUMBER,
+    idproducto           NUMBER NOT NULL,
+    nivelreorden         NUMBER NOT NULL,
+    preciounitario       NUMBER NOT NULL,
+    preciounidadmedida   NUMBER NOT NULL,
+    CONSTRAINT a_vende_pk PRIMARY KEY ( idsucursal,
+                                        idproducto,
+                                        nivelreorden,
+                                        preciounitario,
+                                        preciounidadmedida )
+);
 
+ALTER TABLE a_vende
+    ADD CONSTRAINT fk_v_sucursal FOREIGN KEY ( idsucursal )
+        REFERENCES a_sucursal ( id )
+    ENABLE;
 
+ALTER TABLE a_vende
+    ADD CONSTRAINT fk_v_producto FOREIGN KEY ( idproducto )
+        REFERENCES a_producto ( id )
+    ENABLE;
 
-ALTER TABLE A_VENDE
+ALTER TABLE a_vende ADD CONSTRAINT ck_v_preciou CHECK ( preciounitario > 0 ) ENABLE;
 
-	ADD CONSTRAINT fk_v_sucursal
-	
-	FOREIGN KEY (idsucursal)
-	
-	REFERENCES a_sucursal(id)
+ALTER TABLE a_vende ADD CONSTRAINT ck_v_preciom CHECK ( preciounidadmedida > 0 ) ENABLE;
 
-ENABLE;
-
-
-
-ALTER TABLE A_VENDE
-
-	ADD CONSTRAINT fk_v_producto
-	
-	FOREIGN KEY (idproducto)
-	
-	REFERENCES a_producto(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_VENDE
-	
-	ADD CONSTRAINT CK_V_PRECIOU
-	
-	CHECK (preciounitario > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_VENDE
-	
-	ADD CONSTRAINT CK_V_PRECIOM
-	
-	CHECK (preciounidadmedida > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_VENDE
-	
-	ADD CONSTRAINT CK_V_NIVEL
-	
-	CHECK (nivelreorden > 0)
-
-ENABLE;
+ALTER TABLE a_vende ADD CONSTRAINT ck_v_nivel CHECK ( nivelreorden > 0 ) ENABLE;
 
 
 
 -- Creaci�n de la tabla proveedor y especificaci�n de sus restricciones.
 
-CREATE TABLE A_PROVEEDOR
-   
-	(NIT NUMBER,
-	
-	NOMBRE VARCHAR2(255 BYTE) NOT NULL,
-	
-	CALIFICACION NUMBER NOT NULL,
-	
-	CONSTRAINT A_PROVEEDOR_PK PRIMARY KEY (NIT));
+CREATE TABLE a_proveedor (
+    nit            NUMBER,
+    nombre         VARCHAR2(255 BYTE) NOT NULL,
+    calificacion   NUMBER NOT NULL,
+    CONSTRAINT a_proveedor_pk PRIMARY KEY ( nit )
+);
 
+ALTER TABLE a_proveedor ADD CONSTRAINT ck_p_calificaciona CHECK ( calificacion > 0 ) ENABLE;
 
-
-ALTER TABLE A_PROVEEDOR
-	
-	ADD CONSTRAINT CK_P_CALIFICACIONA
-	
-	CHECK (calificacion > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_PROVEEDOR
-	
-	ADD CONSTRAINT CK_P_CALIFICACIONB
-	
-	CHECK (calificacion < 11)
-
-ENABLE;
+ALTER TABLE a_proveedor ADD CONSTRAINT ck_p_calificacionb CHECK ( calificacion < 11 ) ENABLE;
 
 
 
 -- Creaci�n de la tabla pedido y especificaci�n de sus restricciones.
 
-CREATE TABLE A_PEDIDO
-   
-	(ID NUMBER,
-	
-	IDSUCURSAL NUMBER NOT NULL,
-	
-	IDPROVEEDOR NUMBER NOT NULL, 
-	
-	FECHAENTREGA DATE NOT NULL,
-	
-	ESTADOORDEN VARCHAR2(255 BYTE) NOT NULL,
-	
-	CALIFICACIONSERVICIO NUMBER,
-	
-	COSTOTOTAL NUMBER NOT NULL,
-	
-	CONSTRAINT A_PEDIDO_PK PRIMARY KEY (ID));
+CREATE TABLE a_pedido (
+    id                     NUMBER,
+    idsucursal             NUMBER NOT NULL,
+    idproveedor            NUMBER NOT NULL,
+    fechaentrega           DATE NOT NULL,
+    estadoorden            VARCHAR2(255 BYTE) NOT NULL,
+    calificacionservicio   NUMBER,
+    costototal             NUMBER NOT NULL,
+    CONSTRAINT a_pedido_pk PRIMARY KEY ( id )
+);
 
+ALTER TABLE a_pedido
+    ADD CONSTRAINT fk_ped_sucursal FOREIGN KEY ( idsucursal )
+        REFERENCES a_sucursal ( id )
+    ENABLE;
 
+ALTER TABLE a_pedido
+    ADD CONSTRAINT fk_ped_proveedor FOREIGN KEY ( idproveedor )
+        REFERENCES a_proveedor ( nit )
+    ENABLE;
 
-ALTER TABLE A_PEDIDO
+ALTER TABLE a_pedido ADD CONSTRAINT ck_ped_calificacion CHECK ( calificacionservicio > 0 ) ENABLE;
 
-	ADD CONSTRAINT fk_ped_sucursal
-	
-	FOREIGN KEY (idsucursal)
-	
-	REFERENCES a_sucursal(id)
+ALTER TABLE a_pedido ADD CONSTRAINT ck_ped_costo CHECK ( costototal > 0 ) ENABLE;
 
-ENABLE;
-
-
-
-ALTER TABLE A_PEDIDO
-
-	ADD CONSTRAINT fk_ped_proveedor
-	
-	FOREIGN KEY (idproveedor)
-	
-	REFERENCES a_proveedor(nit)
-
-ENABLE;
-
-
-
-ALTER TABLE A_PEDIDO
-	
-	ADD CONSTRAINT CK_PED_CALIFICACION
-	
-	CHECK (calificacionservicio > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_PEDIDO
-
-	ADD CONSTRAINT CK_PED_COSTO
-	
-	CHECK (costototal > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_PEDIDO
-
-	ADD CONSTRAINT CK_PED_ESTADO
-	
-	CHECK (estadoorden IN ('pendiente', 'entregado'))
-
-ENABLE;
-
+ALTER TABLE a_pedido
+    ADD CONSTRAINT ck_ped_estado CHECK ( estadoorden IN (
+        'pendiente',
+        'entregado'
+    ) ) ENABLE;
 
 
 -- Creaci�n de la tabla subpedido y especificaci�n de sus restricciones.
 
-CREATE TABLE A_SUBPEDIDO
-   
-	(IDPEDIDO NUMBER NOT NULL,
-	
-	IDPRODUCTO NUMBER NOT NULL,
-	
-	CANTIDAD NUMBER NOT NULL,
-	
-	COSTO NUMBER NOT NULL,
-	
-	CONSTRAINT A_SUBPEDIDO_PK PRIMARY KEY (IDPEDIDO, IDPRODUCTO, CANTIDAD, COSTO));
+CREATE TABLE a_subpedido (
+    idpedido     NUMBER NOT NULL,
+    idproducto   NUMBER NOT NULL,
+    cantidad     NUMBER NOT NULL,
+    costo        NUMBER NOT NULL,
+    CONSTRAINT a_subpedido_pk PRIMARY KEY ( idpedido,
+                                            idproducto,
+                                            cantidad,
+                                            costo )
+);
 
+ALTER TABLE a_subpedido
+    ADD CONSTRAINT fk_sub_producto FOREIGN KEY ( idproducto )
+        REFERENCES a_producto ( id )
+    ENABLE;
 
+ALTER TABLE a_subpedido
+    ADD CONSTRAINT fk_sub_pedido FOREIGN KEY ( idpedido )
+        REFERENCES a_pedido ( id )
+    ENABLE;
 
-ALTER TABLE A_SUBPEDIDO
+ALTER TABLE a_subpedido ADD CONSTRAINT ck_sub_costo CHECK ( costo > 0 ) ENABLE;
 
-	ADD CONSTRAINT fk_sub_producto
-	
-	FOREIGN KEY (idproducto)
-	
-	REFERENCES a_producto(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_SUBPEDIDO
-
-	ADD CONSTRAINT fk_sub_pedido
-	
-	FOREIGN KEY (idpedido)
-	
-	REFERENCES a_pedido(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_SUBPEDIDO
-	
-	ADD CONSTRAINT CK_SUB_COSTO
-	
-	CHECK (costo > 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_SUBPEDIDO
-	
-	ADD CONSTRAINT CK_SUB_CANTIDAD
-	
-	CHECK (cantidad > 0)
-
-ENABLE;
-
+ALTER TABLE a_subpedido ADD CONSTRAINT ck_sub_cantidad CHECK ( cantidad > 0 ) ENABLE;
 
 
 -- Creaci�n de la tabla ofrecen y especificaci�n de sus restricciones.
 
-CREATE TABLE A_OFRECEN
-   
-	(IDPRODUCTO NUMBER,
-	
-	IDPROVEEDOR NUMBER NOT NULL,
-	
-	COSTO NUMBER NOT NULL,
-	
-	CONSTRAINT A_OFRECE_PK PRIMARY KEY (IDPRODUCTO, IDPROVEEDOR, COSTO));
- 
+CREATE TABLE a_ofrecen (
+    idproducto    NUMBER,
+    idproveedor   NUMBER NOT NULL,
+    costo         NUMBER NOT NULL,
+    CONSTRAINT a_ofrece_pk PRIMARY KEY ( idproducto,
+                                         idproveedor,
+                                         costo )
+);
 
+ALTER TABLE a_ofrecen
+    ADD CONSTRAINT fk_o_producto FOREIGN KEY ( idproducto )
+        REFERENCES a_producto ( id )
+    ENABLE;
 
-ALTER TABLE A_OFRECEN
+ALTER TABLE a_ofrecen
+    ADD CONSTRAINT fk_o_proveedor FOREIGN KEY ( idproveedor )
+        REFERENCES a_sucursal ( id )
+    ENABLE;
 
-ADD CONSTRAINT fk_o_producto
-	
-	FOREIGN KEY (idproducto)
-	
-	REFERENCES a_producto(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_OFRECEN
-
-	ADD CONSTRAINT fk_o_proveedor
-	
-	FOREIGN KEY (idproveedor)
-	
-	REFERENCES a_sucursal(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_OFRECEN
-	
-	ADD CONSTRAINT CK_O_COSTO
-	
-	CHECK (costo> 0)
-
-ENABLE;
-
-
-
+ALTER TABLE a_ofrecen ADD CONSTRAINT ck_o_costo CHECK ( costo > 0 ) ENABLE;
 
 
 -- Creaci�n de la tabla cliente y especificaci�n de sus restricciones.
 
-CREATE TABLE A_CLIENTE
-   
-	(ID VARCHAR2(255 BYTE),
-	
-	
-	NOMBRE VARCHAR2(255 BYTE) NOT NULL,
-	
+CREATE TABLE a_cliente (
+    id          VARCHAR2(255 BYTE),
+    nombre      VARCHAR2(255 BYTE) NOT NULL,
+    correo      VARCHAR2(255 BYTE) NOT NULL,
+    direccion   VARCHAR2(255 BYTE),
+    tipo        VARCHAR2(255 BYTE) NOT NULL,
+    CONSTRAINT a_cliente_pk PRIMARY KEY ( id )
+);
 
-	CORREO VARCHAR2(255 BYTE) NOT NULL,
-	
-	DIRECCION VARCHAR2(255 BYTE),
-	
-	TIPO VARCHAR2(255 BYTE) NOT NULL,
-	
-	CONSTRAINT A_CLIENTE_PK PRIMARY KEY (ID));
-
-
-
-ALTER TABLE A_CLIENTE
-	
-	ADD CONSTRAINT CK_CLIENTE_TIPO
-	
-	CHECK (tipo IN ('persona', 'empresa'))
-
-ENABLE;
-
+ALTER TABLE a_cliente
+    ADD CONSTRAINT ck_cliente_tipo CHECK ( tipo IN (
+        'persona',
+        'empresa'
+    ) ) ENABLE;
 
 
 -- Creaci�n de la tabla factura y especificaci�n de sus restricciones.
 
-CREATE TABLE A_FACTURA
-   
-	(NUMERO NUMBER,
-	
-	FECHA DATE NOT NULL,
-	
-	IDCLIENTE VARCHAR2(255 BYTE) NOT NULL,
-	
-	SUCURSAL NUMBER NOT NULL, 
-	
-	CONSTRAINT A_FACTURA_PK PRIMARY KEY (NUMERO));
+CREATE TABLE a_factura (
+    numero      NUMBER,
+    fecha       DATE NOT NULL,
+    idcliente   VARCHAR2(255 BYTE) NOT NULL,
+    sucursal    NUMBER NOT NULL,
+    CONSTRAINT a_factura_pk PRIMARY KEY ( numero )
+);
 
+ALTER TABLE a_factura
+    ADD CONSTRAINT fk_factura_cliente FOREIGN KEY ( idcliente )
+        REFERENCES a_cliente ( id )
+    ENABLE;
 
-
-ALTER TABLE A_FACTURA
-
-	ADD CONSTRAINT fk_factura_cliente
-	
-	FOREIGN KEY (idcliente)
-	
-	REFERENCES a_cliente(id)
-
-ENABLE;
-
-
-
-
-ALTER TABLE A_FACTURA
-
-	ADD CONSTRAINT fk_factura_sucursal
-	
-	FOREIGN KEY (sucursal)
-	
-	REFERENCES a_sucursal(id)
-
-ENABLE;
-
+ALTER TABLE a_factura
+    ADD CONSTRAINT fk_factura_sucursal FOREIGN KEY ( sucursal )
+        REFERENCES a_sucursal ( id )
+    ENABLE;
 
 
 -- Creaci�n de la tabla carrito y especificaci�n de sus restricciones.
 
-CREATE TABLE A_CARRITO
-   
-	(ID NUMBER,
-	
-	ESTADO VARCHAR2(255 BYTE) NOT NULL,
-	
-	CONSTRAINT A_CARRITO_PK PRIMARY KEY (ID));
+CREATE TABLE a_carrito (
+    id       NUMBER,
+    estado   VARCHAR2(255 BYTE) NOT NULL,
+    clave    NUMBER NOT NULL,
+    CONSTRAINT a_carrito_pk PRIMARY KEY ( id )
+);
 
+ALTER TABLE a_carrito
+    ADD CONSTRAINT ck_carrito_estado CHECK ( estado IN (
+        'en uso',
+        'abandonado',
+        'pagado',
+        'libre'
+    ) ) ENABLE;
 
-
-ALTER TABLE A_CARRITO
-	
-	ADD CONSTRAINT CK_CARRITO_ESTADO
-	
-	CHECK (estado IN ('en uso', 'abandonado', 'pagado', 'libre'))
-
-ENABLE;
-
+ALTER TABLE a_carrito
+    ADD CONSTRAINT ck_car_clave CHECK ( clave >-1 ) ENABLE;
 
 
 -- Creaci�n de la tabla ofrecen y especificaci�n de sus restricciones.
 
-CREATE TABLE A_CONTIENE
-   
-	(PRODUCTO NUMBER,
-	
-	CARRITO NUMBER NOT NULL,
-	
-	CANTIDAD NUMBER NOT NULL,
-	
-	CONSTRAINT A_CONTIENE_PK PRIMARY KEY (PRODUCTO, CARRITO, CANTIDAD));
- 
+CREATE TABLE a_contiene (
+    producto   NUMBER,
+    carrito    NUMBER NOT NULL,
+    cantidad   NUMBER NOT NULL,
+    CONSTRAINT a_contiene_pk PRIMARY KEY ( producto,
+                                           carrito,
+                                           cantidad )
+);
 
+ALTER TABLE a_contiene
+    ADD CONSTRAINT fk_contiene_producto FOREIGN KEY ( producto )
+        REFERENCES a_producto ( id )
+    ENABLE;
 
-ALTER TABLE A_CONTIENE
+ALTER TABLE a_contiene
+    ADD CONSTRAINT fk_c_carrito FOREIGN KEY ( carrito )
+        REFERENCES a_carrito ( id )
+    ENABLE;
 
-	ADD CONSTRAINT fk_c_producto
-	
-	FOREIGN KEY (producto)
-	
-	REFERENCES a_producto(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_CONTIENE
-
-	ADD CONSTRAINT fk_c_carrito
-	
-	FOREIGN KEY (carrito)
-	
-	REFERENCES a_carrito(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_CONTIENE
-	
-	ADD CONSTRAINT CK_C_CANTIDAD
-	
-	CHECK (cantidad > 0)
-
-ENABLE;
-
-
-
-
+ALTER TABLE a_contiene ADD CONSTRAINT ck_contiene_cantidad CHECK ( cantidad > 0 ) ENABLE;
 
 -- Creaci�n de la tabla promoci�n y especificaci�n de sus restricciones.
 
-CREATE TABLE A_PROMOCION
-   
-	(ID NUMBER,
-	
-	IDPRODUCTO NUMBER NOT NULL, 
-	
-	PRECIO NUMBER NOT NULL,
-	
-	DESCRIPCION VARCHAR2(255 BYTE) NOT NULL,
-	
-	FECHAINICIO DATE NOT NULL,
-	
-	FECHAFIN DATE NOT NULL,
-	
-	TIPO VARCHAR2(255 BYTE) NOT NULL,
-	
-	UNIDADESDISPONIBLES NUMBER NOT NULL,
-	
-	CONSTRAINT A_PROMOCION_PK PRIMARY KEY (ID));
+CREATE TABLE a_promocion (
+    id                    NUMBER,
+    idproducto            NUMBER NOT NULL,
+    precio                NUMBER NOT NULL,
+    descripcion           VARCHAR2(255 BYTE) NOT NULL,
+    fechainicio           DATE NOT NULL,
+    fechafin              DATE NOT NULL,
+    tipo                  VARCHAR2(255 BYTE) NOT NULL,
+    unidadesdisponibles   NUMBER NOT NULL,
+    CONSTRAINT a_promocion_pk PRIMARY KEY ( id )
+);
 
+ALTER TABLE a_promocion ADD CONSTRAINT ck_prom_precio CHECK ( precio > 0 ) ENABLE;
 
+ALTER TABLE a_promocion
+    ADD CONSTRAINT fk_prom_producto FOREIGN KEY ( idproducto )
+        REFERENCES a_producto ( id )
+    ENABLE;
 
-ALTER TABLE A_PROMOCION
-	
-	ADD CONSTRAINT CK_PROM_PRECIO
-	
-	CHECK (precio> 0);
+ALTER TABLE a_promocion
+    ADD CONSTRAINT ck_prom_unidades CHECK ( tipo IN (
+        '2x1',
+        'porcentaje',
+        'cantidad',
+        'segundo porcentaje',
+        'paquete'
+    ) ) ENABLE;
 
-ENABLE;
-
-
-
-ALTER TABLE A_PROMOCION
-
-	ADD CONSTRAINT fk_prom_producto
-    
-	FOREIGN KEY (idproducto)
-    
-	REFERENCES a_producto(id)
-
-ENABLE;
-
-
-
-ALTER TABLE A_PROMOCION
-	
-	ADD CONSTRAINT CK_PROM_UNIDADES
-	
-	CHECK (tipo IN ('2x1', 'porcentaje', 'cantidad','segundo porcentaje', 'paquete'))
-
-ENABLE;
-
-
-
-ALTER TABLE A_PROMOCION
-	
-	ADD CONSTRAINT CK_TIPO_PROM
-	
-	CHECK (unidadesdisponibles> -1)
-
-ENABLE;
-
+ALTER TABLE a_promocion
+    ADD CONSTRAINT ck_tipo_prom CHECK ( unidadesdisponibles >-1 ) ENABLE;
 
 
 -- Creaci�n de la tabla transaccion y especificaci�n de sus restricciones.
 
-CREATE TABLE A_TRANSACCION
-   
-	(IDPRODUCTO NUMBER NOT NULL,
-	
-	CANTIDAD NUMBER NOT NULL,
-	
-	NUMEROFACTURA NUMBER NOT NULL,
-	
-	COSTO NUMBER NOT NULL,
-	
-	PROMOCION NUMBER,
-	
-	ESTADO VARCHAR2(255 BYTE) NOT NULL,
-	
-	CONSTRAINT A_TRANSACCION_PK PRIMARY KEY (IDPRODUCTO, CANTIDAD, NUMEROFACTURA));
+CREATE TABLE a_transaccion (
+    idproducto      NUMBER NOT NULL,
+    cantidad        NUMBER NOT NULL,
+    numerofactura   NUMBER NOT NULL,
+    costo           NUMBER NOT NULL,
+    promocion       NUMBER,
+    estado          VARCHAR2(255 BYTE) NOT NULL,
+    CONSTRAINT a_transaccion_pk PRIMARY KEY ( idproducto,
+                                              cantidad,
+                                              numerofactura )
+);
 
+ALTER TABLE a_transaccion
+    ADD CONSTRAINT fk_t_producto FOREIGN KEY ( idproducto )
+        REFERENCES a_producto ( id )
+    ENABLE;
 
+ALTER TABLE a_transaccion
+    ADD CONSTRAINT fk_tr_numfactura FOREIGN KEY ( numerofactura )
+        REFERENCES a_factura ( numero )
+    ENABLE;
 
-ALTER TABLE A_TRANSACCION
+ALTER TABLE a_transaccion ADD CONSTRAINT ck_tr_cantidad CHECK ( cantidad > 0 ) ENABLE;
 
-	ADD CONSTRAINT fk_t_producto
-	
-	FOREIGN KEY (idproducto)
-	
-	REFERENCES a_producto(id)
+ALTER TABLE a_transaccion ADD CONSTRAINT ck_tr_costo CHECK ( costo > 0 ) ENABLE;
 
-ENABLE;
+ALTER TABLE a_transaccion
+    ADD CONSTRAINT fk_tr_factura FOREIGN KEY ( promocion )
+        REFERENCES a_promocion ( id )
+    ENABLE;
 
-
-
-ALTER TABLE A_TRANSACCION
-
-	ADD CONSTRAINT fk_tr_numfactura
-	
-	FOREIGN KEY (numerofactura)
-	
-	REFERENCES a_factura(numero)
-
-ENABLE;
-
-
-
-ALTER TABLE A_TRANSACCION
-	
-	ADD CONSTRAINT CK_TR_CANTIDAD
-	
-	CHECK (cantidad> 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_TRANSACCION
-	
-	ADD CONSTRAINT CK_TR_COSTO
-	
-	CHECK (costo> 0)
-
-ENABLE;
-
-
-
-ALTER TABLE A_TRANSACCION
-
-	ADD CONSTRAINT fk_tr_factura
-	
-	FOREIGN KEY (promocion)
-	
-	REFERENCES a_promocion(id)
-
-ENABLE;
-
-ALTER TABLE A_TRANSACCION
-	
-	ADD CONSTRAINT CK_TRANSACCION_ESTADO
-	
-	CHECK (estado IN ('pendiente', 'pagada'))
-
-ENABLE;
-
-
+ALTER TABLE a_transaccion
+    ADD CONSTRAINT ck_transaccion_estado CHECK ( estado IN (
+        'pendiente',
+        'pagada'
+    ) ) ENABLE;
 
 COMMIT;

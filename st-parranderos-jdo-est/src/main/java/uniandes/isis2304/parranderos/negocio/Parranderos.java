@@ -1438,19 +1438,34 @@ public class Parranderos
 	 * 			null, si una sucursal con dicho id no existe
 	 * @throws Exception 
 	 */
-	public Carrito asignarCarrito() throws Exception
+	public Carrito asignarCarrito(long clave) throws Exception
 	{
+		try {
+			
+		if(carrito>20) {
+			carrito = 1;
+		}
 		if(carrito<21)
 		{
         log.info ("Asignación de un carrito con id: " + carrito);
-        Carrito asignado = pp.asignarCarrito(carrito);
+        log.info ("Asignación de clave: " + clave);
+        Carrito asignado = pp.asignarCarrito(carrito, clave);
         carrito++;
         log.info ("Buscando carrito por id: " + asignado!= null ? asignado: "NO EXISTE");
         return asignado;
 		}
-		
-		else {
+        else {
 			throw new Exception("Ya no hay carritos disponibles");
 		}
+		
+		}
+		catch(Exception e)
+		{
+			carrito++;
+			Carrito car2 = asignarCarrito(clave);
+			return car2;
+		}
+		
+		
 	}
 }

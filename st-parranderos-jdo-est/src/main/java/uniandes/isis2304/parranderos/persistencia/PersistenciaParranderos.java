@@ -2245,9 +2245,10 @@ public class PersistenciaParranderos
 		return sqlCarrito.darCarritoPorId(pmf.getPersistenceManager(), idCarrito);
 	}
 	
-	public Carrito asignarCarrito(long id)
+	
+	
+	public Carrito asignarCarrito(long id, long clave) throws Exception
 	{
-
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
@@ -2256,7 +2257,7 @@ public class PersistenciaParranderos
 			Carrito car= sqlCarrito.darCarritoPorId(pm, id);
 			tx.commit();
 			
-			if(car.getEstado() == "en uso")
+			if(car.getEstado().equalsIgnoreCase("en uso"))
 			{
 				throw new Exception ("El carrito está en uso");
 			}
@@ -2265,17 +2266,25 @@ public class PersistenciaParranderos
 
 			tx.begin();
 			long tuplas = sqlCarrito.cambiarEstadoCarrito(pm, id, "en uso");
+			long tuplas2 = sqlCarrito.cambiarClaveCarrito(pm, id, clave);
 			tx.commit();
 
+			tx.begin();
+			Carrito car2= sqlCarrito.darCarritoPorId(pm, id);
+			tx.commit();
 			
 			log.trace ("Se asignó el carrito. " + tuplas + " tuplas insertadas");
-			return car;
+			log.trace ("Se cambió la clave del carrito. " + tuplas2 + " tuplas insertadas");
+
+			return car2;
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+//			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return null;
+//			return null;
+			throw new Exception (e.getMessage());
+			
 		}
 		finally
 		{

@@ -1,4 +1,4 @@
---- Sentencias SQL para la creacion del esquema de superandes
+﻿--- Sentencias SQL para la creacion del esquema de superandes
 --- Las tablas tienen prefijo A_ para facilitar su acceso desde SQL Developer
 
 -- USO
@@ -18,6 +18,7 @@ DROP TABLE "A_CLIENTE" CASCADE CONSTRAINTS;
 DROP TABLE "A_OFRECEN" CASCADE CONSTRAINTS;
 DROP TABLE "A_FACTURA" CASCADE CONSTRAINTS;
 DROP TABLE "A_CARRITO" CASCADE CONSTRAINTS;
+DROP TABLE "A_CONTIENE" CASCADE CONSTRAINTS;
 DROP TABLE "A_PROMOCION" CASCADE CONSTRAINTS;
 DROP TABLE "A_TRANSACCION" CASCADE CONSTRAINTS;
 
@@ -28,6 +29,7 @@ COMMIT;
 
 delete from a_transaccion;
 delete from a_promocion;
+delete from a_contiene;
 delete from a_carrito;
 delete from a_factura;
 delete from a_ofrecen;
@@ -42,6 +44,3 @@ delete from a_sucursal;
 delete from a_supermercado;
 
 commit;
-
-
-

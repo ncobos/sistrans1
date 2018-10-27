@@ -25,6 +25,11 @@ public class Carrito implements VOCarrito{
 	 */
 	private String estado;
 	
+	/**
+	 * Clave del carrito
+	 */
+	private long clave;
+	
 	/* ****************************************************************
 	 * 			M�todos
 	 *****************************************************************/
@@ -35,6 +40,7 @@ public class Carrito implements VOCarrito{
 	{
 		this.id = 0;
 		this.estado = "";
+		this.clave = 0;
 	}
 
 	/**
@@ -43,10 +49,11 @@ public class Carrito implements VOCarrito{
 	 * @param pCliente - El identificador del idCliente. Debe existir un cliente con dicho identificador. 
 	 * @param pEstado - El estado del carrito (en uso, abandonado, 
 	 */
-	public Carrito(long pNumero, String pEstado) 
+	public Carrito(long pNumero, String pEstado, long pClave) 
 	{
 		this.id = pNumero;
 		this.estado = pEstado;
+		this.clave = pClave;
 	}
 
 	/**
@@ -79,9 +86,29 @@ public class Carrito implements VOCarrito{
 	}
 
 	
+	
+	
+
+	/**
+	 * @return the clave
+	 */
+	public long getClave() {
+		return clave;
+	}
+
+	/**
+	 * @param clave the clave to set
+	 */
+	public void setClave(long clave) {
+		this.clave = clave;
+	}
+
+	/** 
+	 * @return Una cadena con la información básica del carrito
+	 */
 	@Override
 	public String toString() {
-		return "Carrito [id=" + id + ",  estado=" + estado + "]";
+		return "Carrito [id=" + id + ", estado=" + estado + ", clave=" + clave + "]";
 	}
 
 }

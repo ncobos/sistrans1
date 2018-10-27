@@ -98,7 +98,7 @@ class SQLContiene
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos CONTIENE
 	 */
-	public List<Contiene> darContienees (PersistenceManager pm)
+	public List<Contiene> darContienes (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaContiene ());
 		q.setResultClass(Contiene.class);

@@ -926,7 +926,9 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		String resp = "El identificador del carrito asignado es: ";
 		try 
 		{
-			Carrito car = parranderos.asignarCarrito();
+			String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña para su carrito de mercado:", "Asignar carrito", JOptionPane.QUESTION_MESSAGE);
+			long clave = Long.parseLong(pass);
+			Carrito car = parranderos.asignarCarrito(clave);
 			System.out.println(car);
 			long id = car.getId();
 			resp+=id;

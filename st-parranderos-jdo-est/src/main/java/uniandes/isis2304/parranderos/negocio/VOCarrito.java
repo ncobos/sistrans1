@@ -24,6 +24,11 @@ public interface VOCarrito {
 	 */
 	public String getEstado();
 	
+	/**
+	 * @return La clave del carrito
+	 */
+	public long getClave();
+	
 	/** 
 	 * @return Una cadena con la información básica del carrito
 	 */
