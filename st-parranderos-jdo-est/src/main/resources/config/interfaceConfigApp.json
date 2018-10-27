@@ -27,6 +27,10 @@
 				{
 					"label": "Recibir un pedido",
 					"event": "recibirPedido"
+				},
+				{
+					"label": "Solicitar un carrito de compras",
+					"event": "solicitarCarrito"
 				}
 			]
 		},

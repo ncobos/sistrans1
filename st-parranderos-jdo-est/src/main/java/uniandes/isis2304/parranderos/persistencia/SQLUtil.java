@@ -77,9 +77,8 @@ class SQLUtil
 	 */
 	public long [] limpiarParranderos (PersistenceManager pm)
 	{
-        Query qBodega = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBodega());          
+        Query qAlmacenamiento = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaAlmacenamiento());          
         Query qCliente = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente());
-        Query qEstante = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaEstante ());
         Query qFactura = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaFactura ());
         Query qOfrecen = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaOfrecen ());
         Query qPedido = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPedido ());
@@ -93,9 +92,8 @@ class SQLUtil
         Query qVende = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaVende ());
 
 
-        long bodegaEliminados = (long) qBodega.executeUnique ();
+        long almacenamientoEliminados = (long) qAlmacenamiento.executeUnique ();
         long clienteEliminados = (long) qCliente.executeUnique ();
-        long estanteEliminadas = (long) qEstante.executeUnique ();
         long facturaEliminadas = (long) qFactura.executeUnique ();
         long ofrecenEliminados = (long) qOfrecen.executeUnique ();
         long pedidoEliminados = (long) qPedido.executeUnique ();
@@ -108,7 +106,7 @@ class SQLUtil
         long transaccionEliminados = (long) qTransaccion.executeUnique ();
         long vendeEliminados = (long) qVende.executeUnique ();
 
-        return new long[] {bodegaEliminados, clienteEliminados, estanteEliminadas, facturaEliminadas, ofrecenEliminados, pedidoEliminados, productoEliminados, promocionEliminados, proveedorEliminados, subpedidoEliminados, sucursalEliminados, supermercadoEliminados, transaccionEliminados, vendeEliminados};
+        return new long[] {almacenamientoEliminados, clienteEliminados, facturaEliminadas, ofrecenEliminados, pedidoEliminados, productoEliminados, promocionEliminados, proveedorEliminados, subpedidoEliminados, sucursalEliminados, supermercadoEliminados, transaccionEliminados, vendeEliminados};
 	}
 
 }

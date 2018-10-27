@@ -76,6 +76,8 @@ public class Parranderos
 	}
 	
 	
+	long carrito = 1;
+	
 	
 
 	/* ****************************************************************
@@ -375,221 +377,201 @@ public class Parranderos
         return voProductos;
 	}
 	
-	/* ****************************************************************
-	 * 			Métodos para manejar las BODEGAS
-	 *****************************************************************/
-	
-	/**
-	 * Adiciona de manera persistente una bodega
-	 * Adiciona entradas al log de la aplicación
-	 * @param idBodega - El identificador de la bodega
-	 * @param capacidadVolumen - La capacidad en volumen de la bodega (en metros cúbicos)
-     * @param capacidadPeso - La capacidad en peso de la bodega (en metros cuadrados)
-	 * @param producto - El producto que está almacenado en la bodega
-	 * @param sucursal - La sucursal a la que pertence la bodega
-	 * @param existencias - Las unidades disponibles en la bodega
-	 * @return El objeto Bodega adicionado. null si ocurre alguna Excepción
-	 */
-	public Bodega adicionarBodega(long idBodega, double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int existencias)
-	{
-        log.info ("Adicionando Bodega: " + idBodega);
-        Bodega bodega = pp.adicionarBodega(capacidadVolumen, capacidadPeso, producto, sucursal, existencias);
-        log.info ("Adicionando Bodega: " + bodega);
-        return bodega;
-	}
-	
-	/**
-	 * Elimina una bodega por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @param idBodega - El id de la bodega eliminar
-	 * @return El número de tuplas eliminadas
-	 */
-	public long eliminarBodegaPorId (long idBodega)
-	{
-		log.info ("Eliminando Bodega por id: " + idBodega);
-        long resp = pp.eliminarBodegaPorId(idBodega);	
-        log.info ("Eliminando Bodega por id: " + resp + " tuplas eliminadas");
-        return resp;
-	}
-	
-	/**
-	 * Encuentra una bodega y su información básica, según su identificador
-	 * @param idBodega - El identificador de la bodega buscada
-	 * @return Un objeto Bodega que corresponde con el id buscado y lleno con su información básica
-	 * 			null, si una bodega con dicho id no existe
-	 */
-	public Bodega darBodegaPorId(long idBodega)
-	{
-        log.info ("Dar información de una bodega por id: " + idBodega);
-        Bodega bodega = pp.darBodegaPorId(idBodega);
-        log.info ("Buscando bodega por id: " + bodega != null ? bodega : "NO EXISTE");
-        return bodega;
-	}
-	
-	/**
-	 * Encuentra la información básica de las bodegas, según su sucursal
-	 * @param sucursal - La sucursal a la que pertenece la bodega
-	 * @return Una lista de Bodegas con su información básica, donde todos tienen la sucursal buscada.
-	 * 	La lista vacía indica que no existen bodegas con esa sucursal.
-	 */
-	public List<Bodega> darBodegasPorSucursal(long sucursal)
-	{
-        log.info ("Dar información de bodegas por sucursal: " + sucursal);
-        List<Bodega> bodegas = pp.darBodegasPorSucursal(sucursal);
-        log.info ("Dar información de Bodegas por sucursal: " + bodegas.size() + " bodegas con esa sucursal existentes");
-        return bodegas;
- 	}
-	
-	/**
-	 * Encuentra todos las bodegas en SuperAndes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Bodega con todos los productos que conoce la aplicación, llenos con su información básica
-	 */
-	public List<Bodega> darBodegas()
-	{
-		log.info ("Consultando Bodegas");
-        List<Bodega> bodegas = pp.darBodegas();	
-        log.info ("Consultando Bodegas: " + bodegas.size() + " existentes");
-        return bodegas;
-	}
-	
-	/**
-	 * Encuentra todos las bodegas en SuperAndes y los devuelve como una lista de VOBodega
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOBodega con todas las bodegas que conoce la aplicación, llenos con su información básica
-	 */
-	public List<VOBodega> darVOBodega()
-	{
-		log.info ("Generando los VO de bodegas");        
-        List<VOBodega> voBodegas = new LinkedList<VOBodega> ();
-        for (Bodega bodega : pp.darBodegas())
-        {
-        	voBodegas.add (bodega);
-        }
-        log.info ("Generando los VO de Bodegas: " + voBodegas.size() + " existentes");
-        return voBodegas;
-	}
-	
-	/**
-	 * Aumenta las existencias en 10 unidades de una bodega con id dado
-	 * @return Las tuplas modificadas con el aumento de existencias
-	 */
-	public long aumentarExistenciasBodegaEnDiez(long idBodega)
-	{
-		log.info("Aumentando eixstencias de la bodega en diez");
-		long aumento = pp.aumentarExistenciasBodegaEnDiez(idBodega);
-		log.info("Bodega con id: " + idBodega + "aumentada en 10 sus existencias");
-		return aumento;
-	}
-	
-	/* ****************************************************************
-	 * 			Métodos para manejar los ESTANTES
-	 *****************************************************************/
-	
-	/**
-	 * Adiciona de manera persistente un estante
-	 * Adiciona entradas al log de la aplicación
-	 * @param idEstante - El identificador del estante
-	 * @param capacidadVolumen - La capacidad en volumen del estante(metros cúbicos)
-	 * @param capacidadPeso - La capacidad en peso del estante (en kg)
-	 * @param producto - Identificador del producto que almacena el estante
-	 * @param sucursal - La sucursal a la que pertenece el estante
-	 * @nivelabastecimientobodega - Cantidad de unidades mínimas que debe tener en la bidega por producto
-	 * @param existencias - Las existencias disponibles en la bodega
-	 * @return El objeto Estante adicionado. null si ocurre alguna Excepción
-	 */
-	public 	Estante adicionarEstante(long idEstante, double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int nivelabastecimientobodega, int existencias)
-	{
-        log.info ("Adicionando Bodega: " + idEstante);
-        Estante estante = pp.adicionarEstante(capacidadVolumen, capacidadPeso, producto, sucursal, nivelabastecimientobodega, existencias);
-        log.info ("Adicionando Bodega: " + estante);
-        return estante;
-	}
-	
-	/**
-	 * Elimina un estante por su identificador
-	 * Adiciona entradas al log de la aplicación
-	 * @param idBodega - El id del estante a eliminar
-	 * @return El número de tuplas eliminadas
-	 */
-	public long eliminarEstantePorId (long idEstante)
-	{
-		log.info ("Eliminando Estante por id: " + idEstante);
-        long resp = pp.eliminarEstantePorId(idEstante);
-        log.info ("Eliminando Estante por id: " + resp + " tuplas eliminadas");
-        return resp;
-	}
-	
-	/**
-	 * Encuentra un estante y su información básica, según su identificador
-	 * @param idEstante - El identificador del estante buscado
-	 * @return Un objeto Estante que corresponde con el id buscado y lleno con su información básica
-	 * 			null, si un estante con dicho id no existe
-	 */
-	public Estante darEstantePorId(long idEstante)
-	{
-        log.info ("Dar información de un estante por id: " + idEstante);
-        Estante estante = pp.darEstantePorId(idEstante);
-        log.info ("Buscando estante por id: " + estante != null ? estante : "NO EXISTE");
-        return estante;
-	}
-	
-	/**
-	 * Encuentra la información básica de los estantes, según su sucursal
-	 * @param sucursal - La sucursal a la que pertenece el estante
-	 * @return Una lista de Estantess con su información básica, donde todos tienen la sucursal buscada.
-	 * 	La lista vacía indica que no existen estantes con esa sucursal.
-	 */
-	public List<Estante> darEstantesPorSucursal(long sucursal)
-	{
-        log.info ("Dar información de estantes por sucursal: " + sucursal);
-        List<Estante> estantes = pp.darEstantesPorSucursal(sucursal);
-        log.info ("Dar información de Estantes por sucursal: " + estantes.size() + " estantes con esa sucursal existentes");
-        return estantes;
- 	}
-	
-	/**
-	 * Encuentra todos los estantes en SuperAndes
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos Estante con todos los productos que conoce la aplicación, llenos con su información básica
-	 */
-	public List<Estante> darEstantes()
-	{
-		log.info ("Consultando Estantes");
-        List<Estante> estantes = pp.darEstantes();	
-        log.info ("Consultando Estantes: " + estantes.size() + " existentes");
-        return estantes;
-	}
-	
-	/**
-	 * Encuentra todos los estantes en SuperAndes y los devuelve como una lista de VOEstante
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de objetos VOEstante con todas los estantes que conoce la aplicación, llenos con su información básica
-	 */
-	public List<VOEstante> darVOEsatnte()
-	{
-		log.info ("Generando los VO de estantes");        
-        List<VOEstante> voEstantes = new LinkedList<VOEstante>();
-        for (Estante estante : pp.darEstantes())
-        {
-        	voEstantes.add (estante);
-        }
-        log.info ("Generando los VO de Estantes: " + voEstantes.size() + " existentes");
-        return voEstantes;
-	}
-	
-	/**
-	 * Aumenta las existencias en 10 unidades de un estante con id dado
-	 * @return Las tuplas modificadas con el aumento de existencias
-	 */
-	public long aumentarExistenciasEstanteEnDiez(long idEstante)
-	{
-		log.info("Aumentando eixstencias de la bodega en diez");
-		long aumento = pp.aumentarExistenciasEstanteEnDiez(idEstante);
-		log.info("Estante con id: " + idEstante + "aumentada en 10 sus existencias");
-		return aumento;
-	}
-	
+//	/* ****************************************************************
+//	 * 			Métodos para manejar las BODEGAS
+//	 *****************************************************************/
+//	
+//	/**
+//	 * Adiciona de manera persistente una bodega
+//	 * Adiciona entradas al log de la aplicación
+//	 * @param idBodega - El identificador de la bodega
+//	 * @param capacidadVolumen - La capacidad en volumen de la bodega (en metros cúbicos)
+//     * @param capacidadPeso - La capacidad en peso de la bodega (en metros cuadrados)
+//	 * @param producto - El producto que está almacenado en la bodega
+//	 * @param sucursal - La sucursal a la que pertence la bodega
+//	 * @param existencias - Las unidades disponibles en la bodega
+//	 * @return El objeto Bodega adicionado. null si ocurre alguna Excepción
+//	 */
+//	public Bodega adicionarBodega(long idBodega, double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int existencias)
+//	{
+//        log.info ("Adicionando Bodega: " + idBodega);
+//        Bodega bodega = pp.adicionarBodega(capacidadVolumen, capacidadPeso, producto, sucursal, existencias);
+//        log.info ("Adicionando Bodega: " + bodega);
+//        return bodega;
+//	}
+//	
+//	/**
+//	 * Elimina una bodega por su identificador
+//	 * Adiciona entradas al log de la aplicación
+//	 * @param idBodega - El id de la bodega eliminar
+//	 * @return El número de tuplas eliminadas
+//	 */
+//	public long eliminarBodegaPorId (long idBodega)
+//	{
+//		log.info ("Eliminando Bodega por id: " + idBodega);
+//        long resp = pp.eliminarBodegaPorId(idBodega);	
+//        log.info ("Eliminando Bodega por id: " + resp + " tuplas eliminadas");
+//        return resp;
+//	}
+//	
+//	/**
+//	 * Encuentra una bodega y su información básica, según su identificador
+//	 * @param idBodega - El identificador de la bodega buscada
+//	 * @return Un objeto Bodega que corresponde con el id buscado y lleno con su información básica
+//	 * 			null, si una bodega con dicho id no existe
+//	 */
+//	public Bodega darBodegaPorId(long idBodega)
+//	{
+//        log.info ("Dar información de una bodega por id: " + idBodega);
+//        Bodega bodega = pp.darBodegaPorId(idBodega);
+//        log.info ("Buscando bodega por id: " + bodega != null ? bodega : "NO EXISTE");
+//        return bodega;
+//	}
+//	
+//	/**
+//	 * Encuentra la información básica de las bodegas, según su sucursal
+//	 * @param sucursal - La sucursal a la que pertenece la bodega
+//	 * @return Una lista de Bodegas con su información básica, donde todos tienen la sucursal buscada.
+//	 * 	La lista vacía indica que no existen bodegas con esa sucursal.
+//	 */
+//	public List<Bodega> darBodegasPorSucursal(long sucursal)
+//	{
+//        log.info ("Dar información de bodegas por sucursal: " + sucursal);
+//        List<Bodega> bodegas = pp.darBodegasPorSucursal(sucursal);
+//        log.info ("Dar información de Bodegas por sucursal: " + bodegas.size() + " bodegas con esa sucursal existentes");
+//        return bodegas;
+// 	}
+//	
+//	/**
+//	 * Encuentra todos las bodegas en SuperAndes
+//	 * Adiciona entradas al log de la aplicación
+//	 * @return Una lista de objetos Bodega con todos los productos que conoce la aplicación, llenos con su información básica
+//	 */
+//	public List<Bodega> darBodegas()
+//	{
+//		log.info ("Consultando Bodegas");
+//        List<Bodega> bodegas = pp.darBodegas();	
+//        log.info ("Consultando Bodegas: " + bodegas.size() + " existentes");
+//        return bodegas;
+//	}
+//	
+//	/**
+//	 * Encuentra todos las bodegas en SuperAndes y los devuelve como una lista de VOBodega
+//	 * Adiciona entradas al log de la aplicación
+//	 * @return Una lista de objetos VOBodega con todas las bodegas que conoce la aplicación, llenos con su información básica
+//	 */
+//	public List<VOBodega> darVOBodega()
+//	{
+//		log.info ("Generando los VO de bodegas");        
+//        List<VOBodega> voBodegas = new LinkedList<VOBodega> ();
+//        for (Bodega bodega : pp.darBodegas())
+//        {
+//        	voBodegas.add (bodega);
+//        }
+//        log.info ("Generando los VO de Bodegas: " + voBodegas.size() + " existentes");
+//        return voBodegas;
+//	}
+//	
+//	/**
+//	 * Aumenta las existencias en 10 unidades de una bodega con id dado
+//	 * @return Las tuplas modificadas con el aumento de existencias
+//	 */
+//	public long aumentarExistenciasBodegaEnDiez(long idBodega)
+//	{
+//		log.info("Aumentando eixstencias de la bodega en diez");
+//		long aumento = pp.aumentarExistenciasBodegaEnDiez(idBodega);
+//		log.info("Bodega con id: " + idBodega + "aumentada en 10 sus existencias");
+//		return aumento;
+//	}
+//	
+//	/* ****************************************************************
+//	 * 			Métodos para manejar los ESTANTES
+//	 *****************************************************************/
+//	
+//	/**
+//	 * Elimina un estante por su identificador
+//	 * Adiciona entradas al log de la aplicación
+//	 * @param idBodega - El id del estante a eliminar
+//	 * @return El número de tuplas eliminadas
+//	 */
+//	public long eliminarEstantePorId (long idEstante)
+//	{
+//		log.info ("Eliminando Estante por id: " + idEstante);
+//        long resp = pp.eliminarEstantePorId(idEstante);
+//        log.info ("Eliminando Estante por id: " + resp + " tuplas eliminadas");
+//        return resp;
+//	}
+//	
+//	/**
+//	 * Encuentra un estante y su información básica, según su identificador
+//	 * @param idEstante - El identificador del estante buscado
+//	 * @return Un objeto Estante que corresponde con el id buscado y lleno con su información básica
+//	 * 			null, si un estante con dicho id no existe
+//	 */
+//	public Estante darEstantePorId(long idEstante)
+//	{
+//        log.info ("Dar información de un estante por id: " + idEstante);
+//        Estante estante = pp.darEstantePorId(idEstante);
+//        log.info ("Buscando estante por id: " + estante != null ? estante : "NO EXISTE");
+//        return estante;
+//	}
+//	
+//	/**
+//	 * Encuentra la información básica de los estantes, según su sucursal
+//	 * @param sucursal - La sucursal a la que pertenece el estante
+//	 * @return Una lista de Estantess con su información básica, donde todos tienen la sucursal buscada.
+//	 * 	La lista vacía indica que no existen estantes con esa sucursal.
+//	 */
+//	public List<Estante> darEstantesPorSucursal(long sucursal)
+//	{
+//        log.info ("Dar información de estantes por sucursal: " + sucursal);
+//        List<Estante> estantes = pp.darEstantesPorSucursal(sucursal);
+//        log.info ("Dar información de Estantes por sucursal: " + estantes.size() + " estantes con esa sucursal existentes");
+//        return estantes;
+// 	}
+//	
+//	/**
+//	 * Encuentra todos los estantes en SuperAndes
+//	 * Adiciona entradas al log de la aplicación
+//	 * @return Una lista de objetos Estante con todos los productos que conoce la aplicación, llenos con su información básica
+//	 */
+//	public List<Estante> darEstantes()
+//	{
+//		log.info ("Consultando Estantes");
+//        List<Estante> estantes = pp.darEstantes();	
+//        log.info ("Consultando Estantes: " + estantes.size() + " existentes");
+//        return estantes;
+//	}
+//	
+//	/**
+//	 * Encuentra todos los estantes en SuperAndes y los devuelve como una lista de VOEstante
+//	 * Adiciona entradas al log de la aplicación
+//	 * @return Una lista de objetos VOEstante con todas los estantes que conoce la aplicación, llenos con su información básica
+//	 */
+//	public List<VOEstante> darVOEsatnte()
+//	{
+//		log.info ("Generando los VO de estantes");        
+//        List<VOEstante> voEstantes = new LinkedList<VOEstante>();
+//        for (Estante estante : pp.darEstantes())
+//        {
+//        	voEstantes.add (estante);
+//        }
+//        log.info ("Generando los VO de Estantes: " + voEstantes.size() + " existentes");
+//        return voEstantes;
+//	}
+//	
+//	/**
+//	 * Aumenta las existencias en 10 unidades de un estante con id dado
+//	 * @return Las tuplas modificadas con el aumento de existencias
+//	 */
+//	public long aumentarExistenciasEstanteEnDiez(long idEstante)
+//	{
+//		log.info("Aumentando eixstencias de la bodega en diez");
+//		long aumento = pp.aumentarExistenciasEstanteEnDiez(idEstante);
+//		log.info("Estante con id: " + idEstante + "aumentada en 10 sus existencias");
+//		return aumento;
+//	}
+//	
 	/* ****************************************************************
 	 * 			Métodos para manejar la relación VENDE
 	 *****************************************************************/
@@ -1410,18 +1392,18 @@ public class Parranderos
         return tuplas;
 	}
 	
-	/**
-	 * Calcula el indice de ocupacion de bodegas y estantes por id
-	 * Adiciona entradas al log de la aplicación
-	 * @return Una lista de datos de 4 valores [IdBodega, indice bodega, idEstante, indice estante]
-	 */
-	public List<long []> darIndiceOcupacionBodegasEstantes(long idSucursal)
-	{
-		log.info("Calculando indice de ocupacion de bodegas y estantes");
-		List<long []> datos = pp.darIndiceOcupacionBodegasEstantes(idSucursal);
-		log.info("Calculando indice de ocupacion de bodegas y estantes: Listo!");
-		return datos;
-	}
+//	/**
+//	 * Calcula el indice de ocupacion de bodegas y estantes por id
+//	 * Adiciona entradas al log de la aplicación
+//	 * @return Una lista de datos de 4 valores [IdBodega, indice bodega, idEstante, indice estante]
+//	 */
+//	public List<long []> darIndiceOcupacionBodegasEstantes(long idSucursal)
+//	{
+//		log.info("Calculando indice de ocupacion de bodegas y estantes");
+//		List<long []> datos = pp.darIndiceOcupacionBodegasEstantes(idSucursal);
+//		log.info("Calculando indice de ocupacion de bodegas y estantes: Listo!");
+//		return datos;
+//	}
 	
 	/**
 	 * Encuentra las promociones y sus respectivas ventas.
@@ -1449,5 +1431,26 @@ public class Parranderos
         return productos;
 	}
 	
-	
+	/**
+	 * Encuentra una sucursal y su información básica, según su identificador
+	 * @param idSucursal - El identificador de la sucursal buscada
+	 * @return Un objeto Sucursal que corresponde con el id buscado y lleno con su información básica
+	 * 			null, si una sucursal con dicho id no existe
+	 * @throws Exception 
+	 */
+	public Carrito asignarCarrito() throws Exception
+	{
+		if(carrito<21)
+		{
+        log.info ("Asignación de un carrito con id: " + carrito);
+        Carrito asignado = pp.asignarCarrito(carrito);
+        carrito++;
+        log.info ("Buscando carrito por id: " + asignado!= null ? asignado: "NO EXISTE");
+        return asignado;
+		}
+		
+		else {
+			throw new Exception("Ya no hay carritos disponibles");
+		}
+	}
 }

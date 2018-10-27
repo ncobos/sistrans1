@@ -155,21 +155,21 @@ import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 			return q.executeList();
 		}
 		
-		/**
-		 * Crea y ejecuta la sentencia SQL para consultar el índice de ocupación de bodegas y estantes de una sucursal.
-		 * @param pm - El manejador de persistencia
-		 * @param idSucursal - el identificador de la sucursal
-		 * @return Una lista de arreglos de objetos, de tamaño 4. Corresponde a id bodega, indice bodega, id estante e indice estante.
-		 */
-		public List<Object[]> darIndiceOcupacionBodegasEstantes(PersistenceManager pm, long idSucursal)
-		{
-			String sql = "SELECT b.id as id_bodega, b.existencias/b.capacidadproductos as ratio_bodega, e.id as id_estante, e.existencias/e.capacidadproductos as ratio_estante";
-			sql += " FROM " + pp.darTablaBodega() + " b, " + pp.darTablaEstante() + " e ";
-			sql += " WHERE b.sucursal = e.sucursal ";
-			
-			Query q = pm.newQuery(SQL, sql);
-			q.setParameters(idSucursal);
-			return q.executeList();
-		}
+//		/**
+//		 * Crea y ejecuta la sentencia SQL para consultar el índice de ocupación de bodegas y estantes de una sucursal.
+//		 * @param pm - El manejador de persistencia
+//		 * @param idSucursal - el identificador de la sucursal
+//		 * @return Una lista de arreglos de objetos, de tamaño 4. Corresponde a id bodega, indice bodega, id estante e indice estante.
+//		 */
+//		public List<Object[]> darIndiceOcupacionBodegasEstantes(PersistenceManager pm, long idSucursal)
+//		{
+//			String sql = "SELECT b.id as id_bodega, b.existencias/b.capacidadproductos as ratio_bodega, e.id as id_estante, e.existencias/e.capacidadproductos as ratio_estante";
+//			sql += " FROM " + pp.darTablaBodega() + " b, " + pp.darTablaEstante() + " e ";
+//			sql += " WHERE b.sucursal = e.sucursal ";
+//			
+//			Query q = pm.newQuery(SQL, sql);
+//			q.setParameters(idSucursal);
+//			return q.executeList();
+//		}
 
 }

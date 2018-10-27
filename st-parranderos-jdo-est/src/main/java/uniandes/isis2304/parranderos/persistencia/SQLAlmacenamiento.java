@@ -123,19 +123,23 @@ class SQLAlmacenamiento
 		return (List<Almacenamiento>) q.executeList();
 	}
 
+	
 	/**
-	 * Crea y ejecuta la sentencia SQL para aumentar en diez el n�mero de existencias de las almacenamientos de la 
+	 * Crea y ejecuta la sentencia SQL para aumentar las existencias de los almacenamientos de 
 	 * base de datos de Parranderos
 	 * @param pm - El manejador de persistencia
-	 * @param id - almacenamiento a la cual se le quiere realizar el proceso
-	 * @return El n�mero de tuplas modificadas
+	 * @param cantidad a aumentar
+	 * @param sucursal del almacenamiento
+	 * @param producto que almacena el almacenamiento
+	 * @return El número de tuplas modificadas
 	 */
-	public long aumentarExistenciasAlmacenamientosEnDiez (PersistenceManager pm, long id)
+	public long aumentarExistenciasAlmacenamientos(PersistenceManager pm, int cantidad, long sucursal, long producto, String tipo)
 	{
-        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaAlmacenamiento () + " SET existencias = existencias + 10 WHERE id = ?");
-        q.setParameters(id);
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaAlmacenamiento() + " SET existencias = existencias + ? WHERE producto = ? AND sucursal = ? AND tipo = ?");
+        q.setParameters(cantidad, producto, sucursal, tipo);
         return (long) q.executeUnique();
 	}
+	
 	
 	/**
 	 * Crea y ejecuta la sentencia SQL para disminuir las existencias de los almacenamientos de 
@@ -152,5 +156,7 @@ class SQLAlmacenamiento
         q.setParameters(cantidad, producto, sucursal);
         return (long) q.executeUnique();
 	}
+	
+	
 	
 }
