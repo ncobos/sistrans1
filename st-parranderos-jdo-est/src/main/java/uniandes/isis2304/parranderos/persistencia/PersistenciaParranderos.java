@@ -2304,6 +2304,57 @@ public class PersistenciaParranderos
 	 * @param idProducto
 	 * @return
 	 */
+	public Contiene adicionarProducto (long idCarrito, long clave, long idProducto, long sucursal, int cantidad)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
+			tx.commit();
+			
+			if(car == null)
+			{
+				throw new Exception ("La contraseña del carrito es incorrecta");
+			}
+			
+			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
+
+			tx.begin();
+			long disminuir = sqlAlmacenamiento.disminuirExistenciasAlmacenamientos(pm, cantidad, sucursal, idProducto, "Estante");
+			log.trace ("Disminuyendo " + cantidad + " productos " + idProducto + "  del estante de la sucursal " + sucursal );
+			
+			long add = sqlContiene.adicionarContiene(pm, idProducto, cantidad, idCarrito);
+			log.trace ("Agregando " + add + "a la tabla contiene"  );
+			
+			tx.commit();
+
+			return new Contiene(idCarrito, cantidad, idProducto);
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	/**
+	 * Busca el carrito dado, y elimina la tupla de la tabla contiene que se asocia al carrito y al producto
+	 * @param idCarrito
+	 * @param clave
+	 * @param idProducto
+	 * @return
+	 */
 	public Contiene devolverProducto (long idCarrito, long clave, long idProducto, long sucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();

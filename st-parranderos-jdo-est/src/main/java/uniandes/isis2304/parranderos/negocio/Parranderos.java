@@ -1468,6 +1468,21 @@ public class Parranderos
 	}
 	
 	/**
+	 * Proceso de adicionar un producto (n cantidad)  a un carrito de compras.
+	 * @param idCarrito del cual se quiere adicionar el producto
+	 * @param clave del carrito seleccionado.
+	 * @param idProducto que se quiere adicionar
+	 * @return objeto Contiene con su infromación básica
+	 */
+	public Contiene adicionarProducto (long idCarrito, long clave, long idProducto, long sucursal, int cantidad)
+	{
+		log.info ("Adicionando producto: " + idProducto + " al carrito: " + idCarrito);
+        Contiene adicionar = pp.adicionarProducto(idCarrito, clave, idProducto, sucursal, cantidad);
+		log.info ("Adicionando producto: " + idProducto + " al carrito: " + idCarrito);
+        return adicionar;
+	}
+	
+	/**
 	 * Proceso de devolver un producto que está en un carrito de compras.
 	 * @param idCarrito del cual se quiere sacar el producto
 	 * @param clave del carrito seleccionado.

@@ -2098,3 +2098,67 @@ ORA-02290: restricción de control (ISIS2304A101820.CK_CARRITO_ESTADO) violada
 17:05:39,799 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
 17:05:50,853 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 1 del carrito: 1
 17:05:51,194 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 1 del carrito: 1
+09:28:41,160 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+09:28:41,162 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+09:28:41,212 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:29:15,490 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+09:29:15,491 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1234
+09:29:18,803 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1234]
+09:29:30,794 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 1 del carrito: 1
+09:29:31,460 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+09:29:31,790 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 1 del carrito: 1
+10:26:50,094 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+10:26:50,096 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+10:26:50,140 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:27:13,718 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 1 del carrito: 1
+10:27:14,227 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : null
+
+10:27:14,303 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 1 del carrito: 1
+10:37:39,120 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+10:37:39,124 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+10:37:39,154 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:38:02,956 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+10:38:05,193 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(idproducto, cantidad, carrito) values (?, ?, ?)".
+ORA-00904: "IDPRODUCTO": invalid identifier
+
+10:38:05,360 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+10:38:51,336 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+10:38:51,346 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 2468
+10:38:51,470 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+10:38:51,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+10:38:51,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 2468
+10:38:51,559 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+10:38:51,559 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+10:38:51,559 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 2468
+10:38:51,663 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+10:38:51,663 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+10:38:51,663 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 2468
+10:38:51,766 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+10:38:51,767 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+10:38:51,767 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 2468
+10:38:52,055 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=5, estado=en uso, clave=2468]
+10:39:37,700 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 4 al carrito: 5
+10:39:37,854 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(idproducto, cantidad, carrito) values (?, ?, ?)".
+ORA-00904: "IDPRODUCTO": invalid identifier
+
+10:39:37,934 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 4 al carrito: 5
+10:45:16,856 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 6 al carrito: 5
+10:45:17,010 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(idproducto, cantidad, carrito) values (?, ?, ?)".
+ORA-00904: "IDPRODUCTO": invalid identifier
+
+10:45:17,075 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 6 al carrito: 5
+10:49:15,523 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 3 del carrito: 1
+10:49:15,772 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 3 del carrito: 1
+10:54:10,172 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+10:54:10,174 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+10:54:10,214 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:54:44,321 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 8 al carrito: 5
+10:54:44,937 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(idproducto, cantidad, carrito) values (?, ?, ?)".
+ORA-00904: "IDPRODUCTO": invalid identifier
+
+10:54:45,001 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 8 al carrito: 5

@@ -945,6 +945,44 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	public String adicionarProductoCarrito()
+	{
+		String resp = "El producto adicionado es:";
+		try {
+			String id = JOptionPane.showInputDialog(this, "Ingrese el identificador de su carrito de mercado:", "Adicionar producto", JOptionPane.QUESTION_MESSAGE);
+			String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña de su carrito de mercado:", "Adicionar producto", JOptionPane.QUESTION_MESSAGE);
+			String producto = JOptionPane.showInputDialog(this, "Ingrese el identificador del producto que desea agregar:", "Agregar producto", JOptionPane.QUESTION_MESSAGE);
+			String cantidad = JOptionPane.showInputDialog(this, "Ingrese la cantidad de unidades del producto:", "Agregar producto", JOptionPane.QUESTION_MESSAGE);
+			String sucursal = JOptionPane.showInputDialog(this, "Ingrese la sucursal que vende el producto que desea dagregar:", "Agregar producto", JOptionPane.QUESTION_MESSAGE);
+			
+			long idCarrito = Long.parseLong(id);
+			long clave = Long.parseLong(pass);
+			long idProducto  = Long.parseLong(producto);
+			int cant = Integer.parseInt(cantidad);
+			long idSucursal= Long.parseLong(sucursal);
+
+			Contiene add = parranderos.adicionarProducto(idCarrito, clave, idProducto, idSucursal, cant);
+			
+			if(add == null)
+			{
+				throw new Exception ("Los datos del carrito no son correctos");
+			}
+			System.out.println(add);
+			long prod = add.getProducto();
+			resp+=prod;
+			
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		} 
+		catch (Exception e) {
+
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+
 	public String devolverProductoCarrito()
 	{
 		String resp = "El producto devuelto es: ";
@@ -959,7 +997,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			if(producto == null) {hola = true;}
 			String sucursal = JOptionPane.showInputDialog(this, "Ingrese la sucursal que vende el producto que desea devolver:", "Devolver producto", JOptionPane.QUESTION_MESSAGE);
 			if( sucursal == null) {hola = true;}
-			
+
 			if(!hola)
 			{
 				long idCarrito = Long.parseLong(id);

@@ -46,19 +46,17 @@ class SQLContiene
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para adicionar un CONTIENE a la base de datos de Parranderos
+	 * Crea y ejecuta la sentencia SQL para adicionar un CONTIENE a la base de datos de SuperAndes
 	 * @param pm - El manejador de persistencia
 	 * @param idProducto - El identificador del producto
 	 * @param cantidad - numero de productos
-	 * @param numerofactura - la factura a la que est� asociada la transacci�n
-	 * @param costo - costo de la transacci�n
-	 * @param promocion - identificador de la promoci�n a la cual est� asociada (puede no tener)
+	 * @param carrito - El identificador del carrito
 	 * @return El n�mero de tuplas insertadas
 	 */
-	public long adicionarContiene (PersistenceManager pm, long idProducto, int cantidad, long numerofactura, double costo, long promocion) 
+	public long adicionarContiene (PersistenceManager pm, long idProducto, int cantidad, long carrito) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaContiene () + "(idproducto, cantidad, numerofactura, costo, promocion) values (?, ?, ?, ?, ?)");
-        q.setParameters(idProducto, cantidad, numerofactura, costo, promocion);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaContiene () + "(idproducto, cantidad, carrito) values (?, ?, ?)");
+        q.setParameters(idProducto, cantidad, carrito);
         return (long) q.executeUnique();
 	}
 

@@ -150,10 +150,10 @@ class SQLAlmacenamiento
 	 * @param producto que almacena el almacenamiento
 	 * @return El número de tuplas modificadas
 	 */
-	public long disminuirExistenciasAlmacenamientos(PersistenceManager pm, int cantidad, long sucursal, long producto)
+	public long disminuirExistenciasAlmacenamientos(PersistenceManager pm, int cantidad, long sucursal, long producto, String tipo)
 	{
-        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaAlmacenamiento() + " SET existencias = existencias - ? WHERE producto = ? AND sucursal = ?");
-        q.setParameters(cantidad, producto, sucursal);
+        Query q = pm.newQuery(SQL, "UPDATE " + pp.darTablaAlmacenamiento() + " SET existencias = existencias - ? WHERE producto = ? AND sucursal = ? AND tipo = ?");
+        q.setParameters(cantidad, producto, sucursal, tipo);
         return (long) q.executeUnique();
 	}
 	
