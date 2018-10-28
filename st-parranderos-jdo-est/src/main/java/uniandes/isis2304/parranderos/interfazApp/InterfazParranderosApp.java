@@ -1074,6 +1074,20 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 		return resp;
 	}
+	
+	public void recolectarProductos()
+	{
+		try {
+			parranderos.recolectarProductos();
+			String resultado = "Productos recolectados exitosamente";
+			panelDatos.actualizarInterfaz(resultado);		
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
 
 
 }

@@ -119,6 +119,19 @@ class SQLCarrito {
 		q.setResultClass(Carrito.class);
 		return (List<Carrito>) q.executeList();
 	}
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS CARRITOS abandonados de la 
+	 * base de datos de Superandes
+	 * @param pm - El manejador de persistencia
+	 * @return Una lista de objetos FACTURA
+	 */
+	public List<Carrito> darCarritosAbandonados(PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarrito() + "WHERE estado = 'abandonado'");
+		q.setResultClass(Carrito.class);
+		return (List<Carrito>) q.executeList();
+	}
 
 	/**
 	 * 

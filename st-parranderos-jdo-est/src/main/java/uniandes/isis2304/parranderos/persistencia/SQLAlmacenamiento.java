@@ -157,6 +157,15 @@ class SQLAlmacenamiento
         return (long) q.executeUnique();
 	}
 	
+	public List<Object[]> darExistenciasProductosAbandonados(PersistenceManager pm){
+	    String sql = "SELECT DISTINCT a.existencias, a.sucursal, a.producto, c.cantidad";
+	    sql += " FROM " + pp.darTablaAlmacenamiento() + " a, "+ pp.darTablaContiene() + " c, " + pp.darTablaCarrito() + " b, ";
+	    sql += " WHERE a.tipo = 'Estante' AND b.estado = 'abandonado'";
+	    
+	    Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
+	
 	
 	
 }

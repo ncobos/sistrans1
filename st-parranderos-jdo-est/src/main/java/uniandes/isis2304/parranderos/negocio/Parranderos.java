@@ -1497,6 +1497,13 @@ public class Parranderos
         return contiene;
 	}
 	
+	public void recolectarProductos()
+	{
+        log.info ("Recolectando productos de carritos abandonados y restableciendo existencias");
+        pp.recolectarProductosAbandonados();
+        log.info ("Recolectando productos de carritos abandonados y restableciendo existencias: Listo!");
+	}
+	
 	/**
 	 * Proceso de abandonar un carrito de compras.
 	 * @param idCarrito del cual se quiere sacar el producto

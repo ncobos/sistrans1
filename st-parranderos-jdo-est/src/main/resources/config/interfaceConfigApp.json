@@ -43,6 +43,10 @@
 				{
 					"label": "Abandonar un carrito de compras =(",
 					"event": "abandonarCarrito"
+				},
+				{
+					"label": "Recolectar productos abandonados por carritos",
+					"event": "recolectarProductos"
 				}
 			]
 		},

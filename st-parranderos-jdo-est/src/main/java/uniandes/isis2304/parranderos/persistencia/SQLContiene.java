@@ -92,6 +92,32 @@ class SQLContiene
 		q.setParameters(idCarrito, idProducto);
 		return (Contiene) q.executeUnique();
 	}
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la informaci�n de los CONTIENE de la 
+	 * base de datos de SUPERANES, por su carrito
+	 * @param pm - El manejador de persistencia
+	 * @param idCarrito carrito asociado
+	 * @param idProducto producto contenido en el carrito
+	 * @return Un objeto CONTIENE asociado a cierto carrito
+	 */
+	public Contiene darContienePorCarrito(PersistenceManager pm, long idCarrito)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaContiene () + " WHERE carrito = ?");
+		q.setResultClass(Contiene.class);
+		q.setParameters(idCarrito);
+		return (Contiene) q.executeUnique();
+	}
+	
+	public List<Object[]> darContieneCarritosAbandonados(PersistenceManager pm)
+	{
+	    String sql = "SELECT producto, cantidad, carrito, estado";
+	    sql += " FROM " + pp.darTablaContiene() + " , "+ pp.darTablaCarrito();
+	    sql += " WHERE estado = 'abandonado'";
+	    
+	    Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaci�n de LOS CONTIENEES de la 

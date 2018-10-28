@@ -2449,5 +2449,59 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
+	
+	public void recolectarProductosAbandonados()
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+
+		try
+		{
+			tx.begin();
+			List<Object[]> abandonados = sqlContiene.darContieneCarritosAbandonados(pmf.getPersistenceManager());
+			for ( Object[] abandonado: abandonados)
+			{
+				long [] datosResp = new long [4];
+
+				datosResp [0] = ((BigDecimal) abandonado [0]).longValue (); // id producto
+				datosResp [1] = ((BigDecimal) abandonado [1]).longValue (); // cantidad unidades
+				datosResp [2] = ((BigDecimal) abandonado [2]).longValue (); // id del carrito
+				datosResp [3] = ((BigDecimal) abandonado [3]).longValue (); // estado del carrito
+				
+				sqlContiene.eliminarContienePorCarritoProducto(pmf.getPersistenceManager(), datosResp[2], datosResp[0]);	
+			}
+			
+			List<Object[]> existencias = sqlAlmacenamiento.darExistenciasProductosAbandonados(pmf.getPersistenceManager());
+			for ( Object[] abandonado: abandonados)
+			{
+				long [] datosResp = new long [4];
+				System.out.println(datosResp[1]);
+
+				datosResp [0] = ((BigDecimal) abandonado [0]).longValue (); // existencias
+				datosResp [1] = ((BigDecimal) abandonado [1]).longValue (); // id de la sucursal
+				datosResp [2] = ((BigDecimal) abandonado [2]).longValue (); // id del producto
+				datosResp [3] = ((BigDecimal) abandonado [3]).longValue (); // cantidad unidades
+				
+				sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pmf.getPersistenceManager(), (int)datosResp[3], datosResp[1], datosResp[2], "Estante");
+			}
+			
+			tx.commit();
+			
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
 
 }
