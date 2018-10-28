@@ -1474,7 +1474,7 @@ public class Parranderos
 	 * @param idProducto que se quiere adicionar
 	 * @return objeto Contiene con su infromación básica
 	 */
-	public Contiene adicionarProducto (long idCarrito, long clave, long idProducto, long sucursal, int cantidad)
+	public Contiene adicionarProductoCarrito (long idCarrito, long clave, long idProducto, long sucursal, int cantidad)
 	{
 		log.info ("Adicionando producto: " + idProducto + " al carrito: " + idCarrito);
         Contiene adicionar = pp.adicionarProducto(idCarrito, clave, idProducto, sucursal, cantidad);
@@ -1495,5 +1495,19 @@ public class Parranderos
         Contiene contiene = pp.devolverProducto(idCarrito, clave, idProducto, sucursal);
 		log.info ("Devolviendo producto: " + idProducto + " del carrito: " + idCarrito);
         return contiene;
+	}
+	
+	/**
+	 * Proceso de abandonar un carrito de compras.
+	 * @param idCarrito del cual se quiere sacar el producto
+	 * @param clave del carrito seleccionado.
+	 * @return
+	 */
+	public Carrito abandonarCarrito (long idCarrito, long clave)
+	{
+		log.info ("Abandonando carrito: " + idCarrito) ;
+        Carrito carrito= pp.abandonarCarrito(idCarrito, clave);
+		log.info ("Abandonando carrito: " + idCarrito) ;
+        return carrito;
 	}
 }

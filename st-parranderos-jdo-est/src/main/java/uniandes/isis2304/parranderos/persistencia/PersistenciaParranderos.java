@@ -2334,7 +2334,7 @@ public class PersistenciaParranderos
 		}
 		catch (Exception e)
 		{
-			//        	e.printStackTrace();
+			        	e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return null;
 		}
@@ -2385,6 +2385,54 @@ public class PersistenciaParranderos
 			tx.commit();
 
 			return con1;
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	/**
+	 * Busca el carrito dado, lo abandona, cambiando su estado a abandonado.
+	 * @param idCarrito
+	 * @param clave
+	 * @return
+	 */
+	public Carrito abandonarCarrito (long idCarrito, long clave)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
+			tx.commit();
+			
+			if(car == null)
+			{
+				throw new Exception ("La contraseña del carrito es incorrecta");
+			}
+
+			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
+
+			tx.begin();
+			long tupla = sqlCarrito.cambiarEstadoCarrito(pm, idCarrito, "abandonado");
+			log.trace ("Cambiando el estado de: " + tupla + " tuplas en la tabla Carrito" );
+			long tupla2 = sqlCarrito.cambiarClaveCarrito(pm, idCarrito, 0);
+			log.trace ("Cambiando la clave a cero de: " + tupla + " tuplas en la tabla Carrito" );
+			tx.commit();
+
+			return car;
 		}
 		catch (Exception e)
 		{

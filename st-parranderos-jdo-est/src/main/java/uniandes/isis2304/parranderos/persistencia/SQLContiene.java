@@ -55,7 +55,7 @@ class SQLContiene
 	 */
 	public long adicionarContiene (PersistenceManager pm, long idProducto, int cantidad, long carrito) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaContiene () + "(idproducto, cantidad, carrito) values (?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaContiene () + "(producto, cantidad, carrito) values (?, ?, ?)");
         q.setParameters(idProducto, cantidad, carrito);
         return (long) q.executeUnique();
 	}

@@ -961,7 +961,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			int cant = Integer.parseInt(cantidad);
 			long idSucursal= Long.parseLong(sucursal);
 
-			Contiene add = parranderos.adicionarProducto(idCarrito, clave, idProducto, idSucursal, cant);
+			Contiene add = parranderos.adicionarProductoCarrito(idCarrito, clave, idProducto, idSucursal, cant);
 			
 			if(add == null)
 			{
@@ -1029,5 +1029,51 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 		return resp;
 	}
+	
+	/**
+	 * Método de la interfaz que se conecta con la lógica para abandonar un carrito.
+	 * @return mensaje de confirmación/rechazo
+	 */
+	public String abandonarCarrito()
+	{
+		String resp = "El carrito abandonado fue: ";
+		Boolean hola = false;
+		try 
+		{
+			String id = JOptionPane.showInputDialog(this, "Ingrese el identificador de su carrito de mercado:", "Abandonar carrito de compras", JOptionPane.QUESTION_MESSAGE);
+			if(id == null) {hola = true;}
+			String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña de su carrito de mercado:", "Abandonar carrito de compras", JOptionPane.QUESTION_MESSAGE);
+			if(pass == null) {hola = true;}
+			
+			if(!hola)
+			{
+				long idCarrito = Long.parseLong(id);
+				long clave = Long.parseLong(pass);
+
+				Carrito car = parranderos.abandonarCarrito(idCarrito,clave);
+				if(car == null)
+				{
+					throw new Exception ("Los datos del carrito no son correctos");
+				}
+				System.out.println(car);
+				long id2 = car.getId();
+				resp+=id2;
+				panelDatos.actualizarInterfaz(resp);
+				return resp;
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+
 
 }
