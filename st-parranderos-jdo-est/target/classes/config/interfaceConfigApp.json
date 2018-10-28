@@ -39,6 +39,10 @@
 				{
 					"label": "Devolver un producto del carrito de compras",
 					"event": "devolverProductoCarrito"
+				},
+				{
+					"label": "Abandonar un carrito de compras =(",
+					"event": "abandonarCarrito"
 				}
 			]
 		},
