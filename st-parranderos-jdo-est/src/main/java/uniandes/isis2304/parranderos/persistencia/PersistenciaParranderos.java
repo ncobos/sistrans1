@@ -2237,6 +2237,88 @@ public class PersistenciaParranderos
 	}
 	
 	/**
+	 * Método que consulta las sucursales y las ventas de esa sucursal
+	 * @return La lista de parejas de objetos, construidos con base en las tuplas de la tabla SUCURSAL y FACTURA. 
+	 * El primer elemento de la pareja es una sucursal; 
+	 * @throws Exception 
+	 */
+	public List<List<Pedido>> darPedidosProveedor() throws Exception
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		List<List<Pedido>> resp = new LinkedList ();
+		List<Long> ids = new LinkedList<>();
+		try
+		{
+			tx.begin();
+			List<Pedido> ped= sqlPedido.darPedidos(pm);
+			for(Pedido pedido:ped)
+			{
+				long proveedor = pedido.getIdProveedor();
+				boolean esta = false;
+				if(ids.size() == 0)
+				{
+					System.out.println("veces");
+					ids.add(proveedor);
+				}
+				else {
+					for(Long numero:ids)
+					{
+						if(numero == proveedor)
+						{
+							System.out.println("entro");
+							esta = true;
+						}
+					}
+					if(!esta) {
+						System.out.println("Esta es:" + esta);
+						System.out.println("añade este: " + proveedor);
+					ids.add(proveedor);
+					};
+				}
+				
+				
+			}
+			tx.commit();
+			
+			
+			tx.begin();
+			for(Long id:ids)
+			{
+				resp.add(sqlPedido.darPedidosPorProveedor(pm, id));
+			}
+			tx.commit();
+			
+			
+			log.trace ("Creación de la lista con listas de pedidos por proveedor");
+			
+			for (Long numero:ids)
+			{
+				System.out.println(numero);
+			}
+
+			return resp;
+		}
+		catch (Exception e)
+		{
+//			e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+//			return null;
+			throw new Exception (e.getMessage());
+			
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	
+	/**
 	 * Método que consulta todas las tuplas en la tabla Carrito con un identificador dado
 	 * @param idCarrito- El identificador del carrito
 	 * @return El objeto Carrito, construido con base en las tuplas de la tabla CARRITO con el identificador dado

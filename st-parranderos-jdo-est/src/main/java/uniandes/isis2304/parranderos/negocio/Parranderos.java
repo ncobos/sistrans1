@@ -1432,6 +1432,25 @@ public class Parranderos
 	}
 	
 	/**
+	 * Encuentra los proveedores y sus respectivos pedidos.
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de listas de pedidos lol 
+	 */
+	public List<List<Pedido>> darPedidosProveedores()
+	{
+        log.info ("Listando proveedores y sus pedidos");
+        List<List<Pedido>> tuplas = new LinkedList();
+		try {
+			tuplas = pp.darPedidosProveedor();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        log.info ("Listando proveedores y sus pedidos: listo =)");
+        return tuplas;
+	}
+	
+	/**
 	 * Encuentra una sucursal y su información básica, según su identificador
 	 * @param idSucursal - El identificador de la sucursal buscada
 	 * @return Un objeto Sucursal que corresponde con el id buscado y lleno con su información básica

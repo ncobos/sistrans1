@@ -53,6 +53,7 @@ import com.google.gson.stream.JsonReader;
 import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Contiene;
 import uniandes.isis2304.parranderos.negocio.Parranderos;
+import uniandes.isis2304.parranderos.negocio.Pedido;
 import uniandes.isis2304.parranderos.negocio.Producto;
 import uniandes.isis2304.parranderos.negocio.VOFactura;
 import uniandes.isis2304.parranderos.negocio.VOPedido;
@@ -922,6 +923,50 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	/**
+	 * Método en la interfaz para mostrar las compras hechas a los proveedores.
+	 * @return respuesta de la solicitud
+	 */
+	public String comprasProveedores() 
+	{
+		String resp = "Las compras hechas a los proveedores son:\n";
+
+		try 
+		{
+			List<List<Pedido>> lista = parranderos.darPedidosProveedores();
+			System.out.println(lista.size());
+
+			int i = 1;
+			for ( List<Pedido> tupla : lista)
+			{
+				List<Pedido> datos = tupla;
+				String resp1 = (i++) + ". " + "Proveedor con id: " + datos.get(0).getIdProveedor() + "[";
+				
+				for ( Pedido tupla2 : datos)
+				{
+					resp1 += tupla2.toString();
+					resp1 += "\n";
+				}
+				
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+	
+	/**
+	 * Método en la interfaz para solicitar un carrito de compras
+	 * @return respuesta de la solicitud
+	 */
 	public String solicitarCarrito()
 	{
 		String resp = "El identificador y la contraseña del carrito asignado es: ";
@@ -983,6 +1028,10 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	/**
+	 * Método en la interfaz para devolver un producto que está en un carrito de compras
+	 * @return respuesta de la solicitud de devolución
+	 */
 	public String devolverProductoCarrito()
 	{
 		String resp = "El producto devuelto es: ";

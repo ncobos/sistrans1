@@ -225,7 +225,7 @@ ALTER TABLE a_ofrecen
 
 ALTER TABLE a_ofrecen
     ADD CONSTRAINT fk_o_proveedor FOREIGN KEY ( idproveedor )
-        REFERENCES a_sucursal ( id )
+        REFERENCES a_proveedor ( nit )
     ENABLE;
 
 ALTER TABLE a_ofrecen ADD CONSTRAINT ck_o_costo CHECK ( costo > 0 ) ENABLE;
