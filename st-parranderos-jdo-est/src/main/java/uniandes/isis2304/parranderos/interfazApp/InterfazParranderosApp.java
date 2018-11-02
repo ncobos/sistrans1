@@ -1127,9 +1127,20 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	public void recolectarProductos()
 	{
 		try {
-			parranderos.recolectarProductos();
+			String sucursal2 = JOptionPane.showInputDialog (this, "Identificador de la sucursal donde se van a recoger los productos abandonados", "Recoger productos abandonados", JOptionPane.QUESTION_MESSAGE);
+			if(sucursal2 != null)
+			{
+			
+			long sucursal = Long.parseLong(sucursal2);
+
+			parranderos.recolectarProductos(sucursal);
 			String resultado = "Productos recolectados exitosamente";
 			panelDatos.actualizarInterfaz(resultado);		
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -1138,5 +1149,49 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 	}
 
+	
+	/**
+	 * Método de la interfaz que se conecta con la lógica para analizar la operacion de Superandes.
+	 * @return mensaje con la informacion requerida
+	 */
+	public String analizarOperacion()
+	{
+		String resp = "Resumen de la operación de SuperAndes según el rango dado : ";
+		Boolean hola = false;
+		try 
+		{
+			String fecha = JOptionPane.showInputDialog(this, "Ingrese las unidades de tiempo a evaluar:", "Analizar operación SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			if(fecha == null) {hola = true;}
+			String producto = JOptionPane.showInputDialog(this, "Ingrese el tipo de producto que se quiere buscar:", "Analizar operación SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			if(producto == null) {hola = true;}
+			
+			if(!hola)
+			{
+				
+
+				Long car = parranderos.analizarOperacion(fecha, producto);
+				if(car == null)
+				{
+					throw new Exception ("Los datos del carrito no son correctos");
+				}
+				System.out.println(car);
+//				long id2 = car.getId();
+//				resp+=id2;
+				panelDatos.actualizarInterfaz(resp);
+				return resp;
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
 
 }

@@ -43,6 +43,7 @@ import uniandes.isis2304.parranderos.negocio.Promocion;
 import uniandes.isis2304.parranderos.negocio.Proveedor;
 import uniandes.isis2304.parranderos.negocio.Sucursal;
 import uniandes.isis2304.parranderos.negocio.Supermercado;
+import uniandes.isis2304.parranderos.negocio.Transaccion;
 import uniandes.isis2304.parranderos.negocio.Vende;
 import uniandes.isis2304.parranderos.negocio.Cliente;
 import uniandes.isis2304.parranderos.negocio.Contiene;
@@ -114,7 +115,7 @@ public class PersistenciaParranderos
 	 * Atributo para el acceso a la tabla PRODUCTO de la base de datos
 	 */
 	private SQLProducto sqlProducto;
-	
+
 	/**
 	 * Atributo para el acceso a la tabla ALMACENAMIENTO de la base de datos
 	 */
@@ -159,12 +160,12 @@ public class PersistenciaParranderos
 	 * Atributo para el acceso a la tabla CARRITO de la base de datos
 	 */
 	private SQLCarrito sqlCarrito;
-	
+
 	/**
 	 * Atributo para el acceso a la tabla CONTIENE de la base de datos
 	 */
 	private SQLContiene sqlContiene;
-	
+
 	/**
 	 * Atributo para el acceso a la tabla PROMOCION de la base de datos
 	 */
@@ -297,7 +298,7 @@ public class PersistenciaParranderos
 		sqlTransaccion = new SQLTransaccion(this);
 	}
 
-	
+
 
 	/**
 	 * Transacción para el generador de secuencia de Parranderos
@@ -388,7 +389,7 @@ public class PersistenciaParranderos
 		return tablas.get (2);
 	}
 
-	
+
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Producto de superandes
 	 */
@@ -460,7 +461,7 @@ public class PersistenciaParranderos
 	{
 		return tablas.get (11);
 	}
-	
+
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Carrito de superandes
 	 */
@@ -468,7 +469,7 @@ public class PersistenciaParranderos
 	{
 		return tablas.get (12);
 	}
-	
+
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Contiene de superandes
 	 */
@@ -864,227 +865,227 @@ public class PersistenciaParranderos
 	 * 			MÃ©todos para manejar las BODEGAS
 	 *****************************************************************/
 
-//	/**
-//	 * MÃ©todo que inserta, de manera transaccional, una tupla en la tabla BODEGAs
-//	 * Adiciona entradas al log de la aplicaciÃ³n
-//	 * @param capacidadVolumen - La capacidad en volumen de la bodega (metros cÃºbicos)
-//	 * @param capacidadPeso - La capacidad en peso de la bodega (en kg)
-//	 * @param producto - Identificador del producto que almacena la bodega
-//	 * @param sucursal - La sucursal a la que pertenece la bodega
-//	 * @param existencias - Las existencias disponibles en la bodega
-//	 * @return El objeto Bodega adicionado. null si ocurre alguna ExcepciÃ³n
-//	 */
-//	public Bodega adicionarBodega(double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int existencias)
-//	{
-//		PersistenceManager pm = pmf.getPersistenceManager();
-//		Transaction tx=pm.currentTransaction();
-//		try
-//		{
-//			tx.begin();
-//			long idBodega = nextval ();
-//			long tuplasInsertadas = sqlBodega.adicionarBodega(pm, idBodega, capacidadVolumen, capacidadPeso, producto, sucursal, existencias);
-//			tx.commit();
-//
-//			log.trace ("InserciÃ³n de la bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
-//
-//			return new Bodega(idBodega, capacidadVolumen, capacidadPeso, existencias, producto, sucursal);
-//		}
-//		catch (Exception e)
-//		{
-//			//        	e.printStackTrace();
-//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-//			return null;
-//		}
-//		finally
-//		{
-//			if (tx.isActive())
-//			{
-//				tx.rollback();
-//			}
-//			pm.close();
-//		}
-//	}
-//
-//	/**
-//	 * MÃ©todo que elimina, de manera transaccional, una tupla en la tabla Bodega, dado el identificador de la bodega
-//	 * Adiciona entradas al log de la aplicaciÃ³n
-//	 * @param idBodega - El identificador de la bodega
-//	 * @return El nÃºmero de tuplas eliminadas. -1 si ocurre alguna ExcepciÃ³n
-//	 */
-//	public long eliminarBodegaPorId (long idBodega) 
-//	{
-//		PersistenceManager pm = pmf.getPersistenceManager();
-//		Transaction tx=pm.currentTransaction();
-//		try
-//		{
-//			tx.begin();
-//			long resp = sqlBodega.eliminarBodegaPorId(pm, idBodega);
-//			tx.commit();
-//			return resp;
-//		}
-//		catch (Exception e)
-//		{
-//			//        	e.printStackTrace();
-//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-//			return -1;
-//		}
-//		finally
-//		{
-//			if (tx.isActive())
-//			{
-//				tx.rollback();
-//			}
-//			pm.close();
-//		}
-//	}
-//
-//	/**
-//	 * MÃ©todo que consulta todas las tuplas en la tabla Bodega con un identificador dado
-//	 * @param idBodega - El identificador de la bodega
-//	 * @return El objeto Bodega, construido con base en las tuplas de la tabla BODEGA con el identificador dado
-//	 */
-//	public Bodega darBodegaPorId(long idBodega)
-//	{
-//		return sqlBodega.darBodegaPorId(pmf.getPersistenceManager(), idBodega);
-//	}
-//
-//	/**
-//	 * MÃ©todo que consulta todas las tuplas en la tabla Bodega que tienen una sucursal dada
-//	 * @param sucursal - La sucursal a la que pertenece la bodega
-//	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla BODEGA
-//	 */
-//	public List<Bodega> darBodegasPorSucursal(long sucursal)
-//	{
-//		return sqlBodega.darBodegasPorSucursal(pmf.getPersistenceManager(), sucursal);
-//	}
-//
-//	/**
-//	 * MÃ©todo que consulta todas las tuplas en la tabla Bodega
-//	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla BODEGA
-//	 */
-//	public List<Bodega> darBodegas()
-//	{
-//		return sqlBodega.darBodegas(pmf.getPersistenceManager());
-//	}
-//
-//	/**
-//	 * MÃ©todo que aumenta las existencias en 10 unidades de una bodega con id dado
-//	 * @return Las tuplas modificadas con el aumento de existencias
-//	 */
-//	public long aumentarExistenciasBodegaEnDiez(long idBodega)
-//	{
-//		return sqlBodega.aumentarExistenciasBodegasEnDiez(pmf.getPersistenceManager(), idBodega);
-//	}
-//
-//	/* ****************************************************************
-//	 * 			MÃ©todos para manejar los ESTANTES
-//	 *****************************************************************/
-//
-//	/**
-//	 * MÃ©todo que inserta, de manera transaccional, una tupla en la tabla ALMACENAMIENTO
-//	 * Adiciona entradas al log de la aplicaciÃ³n
-//	 * @param capacidadVolumen - La capacidad en volumen del estante(metros cÃºbicos)
-//	 * @param capacidadPeso - La capacidad en peso del estante (en kg)
-//	 * @param producto - Identificador del producto que almacena el estante
-//	 * @param sucursal - La sucursal a la que pertenece el estante
-//	 * @param nivelabastecimientobodega - Cantidad de unidades mÃ­nimas que debe tener en la bodega por producto
-//	 * @param existencias - Las existencias disponibles en la bodega
-//	 * @param capacidadproductos numero de productos que se pueden almacenar
-//	 * @param tipo Tipo de almacenamiento (bodega o estante)
-//	 * @return El objeto Estante adicionado. null si ocurre alguna ExcepciÃ³n
-//	 */
-//	public Almacenamiento adicionarEstante(double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int nivelabastecimientobodega, int existencias, int capacidadproductos, String tipo)
-//	{
-//		PersistenceManager pm = pmf.getPersistenceManager();
-//		Transaction tx=pm.currentTransaction();
-//		try
-//		{
-//			tx.begin();
-//			long idAlmacenamiento = nextval ();
-//			long tuplasInsertadas = sqlAlmacenamiento.adicionarAlmacenamiento(pm, idAlmacenamiento, capacidadVolumen, capacidadPeso, producto, sucursal, nivelabastecimientobodega, existencias, capacidadproductos, tipo);
-//			tx.commit();
-//
-//			log.trace ("InserciÃ³n del almacenamiento: " + idAlmacenamiento + ": " + tuplasInsertadas + " tuplas insertadas");
-//
-//			return new Almacenamiento(idAlmacenamiento, capacidadVolumen, capacidadPeso, existencias, producto, sucursal, nivelabastecimientobodega, capacidadproductos, tipo);
-//		}
-//		catch (Exception e)
-//		{
-//			//        	e.printStackTrace();
-//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-//			return null;
-//		}
-//		finally
-//		{
-//			if (tx.isActive())
-//			{
-//				tx.rollback();
-//			}
-//			pm.close();
-//		}
-//	}
-//
-//	/**
-//	 * MÃ©todo que elimina, de manera transaccional, una tupla en la tabla Estante, dado el identificador del estante
-//	 * Adiciona entradas al log de la aplicaciÃ³n
-//	 * @param idBodega - El identificador del estante
-//	 * @return El nÃºmero de tuplas eliminadas. -1 si ocurre alguna ExcepciÃ³n
-//	 */
-//	public long eliminarEstantePorId (long idEstante) 
-//	{
-//		PersistenceManager pm = pmf.getPersistenceManager();
-//		Transaction tx=pm.currentTransaction();
-//		try
-//		{
-//			tx.begin();
-//			long resp = sqlEstante.eliminarEstantePorId(pm, idEstante);
-//			tx.commit();
-//			return resp;
-//		}
-//		catch (Exception e)
-//		{
-//			//        	e.printStackTrace();
-//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-//			return -1;
-//		}
-//		finally
-//		{
-//			if (tx.isActive())
-//			{
-//				tx.rollback();
-//			}
-//			pm.close();
-//		}
-//	}
-//
-//	/**
-//	 * MÃ©todo que consulta todas las tuplas en la tabla Estante con un identificador dado
-//	 * @param idEstante - El identificador del estante
-//	 * @return El objeto Estante, construido con base en las tuplas de la tabla ESTANTE con el identificador dado
-//	 */
-//	public Estante darEstantePorId(long idEstante)
-//	{
-//		return sqlEstante.darEstantePorId(pmf.getPersistenceManager(), idEstante);
-//	}
-//
-//	/**
-//	 * MÃ©todo que consulta todas las tuplas en la tabla Estante que tienen una sucursal dada
-//	 * @param sucursal - La sucursal a la que pertenece al estante
-//	 * @return La lista de objetos Estante, construidos con base en las tuplas de la tabla ESTANTE
-//	 */
-//	public List<Estante> darEstantesPorSucursal(long sucursal)
-//	{
-//		return sqlEstante.darEstantesPorSucursal(pmf.getPersistenceManager(), sucursal);
-//	}
-//
-//	/**
-//	 * MÃ©todo que consulta todas las tuplas en la tabla Estante
-//	 * @return La lista de objetos Estante, construidos con base en las tuplas de la tabla ESTANTEs
-//	 */
-//	public List<Estante> darEstantes()
-//	{
-//		return sqlEstante.darEstantes(pmf.getPersistenceManager());
-//	}
+	//	/**
+	//	 * MÃ©todo que inserta, de manera transaccional, una tupla en la tabla BODEGAs
+	//	 * Adiciona entradas al log de la aplicaciÃ³n
+	//	 * @param capacidadVolumen - La capacidad en volumen de la bodega (metros cÃºbicos)
+	//	 * @param capacidadPeso - La capacidad en peso de la bodega (en kg)
+	//	 * @param producto - Identificador del producto que almacena la bodega
+	//	 * @param sucursal - La sucursal a la que pertenece la bodega
+	//	 * @param existencias - Las existencias disponibles en la bodega
+	//	 * @return El objeto Bodega adicionado. null si ocurre alguna ExcepciÃ³n
+	//	 */
+	//	public Bodega adicionarBodega(double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int existencias)
+	//	{
+	//		PersistenceManager pm = pmf.getPersistenceManager();
+	//		Transaction tx=pm.currentTransaction();
+	//		try
+	//		{
+	//			tx.begin();
+	//			long idBodega = nextval ();
+	//			long tuplasInsertadas = sqlBodega.adicionarBodega(pm, idBodega, capacidadVolumen, capacidadPeso, producto, sucursal, existencias);
+	//			tx.commit();
+	//
+	//			log.trace ("InserciÃ³n de la bodega: " + idBodega + ": " + tuplasInsertadas + " tuplas insertadas");
+	//
+	//			return new Bodega(idBodega, capacidadVolumen, capacidadPeso, existencias, producto, sucursal);
+	//		}
+	//		catch (Exception e)
+	//		{
+	//			//        	e.printStackTrace();
+	//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+	//			return null;
+	//		}
+	//		finally
+	//		{
+	//			if (tx.isActive())
+	//			{
+	//				tx.rollback();
+	//			}
+	//			pm.close();
+	//		}
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que elimina, de manera transaccional, una tupla en la tabla Bodega, dado el identificador de la bodega
+	//	 * Adiciona entradas al log de la aplicaciÃ³n
+	//	 * @param idBodega - El identificador de la bodega
+	//	 * @return El nÃºmero de tuplas eliminadas. -1 si ocurre alguna ExcepciÃ³n
+	//	 */
+	//	public long eliminarBodegaPorId (long idBodega) 
+	//	{
+	//		PersistenceManager pm = pmf.getPersistenceManager();
+	//		Transaction tx=pm.currentTransaction();
+	//		try
+	//		{
+	//			tx.begin();
+	//			long resp = sqlBodega.eliminarBodegaPorId(pm, idBodega);
+	//			tx.commit();
+	//			return resp;
+	//		}
+	//		catch (Exception e)
+	//		{
+	//			//        	e.printStackTrace();
+	//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+	//			return -1;
+	//		}
+	//		finally
+	//		{
+	//			if (tx.isActive())
+	//			{
+	//				tx.rollback();
+	//			}
+	//			pm.close();
+	//		}
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que consulta todas las tuplas en la tabla Bodega con un identificador dado
+	//	 * @param idBodega - El identificador de la bodega
+	//	 * @return El objeto Bodega, construido con base en las tuplas de la tabla BODEGA con el identificador dado
+	//	 */
+	//	public Bodega darBodegaPorId(long idBodega)
+	//	{
+	//		return sqlBodega.darBodegaPorId(pmf.getPersistenceManager(), idBodega);
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que consulta todas las tuplas en la tabla Bodega que tienen una sucursal dada
+	//	 * @param sucursal - La sucursal a la que pertenece la bodega
+	//	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla BODEGA
+	//	 */
+	//	public List<Bodega> darBodegasPorSucursal(long sucursal)
+	//	{
+	//		return sqlBodega.darBodegasPorSucursal(pmf.getPersistenceManager(), sucursal);
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que consulta todas las tuplas en la tabla Bodega
+	//	 * @return La lista de objetos Bodega, construidos con base en las tuplas de la tabla BODEGA
+	//	 */
+	//	public List<Bodega> darBodegas()
+	//	{
+	//		return sqlBodega.darBodegas(pmf.getPersistenceManager());
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que aumenta las existencias en 10 unidades de una bodega con id dado
+	//	 * @return Las tuplas modificadas con el aumento de existencias
+	//	 */
+	//	public long aumentarExistenciasBodegaEnDiez(long idBodega)
+	//	{
+	//		return sqlBodega.aumentarExistenciasBodegasEnDiez(pmf.getPersistenceManager(), idBodega);
+	//	}
+	//
+	//	/* ****************************************************************
+	//	 * 			MÃ©todos para manejar los ESTANTES
+	//	 *****************************************************************/
+	//
+	//	/**
+	//	 * MÃ©todo que inserta, de manera transaccional, una tupla en la tabla ALMACENAMIENTO
+	//	 * Adiciona entradas al log de la aplicaciÃ³n
+	//	 * @param capacidadVolumen - La capacidad en volumen del estante(metros cÃºbicos)
+	//	 * @param capacidadPeso - La capacidad en peso del estante (en kg)
+	//	 * @param producto - Identificador del producto que almacena el estante
+	//	 * @param sucursal - La sucursal a la que pertenece el estante
+	//	 * @param nivelabastecimientobodega - Cantidad de unidades mÃ­nimas que debe tener en la bodega por producto
+	//	 * @param existencias - Las existencias disponibles en la bodega
+	//	 * @param capacidadproductos numero de productos que se pueden almacenar
+	//	 * @param tipo Tipo de almacenamiento (bodega o estante)
+	//	 * @return El objeto Estante adicionado. null si ocurre alguna ExcepciÃ³n
+	//	 */
+	//	public Almacenamiento adicionarEstante(double capacidadVolumen, double capacidadPeso, long producto, long sucursal, int nivelabastecimientobodega, int existencias, int capacidadproductos, String tipo)
+	//	{
+	//		PersistenceManager pm = pmf.getPersistenceManager();
+	//		Transaction tx=pm.currentTransaction();
+	//		try
+	//		{
+	//			tx.begin();
+	//			long idAlmacenamiento = nextval ();
+	//			long tuplasInsertadas = sqlAlmacenamiento.adicionarAlmacenamiento(pm, idAlmacenamiento, capacidadVolumen, capacidadPeso, producto, sucursal, nivelabastecimientobodega, existencias, capacidadproductos, tipo);
+	//			tx.commit();
+	//
+	//			log.trace ("InserciÃ³n del almacenamiento: " + idAlmacenamiento + ": " + tuplasInsertadas + " tuplas insertadas");
+	//
+	//			return new Almacenamiento(idAlmacenamiento, capacidadVolumen, capacidadPeso, existencias, producto, sucursal, nivelabastecimientobodega, capacidadproductos, tipo);
+	//		}
+	//		catch (Exception e)
+	//		{
+	//			//        	e.printStackTrace();
+	//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+	//			return null;
+	//		}
+	//		finally
+	//		{
+	//			if (tx.isActive())
+	//			{
+	//				tx.rollback();
+	//			}
+	//			pm.close();
+	//		}
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que elimina, de manera transaccional, una tupla en la tabla Estante, dado el identificador del estante
+	//	 * Adiciona entradas al log de la aplicaciÃ³n
+	//	 * @param idBodega - El identificador del estante
+	//	 * @return El nÃºmero de tuplas eliminadas. -1 si ocurre alguna ExcepciÃ³n
+	//	 */
+	//	public long eliminarEstantePorId (long idEstante) 
+	//	{
+	//		PersistenceManager pm = pmf.getPersistenceManager();
+	//		Transaction tx=pm.currentTransaction();
+	//		try
+	//		{
+	//			tx.begin();
+	//			long resp = sqlEstante.eliminarEstantePorId(pm, idEstante);
+	//			tx.commit();
+	//			return resp;
+	//		}
+	//		catch (Exception e)
+	//		{
+	//			//        	e.printStackTrace();
+	//			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+	//			return -1;
+	//		}
+	//		finally
+	//		{
+	//			if (tx.isActive())
+	//			{
+	//				tx.rollback();
+	//			}
+	//			pm.close();
+	//		}
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que consulta todas las tuplas en la tabla Estante con un identificador dado
+	//	 * @param idEstante - El identificador del estante
+	//	 * @return El objeto Estante, construido con base en las tuplas de la tabla ESTANTE con el identificador dado
+	//	 */
+	//	public Estante darEstantePorId(long idEstante)
+	//	{
+	//		return sqlEstante.darEstantePorId(pmf.getPersistenceManager(), idEstante);
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que consulta todas las tuplas en la tabla Estante que tienen una sucursal dada
+	//	 * @param sucursal - La sucursal a la que pertenece al estante
+	//	 * @return La lista de objetos Estante, construidos con base en las tuplas de la tabla ESTANTE
+	//	 */
+	//	public List<Estante> darEstantesPorSucursal(long sucursal)
+	//	{
+	//		return sqlEstante.darEstantesPorSucursal(pmf.getPersistenceManager(), sucursal);
+	//	}
+	//
+	//	/**
+	//	 * MÃ©todo que consulta todas las tuplas en la tabla Estante
+	//	 * @return La lista de objetos Estante, construidos con base en las tuplas de la tabla ESTANTEs
+	//	 */
+	//	public List<Estante> darEstantes()
+	//	{
+	//		return sqlEstante.darEstantes(pmf.getPersistenceManager());
+	//	}
 
 	/* ****************************************************************
 	 * 			MÃ©todos para manejar la relaciÃ³n VENDE
@@ -2033,7 +2034,7 @@ public class PersistenciaParranderos
 			if(promocion == 0)
 			{
 				tx.begin();
-//				sqlEstante.disminuirExistenciasEstantes(pm, cantidad, sucursal, producto);
+				//				sqlEstante.disminuirExistenciasEstantes(pm, cantidad, sucursal, producto);
 				tx.commit();
 			}
 			else
@@ -2181,31 +2182,31 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
-//	/**
-//	 * Método que consulta los indices de ocupacion de bodegas y estantes por una sucursal
-//	 * @return La lista de parejas de objetos, construidos con base en los valores de la tabla SUCURSAL.
-//	 * El primer elemento del arreglo es el id de la bodega.
-//	 * El segundo elemento del arreglo es el indice de ocupación del estante.
-//	 * El tercer elemento del arreglo es el id del estante
-//	 * El cuarto elemento del arreglo es el indice de ocupación del estante.
-//	 */
-//	public List<long[]> darIndiceOcupacionBodegasEstantes (long idSucursal)
-//	{
-//		List<long []> resp = new LinkedList<long []>();
-//		List<Object []> tuplas = sqlSucursal.darIndiceOcupacionBodegasEstantes(pmf.getPersistenceManager(), idSucursal);
-//		for(Object [] tupla : tuplas)
-//		{
-//			long [] datos = new long [4];
-//			
-//			datos [0] = ((BigDecimal) tupla [0]).longValue();
-//			datos [1] = ((BigDecimal) tupla [1]).longValue();
-//			datos [2] = ((BigDecimal) tupla [2]).longValue();
-//			datos [3] = ((BigDecimal) tupla [3]).longValue();
-//			resp.add(datos);
-//		}
-//		return resp;
-//	}
+
+	//	/**
+	//	 * Método que consulta los indices de ocupacion de bodegas y estantes por una sucursal
+	//	 * @return La lista de parejas de objetos, construidos con base en los valores de la tabla SUCURSAL.
+	//	 * El primer elemento del arreglo es el id de la bodega.
+	//	 * El segundo elemento del arreglo es el indice de ocupación del estante.
+	//	 * El tercer elemento del arreglo es el id del estante
+	//	 * El cuarto elemento del arreglo es el indice de ocupación del estante.
+	//	 */
+	//	public List<long[]> darIndiceOcupacionBodegasEstantes (long idSucursal)
+	//	{
+	//		List<long []> resp = new LinkedList<long []>();
+	//		List<Object []> tuplas = sqlSucursal.darIndiceOcupacionBodegasEstantes(pmf.getPersistenceManager(), idSucursal);
+	//		for(Object [] tupla : tuplas)
+	//		{
+	//			long [] datos = new long [4];
+	//			
+	//			datos [0] = ((BigDecimal) tupla [0]).longValue();
+	//			datos [1] = ((BigDecimal) tupla [1]).longValue();
+	//			datos [2] = ((BigDecimal) tupla [2]).longValue();
+	//			datos [3] = ((BigDecimal) tupla [3]).longValue();
+	//			resp.add(datos);
+	//		}
+	//		return resp;
+	//	}
 
 	/**
 	 * Método que encuentra el identificador de las promociones y sus ventas
@@ -2225,7 +2226,7 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-		
+
 	/**
 	 * Método que consulta todas las tuplas en la tabla Productos y Sucursal que tienen una ciudad dada
 	 * @param ciudad - La ciudad de donde proviene el producto
@@ -2235,7 +2236,7 @@ public class PersistenciaParranderos
 	{
 		return sqlProducto.darProductosPorCiudad(pmf.getPersistenceManager(), ciudad);
 	}
-	
+
 	/**
 	 * Método que consulta las sucursales y las ventas de esa sucursal
 	 * @return La lista de parejas de objetos, construidos con base en las tuplas de la tabla SUCURSAL y FACTURA. 
@@ -2273,25 +2274,25 @@ public class PersistenciaParranderos
 					if(!esta) {
 						System.out.println("Esta es:" + esta);
 						System.out.println("añade este: " + proveedor);
-					ids.add(proveedor);
+						ids.add(proveedor);
 					};
 				}
-				
-				
+
+
 			}
 			tx.commit();
-			
-			
+
+
 			tx.begin();
 			for(Long id:ids)
 			{
 				resp.add(sqlPedido.darPedidosPorProveedor(pm, id));
 			}
 			tx.commit();
-			
-			
+
+
 			log.trace ("Creación de la lista con listas de pedidos por proveedor");
-			
+
 			for (Long numero:ids)
 			{
 				System.out.println(numero);
@@ -2301,11 +2302,11 @@ public class PersistenciaParranderos
 		}
 		catch (Exception e)
 		{
-//			e.printStackTrace();
+			//			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-//			return null;
+			//			return null;
 			throw new Exception (e.getMessage());
-			
+
 		}
 		finally
 		{
@@ -2316,8 +2317,8 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
-	
+
+
 	/**
 	 * Método que consulta todas las tuplas en la tabla Carrito con un identificador dado
 	 * @param idCarrito- El identificador del carrito
@@ -2327,9 +2328,9 @@ public class PersistenciaParranderos
 	{
 		return sqlCarrito.darCarritoPorId(pmf.getPersistenceManager(), idCarrito);
 	}
-	
-	
-	
+
+
+
 	public Carrito asignarCarrito(long id, long clave) throws Exception
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2339,7 +2340,7 @@ public class PersistenciaParranderos
 			tx.begin();
 			Carrito car= sqlCarrito.darCarritoPorId(pm, id);
 			tx.commit();
-			
+
 			if(car.getEstado().equalsIgnoreCase("en uso"))
 			{
 				throw new Exception ("El carrito está en uso");
@@ -2355,7 +2356,7 @@ public class PersistenciaParranderos
 			tx.begin();
 			Carrito car2= sqlCarrito.darCarritoPorId(pm, id);
 			tx.commit();
-			
+
 			log.trace ("Se asignó el carrito. " + tuplas + " tuplas insertadas");
 			log.trace ("Se cambió la clave del carrito. " + tuplas2 + " tuplas insertadas");
 
@@ -2363,11 +2364,11 @@ public class PersistenciaParranderos
 		}
 		catch (Exception e)
 		{
-//			e.printStackTrace();
+			//			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-//			return null;
+			//			return null;
 			throw new Exception (e.getMessage());
-			
+
 		}
 		finally
 		{
@@ -2378,7 +2379,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	/**
 	 * Busca el carrito dado, y elimina la tupla de la tabla contiene que se asocia al carrito y al producto
 	 * @param idCarrito
@@ -2395,28 +2396,28 @@ public class PersistenciaParranderos
 			tx.begin();
 			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
 			tx.commit();
-			
+
 			if(car == null)
 			{
 				throw new Exception ("La contraseña del carrito es incorrecta");
 			}
-			
+
 			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
 
 			tx.begin();
 			long disminuir = sqlAlmacenamiento.disminuirExistenciasAlmacenamientos(pm, cantidad, sucursal, idProducto, "Estante");
 			log.trace ("Disminuyendo " + cantidad + " productos " + idProducto + "  del estante de la sucursal " + sucursal );
-			
+
 			long add = sqlContiene.adicionarContiene(pm, idProducto, cantidad, idCarrito);
 			log.trace ("Agregando " + add + "a la tabla contiene"  );
-			
+
 			tx.commit();
 
 			return new Contiene(idCarrito, cantidad, idProducto);
 		}
 		catch (Exception e)
 		{
-			        	e.printStackTrace();
+			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return null;
 		}
@@ -2429,7 +2430,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	/**
 	 * Busca el carrito dado, y elimina la tupla de la tabla contiene que se asocia al carrito y al producto
 	 * @param idCarrito
@@ -2446,7 +2447,7 @@ public class PersistenciaParranderos
 			tx.begin();
 			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
 			tx.commit();
-			
+
 			if(car == null)
 			{
 				throw new Exception ("La contraseña del carrito es incorrecta");
@@ -2459,11 +2460,11 @@ public class PersistenciaParranderos
 			int cantidad = con1.getCantidad();
 			long can = sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pm, cantidad, sucursal, idProducto, "Estante");
 			log.trace ("Devolviendo " + cantidad + " productos " + idProducto + "  al estante de la sucursal " + sucursal );
-			
+
 			long dev = sqlContiene.eliminarContienePorCarritoProducto(pm, idCarrito, idProducto);
 			log.trace ("Eliminando " + dev + "de la tabla contiene"  );
 
-			
+
 			tx.commit();
 
 			return con1;
@@ -2483,7 +2484,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	/**
 	 * Busca el carrito dado, lo abandona, cambiando su estado a abandonado.
 	 * @param idCarrito
@@ -2499,7 +2500,7 @@ public class PersistenciaParranderos
 			tx.begin();
 			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
 			tx.commit();
-			
+
 			if(car == null)
 			{
 				throw new Exception ("La contraseña del carrito es incorrecta");
@@ -2531,50 +2532,141 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
-	public void recolectarProductosAbandonados()
+
+	public void recolectarProductosAbandonados(long sucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 
-		try
-		{
+		//		try
+		//		{
+		//			tx.begin();
+		//			List<Object[]> abandonados = sqlContiene.darContieneCarritosAbandonados(pmf.getPersistenceManager());
+		//			for ( Object[] abandonado: abandonados)
+		//			{
+		//				long [] datosResp = new long [4];
+		//
+		//				datosResp [0] = ((BigDecimal) abandonado [0]).longValue (); // id producto
+		//				datosResp [1] = ((BigDecimal) abandonado [1]).longValue (); // cantidad unidades
+		//				datosResp [2] = ((BigDecimal) abandonado [2]).longValue (); // id del carrito
+		//				datosResp [3] = ((BigDecimal) abandonado [3]).longValue (); // estado del carrito
+		//				
+		//				sqlContiene.eliminarContienePorCarritoProducto(pmf.getPersistenceManager(), datosResp[2], datosResp[0]);	
+		//			}
+		//			
+		//			List<Object[]> existencias = sqlAlmacenamiento.darExistenciasProductosAbandonados(pmf.getPersistenceManager());
+		//			for ( Object[] abandonado: abandonados)
+		//			{
+		//				long [] datosResp = new long [4];
+		//				System.out.println(datosResp[1]);
+		//
+		//				datosResp [0] = ((BigDecimal) abandonado [0]).longValue (); // existencias
+		//				datosResp [1] = ((BigDecimal) abandonado [1]).longValue (); // id de la sucursal
+		//				datosResp [2] = ((BigDecimal) abandonado [2]).longValue (); // id del producto
+		//				datosResp [3] = ((BigDecimal) abandonado [3]).longValue (); // cantidad unidades
+		//				
+		//				sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pmf.getPersistenceManager(), (int)datosResp[3], datosResp[1], datosResp[2], "Estante");
+		//			}
+		//			
+		//			tx.commit();
+
+		try {
 			tx.begin();
-			List<Object[]> abandonados = sqlContiene.darContieneCarritosAbandonados(pmf.getPersistenceManager());
-			for ( Object[] abandonado: abandonados)
-			{
-				long [] datosResp = new long [4];
+			List<Carrito> abandonados = sqlCarrito.darCarritosAbandonados(pm);
+			log.trace("Se encontraron " + abandonados.size() + " carritos abandonados");
 
-				datosResp [0] = ((BigDecimal) abandonado [0]).longValue (); // id producto
-				datosResp [1] = ((BigDecimal) abandonado [1]).longValue (); // cantidad unidades
-				datosResp [2] = ((BigDecimal) abandonado [2]).longValue (); // id del carrito
-				datosResp [3] = ((BigDecimal) abandonado [3]).longValue (); // estado del carrito
-				
-				sqlContiene.eliminarContienePorCarritoProducto(pmf.getPersistenceManager(), datosResp[2], datosResp[0]);	
-			}
-			
-			List<Object[]> existencias = sqlAlmacenamiento.darExistenciasProductosAbandonados(pmf.getPersistenceManager());
-			for ( Object[] abandonado: abandonados)
+			List<Long> ids = new LinkedList<Long>();
+			if(abandonados.size()>0)
 			{
-				long [] datosResp = new long [4];
-				System.out.println(datosResp[1]);
 
-				datosResp [0] = ((BigDecimal) abandonado [0]).longValue (); // existencias
-				datosResp [1] = ((BigDecimal) abandonado [1]).longValue (); // id de la sucursal
-				datosResp [2] = ((BigDecimal) abandonado [2]).longValue (); // id del producto
-				datosResp [3] = ((BigDecimal) abandonado [3]).longValue (); // cantidad unidades
-				
-				sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pmf.getPersistenceManager(), (int)datosResp[3], datosResp[1], datosResp[2], "Estante");
+				for(Carrito carrito:abandonados)
+				{
+					sqlCarrito.cambiarEstadoCarrito(pm, carrito.getId(), "libre");
+					log.trace("Se cambia el estado del carrito " + carrito.getId() + " a libre");
+					ids.add(carrito.getId());
+					log.trace("Se añade a la lista de ids de carritos abandonados el numero: " + carrito.getId());
+				}
+
+
+				for(Long id:ids)
+				{
+					List<Contiene> contienePorCarrito = sqlContiene.darContienePorCarrito(pm, id);
+					log.trace("Se obtienen todos los objetos contiene de ese carrito");
+					if(contienePorCarrito.size()>0)
+					{
+						for(Contiene contiene:contienePorCarrito)
+						{
+							long idCarrito = contiene.getCarrito();
+							long producto = contiene.getProducto();
+							int cantidad = contiene.getCantidad();
+
+							long tupla = sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pm, cantidad, sucursal, producto, "Estante");
+							long tupla2 = sqlContiene.eliminarContienePorCarritoProducto(pm, idCarrito, producto);
+							log.trace("Se eliminaron " + tupla2 + " tuplas y se aumentaron sus existencias en los estantes respectivos");
+
+						}
+					}
+
+				}
+
+				tx.commit();
+
 			}
-			
-			tx.commit();
-			
+			else {throw new Exception("No hay carritos abandonados");}
 		}
 		catch (Exception e)
 		{
 			//        	e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			
+
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Promocion, dado el identificador de la promocion
+	 * Adiciona entradas al log de la aplicación
+	 * @param idProm - El identificador de la promoción
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long analizarOperacion(String fecha, String producto) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		List<Transaccion> rta = new LinkedList<>();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			List<Transaccion> tran = sqlTransaccion.darTransacciones(pm);
+			for (Transaccion actual:tran)
+			{
+				long idProducto = actual.getProducto();
+				Producto prod = sqlProducto.darProductoPorId(pm, idProducto);
+				if(prod.getTipo().equals(producto))
+				{
+					rta.add(actual);
+				}
+			}
+
+
+
+
+			tx.commit();
+			long respuesta = (long) rta.size();
+			return respuesta;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
 		}
 		finally
 		{

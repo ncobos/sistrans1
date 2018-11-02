@@ -72,6 +72,10 @@
 				{
 					"label": "Mostrar compras hechas a proveedores",
 					"event": "comprasProveedores"
+				},
+				{
+					"label": "Analizar la operación de SuperAndes",
+					"event": "analizarOperacion"
 				}
 			]
 		},

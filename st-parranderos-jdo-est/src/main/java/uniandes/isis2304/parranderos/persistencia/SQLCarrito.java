@@ -128,7 +128,7 @@ class SQLCarrito {
 	 */
 	public List<Carrito> darCarritosAbandonados(PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarrito() + "WHERE estado = 'abandonado'");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarrito() + " WHERE estado = 'abandonado'");
 		q.setResultClass(Carrito.class);
 		return (List<Carrito>) q.executeList();
 	}

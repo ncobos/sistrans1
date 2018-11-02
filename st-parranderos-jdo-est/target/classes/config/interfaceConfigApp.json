@@ -70,16 +70,12 @@
 					"event": "darProductosPorCiudad"
 				},
 				{
-					"label": "Limpiar log de superandes",
-					"event": "limpiarLogParranderos"
+					"label": "Mostrar compras hechas a proveedores",
+					"event": "comprasProveedores"
 				},
 				{
-					"label": "Limpiar log de datanucleus",
-					"event": "limpiarLogDatanucleus"
-				},
-				{
-					"label": "Limpiar Base de Datos",
-					"event": "limpiarBD"
+					"label": "Analizar la operación de SuperAndes",
+					"event": "analizarOperacion"
 				}
 			]
 		},

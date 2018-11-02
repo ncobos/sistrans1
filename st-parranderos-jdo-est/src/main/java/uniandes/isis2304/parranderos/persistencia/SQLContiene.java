@@ -101,12 +101,12 @@ class SQLContiene
 	 * @param idProducto producto contenido en el carrito
 	 * @return Un objeto CONTIENE asociado a cierto carrito
 	 */
-	public Contiene darContienePorCarrito(PersistenceManager pm, long idCarrito)
+	public List<Contiene> darContienePorCarrito(PersistenceManager pm, long idCarrito)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaContiene () + " WHERE carrito = ?");
 		q.setResultClass(Contiene.class);
 		q.setParameters(idCarrito);
-		return (Contiene) q.executeUnique();
+		return (List<Contiene>) q.executeList();
 	}
 	
 	public List<Object[]> darContieneCarritosAbandonados(PersistenceManager pm)

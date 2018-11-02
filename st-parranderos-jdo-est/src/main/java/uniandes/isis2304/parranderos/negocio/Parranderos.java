@@ -1516,10 +1516,10 @@ public class Parranderos
         return contiene;
 	}
 	
-	public void recolectarProductos()
+	public void recolectarProductos(long sucursal)
 	{
         log.info ("Recolectando productos de carritos abandonados y restableciendo existencias");
-        pp.recolectarProductosAbandonados();
+        pp.recolectarProductosAbandonados(sucursal);
         log.info ("Recolectando productos de carritos abandonados y restableciendo existencias: Listo!");
 	}
 	
@@ -1535,5 +1535,19 @@ public class Parranderos
         Carrito carrito= pp.abandonarCarrito(idCarrito, clave);
 		log.info ("Abandonando carrito: " + idCarrito) ;
         return carrito;
+	}
+	
+	/**
+	 * Proceso de abandonar un carrito de compras.
+	 * @param idCarrito del cual se quiere sacar el producto
+	 * @param clave del carrito seleccionado.
+	 * @return
+	 */
+	public Long analizarOperacion(String fecha, String producto)
+	{
+		log.info ("Analizando la operación para: " + " y para " + producto) ;
+        Long oper = pp.analizarOperacion(fecha, producto);
+		log.info ("Analisis la operación para: " + " y para " + producto + " hecho.") ;
+        return oper;
 	}
 }
