@@ -54,10 +54,10 @@ class SQLCarrito {
 	 * @param idSucursal - El identificador de la sucursal donde se generó la carrito
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarCarrito (PersistenceManager pm, long id, String estado)
+	public long adicionarCarrito (PersistenceManager pm, long id, String estado, long clave, long sucursal)
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCarrito() + "(id, estado) values (?, ?)");
-        q.setParameters(id, estado);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCarrito() + "(id, estado, clave, sucursal) values (?, ?, ?, ?)");
+        q.setParameters(id, estado, clave, sucursal);
         return (long) q.executeUnique();            
 	}
 	

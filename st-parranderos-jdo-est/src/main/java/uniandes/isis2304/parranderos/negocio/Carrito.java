@@ -17,18 +17,22 @@ public class Carrito implements VOCarrito{
 	/**
 	 * El identificador ÚNICO de las carritos
 	 */
-	private long id;
-	
+	public long id;
 	
 	/**
 	 * Estado del carrito
 	 */
-	private String estado;
+	public String estado;
 	
 	/**
 	 * Clave del carrito
 	 */
-	private long clave;
+	public long clave;
+	
+	/**
+	 * Sucursal del carrito
+	 */
+	public long sucursal;
 	
 	/* ****************************************************************
 	 * 			M�todos
@@ -41,19 +45,22 @@ public class Carrito implements VOCarrito{
 		this.id = 0;
 		this.estado = "";
 		this.clave = 0;
+		this.sucursal = 0;
 	}
 
 	/**
 	 * Constructor con valores
-	 * @param pId - El identificador del carrito. Debe existir una carrito con dicho identificador
-	 * @param pCliente - El identificador del idCliente. Debe existir un cliente con dicho identificador. 
-	 * @param pEstado - El estado del carrito (en uso, abandonado, 
+	 * @param pNumero - El identificador del carrito. Debe existir una carrito con dicho identificador
+	 * @param pEstado - El estado del carrito (en uso, abandonado, libre, pagado)
+	 * @param pClave- Clave asignada al carrito
+	 * @param pSucursal - Sucursal a la que pertenece el carrito
 	 */
-	public Carrito(long pNumero, String pEstado, long pClave) 
+	public Carrito(long pNumero, String pEstado, long pClave, long pSucursal) 
 	{
 		this.id = pNumero;
 		this.estado = pEstado;
 		this.clave = pClave;
+		this.sucursal = pSucursal;
 	}
 
 	/**
@@ -103,12 +110,26 @@ public class Carrito implements VOCarrito{
 		this.clave = clave;
 	}
 
-	/** 
-	 * @return Una cadena con la información básica del carrito
+	/**
+	 * @return the sucursal
+	 */
+	public long getSucursal() {
+		return sucursal;
+	}
+
+	/**
+	 * @param sucursal the sucursal to set
+	 */
+	public void setSucursal(long sucursal) {
+		this.sucursal = sucursal;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Carrito [id=" + id + ", estado=" + estado + ", clave=" + clave + "]";
+		return "Carrito [id=" + id + ", estado=" + estado + ", clave=" + clave + ", sucursal=" + sucursal + "]";
 	}
 
 }

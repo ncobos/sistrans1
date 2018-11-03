@@ -55,7 +55,7 @@ import uniandes.isis2304.parranderos.negocio.Subpedido;
  * Traduce la información entre objetos Java y tuplas de la base de datos, en ambos sentidos
  * Sigue un patrón SINGLETON (Sólo puede haber UN objeto de esta clase) para comunicarse de manera correcta
  * con la base de datos
- * Se apoya en las clases SQLBar, SQLBebedor, SQLBebida, SQLGustan, SQLSirven, SQLTipoBebida y SQLVisitan, que son 
+ * Se apoya en las clases SQLBar, SQLCarrito, SQLBebida, SQLGustan, SQLSirven, SQLTipoBebida y SQLVisitan, que son 
  * las que realizan el acceso a la base de datos
  * 
  * @author Germán Bravo
@@ -82,7 +82,7 @@ public class PersistenciaParranderos
 
 	/**
 	 * Arreglo de cadenas con los nombres de las tablas de la base de datos, en su orden:
-	 * Secuenciador, tipoBebida, bebida, bar, bebedor, gustan, sirven y visitan
+	 * Secuenciador, tipoBebida, bebida, bar, carrito, gustan, sirven y visitan
 	 */
 	private List <String> tablas;
 
@@ -334,7 +334,7 @@ public class PersistenciaParranderos
 	 * Elimina todas las tuplas de todas las tablas de la base de datos de Parranderos
 	 * Crea y ejecuta las sentencias SQL para cada tabla de la base de datos - EL ORDEN ES IMPORTANTE 
 	 * @return Un arreglo con 7 números que indican el número de tuplas borradas en las tablas GUSTAN, SIRVEN, VISITAN, BEBIDA,
-	 * TIPOBEBIDA, BEBEDOR y BAR, respectivamente
+	 * TIPOBEBIDA, CARRITO y BAR, respectivamente
 	 */
 	public long [] limpiarParranderos ()
 	{
@@ -2329,9 +2329,79 @@ public class PersistenciaParranderos
 		return sqlCarrito.darCarritoPorId(pmf.getPersistenceManager(), idCarrito);
 	}
 
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Bebida
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - El nombre de la bebida
+	 * @param idTipoBebida - El identificador del tipo de bebida (Debe existir en la tabla TipoBebida)
+	 * @param gradoAlcohol - El grado de alcohol de la bebida (mayor que 0)
+	 * @return El objeto Bebida adicionado. null si ocurre alguna Excepción
+	 */
+	public Carrito crearCarrito(long sucursal) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();            
+            long idCarrito = nextval ();
+            long tuplasInsertadas = sqlCarrito.adicionarCarrito(pm, idCarrito, "libre", 0, sucursal);
+            tx.commit();
+            
+            log.trace ("Inserción carrito: " + idCarrito + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Carrito(idCarrito, "libre", 0 , sucursal);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla CARRITO, dado el identificador del carrito
+	 * Adiciona entradas al log de la aplicación
+	 * @param idCarrito - El identificador del carrito
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarCarritoPorId (long idCarrito) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlCarrito.eliminarCarritoPorId (pm, idCarrito);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 
-	public Carrito asignarCarrito(long id, long clave) throws Exception
+	public Carrito asignarCarrito(long id, long sucursal, long clave) throws Exception
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -2344,6 +2414,10 @@ public class PersistenciaParranderos
 			if(car.getEstado().equalsIgnoreCase("en uso"))
 			{
 				throw new Exception ("El carrito está en uso");
+			}
+			if(car.getSucursal() != sucursal)
+			{
+				throw new Exception("No corresponde a la sucursal");
 			}
 
 			log.trace ("Asignación de carrito: " + id);
@@ -2678,4 +2752,13 @@ public class PersistenciaParranderos
 		}
 	}
 
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla Carrito
+	 * @return La lista de objetos Carrito, construidos con base en las tuplas de la tabla CARRITO
+	 */
+	public List<Carrito> darCarritos ()
+	{
+		return sqlCarrito.darCarritos(pmf.getPersistenceManager());
+	}
 }
