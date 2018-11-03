@@ -2734,23 +2734,31 @@ public class PersistenciaParranderos
 			Factura factura = new Factura(idFactura, sucursal, fecha, cliente);
 			
 			sqlFactura.adicionarFactura(pm, idFactura, fecha, cliente, sucursal);
-			
+			System.out.println("factura agregada");
 			List<Contiene> con = sqlContiene.darContienePorCarrito(pm, idCarrito);
+			System.out.println("hola");
 			for(Contiene actual: con)
 			{
 				long producto = actual.getProducto();
 				int cantidad = actual.getCantidad();
 				Vende vende = sqlVende.darVendePorProductoSucursal(pm, producto, sucursal);
 				double costo = vende.getPrecioUnitario() * cantidad;
+				System.out.println(costo);
+				
+				System.out.println("entré al recorrido");
 				
 				sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion, "pagada");
 				
-				costoTotal+= costo;		
+				costoTotal+= costo;	
+				
+				sqlContiene.eliminarContienePorCarritoProducto(pm, idCarrito, producto);
+				System.out.println("los eliminé");
 			}
 			
+			System.out.println("salió");
 			
 			tx.commit();
-			
+	
 			return factura;
 			
 		} catch (Exception e) {
@@ -2785,7 +2793,7 @@ public class PersistenciaParranderos
 			List<Transaccion> tran = sqlTransaccion.darTransacciones(pm);
 			for (Transaccion actual:tran)
 			{
-				long idProducto = actual.getProducto();
+				long idProducto = actual.getIdProducto();
 				Producto prod = sqlProducto.darProductoPorId(pm, idProducto);
 				if(prod.getTipo().equals(producto))
 				{

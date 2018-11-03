@@ -32,7 +32,7 @@ public interface VOTransaccion {
 	/**
 	 * @return El producto de la transacci�n
 	 */
-	public long getProducto();
+	public long getIdProducto();
 	
 	/**
 	 * @return La promoci�n de la transacci�n

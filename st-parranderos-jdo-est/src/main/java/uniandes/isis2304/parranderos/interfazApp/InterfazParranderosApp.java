@@ -1193,7 +1193,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	
 	public String pagarCompra()
 	{
-		String resp = "Información de la factura del carrito pagado:";
+		String resp = "Información de la factura del carrito pagado:" + "\n";
 		
 		try {
 			
@@ -1218,25 +1218,31 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			Factura factura = parranderos.pagarcompra(idCarrito, clave, fecha, cliente);
 			
 			long idfactura = factura.getNumero();
+			System.out.println(idfactura);
 			
 			List<Transaccion> transacciones = parranderos.darTransaccionesPorFactura(idfactura);
+			System.out.println(transacciones.size());
 		
 			double costoTotal = 0;
+			
+			System.out.println("voy a entrar");
 			for(Transaccion actual: transacciones)
 			{
 				int cantidad = actual.getCantidad();
 				double costo = actual.getCosto()*cantidad;
-				long producto = actual.getProducto();
+				long producto = actual.getIdProducto();
+				
+				System.out.println("ahí voy");
 				
 				costoTotal+= costo;
 				System.out.println("estoy dentro");
 				
-				resp+= costoTotal + "," + producto + "\n";
+				resp+= "Costo Total: "+ costoTotal + "," + "Id producto:" + producto + "\n";
 			}
 			
 			System.out.println(factura);
 			
-			resp+= "Cliente:" + cliente + ","+ "Carrito" + id + "," + "Fecha factura:" + fecha;
+			resp+= "Cliente:" + cliente + "," + "\n"+ "Carrito" + id + "," + "\n" + "Fecha factura:" + fecha;
 			
 			panelDatos.actualizarInterfaz(resp);
 				
