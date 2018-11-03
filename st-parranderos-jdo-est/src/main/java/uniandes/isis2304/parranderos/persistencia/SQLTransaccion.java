@@ -55,10 +55,10 @@ class SQLTransaccion
 	 * @param promocion - identificador de la promoci�n a la cual est� asociada (puede no tener)
 	 * @return El n�mero de tuplas insertadas
 	 */
-	public long adicionarTransaccion (PersistenceManager pm, long idProducto, int cantidad, long numerofactura, double costo, long promocion) 
+	public long adicionarTransaccion (PersistenceManager pm, long idProducto, int cantidad, long numerofactura, double costo, long promocion, String estado) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaTransaccion () + "(idproducto, cantidad, numerofactura, costo, promocion) values (?, ?, ?, ?, ?)");
-        q.setParameters(idProducto, cantidad, numerofactura, costo, promocion);
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaTransaccion () + "(idproducto, cantidad, numerofactura, costo, promocion, estado) values (?, ?, ?, ?, ?, ?)");
+        q.setParameters(idProducto, cantidad, numerofactura, costo, promocion, estado);
         return (long) q.executeUnique();
 	}
 

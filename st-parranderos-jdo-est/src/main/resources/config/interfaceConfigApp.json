@@ -47,6 +47,10 @@
 				{
 					"label": "Recolectar productos abandonados por carritos",
 					"event": "recolectarProductos"
+				},
+								{
+					"label": "Pagar compra",
+					"event": "pagarCompra"
 				}
 			]
 		},

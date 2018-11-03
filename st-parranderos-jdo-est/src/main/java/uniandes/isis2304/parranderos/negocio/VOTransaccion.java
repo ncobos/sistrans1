@@ -39,7 +39,7 @@ public interface VOTransaccion {
 	 */
 	public long getPromocion();
 	
-
+	public String getEstado();
 	
 	/** 
 	 * @return Una cadena con la informaci�n b�sica

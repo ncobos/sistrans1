@@ -1537,6 +1537,14 @@ public class Parranderos
         return carrito;
 	}
 	
+	public Factura pagarcompra(long idCarrito, long clave, Timestamp fecha, String cliente)
+	{
+		log.info ("Pagando compra para el carrito:" + idCarrito) ;
+        Factura factura = pp.pagarCompra(idCarrito, clave, fecha, cliente);
+		log.info ("Pagando compra para el carrito:" + idCarrito + "hecho.") ;
+        return factura;
+	}
+	
 	/**
 	 * Proceso de abandonar un carrito de compras.
 	 * @param idCarrito del cual se quiere sacar el producto
@@ -1561,6 +1569,14 @@ public class Parranderos
         List<Carrito> oper = pp.darCarritos();
 		log.info ("Obteniendo todos los carritos de la base de datos: listo") ;
         return oper;
+	}
+	
+	public List<Transaccion> darTransaccionesPorFactura(long numeroFactura)
+	{
+		log.info ("Obteniendo todas las transacciones por una factura de la base de datos") ;
+		List<Transaccion> trans = pp.darTransaccionesPorFactura(numeroFactura);
+		log.info ("Obteniendo todas las transacciones por una factura de la base de datos: Listo!") ;
+		return trans;
 	}
 	
 	/**

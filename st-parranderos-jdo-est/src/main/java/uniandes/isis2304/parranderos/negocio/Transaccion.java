@@ -40,7 +40,10 @@ public class Transaccion implements VOTransaccion{
 	 */
 	private long promocion;
 	
-
+	/**
+	 *  Estado de la transacci�n
+	 */
+	private String estado;
 	
 	/**
 	 * Constructor por defecto
@@ -51,6 +54,7 @@ public class Transaccion implements VOTransaccion{
 		this.costo = 0;
 		this.producto = 0;
 		this.promocion = 0;
+		this.estado = "";
 		
 	}
 	
@@ -70,6 +74,7 @@ public class Transaccion implements VOTransaccion{
 		this.costo = costo;
 		this.producto = producto;
 		this.promocion = promocion;
+		this.estado = estado;
 	}
 
 	/**
@@ -142,7 +147,19 @@ public class Transaccion implements VOTransaccion{
 		this.promocion = promocion;
 	}
 
-	
+	/**
+	 * @return the producto
+	 */
+	public String getEstado() {
+		return estado;
+	}
+
+	/**
+	 * @param producto the producto to set
+	 */
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
 
 

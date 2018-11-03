@@ -2043,7 +2043,7 @@ public class PersistenciaParranderos
 				sqlPromocion.disminuirExistenciasPromocion(pm, promocion, cantidad);
 			}
 			tx.begin();
-			long tuplasInsertadas2 = sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion);
+			long tuplasInsertadas2 = sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion, "pagada");
 			tx.commit();
 
 			log.trace ("Inserción de la transacción: " + tuplasInsertadas2 + " tuplas insertadas");
@@ -2327,6 +2327,11 @@ public class PersistenciaParranderos
 	public Carrito darCarritoPorId(long idCarrito)
 	{
 		return sqlCarrito.darCarritoPorId(pmf.getPersistenceManager(), idCarrito);
+	}
+	
+	public List<Transaccion> darTransaccionesPorFactura(long numeroFactura)
+	{
+		return sqlTransaccion.darTransaccionesPorNumeroFactura(pmf.getPersistenceManager(), numeroFactura);
 	}
 
 	/**
@@ -2702,10 +2707,12 @@ public class PersistenciaParranderos
 		}
 	}
 
-	public Factura pagarCompra(long idFactura, long idCarrito, long clave, Timestamp fecha, String cliente, long sucursal, long producto, long promocion, int cantidad)
+	public Factura pagarCompra( long idCarrito, long clave, Timestamp fecha, String cliente)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
+		long idFactura = nextval();
+		double costoTotal = 0;
 		try {
 			tx.begin();
 			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
@@ -2720,11 +2727,44 @@ public class PersistenciaParranderos
 			
 			tx.begin();
 			
+			long sucursal = car.getSucursal();
+			
+			long promocion = 0;
+			
 			Factura factura = new Factura(idFactura, sucursal, fecha, cliente);
+			
+			sqlFactura.adicionarFactura(pm, idFactura, fecha, cliente, sucursal);
+			
+			List<Contiene> con = sqlContiene.darContienePorCarrito(pm, idCarrito);
+			for(Contiene actual: con)
+			{
+				long producto = actual.getProducto();
+				int cantidad = actual.getCantidad();
+				Vende vende = sqlVende.darVendePorProductoSucursal(pm, producto, sucursal);
+				double costo = vende.getPrecioUnitario() * cantidad;
+				
+				sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion, "pagada");
+				
+				costoTotal+= costo;		
+			}
+			
+			
 			tx.commit();
 			
+			return factura;
+			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
 		}
 		
 	}

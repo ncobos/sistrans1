@@ -52,9 +52,11 @@ import com.google.gson.stream.JsonReader;
 
 import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Contiene;
+import uniandes.isis2304.parranderos.negocio.Factura;
 import uniandes.isis2304.parranderos.negocio.Parranderos;
 import uniandes.isis2304.parranderos.negocio.Pedido;
 import uniandes.isis2304.parranderos.negocio.Producto;
+import uniandes.isis2304.parranderos.negocio.Transaccion;
 import uniandes.isis2304.parranderos.negocio.VOFactura;
 import uniandes.isis2304.parranderos.negocio.VOPedido;
 import uniandes.isis2304.parranderos.negocio.VOPromocion;
@@ -1185,6 +1187,63 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+	
+	public String pagarCompra()
+	{
+		String resp = "Información de la factura del carrito pagado:";
+		
+		try {
+			
+			String fecha2 = JOptionPane.showInputDialog (this, "Fecha de la creación de la factura. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Pagar compra", JOptionPane.QUESTION_MESSAGE);
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			Date date = dateFormat.parse(fecha2);
+			long time = date.getTime();
+			Timestamp fecha = new Timestamp(time);
+			
+			String cliente = JOptionPane.showInputDialog (this, "Identificación del cliente", "Pagar compra", JOptionPane.QUESTION_MESSAGE);
+			
+			String id = JOptionPane.showInputDialog(this, "Ingrese el identificador de su carrito de mercado:", "Pagar compra", JOptionPane.QUESTION_MESSAGE);
+			
+			String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña de su carrito de mercado:", "Pagar compra", JOptionPane.QUESTION_MESSAGE);
+			
+			long idCarrito = Long.parseLong(id);
+			
+			long clave = Long.parseLong(pass);
+			
+			
+
+			Factura factura = parranderos.pagarcompra(idCarrito, clave, fecha, cliente);
+			
+			long idfactura = factura.getNumero();
+			
+			List<Transaccion> transacciones = parranderos.darTransaccionesPorFactura(idfactura);
+		
+			double costoTotal = 0;
+			for(Transaccion actual: transacciones)
+			{
+				int cantidad = actual.getCantidad();
+				double costo = actual.getCosto()*cantidad;
+				long producto = actual.getProducto();
+				
+				costoTotal+= costo;
+				System.out.println("estoy dentro");
+				
+				resp+= costoTotal + "," + producto + "\n";
+			}
+			
+			System.out.println(factura);
+			
+			resp+= "Cliente:" + cliente + ","+ "Carrito" + id + "," + "Fecha factura:" + fecha;
+			
+			panelDatos.actualizarInterfaz(resp);
+				
+			return resp;		
+		} 
+		catch (Exception e) {
+			// TODO: handle exception
 		}
 		return resp;
 	}
