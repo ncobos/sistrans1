@@ -276,6 +276,7 @@ CREATE TABLE a_carrito (
     id       NUMBER,
     estado   VARCHAR2(255 BYTE) NOT NULL,
     clave    NUMBER NOT NULL,
+    sucursal NUMBER NOT NULL,
     CONSTRAINT a_carrito_pk PRIMARY KEY ( id )
 );
 
@@ -289,6 +290,11 @@ ALTER TABLE a_carrito
 
 ALTER TABLE a_carrito
     ADD CONSTRAINT ck_car_clave CHECK ( clave >-1 ) ENABLE;
+    
+ALTER TABLE a_carrito
+    ADD CONSTRAINT fk_c_sucursal FOREIGN KEY ( sucursal )
+        REFERENCES a_sucursal ( id )
+    ENABLE;
 
 
 -- Creaci�n de la tabla ofrecen y especificaci�n de sus restricciones.
