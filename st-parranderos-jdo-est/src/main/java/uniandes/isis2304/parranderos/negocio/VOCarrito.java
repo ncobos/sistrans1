@@ -32,6 +32,7 @@ public interface VOCarrito {
 	/**
 	 * @return La sucursal del carrito
 	 */
+
 	public long getSucursal();
 	
 	/** 

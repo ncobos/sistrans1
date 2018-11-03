@@ -1457,7 +1457,7 @@ public class Parranderos
 	 * 			null, si una sucursal con dicho id no existe
 	 * @throws Exception 
 	 */
-	public Carrito asignarCarrito(long clave) throws Exception
+	public Carrito asignarCarrito(long sucursal, long clave) throws Exception
 	{
 		try {
 			
@@ -1468,7 +1468,7 @@ public class Parranderos
 		{
         log.info ("Asignación de un carrito con id: " + carrito);
         log.info ("Asignación de clave: " + clave);
-        Carrito asignado = pp.asignarCarrito(carrito, clave);
+        Carrito asignado = pp.asignarCarrito(carrito, sucursal, clave);
         carrito++;
         log.info ("Buscando carrito por id: " + asignado!= null ? asignado: "NO EXISTE");
         return asignado;
@@ -1481,7 +1481,7 @@ public class Parranderos
 		catch(Exception e)
 		{
 			carrito++;
-			Carrito car2 = asignarCarrito(clave);
+			Carrito car2 = asignarCarrito(sucursal, clave);
 			return car2;
 		}
 	}
@@ -1541,13 +1541,49 @@ public class Parranderos
 	 * Proceso de abandonar un carrito de compras.
 	 * @param idCarrito del cual se quiere sacar el producto
 	 * @param clave del carrito seleccionado.
-	 * @return
+	 * @return numero de tuplas 
 	 */
 	public Long analizarOperacion(String fecha, String producto)
 	{
 		log.info ("Analizando la operación para: " + " y para " + producto) ;
         Long oper = pp.analizarOperacion(fecha, producto);
 		log.info ("Analisis la operación para: " + " y para " + producto + " hecho.") ;
+        return oper;
+	}
+	
+	/**
+	 * Retorna una lista con los carritos existentes
+	 * @return carritos en la base de datos
+	 */
+	public List<Carrito> darCarritos()
+	{
+		log.info ("Obteniendo todos los carritos de la base de datos") ;
+        List<Carrito> oper = pp.darCarritos();
+		log.info ("Obteniendo todos los carritos de la base de datos: listo") ;
+        return oper;
+	}
+	
+	/**
+	 * Adiciona un carrito a la base de datos
+	 * @return el objeto carrito creado
+	 */
+	public Carrito crearCarrito(long sucursal)
+	{
+		log.info ("Creando e ingresando un carrito en la base de datos") ;
+        Carrito oper = pp.crearCarrito(sucursal);
+		log.info ("Creando e ingresando un carrito en la base de datos: listo") ;
+        return oper;
+	}
+	
+	/**
+	 * Adiciona un carrito a la base de datos
+	 * @return el objeto carrito creado
+	 */
+	public long eliminarCarritoPorId(long id)
+	{
+		log.info ("Eliminando carrito con id " + id) ;
+        long oper = pp.eliminarCarritoPorId(id);
+		log.info ("Eliminando carrito con id" + id + ": listo") ;
         return oper;
 	}
 }
