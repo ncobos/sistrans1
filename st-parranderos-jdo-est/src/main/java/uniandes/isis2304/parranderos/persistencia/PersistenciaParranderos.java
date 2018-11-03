@@ -2702,6 +2702,32 @@ public class PersistenciaParranderos
 		}
 	}
 
+	public Factura pagarCompra(long idFactura, long idCarrito, long clave, Timestamp fecha, String cliente, long sucursal, long producto, long promocion, int cantidad)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try {
+			tx.begin();
+			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
+			tx.commit();
+
+			if(car == null)
+			{
+				throw new Exception ("La contraseña del carrito es incorrecta");
+			}
+
+			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
+			
+			tx.begin();
+			
+			Factura factura = new Factura(idFactura, sucursal, fecha, cliente);
+			tx.commit();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla Promocion, dado el identificador de la promocion
 	 * Adiciona entradas al log de la aplicación
