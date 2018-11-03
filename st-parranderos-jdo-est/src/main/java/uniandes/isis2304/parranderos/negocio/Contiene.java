@@ -29,13 +29,7 @@ public class Contiene implements VOContiene{
 	/**
 	 *  El producto 
 	 */
-	private long producto;
-	
-	/**
-	 * sucursal a donde pertence el producto del carrito asociado
-	 */
-	private long sucursal;
- 
+	private long producto; 
 	
 	/**
 	 * Constructor por defecto
@@ -44,7 +38,6 @@ public class Contiene implements VOContiene{
 		this.carrito = 0;
 		this.cantidad = 0;
 		this.producto = 0;
-		this.sucursal= 0;
 		
 	}
 	
@@ -56,11 +49,10 @@ public class Contiene implements VOContiene{
 	 * @param producto
 	 * @param promocion
 	 */
-	public Contiene(long carrito, int cantidad, long producto, long sucursal) {
+	public Contiene(long carrito, int cantidad, long producto) {
 		this.carrito = carrito;
 		this.cantidad = cantidad;
 		this.producto = producto;
-		this.sucursal = sucursal;
 	}
 
 	/**
@@ -105,23 +97,7 @@ public class Contiene implements VOContiene{
 	 */
 	public void setProducto(long producto) {
 		this.producto = producto;
-	}
-	
-	/**
-	 * @return the sucursal
-	 */
-	public long getSucursal() {
-		return sucursal;
-	}
-
-	/**
-	 * @param producto the producto to set
-	 */
-	public void setSucursal(long sucursal) {
-		this.sucursal = sucursal;
-	}
-
-	
+	}	
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -129,7 +105,7 @@ public class Contiene implements VOContiene{
 	@Override
 	public String toString() {
 		return "Contiene [carrito=" + carrito + ", cantidad=" + cantidad + 
-				", producto=" + producto + ", sucursal=" + sucursal + "]";
+				", producto=" + producto +"]";
 	}
 	
 }

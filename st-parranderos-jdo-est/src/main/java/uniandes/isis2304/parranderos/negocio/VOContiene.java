@@ -27,11 +27,6 @@ public interface VOContiene {
 	 * @return El producto de la transacci�n
 	 */
 	public long getProducto();
-
-	/**
-	 * @return La sucursal
-	 */
-	public long getSucursal();
 	
 	/** 
 	 * @return Una cadena con la informaci�n b�sica

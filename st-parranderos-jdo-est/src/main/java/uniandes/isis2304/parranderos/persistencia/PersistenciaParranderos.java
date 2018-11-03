@@ -2487,7 +2487,7 @@ public class PersistenciaParranderos
 
 			tx.commit();
 
-			return new Contiene(idCarrito, cantidad, idProducto, sucursal);
+			return new Contiene(idCarrito, cantidad, idProducto);
 		}
 		catch (Exception e)
 		{
