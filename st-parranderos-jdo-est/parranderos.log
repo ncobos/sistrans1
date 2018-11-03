@@ -1,0 +1,4 @@
+10:36:59,414 (main) INFO  [uniandes.isis2304.parranderos.test.CarritoTest] - Probando las operaciones CRD sobre Carrito
+10:36:59,502 (main) INFO  [uniandes.isis2304.parranderos.test.CarritoTest] - Se encontró un archivo de configuración de tablas válido
+10:37:01,631 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los carritos de la base de datos
+10:37:01,922 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los carritos de la base de datos: listo

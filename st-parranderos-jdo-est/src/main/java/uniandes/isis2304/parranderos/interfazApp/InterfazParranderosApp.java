@@ -1129,20 +1129,13 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	public void recolectarProductos()
 	{
 		try {
-			String sucursal2 = JOptionPane.showInputDialog (this, "Identificador de la sucursal donde se van a recoger los productos abandonados", "Recoger productos abandonados", JOptionPane.QUESTION_MESSAGE);
-			if(sucursal2 != null)
-			{
 			
-			long sucursal = Long.parseLong(sucursal2);
 
-			parranderos.recolectarProductos(sucursal);
+			parranderos.recolectarProductos();
 			String resultado = "Productos recolectados exitosamente";
 			panelDatos.actualizarInterfaz(resultado);		
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-			}
+			
+			
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

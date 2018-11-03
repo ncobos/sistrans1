@@ -2607,7 +2607,7 @@ public class PersistenciaParranderos
 		}
 	}
 
-	public void recolectarProductosAbandonados(long sucursal)
+	public void recolectarProductosAbandonados()
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -2649,7 +2649,6 @@ public class PersistenciaParranderos
 			List<Carrito> abandonados = sqlCarrito.darCarritosAbandonados(pm);
 			log.trace("Se encontraron " + abandonados.size() + " carritos abandonados");
 
-			List<Long> ids = new LinkedList<Long>();
 			if(abandonados.size()>0)
 			{
 
@@ -2657,14 +2656,13 @@ public class PersistenciaParranderos
 				{
 					sqlCarrito.cambiarEstadoCarrito(pm, carrito.getId(), "libre");
 					log.trace("Se cambia el estado del carrito " + carrito.getId() + " a libre");
-					ids.add(carrito.getId());
-					log.trace("Se añade a la lista de ids de carritos abandonados el numero: " + carrito.getId());
-				}
+					}
 
 
-				for(Long id:ids)
+				for(Carrito actual:abandonados)
 				{
-					List<Contiene> contienePorCarrito = sqlContiene.darContienePorCarrito(pm, id);
+					List<Contiene> contienePorCarrito = sqlContiene.darContienePorCarrito(pm, actual.getId());
+					long sucursal = actual.getSucursal();
 					log.trace("Se obtienen todos los objetos contiene de ese carrito");
 					if(contienePorCarrito.size()>0)
 					{

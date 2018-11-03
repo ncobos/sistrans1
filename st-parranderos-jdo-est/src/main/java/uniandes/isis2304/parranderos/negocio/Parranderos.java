@@ -1516,10 +1516,10 @@ public class Parranderos
         return contiene;
 	}
 	
-	public void recolectarProductos(long sucursal)
+	public void recolectarProductos()
 	{
         log.info ("Recolectando productos de carritos abandonados y restableciendo existencias");
-        pp.recolectarProductosAbandonados(sucursal);
+        pp.recolectarProductosAbandonados();
         log.info ("Recolectando productos de carritos abandonados y restableciendo existencias: Listo!");
 	}
 	
