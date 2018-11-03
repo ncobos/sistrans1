@@ -2,3 +2,10 @@
 10:36:59,502 (main) INFO  [uniandes.isis2304.parranderos.test.CarritoTest] - Se encontró un archivo de configuración de tablas válido
 10:37:01,631 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los carritos de la base de datos
 10:37:01,922 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los carritos de la base de datos: listo
+10:39:24,579 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+10:39:24,584 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+10:39:24,615 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:40:10,112 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+10:40:10,427 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+10:40:24,831 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias
+10:40:24,916 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias: Listo!
