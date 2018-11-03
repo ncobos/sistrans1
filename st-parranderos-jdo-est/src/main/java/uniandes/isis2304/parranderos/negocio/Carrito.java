@@ -30,6 +30,11 @@ public class Carrito implements VOCarrito{
 	 */
 	private long clave;
 	
+	/**
+	 * Sucursal a la que pertence el carrito
+	 */
+	private long sucursal;
+	
 	/* ****************************************************************
 	 * 			M�todos
 	 *****************************************************************/
@@ -41,6 +46,7 @@ public class Carrito implements VOCarrito{
 		this.id = 0;
 		this.estado = "";
 		this.clave = 0;
+		this.sucursal = 0;
 	}
 
 	/**
@@ -49,11 +55,12 @@ public class Carrito implements VOCarrito{
 	 * @param pCliente - El identificador del idCliente. Debe existir un cliente con dicho identificador. 
 	 * @param pEstado - El estado del carrito (en uso, abandonado, 
 	 */
-	public Carrito(long pNumero, String pEstado, long pClave) 
+	public Carrito(long pNumero, String pEstado, long pClave, long pSucursal) 
 	{
 		this.id = pNumero;
 		this.estado = pEstado;
 		this.clave = pClave;
+		this.sucursal = pSucursal;
 	}
 
 	/**
@@ -102,13 +109,27 @@ public class Carrito implements VOCarrito{
 	public void setClave(long clave) {
 		this.clave = clave;
 	}
+	
+	/**
+	 * @return la sucursal
+	 */
+	public long getSucursal() {
+		return sucursal;
+	}
+
+	/**
+	 * @param sucursal the sucursal to set
+	 */
+	public void setSucursal(long sucursal) {
+		this.sucursal = sucursal;
+	}
 
 	/** 
 	 * @return Una cadena con la información básica del carrito
 	 */
 	@Override
 	public String toString() {
-		return "Carrito [id=" + id + ", estado=" + estado + ", clave=" + clave + "]";
+		return "Carrito [id=" + id + ", estado=" + estado + ", clave=" + clave + ", sucursal=" + sucursal + "]";
 	}
 
 }

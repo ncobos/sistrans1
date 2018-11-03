@@ -28,6 +28,10 @@ public interface VOContiene {
 	 */
 	public long getProducto();
 
+	/**
+	 * @return La sucursal
+	 */
+	public long getSucursal();
 	
 	/** 
 	 * @return Una cadena con la informaci�n b�sica

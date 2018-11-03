@@ -90,6 +90,21 @@ class SQLCarrito {
 	}
 	
 	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de UNA FACTURA de la 
+	 * base de datos de Superandes, por su identificador
+	 * @param pm - El manejador de persistencia
+	 * @param numero - El identificador de la carrito
+	 * @return El objeto FACTURA que tiene el identificador dado
+	 */
+	public Carrito darCarritoPorSucursal (PersistenceManager pm, long idsucursal) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCarrito() + " WHERE sucursal = ?");
+		q.setResultClass(Carrito.class);
+		q.setParameters(idsucursal);
+		return (Carrito) q.executeUnique();
+	}
+	
+	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de FACTURAS de la 
 	 * base de datos de Superandes, por su numero
 	 * @param pm - El manejador de persistencia

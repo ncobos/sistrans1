@@ -29,6 +29,11 @@ public interface VOCarrito {
 	 */
 	public long getClave();
 	
+	/**
+	 * @return La sucursal del carrito
+	 */
+	public long getSucursal();
+	
 	/** 
 	 * @return Una cadena con la información básica del carrito
 	 */

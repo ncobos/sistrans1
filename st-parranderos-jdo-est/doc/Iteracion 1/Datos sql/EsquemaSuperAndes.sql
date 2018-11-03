@@ -303,6 +303,7 @@ CREATE TABLE a_contiene (
     producto   NUMBER,
     carrito    NUMBER NOT NULL,
     cantidad   NUMBER NOT NULL,
+    sucursal   NUMBER NOT NULL,
     CONSTRAINT a_contiene_pk PRIMARY KEY ( producto,
                                            carrito,
                                            cantidad )
@@ -316,6 +317,11 @@ ALTER TABLE a_contiene
 ALTER TABLE a_contiene
     ADD CONSTRAINT fk_c_carrito FOREIGN KEY ( carrito )
         REFERENCES a_carrito ( id )
+    ENABLE;
+    
+ALTER TABLE a_contiene
+    ADD CONSTRAINT fk_co_sucursal FOREIGN KEY ( sucursal )
+        REFERENCES a_sucursal ( id )
     ENABLE;
 
 ALTER TABLE a_contiene ADD CONSTRAINT ck_contiene_cantidad CHECK ( cantidad > 0 ) ENABLE;
