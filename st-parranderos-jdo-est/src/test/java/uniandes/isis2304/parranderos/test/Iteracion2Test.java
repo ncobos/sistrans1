@@ -120,6 +120,8 @@ public class Iteracion2Test {
 
    			assertEquals("El estado debe ser 'en uso'", "en uso", carrito.getEstado());
    			assertEquals("La contraseña debe coincidir", 1, carrito.getClave());
+   			
+   			parranderos.abandonarCarrito(carrito.getId(), carrito.getClave());
    		
    		}
    		catch (Exception e)
@@ -190,6 +192,7 @@ public class Iteracion2Test {
    			
    			assertNotEquals("NO Deberían ser iguales", almacenamiento1.getExistencias(), almacenamientoMal.getExistencias());
    		
+   			parranderos.abandonarCarrito(carrito.getId(), carrito.getClave());
    		}
    		catch (Exception e)
    		{
