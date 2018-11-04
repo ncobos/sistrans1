@@ -333,3 +333,137 @@ ORA-02291: restricción de integridad (ISIS2304A101820.FK_TR_FACTURA) violada - 
 22:03:42,560 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Devolviendo producto: 1 del carrito: 7
 22:03:42,560 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
 22:03:42,578 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+07:34:41,648 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+07:34:41,649 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+07:34:41,702 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:36:31,842 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:36:32,569 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:36:41,195 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:36:41,448 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:36:53,373 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 1
+07:36:53,601 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 1
+07:37:31,095 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+07:37:31,759 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+07:37:31,759 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+07:37:31,863 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!
+07:40:16,708 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+07:40:16,710 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+07:40:16,779 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:40:41,853 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:40:42,474 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:40:51,910 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:40:52,101 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+07:40:52,161 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:41:07,225 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:41:07,446 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:42:29,270 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+07:45:16,070 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+07:45:16,072 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+07:45:16,119 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:46:43,206 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+07:46:43,207 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+07:46:43,251 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:47:01,040 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+07:47:03,284 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+07:47:03,285 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+07:47:03,460 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!
+07:49:19,361 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+07:49:19,363 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+07:49:19,401 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:49:34,572 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:49:35,331 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:49:43,790 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:49:44,139 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:50:01,449 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+07:50:02,175 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+07:50:02,175 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+07:50:02,323 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!
+07:52:46,278 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+07:52:46,280 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+07:52:46,322 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:53:18,523 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:53:19,170 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+07:53:34,528 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:53:34,749 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+07:54:20,908 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+07:55:21,120 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+07:55:21,122 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+07:55:21,156 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+07:55:40,080 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+07:55:40,857 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+07:55:40,857 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+07:55:40,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!
+08:01:00,994 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+08:01:00,996 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+08:01:01,038 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:01:21,203 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+08:01:22,113 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+08:01:29,016 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+08:01:29,354 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+08:44:06,782 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+08:44:06,784 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+08:44:06,827 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:44:54,841 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+08:44:56,290 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_SUBPEDIDO(idpedido, idproducto, cantidad, costo) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304A101820.FK_SUB_PEDIDO) violada - clave principal no encontrada
+
+08:44:56,488 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+08:46:25,307 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+08:46:25,308 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+08:46:25,352 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:46:42,077 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+08:46:43,539 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_PEDIDO(id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_PEDIDO_PK) violada
+
+08:46:43,748 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+08:54:17,880 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+08:54:17,881 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+08:54:17,923 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+08:54:38,846 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+08:54:40,912 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_PEDIDO(id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_PEDIDO_PK) violada
+
+08:54:41,087 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+09:02:24,398 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+09:02:24,401 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+09:02:24,441 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:02:56,021 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+09:02:57,077 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Invalid state. Transaction has already started
+
+09:02:57,219 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+09:03:45,262 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+09:03:45,263 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+09:03:45,307 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:04:05,638 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+09:04:10,055 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_PEDIDO(id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_PEDIDO_PK) violada
+
+09:04:10,240 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+09:10:41,455 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+09:10:41,457 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+09:10:41,491 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:10:58,013 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+09:10:59,270 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_PEDIDO(id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (?, ?, ?, ?, ?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_PEDIDO_PK) violada
+
+09:10:59,492 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+09:13:16,652 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+09:13:16,654 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+09:13:16,682 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:13:48,813 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+09:14:00,062 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+09:14:00,071 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+09:14:00,744 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!
+09:21:55,639 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+09:21:55,641 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+09:21:55,702 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:22:06,823 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+09:22:07,173 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+09:22:14,815 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+09:22:15,211 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+09:22:24,900 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1
+09:22:35,786 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:1hecho.
+09:22:35,786 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+09:22:35,928 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!

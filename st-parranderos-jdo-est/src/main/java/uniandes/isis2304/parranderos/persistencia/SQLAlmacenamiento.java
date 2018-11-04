@@ -181,6 +181,15 @@ class SQLAlmacenamiento
 		return q.executeList();
 	}
 	
+	public List<Object[]> darExistenciasPorContiene(PersistenceManager pm){
+		String sql = "SELECT DISTINCT existencias, c.producto, v.nivelreorden , a.sucursal";
+		sql += " FROM " + pp.darTablaAlmacenamiento() + " a, " +  pp.darTablaContiene() + " c, " +  pp.darTablaVende() + " v ";
+		sql += " WHERE a.producto = c.producto AND a.tipo = 'Estante' AND a.producto = v.idproducto AND c.producto = v.idproducto";
+	
+	    Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
+	
 	
 	
 }

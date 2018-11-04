@@ -28,6 +28,8 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
+import org.datanucleus.store.valuegenerator.TimestampGenerator;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -2768,28 +2770,65 @@ public class PersistenciaParranderos
 			Factura factura = new Factura(idFactura, sucursal, fecha, cliente);
 			
 			sqlFactura.adicionarFactura(pm, idFactura, fecha, cliente, sucursal);
-			System.out.println("factura agregada");
+			//System.out.println("factura agregada");
 			List<Contiene> con = sqlContiene.darContienePorCarrito(pm, idCarrito);
-			System.out.println("hola");
+			//System.out.println("hola");
 			for(Contiene actual: con)
 			{
 				long producto = actual.getProducto();
 				int cantidad = actual.getCantidad();
 				Vende vende = sqlVende.darVendePorProductoSucursal(pm, producto, sucursal);
 				double costo = vende.getPrecioUnitario() * cantidad;
-				System.out.println(costo);
+				//System.out.println(costo);
 				
-				System.out.println("entré al recorrido");
+				//System.out.println("entré al recorrido");
 				
 				sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion, "pagada");
 				
 				costoTotal+= costo;	
 				
 				sqlContiene.eliminarContienePorCarritoProducto(pm, idCarrito, producto);
-				System.out.println("los eliminé");
+				//System.out.println("los eliminé");
 			}
+							
 			
-			System.out.println("salió");
+//			List<Vende> venden = sqlVende.darVendenPorSucursal(pm, sucursal);
+//			
+//			List<Almacenamiento> almacenan = sqlAlmacenamiento.darAlmacenamientosPorSucursal(pm, sucursal);
+//			
+//			int cantT = 0;
+//			for(Vende actual : venden)
+//			{
+//				for(Almacenamiento actual2 : almacenan)
+//				{
+//					if(actual2.getExistencias() <= actual.getNivelReorden())
+//					{
+//						long idPedido = nextval();
+//						long prod = actual.getIdProducto();
+//						int cant = actual.getNivelReorden();
+//						double cost = actual.getPrecioUnitario();
+//						
+//						double costoT = cant*cost;
+//						
+//						cantT += cant;
+//						
+//						Ofrecen ofr = sqlOfrecen.darOfrecenPorProducto(pm, prod);
+//						
+//						long prov = ofr.getIdProveedor();
+//						
+//						Pedido ped = new Pedido(idPedido, prov, sucursal, fecha, "pendiente", cantT, 5, costoT);
+//						sqlPedido.adicionarPedido(pm, idPedido, prov, sucursal, fecha, "pendiente", cantT, 5, costoT);
+//						
+//						Subpedido subp = new Subpedido(prod, idPedido, cant, cost);
+//						sqlSubPedido.adicionarSubPedido(pm, idPedido, prod, cant, cost);	
+//						
+//					}
+//				}
+//			}
+			
+			//System.out.println(costoTotal);
+			
+			//System.out.println("salió");
 			
 			tx.commit();
 	

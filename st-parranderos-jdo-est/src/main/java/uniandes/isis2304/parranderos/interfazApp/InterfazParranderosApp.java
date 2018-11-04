@@ -1216,31 +1216,33 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			Factura factura = parranderos.pagarcompra(idCarrito, clave, fecha, cliente);
 			
 			long idfactura = factura.getNumero();
-			System.out.println(idfactura);
+			//System.out.println(idfactura);
 			
 			List<Transaccion> transacciones = parranderos.darTransaccionesPorFactura(idfactura);
-			System.out.println(transacciones.size());
+			//System.out.println(transacciones.size());
 		
 			double costoTotal = 0;
+			
+			resp += "Id Cliente:" + cliente + "," + "\n"+ "Id Carrito:" + id + "," + "\n" + "Fecha factura:" + fecha + "\n";
 			
 			System.out.println("voy a entrar");
 			for(Transaccion actual: transacciones)
 			{
 				int cantidad = actual.getCantidad();
-				double costo = actual.getCosto()*cantidad;
+				double costo = actual.getCosto();
 				long producto = actual.getIdProducto();
 				
 				System.out.println("ahí voy");
 				
 				costoTotal+= costo;
-				System.out.println("estoy dentro");
+				//System.out.println("estoy dentro");
 				
-				resp+= "Costo Total: "+ costoTotal + "," + "Id producto:" + producto + "\n";
+				resp+=  "Id producto:" + producto + "," + "Costo: "+ costo + "\n";
 			}
 			
-			System.out.println(factura);
+			//System.out.println(factura);
 			
-			resp+= "Cliente:" + cliente + "," + "\n"+ "Carrito" + id + "," + "\n" + "Fecha factura:" + fecha;
+			resp+= "Costo Total:" + costoTotal;
 			
 			panelDatos.actualizarInterfaz(resp);
 				

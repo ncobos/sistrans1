@@ -110,4 +110,12 @@ class SQLOfrecen {
 		q.setParameters(producto, proveedor);
 		return (Ofrecen) q.executeUnique();
 	}
+	
+	public Ofrecen darOfrecenPorProducto (PersistenceManager pm, long producto)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOfrecen () + " WHERE idproducto = ?");
+		q.setResultClass(Ofrecen.class);
+		q.setParameters(producto);
+		return (Ofrecen) q.executeUnique();
+	}
 }
