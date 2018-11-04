@@ -29,7 +29,9 @@ import uniandes.isis2304.parranderos.negocio.Almacenamiento;
 import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Cliente;
 import uniandes.isis2304.parranderos.negocio.Contiene;
+import uniandes.isis2304.parranderos.negocio.Factura;
 import uniandes.isis2304.parranderos.negocio.Parranderos;
+import uniandes.isis2304.parranderos.negocio.Transaccion;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -320,7 +322,18 @@ public class Iteracion2Test {
 			long time = date.getTime();
    			java.sql.Timestamp fecha = new java.sql.Timestamp(time);
    		
-			parranderos.pagarcompra(carrito.getId(), carrito.getClave(), fecha, cliente);
+			Factura fact = parranderos.pagarcompra(carrito.getId(), carrito.getClave(), fecha, cliente);
+			
+			long id = fact.getNumero(); 
+			
+			List<Contiene> cont = parranderos.darContienePorCarrito(1);
+   			
+   			assertEquals("debe ser 0 el tamaño", 0, cont.size());
+   			
+   			List<Transaccion> trans = parranderos.darTransaccionesPorFactura(id);
+   			
+   			assertNotNull("debeería de haber al menos una transaccion", trans);
+   			
 
 			Almacenamiento alm = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
 			Almacenamiento alm2 = parranderos.obtenerEstanteSucursalIdProducto(1, 2);
@@ -389,6 +402,83 @@ public class Iteracion2Test {
    			
    			assertEquals("El estado debería ser abandonado", "abandonado", abandonar.getEstado());
        		
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			String msg = "Error en la ejecución de las pruebas de operaciones sobre el requerimiento de RF14.\n";
+   			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+
+       		fail ("Error en las pruebas sobre el RF12");
+   		}
+   		finally
+   		{
+//   			parranderos.limpiarParranderos ();
+       		parranderos.cerrarUnidadPersistencia ();    		
+   		}
+   	}
+
+    
+    /**
+     * Metodo que testea el requerimiento funcional RF17
+     */
+    @Test
+   	public void CRDRecolectarProductosTest() 
+   	{
+       	// Probar primero la conexión a la base de datos
+   		try
+   		{
+   			log.info ("Probando las operaciones CRD sobre recolectarProductos");
+   			parranderos = new Parranderos (openConfig (CONFIG_TABLAS_A));
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			log.info ("Prueba de CRD de RF17 incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
+   			log.info ("La causa es: " + e.getCause ().toString ());
+
+   			String msg = "Prueba de CRD de RF17 incompleta. No se pudo conectar a la base de datos !!.\n";
+   			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+   			fail (msg);
+   		}
+   		
+   		// Ahora si se pueden probar las operaciones
+       	try
+   		{
+   			Carrito carrito = parranderos.asignarCarrito(1, 1);
+   			
+   			Contiene contiene = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 1, 5);
+   			Contiene contiene2 = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 2, 15);
+   			Contiene contiene3 = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 3, 10);
+   			
+			Almacenamiento almuno = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+			Almacenamiento almdos = parranderos.obtenerEstanteSucursalIdProducto(1, 2);
+			Almacenamiento almtres = parranderos.obtenerEstanteSucursalIdProducto(1, 3);
+   			
+   			Carrito abandonarMal = parranderos.abandonarCarrito(carrito.getId(), 123456789);
+   			
+   			assertNull(abandonarMal);
+   			
+   			Carrito abandonar = parranderos.abandonarCarrito(carrito.getId(), 1);
+   			
+   			assertEquals("El estado debería ser abandonado", "abandonado", abandonar.getEstado());
+   			
+   			parranderos.recolectarProductos();
+   			
+   			List<Contiene> cont = parranderos.darContienePorCarrito(1);
+   			
+   			assertEquals("debe ser 0 el tamaño", 0, cont.size());
+   			
+   			Almacenamiento alm = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+			Almacenamiento alm2 = parranderos.obtenerEstanteSucursalIdProducto(1, 2);
+			Almacenamiento alm3 = parranderos.obtenerEstanteSucursalIdProducto(1, 3);
+			
+			assertNotEquals("no deberían ser iguales", almuno.getExistencias(), alm.getExistencias());
+			assertNotEquals("no deberían ser iguales", almdos.getExistencias(), alm2.getExistencias());
+			assertNotEquals("no deberían ser iguales", almtres.getExistencias(), alm3.getExistencias());
+   			   		
    		}
    		catch (Exception e)
    		{

@@ -2950,4 +2950,14 @@ public class PersistenciaParranderos
 	{
 		return sqlCarrito.darCarritos(pmf.getPersistenceManager());
 	}
+	
+	public List<Contiene> darContienePorCarrito(long idCarrito)
+	{
+		return sqlContiene.darContienePorCarrito(pmf.getPersistenceManager(), idCarrito);
+	}
+	
+	public Contiene darContienePorCarritoProducto(long idCarrito, long idProducto)
+	{
+		return sqlContiene.darContienePorCarritoProducto(pmf.getPersistenceManager(), idCarrito, idProducto);
+	}
 }

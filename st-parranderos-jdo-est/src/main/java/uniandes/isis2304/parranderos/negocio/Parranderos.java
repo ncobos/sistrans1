@@ -1587,6 +1587,22 @@ public class Parranderos
 		return trans;
 	}
 	
+	public List<Contiene> darContienePorCarrito(long idCarrito)
+	{
+		log.info ("Obteniendo todos los contiene por carrito") ;
+		List<Contiene> cont = pp.darContienePorCarrito(idCarrito);
+		log.info ("Obteniendo todos los contiene por carrito: listo!") ;
+		return cont;
+	}
+	
+	public Contiene darContieneCarritoProducto(long carrito, long producto)
+	{
+		log.info ("Obteniendo contiene por carrito y producto") ;
+		Contiene cont = pp.darContienePorCarritoProducto(carrito, producto);
+		log.info ("Obteniendo contiene por carrito y producto: listo!") ;
+		return cont;
+	}
+	
 	/**
 	 * Adiciona un carrito a la base de datos
 	 * @return el objeto carrito creado
