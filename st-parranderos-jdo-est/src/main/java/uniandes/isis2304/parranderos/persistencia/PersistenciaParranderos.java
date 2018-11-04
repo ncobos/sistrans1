@@ -2959,7 +2959,6 @@ public class PersistenciaParranderos
 		return resp;
 	}
 
-
 	/**
 	 * Método que consulta todas las tuplas en la tabla Carrito
 	 * @return La lista de objetos Carrito, construidos con base en las tuplas de la tabla CARRITO
