@@ -94,6 +94,21 @@ class SQLAlmacenamiento
 		q.setParameters(idAlmacenamiento);
 		return (Almacenamiento) q.executeUnique();
 	}
+	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la informaci�n de UN ESTANTE de la 
+	 * base de datos de Parranderos, por su identificador
+	 * @param pm - El manejador de persistencia
+	 * @param idAlmacenamiento - El identificador del almacenamiento
+	 * @return El objeto ESTANTE que tiene el identificador dado
+	 */
+	public Almacenamiento darAlmacenamientoPorSucursalIdProducto (PersistenceManager pm, long sucursal, long producto, String tipo) 
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaAlmacenamiento () + " WHERE sucursal = ? AND producto = ? AND tipo = ?");
+		q.setResultClass(Almacenamiento.class);
+		q.setParameters(sucursal, producto, tipo);
+		return (Almacenamiento) q.executeUnique();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaci�n de LOS ESTANTEES de la 

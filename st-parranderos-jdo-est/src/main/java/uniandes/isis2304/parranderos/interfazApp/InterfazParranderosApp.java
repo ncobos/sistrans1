@@ -1002,15 +1002,13 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			String pass = JOptionPane.showInputDialog(this, "Ingrese la contraseña de su carrito de mercado:", "Adicionar producto", JOptionPane.QUESTION_MESSAGE);
 			String producto = JOptionPane.showInputDialog(this, "Ingrese el identificador del producto que desea agregar:", "Agregar producto", JOptionPane.QUESTION_MESSAGE);
 			String cantidad = JOptionPane.showInputDialog(this, "Ingrese la cantidad de unidades del producto:", "Agregar producto", JOptionPane.QUESTION_MESSAGE);
-			String sucursal = JOptionPane.showInputDialog(this, "Ingrese la sucursal que vende el producto que desea dagregar:", "Agregar producto", JOptionPane.QUESTION_MESSAGE);
 			
 			long idCarrito = Long.parseLong(id);
 			long clave = Long.parseLong(pass);
 			long idProducto  = Long.parseLong(producto);
 			int cant = Integer.parseInt(cantidad);
-			long idSucursal= Long.parseLong(sucursal);
 
-			Contiene add = parranderos.adicionarProductoCarrito(idCarrito, clave, idProducto, idSucursal, cant);
+			Contiene add = parranderos.adicionarProductoCarrito(idCarrito, clave, idProducto, cant);
 			
 			if(add == null)
 			{

@@ -2466,7 +2466,7 @@ public class PersistenciaParranderos
 	 * @param idProducto
 	 * @return
 	 */
-	public Contiene adicionarProducto (long idCarrito, long clave, long idProducto, long sucursal, int cantidad)
+	public Contiene adicionarProducto (long idCarrito, long clave, long idProducto,  int cantidad)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -2474,6 +2474,7 @@ public class PersistenciaParranderos
 		{
 			tx.begin();
 			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
+			
 			tx.commit();
 
 			if(car == null)
@@ -2481,6 +2482,7 @@ public class PersistenciaParranderos
 				throw new Exception ("La contraseña del carrito es incorrecta");
 			}
 
+			long sucursal = car.getSucursal();
 			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
 
 			tx.begin();
@@ -2563,6 +2565,36 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
+	
+	public Almacenamiento obtenerEstanteSucursalIdProducto(long sucursal, long idProducto)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			Almacenamiento almacenamiento= sqlAlmacenamiento.darAlmacenamientoPorSucursalIdProducto(pm, sucursal, idProducto, "Estante");
+			tx.commit();
+			
+			return almacenamiento;
+		}
+			catch (Exception e)
+			{
+	        	e.printStackTrace();
+				log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+				return null;
+			}
+			finally
+			{
+				if (tx.isActive())
+				{
+					tx.rollback();
+				}
+				pm.close();
+			}
+		}
+
+	
 
 	/**
 	 * Busca el carrito dado, lo abandona, cambiando su estado a abandonado.
@@ -2591,14 +2623,16 @@ public class PersistenciaParranderos
 			long tupla = sqlCarrito.cambiarEstadoCarrito(pm, idCarrito, "abandonado");
 			log.trace ("Cambiando el estado de: " + tupla + " tuplas en la tabla Carrito" );
 			long tupla2 = sqlCarrito.cambiarClaveCarrito(pm, idCarrito, 0);
-			log.trace ("Cambiando la clave a cero de: " + tupla + " tuplas en la tabla Carrito" );
+			log.trace ("Cambiando la clave a cero de: " + tupla2 + " tuplas en la tabla Carrito" );
 			tx.commit();
+			
+			Carrito car2 = sqlCarrito.darCarritoPorId(pm, idCarrito);
 
-			return car;
+			return car2;
 		}
 		catch (Exception e)
 		{
-			//        	e.printStackTrace();
+			        	e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return null;
 		}

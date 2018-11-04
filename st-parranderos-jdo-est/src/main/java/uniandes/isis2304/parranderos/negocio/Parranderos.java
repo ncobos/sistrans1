@@ -1493,10 +1493,10 @@ public class Parranderos
 	 * @param idProducto que se quiere adicionar
 	 * @return objeto Contiene con su infromación básica
 	 */
-	public Contiene adicionarProductoCarrito (long idCarrito, long clave, long idProducto, long sucursal, int cantidad)
+	public Contiene adicionarProductoCarrito (long idCarrito, long clave, long idProducto, int cantidad)
 	{
 		log.info ("Adicionando producto: " + idProducto + " al carrito: " + idCarrito);
-        Contiene adicionar = pp.adicionarProducto(idCarrito, clave, idProducto, sucursal, cantidad);
+        Contiene adicionar = pp.adicionarProducto(idCarrito, clave, idProducto, cantidad);
 		log.info ("Adicionando producto: " + idProducto + " al carrito: " + idCarrito);
         return adicionar;
 	}
@@ -1514,6 +1514,14 @@ public class Parranderos
         Contiene contiene = pp.devolverProducto(idCarrito, clave, idProducto, sucursal);
 		log.info ("Devolviendo producto: " + idProducto + " del carrito: " + idCarrito);
         return contiene;
+	}
+	
+	public Almacenamiento obtenerEstanteSucursalIdProducto(long sucursal, long idProducto)
+	{
+		log.info ("Obteniendo estante con producto: " + idProducto + " de la sucursal: " + sucursal);
+        Almacenamiento almacenamiento = pp.obtenerEstanteSucursalIdProducto(sucursal, idProducto);
+		log.info ("Obteniendo estante con producto: " + idProducto + " de la sucursal: " + sucursal + ": listo!");
+        return almacenamiento;
 	}
 	
 	public void recolectarProductos()
