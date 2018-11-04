@@ -7,20 +7,27 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
 import java.io.FileReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
+import org.datanucleus.store.rdbms.adapter.SQLAnywhereAdapter;
 import org.junit.Test;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
+import com.sun.jmx.snmp.Timestamp;
 
+import oracle.jdbc.driver.T4CXAConnection;
 import uniandes.isis2304.parranderos.negocio.Almacenamiento;
 import uniandes.isis2304.parranderos.negocio.Carrito;
+import uniandes.isis2304.parranderos.negocio.Cliente;
 import uniandes.isis2304.parranderos.negocio.Contiene;
 import uniandes.isis2304.parranderos.negocio.Parranderos;
 
@@ -201,7 +208,7 @@ public class Iteracion2Test {
     
     
     /**
-     * Metodo que testea el requerimiento funcional RF12
+     * Metodo que testea el requerimiento funcional RF14
      */
     @Test
    	public void CRDDevolverProductoTest() 
@@ -265,7 +272,88 @@ public class Iteracion2Test {
    	}
     
     /**
-     * Metodo que testea el requerimiento funcional RF12
+     * Metodo que testea el requerimiento funcional RF15
+     */
+    @Test
+   	public void CRDPagarCompraTest() 
+   	{
+       	// Probar primero la conexión a la base de datos
+   		try
+   		{
+   			log.info ("Probando las operaciones CRD sobre pagarCompra");
+   			parranderos = new Parranderos (openConfig (CONFIG_TABLAS_A));
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			log.info ("Prueba de CRD de RF15 incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
+   			log.info ("La causa es: " + e.getCause ().toString ());
+
+   			String msg = "Prueba de CRD de RF15 incompleta. No se pudo conectar a la base de datos !!.\n";
+   			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+   			fail (msg);
+   		}
+   		
+   		// Ahora si se pueden probar las operaciones
+       	try
+   		{
+   			
+       		Carrito carrito = parranderos.asignarCarrito(1, 1);
+   			assertNotNull("El carrito no puede ser nulo", carrito);
+   			
+   		
+   			Contiene contiene = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 1, 5);
+   			Contiene contiene2 = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 2, 15);
+   			Contiene contiene3 = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 3, 10);
+   			
+			Almacenamiento almuno = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+			Almacenamiento almdos = parranderos.obtenerEstanteSucursalIdProducto(1, 2);
+			Almacenamiento almtres = parranderos.obtenerEstanteSucursalIdProducto(1, 3);
+
+   			
+   			String cliente = "Juan Felipe";
+   			
+   			String fecha2 = "04/11/2018";
+   			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			Date date = dateFormat.parse(fecha2);
+			long time = date.getTime();
+   			java.sql.Timestamp fecha = new java.sql.Timestamp(time);
+   		
+			parranderos.pagarcompra(carrito.getId(), carrito.getClave(), fecha, cliente);
+
+			Almacenamiento alm = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+			Almacenamiento alm2 = parranderos.obtenerEstanteSucursalIdProducto(1, 2);
+			Almacenamiento alm3 = parranderos.obtenerEstanteSucursalIdProducto(1, 3);
+			
+			assertNotEquals("no deberían ser iguales", almuno.getExistencias(), alm.getExistencias());
+			assertNotEquals("no deberían ser iguales", almdos.getExistencias(), alm2.getExistencias());
+			assertNotEquals("no deberían ser iguales", almtres.getExistencias(), alm3.getExistencias());
+   			
+   			//No debería ser null (si lo es, significa que existió algún error).
+   			
+   			
+   		
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			String msg = "Error en la ejecución de las pruebas de operaciones sobre el requerimiento de RF14.\n";
+   			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+
+       		fail ("Error en las pruebas sobre el RF12");
+   		}
+   		finally
+   		{
+//   			parranderos.limpiarParranderos ();
+       		parranderos.cerrarUnidadPersistencia ();    		
+   		}
+   	}
+    
+    
+    /**
+     * Metodo que testea el requerimiento funcional RF16
      */
     @Test
    	public void CRDAbandonarCarritoTest() 
