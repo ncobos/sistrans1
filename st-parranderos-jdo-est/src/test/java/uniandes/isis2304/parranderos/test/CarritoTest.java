@@ -148,7 +148,7 @@ public class CarritoTest {
 		} 
 		catch (Exception e)
 		{
-//			e.printStackTrace ();
+			e.printStackTrace ();
 			log.info ("NO se encontró un archivo de configuración válido");			
 			JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de tablas válido: ", "CarritoTest", JOptionPane.ERROR_MESSAGE);
 		}	
