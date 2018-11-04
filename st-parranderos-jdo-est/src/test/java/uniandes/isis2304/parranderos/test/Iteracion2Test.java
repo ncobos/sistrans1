@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
 import java.io.FileReader;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -127,6 +128,77 @@ public class Iteracion2Test {
        		parranderos.cerrarUnidadPersistencia ();    		
    		}
    	}
+    
+    /**
+     * Metodo que testea el requerimiento funcional RF13
+     */
+    @Test
+   	public void CRDAdicionarProductoTest() 
+   	{
+       	// Probar primero la conexión a la base de datos
+   		try
+   		{
+   			log.info ("Probando las operaciones CRD sobre adicionarProducto");
+   			parranderos = new Parranderos (openConfig (CONFIG_TABLAS_A));
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			log.info ("Prueba de CRD de RF13 incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
+   			log.info ("La causa es: " + e.getCause ().toString ());
+
+   			String msg = "Prueba de CRD de RF13 incompleta. No se pudo conectar a la base de datos !!.\n";
+   			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+   			fail (msg);
+   		}
+   		
+   		// Ahora si se pueden probar las operaciones
+       	try
+   		{
+   			
+       		Carrito carrito = parranderos.asignarCarrito(1, 1);
+   			assertNotNull("El carrito no puede ser nulo", carrito);
+   			
+   			Almacenamiento almacenamiento1 = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+
+   			Contiene contiene = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 1, 5);
+   			
+   			Almacenamiento almacenamientoMal = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+   			
+   			assertNotEquals(almacenamiento1.getExistencias(), almacenamientoMal.getExistencias());
+   			
+   			Almacenamiento almacenamiento2 = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+   			
+   			Contiene contiene2 = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 2, 10);
+   			
+   			List<Contiene> contienes = new LinkedList<Contiene>();
+   			
+   			contienes.add(contiene);
+   			contienes.add(contiene2);
+   			
+   			assertEquals("Deben ser el mismo tamaño",2, contienes.size());
+   			
+   			assertNotEquals("NO Deberían ser iguales", almacenamiento1.getExistencias(), almacenamientoMal.getExistencias());
+   		
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			String msg = "Error en la ejecución de las pruebas de operaciones sobre el requerimiento de RF13.\n";
+   			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+
+       		fail ("Error en las pruebas sobre el RF13");
+   		}
+   		finally
+   		{
+//   			parranderos.limpiarParranderos ();
+       		parranderos.cerrarUnidadPersistencia ();    		
+   		}
+   	}
+    
+    
     
     /**
      * Metodo que testea el requerimiento funcional RF12
