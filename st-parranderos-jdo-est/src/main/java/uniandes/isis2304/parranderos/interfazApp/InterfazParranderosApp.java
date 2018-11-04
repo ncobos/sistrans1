@@ -994,6 +994,10 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	/**
+	 * Método en la interfaz para agregar un producto a un carrito de compras
+	 * @return respuesta de la solicitud
+	 */
 	public String adicionarProductoCarrito()
 	{
 		String resp = "El producto adicionado es:";
@@ -1125,6 +1129,12 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 		return resp;
 	}
+	
+	/**
+	 * Método de la interfaz que se conecta con la lógica de la aplicación para recoger
+	 * los productos de los carritos abandonados. Actualiza en la interfaz el resultado del
+	 * proceso
+	 */
 	
 	public void recolectarProductos()
 	{
