@@ -370,7 +370,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	 */
 	public void mostrarScriptBD ()
 	{
-		mostrarArchivo ("Datos sql/EsquemaSuperAndes.sql");
+		mostrarArchivo ("doc/Iteracion 1/Datos sql/EsquemaSuperAndes.sql");
 	}
 
 

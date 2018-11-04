@@ -282,3 +282,6 @@ ORA-02290: restricción de control (ISIS2304A101820.CK_AL_EXISTENCIAS) violada
 12:16:12,462 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 2
 12:16:12,462 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 2
 12:16:12,542 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 2
+14:41:47,021 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+14:41:47,022 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+14:41:47,047 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
