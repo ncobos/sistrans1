@@ -48,7 +48,7 @@
 					"label": "Recolectar productos abandonados por carritos",
 					"event": "recolectarProductos"
 				},
-								{
+				{
 					"label": "Pagar compra",
 					"event": "pagarCompra"
 				}
@@ -76,6 +76,10 @@
 				{
 					"label": "Mostrar compras hechas a proveedores",
 					"event": "comprasProveedores"
+				},
+				{
+					"label": "Dar clientes frecuentes",
+					"event": "darClientesFrecuentes"
 				},
 				{
 					"label": "Analizar la operación de SuperAndes",

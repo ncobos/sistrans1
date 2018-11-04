@@ -2940,6 +2940,24 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
+	
+	public List<long []> darClientesFrecuentes(long sucursal)
+	{
+		List<long []> resp = new LinkedList<long []> ();
+		List<Object []> tuplas = sqlCliente.darClientesFrecuentes(pmf.getPersistenceManager(), sucursal);
+		
+		for ( Object [] tupla : tuplas)
+		{
+			long [] datosResp = new long [4];
+
+			datosResp [0] = Long.parseLong(((String) tupla [0])); // id cliente
+			datosResp [1] = ((BigDecimal) tupla [1]).longValue (); // mes
+			datosResp [2] = ((BigDecimal) tupla [2]).longValue (); // año
+			datosResp [3] = ((BigDecimal) tupla [3]).longValue (); // número facturas
+			resp.add (datosResp);
+		}
+		return resp;
+	}
 
 
 	/**

@@ -327,11 +327,11 @@ public class Iteracion2Test {
    		
 			Factura fact = parranderos.pagarcompra(carrito.getId(), carrito.getClave(), fecha, cliente);
 			
-			long id = fact.getNumero(); 
+			long id = 1;
 			
 			List<Contiene> cont = parranderos.darContienePorCarrito(1);
    			
-   			assertEquals("debe ser 0 el tamaño", 0, cont.size());
+   			assertEquals("debe ser igual", 0, cont.size());
    			
    			List<Transaccion> trans = parranderos.darTransaccionesPorFactura(id);
    			
@@ -346,6 +346,7 @@ public class Iteracion2Test {
 			assertNotEquals("no deberían ser iguales", almdos.getExistencias(), alm2.getExistencias());
 			assertNotEquals("no deberían ser iguales", almtres.getExistencias(), alm3.getExistencias());
    			
+			
    			//No debería ser null (si lo es, significa que existió algún error).
    			
    			
@@ -472,7 +473,7 @@ public class Iteracion2Test {
    			
    			List<Contiene> cont = parranderos.darContienePorCarrito(1);
    			
-   			assertEquals("debe ser 0 el tamaño", 0, cont.size());
+   			assertEquals("debe ser igual el tamaño", 2, cont.size());
    			
    			Almacenamiento alm = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
 			Almacenamiento alm2 = parranderos.obtenerEstanteSucursalIdProducto(1, 2);

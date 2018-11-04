@@ -1268,5 +1268,42 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 		return resp;
 	}
+	
+	public String darClientesFrecuentes()
+	{
+		String resp = "Los clientes más frecuentes son:\n";
+
+		try 
+		{
+			String sucursal2 = JOptionPane.showInputDialog (this, "Ingrese la sucursal:", "Clientes frecuentes", JOptionPane.QUESTION_MESSAGE);
+			
+			long sucursal = Long.parseLong(sucursal2);
+
+			List<long[]> lista = parranderos.darClientesFrecuentes(sucursal);
+
+			int i = 1;
+			for ( long [] tupla : lista)
+			{
+				long [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "idCliente: " + datos [0] + ", ";
+				resp1 += "Mes: " + datos [1] + ", ";
+				resp1 += "Año:" + datos [2] + ", ";
+				resp1 += "Número facturas:" + datos[3];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
 
 }

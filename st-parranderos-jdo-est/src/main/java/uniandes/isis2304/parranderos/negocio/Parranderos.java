@@ -1567,6 +1567,14 @@ public class Parranderos
         return oper;
 	}
 	
+	public List<long[]> darClientesFrecuentes(long sucursal)
+	{
+		log.info ("Obteniendo todos los clientes frecuentes") ;
+		List<long []> clientes = pp.darClientesFrecuentes(sucursal);
+		log.info ("Obteniendo todos los clientes frecuentes: listo!") ;
+		return clientes;
+	}
+	
 	/**
 	 * Retorna una lista con los carritos existentes
 	 * @return carritos en la base de datos

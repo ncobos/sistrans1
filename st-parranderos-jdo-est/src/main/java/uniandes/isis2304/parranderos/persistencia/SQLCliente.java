@@ -145,4 +145,19 @@ class SQLCliente {
 		q.setParameters(tipoCliente);
 		return (List<Cliente>) q.executeList();
 	}
+	
+	public List<Object[]> darClientesFrecuentes(PersistenceManager pm, long sucursal)
+	{
+		String sql = "SELECT IDCLIENTE, MES, ANIO, COUNT(*) AS COMPRAS";
+		sql += " FROM ( SELECT NUMERO, IDCLIENTE, EXTRACT(DAY FROM FECHA) AS DIA, EXTRACT(MONTH FROM FECHA) AS MES, EXTRACT(YEAR FROM FECHA) AS ANIO";  
+		sql += " FROM " + pp.darTablaFactura();
+		sql += " WHERE SUCURSAL = ?) ";
+		sql += " GROUP BY IDCLIENTE, MES, ANIO ";
+		sql += " HAVING COUNT(*) >= 2 ";
+		sql += " ORDER BY MES ASC, ANIO ASC ";
+		
+		Query q = pm.newQuery(SQL, sql);
+		    q.setParameters(sucursal);
+			return q.executeList();
+	}
 }
