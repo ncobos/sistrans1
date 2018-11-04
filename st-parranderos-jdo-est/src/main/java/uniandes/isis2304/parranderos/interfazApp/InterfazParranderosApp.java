@@ -1189,6 +1189,11 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 	
+	
+	/**
+	 * Método de la interfaz que se conecta con la lógica para pagar una compra haciendo uso de un carrito
+	 * @return respuesta de confirmación o errror
+	 */
 	public String pagarCompra()
 	{
 		String resp = "Información de la factura del carrito pagado:" + "\n";

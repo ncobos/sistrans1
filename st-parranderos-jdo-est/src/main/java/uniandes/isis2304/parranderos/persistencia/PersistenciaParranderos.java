@@ -1249,7 +1249,7 @@ public class PersistenciaParranderos
 
 			tx.begin();
 			long idPedido = nextval ();
-			long tuplasInsertadas = sqlPedido.adicionarPedido(pm, idPedido, proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, costoP);
+			long tuplasInsertadas = sqlPedido.adicionarPedido(pm, idPedido, proveedor, sucursal, fechaEntrega, estadoOrden, calificacion, costoP);
 			tx.commit();
 
 			tx.begin();
@@ -2330,7 +2330,7 @@ public class PersistenciaParranderos
 	{
 		return sqlCarrito.darCarritoPorId(pmf.getPersistenceManager(), idCarrito);
 	}
-	
+
 	public List<Transaccion> darTransaccionesPorFactura(long numeroFactura)
 	{
 		return sqlTransaccion.darTransaccionesPorNumeroFactura(pmf.getPersistenceManager(), numeroFactura);
@@ -2347,33 +2347,33 @@ public class PersistenciaParranderos
 	public Carrito crearCarrito(long sucursal) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
-        Transaction tx=pm.currentTransaction();
-        try
-        {
-            tx.begin();            
-            long idCarrito = nextval ();
-            long tuplasInsertadas = sqlCarrito.adicionarCarrito(pm, idCarrito, "libre", 0, sucursal);
-            tx.commit();
-            
-            log.trace ("Inserción carrito: " + idCarrito + ": " + tuplasInsertadas + " tuplas insertadas");
-            return new Carrito(idCarrito, "libre", 0 , sucursal);
-        }
-        catch (Exception e)
-        {
-//        	e.printStackTrace();
-        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-        	return null;
-        }
-        finally
-        {
-            if (tx.isActive())
-            {
-                tx.rollback();
-            }
-            pm.close();
-        }
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();            
+			long idCarrito = nextval ();
+			long tuplasInsertadas = sqlCarrito.adicionarCarrito(pm, idCarrito, "libre", 0, sucursal);
+			tx.commit();
+
+			log.trace ("Inserción carrito: " + idCarrito + ": " + tuplasInsertadas + " tuplas insertadas");
+			return new Carrito(idCarrito, "libre", 0 , sucursal);
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
 	}
-	
+
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla CARRITO, dado el identificador del carrito
 	 * Adiciona entradas al log de la aplicación
@@ -2383,28 +2383,28 @@ public class PersistenciaParranderos
 	public long eliminarCarritoPorId (long idCarrito) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
-        Transaction tx=pm.currentTransaction();
-        try
-        {
-            tx.begin();
-            long resp = sqlCarrito.eliminarCarritoPorId (pm, idCarrito);
-            tx.commit();
-            return resp;
-        }
-        catch (Exception e)
-        {
-//        	e.printStackTrace();
-        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-            return -1;
-        }
-        finally
-        {
-            if (tx.isActive())
-            {
-                tx.rollback();
-            }
-            pm.close();
-        }
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlCarrito.eliminarCarritoPorId (pm, idCarrito);
+			tx.commit();
+			return resp;
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
 	}
 
 
@@ -2476,8 +2476,8 @@ public class PersistenciaParranderos
 		{
 			tx.begin();
 			Carrito car= sqlCarrito.darCarritoPorIdClave(pm, idCarrito, clave);
-			
-			tx.commit();
+
+
 
 			if(car == null)
 			{
@@ -2487,7 +2487,12 @@ public class PersistenciaParranderos
 			long sucursal = car.getSucursal();
 			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
 
-			tx.begin();
+			Vende vende = sqlVende.darVendePorProductoSucursal(pm, idProducto, sucursal);
+			if(vende == null )
+			{
+				throw new Exception ("El producto requerido no se vende en la sucursal");
+			}
+
 			long disminuir = sqlAlmacenamiento.disminuirExistenciasAlmacenamientos(pm, cantidad, sucursal, idProducto, "Estante");
 			log.trace ("Disminuyendo " + cantidad + " productos " + idProducto + "  del estante de la sucursal " + sucursal );
 
@@ -2567,7 +2572,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	public Almacenamiento obtenerEstanteSucursalIdProducto(long sucursal, long idProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2577,26 +2582,26 @@ public class PersistenciaParranderos
 			tx.begin();
 			Almacenamiento almacenamiento= sqlAlmacenamiento.darAlmacenamientoPorSucursalIdProducto(pm, sucursal, idProducto, "Estante");
 			tx.commit();
-			
+
 			return almacenamiento;
 		}
-			catch (Exception e)
-			{
-	        	e.printStackTrace();
-				log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-				return null;
-			}
-			finally
-			{
-				if (tx.isActive())
-				{
-					tx.rollback();
-				}
-				pm.close();
-			}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
 		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
 
-	
+
 
 	/**
 	 * Busca el carrito dado, lo abandona, cambiando su estado a abandonado.
@@ -2627,14 +2632,14 @@ public class PersistenciaParranderos
 			long tupla2 = sqlCarrito.cambiarClaveCarrito(pm, idCarrito, 0);
 			log.trace ("Cambiando la clave a cero de: " + tupla2 + " tuplas en la tabla Carrito" );
 			tx.commit();
-			
+
 			Carrito car2 = sqlCarrito.darCarritoPorId(pm, idCarrito);
 
 			return car2;
 		}
 		catch (Exception e)
 		{
-			        	e.printStackTrace();
+			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
 			return null;
 		}
@@ -2697,7 +2702,7 @@ public class PersistenciaParranderos
 				{
 					sqlCarrito.cambiarEstadoCarrito(pm, carrito.getId(), "libre");
 					log.trace("Se cambia el estado del carrito " + carrito.getId() + " a libre");
-					}
+				}
 
 
 				for(Carrito actual:abandonados)
@@ -2760,15 +2765,15 @@ public class PersistenciaParranderos
 			}
 
 			log.trace ("Buscando carrito " + idCarrito+ " con contraseña " + clave );
-			
+
 			tx.begin();
-			
+
 			long sucursal = car.getSucursal();
-			
+
 			long promocion = 0;
-			
+
 			Factura factura = new Factura(idFactura, sucursal, fecha, cliente);
-			
+
 			sqlFactura.adicionarFactura(pm, idFactura, fecha, cliente, sucursal);
 			//System.out.println("factura agregada");
 			List<Contiene> con = sqlContiene.darContienePorCarrito(pm, idCarrito);
@@ -2780,60 +2785,99 @@ public class PersistenciaParranderos
 				Vende vende = sqlVende.darVendePorProductoSucursal(pm, producto, sucursal);
 				double costo = vende.getPrecioUnitario() * cantidad;
 				//System.out.println(costo);
-				
+
 				//System.out.println("entré al recorrido");
-				
+
 				sqlTransaccion.adicionarTransaccion(pm, producto, cantidad, idFactura, costo, promocion, "pagada");
-				
+
 				costoTotal+= costo;	
-				
+
 				sqlContiene.eliminarContienePorCarritoProducto(pm, idCarrito, producto);
+
+				Almacenamiento estante = sqlAlmacenamiento.darAlmacenamientoPorSucursalIdProducto(pm, sucursal, producto, "Estante");
+				Almacenamiento bodega = sqlAlmacenamiento.darAlmacenamientoPorSucursalIdProducto(pm, sucursal, producto, "Bodega");
+				
+				boolean hola = false;
+				double costoTotalPedido = 0;
+				long idPedido = nextval();
+				if(estante.getExistencias()<=estante.getNivelAbastecimientoBodega())
+				{
+					int cantidadRe = (estante.getCapacidadProductos()-estante.getExistencias()-1);
+
+					
+					if(cantidadRe>= bodega.getExistencias())
+					{
+						cantidadRe = bodega.getExistencias();
+						sqlAlmacenamiento.disminuirExistenciasAlmacenamientos(pm, cantidadRe, sucursal, producto, "Bodega");
+						sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pm, cantidadRe, sucursal, producto, "Estante");
+
+						List<Ofrecen> ofrecen = sqlOfrecen.darOfrecenPorProducto(pm, producto);
+						Ofrecen ofrecenbien = ofrecen.get(0);
+						long proveedor = ofrecenbien.getIdProveedor();
+						
+						if(!hola)
+						{
+							
+						hola = true;
+						Long pedido = sqlPedido.adicionarPedido(pm, idPedido, proveedor, sucursal, fecha, "pendiente", 1, costoTotalPedido);
+						}
+						
+						Long sub = sqlSubPedido.adicionarSubPedido(pm, idPedido, producto, bodega.getCapacidadProductos()-1, ofrecenbien.getCosto()*bodega.getCapacidadProductos());
+						
+					}
+
+					else {
+						sqlAlmacenamiento.disminuirExistenciasAlmacenamientos(pm, cantidadRe, sucursal, producto, "Bodega");
+						sqlAlmacenamiento.aumentarExistenciasAlmacenamientos(pm, cantidadRe, sucursal, producto, "Estante");
+
+					}
+				}
 				//System.out.println("los eliminé");
 			}
-							
-			
-//			List<Vende> venden = sqlVende.darVendenPorSucursal(pm, sucursal);
-//			
-//			List<Almacenamiento> almacenan = sqlAlmacenamiento.darAlmacenamientosPorSucursal(pm, sucursal);
-//			
-//			int cantT = 0;
-//			for(Vende actual : venden)
-//			{
-//				for(Almacenamiento actual2 : almacenan)
-//				{
-//					if(actual2.getExistencias() <= actual.getNivelReorden())
-//					{
-//						long idPedido = nextval();
-//						long prod = actual.getIdProducto();
-//						int cant = actual.getNivelReorden();
-//						double cost = actual.getPrecioUnitario();
-//						
-//						double costoT = cant*cost;
-//						
-//						cantT += cant;
-//						
-//						Ofrecen ofr = sqlOfrecen.darOfrecenPorProducto(pm, prod);
-//						
-//						long prov = ofr.getIdProveedor();
-//						
-//						Pedido ped = new Pedido(idPedido, prov, sucursal, fecha, "pendiente", cantT, 5, costoT);
-//						sqlPedido.adicionarPedido(pm, idPedido, prov, sucursal, fecha, "pendiente", cantT, 5, costoT);
-//						
-//						Subpedido subp = new Subpedido(prod, idPedido, cant, cost);
-//						sqlSubPedido.adicionarSubPedido(pm, idPedido, prod, cant, cost);	
-//						
-//					}
-//				}
-//			}
-			
+
+
+			//			List<Vende> venden = sqlVende.darVendenPorSucursal(pm, sucursal);
+			//			
+			//			List<Almacenamiento> almacenan = sqlAlmacenamiento.darAlmacenamientosPorSucursal(pm, sucursal);
+			//			
+			//			int cantT = 0;
+			//			for(Vende actual : venden)
+			//			{
+			//				for(Almacenamiento actual2 : almacenan)
+			//				{
+			//					if(actual2.getExistencias() <= actual.getNivelReorden())
+			//					{
+			//						long idPedido = nextval();
+			//						long prod = actual.getIdProducto();
+			//						int cant = actual.getNivelReorden();
+			//						double cost = actual.getPrecioUnitario();
+			//						
+			//						double costoT = cant*cost;
+			//						
+			//						cantT += cant;
+			//						
+			//						Ofrecen ofr = sqlOfrecen.darOfrecenPorProducto(pm, prod);
+			//						
+			//						long prov = ofr.getIdProveedor();
+			//						
+			//						Pedido ped = new Pedido(idPedido, prov, sucursal, fecha, "pendiente", cantT, 5, costoT);
+			//						sqlPedido.adicionarPedido(pm, idPedido, prov, sucursal, fecha, "pendiente", cantT, 5, costoT);
+			//						
+			//						Subpedido subp = new Subpedido(prod, idPedido, cant, cost);
+			//						sqlSubPedido.adicionarSubPedido(pm, idPedido, prod, cant, cost);	
+			//						
+			//					}
+			//				}
+			//			}
+
 			//System.out.println(costoTotal);
-			
+
 			//System.out.println("salió");
-			
+
 			tx.commit();
-	
+
 			return factura;
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
@@ -2847,7 +2891,7 @@ public class PersistenciaParranderos
 			}
 			pm.close();
 		}
-		
+
 	}
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla Promocion, dado el identificador de la promocion
@@ -2897,7 +2941,7 @@ public class PersistenciaParranderos
 		}
 	}
 
-	
+
 	/**
 	 * Método que consulta todas las tuplas en la tabla Carrito
 	 * @return La lista de objetos Carrito, construidos con base en las tuplas de la tabla CARRITO
