@@ -59,10 +59,10 @@ class SQLPedido {
 	 * @param costoTotal - El costo total del pedido
 	 * @return EL número de tuplas insertadas
 	 */
-	public long adicionarPedido (PersistenceManager pm, long idPedido, long proveedor, long sucursal, Timestamp fechaEntrega, String estadoOrden, int cantidad, int calificacion, double costoTotal) 
+	public long adicionarPedido (PersistenceManager pm, long idPedido, long proveedor, long sucursal, Timestamp fechaEntrega, String estadoOrden, int calificacion, double costoTotal) 
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPedido() + "(id, idsucursal, idproveedor, fechaentrega, estadoorden, calificacionservicio, costototal) values (?, ?, ?, ?, ?, ?, ?)");
-		q.setParameters(idPedido, proveedor, sucursal, fechaEntrega, estadoOrden, cantidad, calificacion, costoTotal);
+		q.setParameters(idPedido, sucursal, proveedor, fechaEntrega, estadoOrden, calificacion, costoTotal);
 		return (long) q.executeUnique();            
 	}
 

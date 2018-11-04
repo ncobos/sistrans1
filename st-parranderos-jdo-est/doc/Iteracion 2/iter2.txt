@@ -6,5 +6,5 @@ seguirá normal y para las bodegas lo ideal es que siempre fuera cero.
 2. Para el cumplimiento de los nuevos requerimientos, existió la necesidad de la creación de dos nuevas tablas. Una tabla se llama Carrito y está asociada a Producto 
 mediante una clase de asociación: Contiene. En esta última tabla existen los siguientes tributos: idCarrito, es decir el carrito al cual está asociado, idProducto, es 
 decir uno de los producto que hay en el carrito, y cantidad, que es el número de ese producto que hay en el carrito. Para la asignación de un carrito a un cliente, se
-pregunta la sucursal de la cual quiere un carrito, y el cliente le puede asignar una clave a ese carrito de tal manera uqe él sea el único que lo pueda manejar. Cuando 
+pregunta la sucursal de la cual quiere un carrito, y el cliente le puede asignar una clave a ese carrito de tal manera que él sea el único que lo pueda manejar. Cuando 
 lo abandona, su clave se vuelve cero y queda disponible para otro cliente. 
