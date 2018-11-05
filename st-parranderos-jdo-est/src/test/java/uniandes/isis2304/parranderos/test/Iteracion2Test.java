@@ -375,7 +375,7 @@ public class Iteracion2Test {
 			Almacenamiento almtres = parranderos.obtenerEstanteSucursalIdProducto(1, 3);
 
    			
-   			String cliente = "Juan Felipe";
+   			String cliente = "1";
    			
    			String fecha2 = "04/11/2018";
    			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -383,13 +383,13 @@ public class Iteracion2Test {
 			long time = date.getTime();
    			java.sql.Timestamp fecha = new java.sql.Timestamp(time);
    		
-			Factura fact = parranderos.pagarcompra(carrito.getId(), carrito.getClave(), fecha, cliente);
+			Factura fact = parranderos.pagarcompra(carrito.getId(), carrito.getClave(), fecha, cliente );
 			
 			long id = 1;
 			
 			List<Contiene> cont = parranderos.darContienePorCarrito(1);
    			
-   			assertEquals("debe ser igual", 2, cont.size());
+   			assertEquals("debe ser igual", 0, cont.size());
    			
    			List<Transaccion> trans = parranderos.darTransaccionesPorFactura(id);
    			
@@ -400,14 +400,14 @@ public class Iteracion2Test {
 			Almacenamiento alm2 = parranderos.obtenerEstanteSucursalIdProducto(1, 2);
 			Almacenamiento alm3 = parranderos.obtenerEstanteSucursalIdProducto(1, 3);
 			
-			assertNotEquals("no deberían ser iguales", alm.getExistencias(), almuno.getExistencias());
-			assertNotEquals("no deberían ser iguales", alm2.getExistencias(), almdos.getExistencias());
-			assertNotEquals("no deberían ser iguales", alm3.getExistencias(), almtres.getExistencias());
+			assertNotEquals("no deberían ser iguales", almuno.getExistencias(), alm.getExistencias());
+			assertNotEquals("no deberían ser iguales", almdos.getExistencias(), alm2.getExistencias());
+			assertNotEquals("no deberían ser iguales", almtres.getExistencias(), alm3.getExistencias());
    			
 			
    			//No debería ser null (si lo es, significa que existió algún error).
    			
-   			
+   			parranderos.abandonarCarrito(carrito.getId(), carrito.getClave());
    		
    		}
    		catch (Exception e)
@@ -425,6 +425,8 @@ public class Iteracion2Test {
        		parranderos.cerrarUnidadPersistencia ();    		
    		}
    	}
+    
+    
     
     
    
