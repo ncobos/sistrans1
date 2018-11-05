@@ -473,15 +473,15 @@ public class Iteracion2Test {
    			
    			List<Contiene> cont = parranderos.darContienePorCarrito(1);
    			
-   			assertEquals("debe ser igual el tamaño", 2, cont.size());
+   			assertEquals("debe ser igual el tamaño", 1, cont.size());
    			
    			Almacenamiento alm = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
 			Almacenamiento alm2 = parranderos.obtenerEstanteSucursalIdProducto(1, 2);
 			Almacenamiento alm3 = parranderos.obtenerEstanteSucursalIdProducto(1, 3);
 			
-			assertNotEquals("no deberían ser iguales", almuno.getExistencias(), alm.getExistencias());
-			assertNotEquals("no deberían ser iguales", almdos.getExistencias(), alm2.getExistencias());
-			assertNotEquals("no deberían ser iguales", almtres.getExistencias(), alm3.getExistencias());
+			assertNotEquals("no deberían ser iguales", alm.getExistencias(), almuno.getExistencias());
+			assertNotEquals("no deberían ser iguales", alm2.getExistencias(), almdos.getExistencias());
+			assertNotEquals("no deberían ser iguales", alm3.getExistencias(), almtres.getExistencias());
    			   		
    		}
    		catch (Exception e)
