@@ -1,0 +1,1267 @@
+21:29:21,099 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre abandonarCarrito
+21:29:21,274 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:29:21,280 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre recolectarProductos
+21:29:21,280 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:29:21,281 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre adicionarProducto
+21:29:21,281 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:29:21,282 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre asignarCarrito
+21:29:21,282 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:29:21,283 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre devolverProducto
+21:29:21,284 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:29:21,285 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre pagarCompra
+21:29:21,285 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:30:29,539 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre abandonarCarrito
+21:30:29,641 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:30:32,202 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:30:32,202 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:32,721 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:30:32,722 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:32,805 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:30:32,806 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:32,806 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:33,021 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:33,072 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre recolectarProductos
+21:30:33,072 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:30:33,482 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:30:33,482 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:33,923 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:30:33,923 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:30:34,047 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:30:34,047 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:30:34,174 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:30:34,174 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 1
+21:30:34,289 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 1
+21:30:34,289 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:30:34,349 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:30:34,349 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:30:34,407 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:30:34,407 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:30:34,467 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:30:34,467 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:34,525 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:30:34,525 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:34,525 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:34,755 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:34,755 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias
+21:30:34,984 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias: Listo!
+21:30:34,984 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:30:35,040 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:30:35,095 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre adicionarProducto
+21:30:35,096 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:30:35,440 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:30:35,440 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:35,874 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:30:35,874 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:30:35,939 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:30:35,939 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:30:36,075 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:30:36,075 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:30:36,139 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:30:36,139 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:30:36,215 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:30:36,215 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:30:36,325 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:30:36,325 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:36,498 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:36,533 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre asignarCarrito
+21:30:36,534 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:30:36,846 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:30:36,854 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:37,260 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:30:37,260 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:37,445 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:30:37,486 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre devolverProducto
+21:30:37,486 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:30:37,806 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:30:37,806 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:38,250 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:30:38,250 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:30:38,306 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:30:38,306 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:30:38,427 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:30:38,459 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:30:38,459 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:30:38,511 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:30:38,539 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre pagarCompra
+21:30:38,539 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:30:38,883 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:30:38,883 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:39,185 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:30:39,185 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:30:39,185 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:39,241 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:30:39,241 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:30:39,241 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:30:39,436 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=3, estado=en uso, clave=1, sucursal=1]
+21:30:39,436 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 3
+21:30:39,568 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:30:39,603 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 3
+21:30:39,603 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 3
+21:30:39,714 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:30:39,753 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 3
+21:30:39,753 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 3
+21:30:39,888 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 3
+21:30:39,888 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:30:39,946 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:30:39,946 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:30:39,998 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:30:39,998 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:30:40,049 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:30:40,060 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:3
+21:30:40,219 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_FACTURA(numero, fecha, idcliente, sucursal) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) violada - clave principal no encontrada
+
+21:30:40,248 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:3hecho.
+21:30:40,248 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:30:40,301 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:31:05,293 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre abandonarCarrito
+21:31:05,394 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:07,157 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:07,157 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:07,526 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:07,527 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:07,527 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:07,589 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:07,589 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:07,589 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:07,650 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:07,651 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:07,651 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:07,852 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=4, estado=en uso, clave=1, sucursal=1]
+21:31:07,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:07,920 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:31:07,921 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:07,921 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:08,143 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:08,198 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre recolectarProductos
+21:31:08,199 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:08,585 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:08,585 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:08,850 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:08,850 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:08,850 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:08,909 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:08,909 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:08,909 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:08,963 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:08,963 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:08,963 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:09,151 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=4, estado=en uso, clave=1, sucursal=1]
+21:31:09,152 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 4
+21:31:09,277 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:09,312 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 4
+21:31:09,312 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 4
+21:31:09,392 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:09,431 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 4
+21:31:09,431 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 4
+21:31:09,525 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:09,570 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 4
+21:31:09,570 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:09,639 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:09,639 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:31:09,712 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:31:09,712 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:31:09,806 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:31:09,806 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:09,860 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:31:09,861 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:09,861 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:10,079 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:10,079 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias
+21:31:10,303 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias: Listo!
+21:31:10,303 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:31:10,383 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:31:10,423 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre adicionarProducto
+21:31:10,424 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:10,771 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:10,771 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:11,067 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:11,069 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:11,069 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:11,146 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:11,146 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:11,146 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:11,200 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:11,200 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:11,201 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:11,416 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=4, estado=en uso, clave=1, sucursal=1]
+21:31:11,416 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:11,478 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:11,478 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 4
+21:31:11,614 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 4
+21:31:11,614 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:11,683 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:11,683 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:11,760 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:11,760 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 4
+21:31:11,877 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 4
+21:31:11,877 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:12,093 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:12,131 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre asignarCarrito
+21:31:12,132 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:16,516 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:16,516 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:16,783 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:16,793 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:16,793 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:16,849 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:16,849 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:16,849 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:16,918 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:16,918 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:16,918 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:17,117 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=4, estado=en uso, clave=1, sucursal=1]
+21:31:17,118 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:17,317 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 4
+21:31:17,375 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre devolverProducto
+21:31:17,375 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:17,731 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:17,731 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:17,994 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:17,994 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:17,994 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:18,058 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:18,058 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:18,058 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:18,121 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:18,122 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:18,122 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:18,313 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=4, estado=en uso, clave=1, sucursal=1]
+21:31:18,313 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:18,370 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:18,370 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 4
+21:31:18,469 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:18,517 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 4
+21:31:18,517 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:18,581 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:18,641 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre pagarCompra
+21:31:18,641 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:19,001 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:19,001 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:19,276 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:19,276 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:19,276 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:19,336 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:19,336 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:19,336 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:19,389 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:19,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:19,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:19,439 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:19,439 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:31:19,439 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:19,614 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=5, estado=en uso, clave=1, sucursal=1]
+21:31:19,614 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 5
+21:31:19,714 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:19,748 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 5
+21:31:19,748 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 5
+21:31:19,856 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 5
+21:31:19,856 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 5
+21:31:19,984 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 5
+21:31:19,984 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:20,050 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:20,050 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:31:20,127 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:31:20,127 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:31:20,191 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:31:20,193 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:5
+21:31:20,356 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_FACTURA(numero, fecha, idcliente, sucursal) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) violada - clave principal no encontrada
+
+21:31:20,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:5hecho.
+21:31:20,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:31:20,450 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:31:33,839 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre abandonarCarrito
+21:31:33,944 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:36,025 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:36,025 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:36,405 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:36,407 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:36,407 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:36,457 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:36,458 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:36,458 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:36,519 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:36,519 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:36,519 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:36,584 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:36,584 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:31:36,584 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:36,635 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:36,635 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:31:36,635 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:36,838 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=6, estado=en uso, clave=1, sucursal=1]
+21:31:36,838 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:36,909 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:31:36,910 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:36,910 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:37,092 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:37,137 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre recolectarProductos
+21:31:37,137 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:37,506 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:37,506 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:37,796 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:37,797 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:37,797 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:37,857 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:37,858 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:37,858 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:37,914 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:37,914 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:37,914 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:37,969 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:37,969 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:31:37,969 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:38,031 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:38,031 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:31:38,031 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:38,253 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=6, estado=en uso, clave=1, sucursal=1]
+21:31:38,253 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 6
+21:31:38,383 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:38,423 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 6
+21:31:38,423 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 6
+21:31:38,533 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 6
+21:31:38,533 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 6
+21:31:38,662 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 6
+21:31:38,662 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:38,723 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:38,723 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:31:38,796 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:31:38,796 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:31:38,882 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:31:38,882 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:38,952 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:31:38,952 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:38,952 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:39,122 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:39,122 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias
+21:31:39,373 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias: Listo!
+21:31:39,373 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:31:39,434 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:31:39,434 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:39,503 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:39,503 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:31:39,587 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:31:39,587 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:31:39,657 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:31:39,694 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre adicionarProducto
+21:31:39,695 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:40,019 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:40,019 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:40,311 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:40,311 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:40,311 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:40,359 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:40,359 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:40,359 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:40,411 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:40,411 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:40,411 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:40,465 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:40,465 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:31:40,465 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:40,532 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:40,533 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:31:40,533 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:40,743 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=6, estado=en uso, clave=1, sucursal=1]
+21:31:40,744 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:40,830 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:40,830 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 6
+21:31:40,940 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 6
+21:31:40,940 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:41,007 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:41,007 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:41,067 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:41,067 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 6
+21:31:41,184 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 6
+21:31:41,184 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:41,393 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:41,430 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre asignarCarrito
+21:31:41,431 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:41,770 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:41,770 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:42,065 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:42,066 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:42,066 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:42,120 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:42,120 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:42,120 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:42,185 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:42,185 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:42,185 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:42,236 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:42,236 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:31:42,236 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:42,286 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:42,286 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:31:42,286 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:42,491 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=6, estado=en uso, clave=1, sucursal=1]
+21:31:42,491 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:42,734 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 6
+21:31:42,764 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre devolverProducto
+21:31:42,764 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:43,117 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:43,117 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:43,392 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:43,392 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:43,392 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:43,452 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:43,452 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:43,452 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:43,516 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:43,516 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:43,516 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:43,568 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:43,568 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:31:43,568 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:43,613 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:43,614 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:31:43,614 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:43,818 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=6, estado=en uso, clave=1, sucursal=1]
+21:31:43,818 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:43,896 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:43,896 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 6
+21:31:44,002 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:44,047 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 6
+21:31:44,047 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:44,111 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:44,157 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre pagarCompra
+21:31:44,158 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:31:44,513 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:31:44,513 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:44,751 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:44,752 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:31:44,752 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:44,802 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:44,802 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:31:44,802 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:44,853 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:44,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:31:44,853 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:44,918 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:44,918 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:31:44,918 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:44,979 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:44,979 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:31:44,980 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:45,039 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:31:45,039 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:31:45,039 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:31:45,259 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=7, estado=en uso, clave=1, sucursal=1]
+21:31:45,259 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 7
+21:31:45,342 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:31:45,377 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 7
+21:31:45,377 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 7
+21:31:45,499 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 7
+21:31:45,499 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 7
+21:31:45,633 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 7
+21:31:45,633 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:31:45,695 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:31:45,695 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:31:45,761 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:31:45,761 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:31:45,810 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:31:45,811 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:7
+21:31:45,970 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_FACTURA(numero, fecha, idcliente, sucursal) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) violada - clave principal no encontrada
+
+21:31:46,006 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:7hecho.
+21:31:46,006 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:31:46,063 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:32:01,959 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre abandonarCarrito
+21:32:02,049 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:04,275 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:04,275 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:04,695 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:04,696 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:04,696 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:04,817 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:04,817 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:04,817 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:04,884 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:04,885 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:04,885 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:04,955 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:04,955 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:04,955 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:05,012 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:05,012 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:05,012 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:05,089 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:05,089 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:05,089 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:05,142 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:05,142 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:05,142 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:05,334 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=8, estado=en uso, clave=1, sucursal=1]
+21:32:05,334 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:05,400 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:32:05,400 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:05,400 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:05,614 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:05,659 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre recolectarProductos
+21:32:05,659 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:06,102 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:06,103 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:06,396 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:06,397 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:06,397 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:06,462 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:06,462 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:06,462 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:06,535 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:06,535 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:06,535 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:06,606 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:06,607 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:06,607 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:06,669 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:06,669 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:06,669 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:06,756 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:06,757 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:06,757 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:06,829 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:06,830 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:06,830 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:07,086 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=8, estado=en uso, clave=1, sucursal=1]
+21:32:07,086 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 8
+21:32:07,209 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:07,240 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 8
+21:32:07,240 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 8
+21:32:07,345 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:07,384 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 8
+21:32:07,384 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 8
+21:32:07,505 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:07,534 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 8
+21:32:07,534 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:07,588 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:07,589 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:07,634 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:07,634 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:07,676 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:32:07,676 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:07,722 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:32:07,722 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:07,722 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:07,884 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:07,884 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias
+21:32:08,150 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias: Listo!
+21:32:08,150 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:32:08,204 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:32:08,204 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:08,272 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:08,273 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:08,343 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:08,343 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:08,413 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:32:08,467 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre adicionarProducto
+21:32:08,468 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:08,858 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:08,858 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,132 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:09,132 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:09,132 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,185 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:09,185 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:09,185 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,255 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:09,256 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:09,256 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,305 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:09,305 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:09,305 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,371 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:09,371 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:09,371 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,432 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:09,432 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:09,432 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,496 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:09,497 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:09,497 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:09,742 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=8, estado=en uso, clave=1, sucursal=1]
+21:32:09,742 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:09,798 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:09,798 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 8
+21:32:09,929 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 8
+21:32:09,929 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:09,986 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:09,986 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:10,038 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:10,038 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 8
+21:32:10,168 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 8
+21:32:10,168 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:10,371 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:10,412 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre asignarCarrito
+21:32:10,413 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:10,755 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:10,755 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,046 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:11,046 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:11,046 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,117 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:11,117 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:11,117 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,178 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:11,178 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:11,178 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,233 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:11,233 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:11,233 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,284 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:11,284 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:11,284 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,335 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:11,336 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:11,336 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,388 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:11,388 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:11,388 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:11,559 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=8, estado=en uso, clave=1, sucursal=1]
+21:32:11,559 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:11,762 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 8
+21:32:11,799 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre devolverProducto
+21:32:11,800 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:12,166 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:12,166 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,448 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:12,448 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:12,448 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,499 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:12,499 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:12,499 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,560 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:12,560 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:12,560 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,616 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:12,616 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:12,616 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,669 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:12,669 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:12,669 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,729 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:12,729 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:12,729 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,805 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:12,805 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:12,805 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:12,995 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=8, estado=en uso, clave=1, sucursal=1]
+21:32:12,995 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:13,046 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:13,046 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 8
+21:32:13,135 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:13,167 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 8
+21:32:13,167 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:13,239 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:13,278 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre pagarCompra
+21:32:13,279 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:13,608 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:13,608 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:13,895 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:13,895 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:13,895 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:13,950 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:13,950 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:13,950 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:14,000 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:14,001 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:14,001 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:14,052 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:14,053 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:14,053 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:14,101 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:14,101 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:14,101 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:14,160 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:14,160 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:14,160 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:14,218 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:14,219 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:14,219 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:14,273 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:14,273 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 9
+21:32:14,273 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:14,453 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=9, estado=en uso, clave=1, sucursal=1]
+21:32:14,453 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 9
+21:32:14,534 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:14,581 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 9
+21:32:14,581 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 9
+21:32:14,671 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:14,706 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 9
+21:32:14,706 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 9
+21:32:14,801 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:14,831 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 9
+21:32:14,831 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:14,889 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:14,889 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:14,944 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:14,944 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:14,998 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:32:14,999 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:9
+21:32:15,171 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_FACTURA(numero, fecha, idcliente, sucursal) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) violada - clave principal no encontrada
+
+21:32:15,202 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:9hecho.
+21:32:15,202 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:32:15,246 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:32:15,246 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+21:32:15,333 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!
+21:32:15,333 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:15,394 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:15,394 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:15,461 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:15,461 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:15,529 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:32:44,028 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre abandonarCarrito
+21:32:44,179 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:46,794 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:46,794 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,148 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,149 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:47,149 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,215 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,215 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:47,215 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,268 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,268 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:47,268 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,319 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,320 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:47,320 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,382 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,383 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:47,383 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,438 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,438 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:47,438 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,495 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,495 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:47,495 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,553 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,554 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 9
+21:32:47,554 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,610 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:47,611 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 10
+21:32:47,611 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:47,813 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=10, estado=en uso, clave=1, sucursal=1]
+21:32:47,814 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:47,869 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:32:47,870 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:47,870 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:48,089 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:48,124 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre recolectarProductos
+21:32:48,125 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:48,509 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:48,509 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:48,806 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:48,807 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:48,807 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:48,856 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:48,856 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:48,856 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:48,929 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:48,930 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:48,930 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:48,996 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:48,996 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:48,996 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:49,048 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:49,048 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:49,048 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:49,106 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:49,106 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:49,106 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:49,161 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:49,161 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:49,161 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:49,232 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:49,232 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 9
+21:32:49,232 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:49,291 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:49,291 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 10
+21:32:49,291 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:49,470 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=10, estado=en uso, clave=1, sucursal=1]
+21:32:49,470 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 10
+21:32:49,591 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:49,630 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 10
+21:32:49,630 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 10
+21:32:49,765 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 10
+21:32:49,765 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 10
+21:32:49,899 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 10
+21:32:49,899 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:50,003 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:50,003 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:50,077 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:50,077 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:50,149 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:32:50,149 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:50,217 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:32:50,217 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:50,217 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:50,442 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:50,442 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias
+21:32:50,685 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias: Listo!
+21:32:50,685 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:32:50,740 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:32:50,740 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:50,804 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:50,804 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:50,860 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:50,860 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:50,914 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:32:50,955 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre adicionarProducto
+21:32:50,955 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:51,393 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:51,393 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:51,682 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:51,682 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:51,682 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:51,737 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:51,737 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:51,737 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:51,798 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:51,798 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:51,798 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:51,854 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:51,854 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:51,854 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:51,913 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:51,913 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:51,913 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:51,962 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:51,962 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:51,962 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:52,016 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:52,016 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:52,016 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:52,095 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:52,095 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 9
+21:32:52,095 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:52,168 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:52,168 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 10
+21:32:52,168 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:52,383 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=10, estado=en uso, clave=1, sucursal=1]
+21:32:52,383 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:52,448 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:52,448 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 10
+21:32:52,573 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 10
+21:32:52,573 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:52,631 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:52,631 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:52,692 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:52,692 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 10
+21:32:52,832 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 10
+21:32:52,832 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:53,053 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:53,095 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre asignarCarrito
+21:32:53,097 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:53,457 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:53,457 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:53,738 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:53,738 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:53,738 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:53,809 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:53,809 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:53,809 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:53,894 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:53,895 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:53,895 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:53,959 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:53,959 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:53,959 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:54,018 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:54,018 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:54,019 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:54,084 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:54,084 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:54,084 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:54,145 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:54,145 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:54,145 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:54,225 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:54,225 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 9
+21:32:54,225 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:54,282 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:54,282 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 10
+21:32:54,282 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:54,490 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=10, estado=en uso, clave=1, sucursal=1]
+21:32:54,490 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:54,707 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 10
+21:32:54,744 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre devolverProducto
+21:32:54,745 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:55,133 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:55,133 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,404 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,404 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:55,404 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,469 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,469 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:55,469 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,526 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,526 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:55,526 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,580 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,580 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:55,580 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,627 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,628 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:55,628 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,682 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,682 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:55,682 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,736 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,736 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:55,736 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,789 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,789 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 9
+21:32:55,789 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:55,844 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:55,844 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 10
+21:32:55,844 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:56,038 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=10, estado=en uso, clave=1, sucursal=1]
+21:32:56,038 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:56,097 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:56,097 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 10
+21:32:56,219 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:56,248 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 10
+21:32:56,248 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:56,299 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:56,346 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre pagarCompra
+21:32:56,346 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:32:56,724 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:32:56,724 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,053 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,053 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 2
+21:32:57,053 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,114 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,114 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 3
+21:32:57,114 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,171 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,171 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 4
+21:32:57,171 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,246 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,246 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 5
+21:32:57,246 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,304 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,304 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 6
+21:32:57,305 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,357 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,357 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 7
+21:32:57,357 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,418 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,418 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 8
+21:32:57,418 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,481 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,482 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 9
+21:32:57,482 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,532 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,532 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 10
+21:32:57,532 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,601 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El carrito está en uso
+
+21:32:57,601 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 11
+21:32:57,601 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,681 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : No corresponde a la sucursal
+
+21:32:57,681 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 12
+21:32:57,681 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:32:57,855 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=12, estado=en uso, clave=1, sucursal=1]
+21:32:57,855 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 12
+21:32:57,948 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:57,980 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 12
+21:32:57,980 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 12
+21:32:58,100 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_CONTIENE(producto, cantidad, carrito) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304A101820.A_CONTIENE_PK) violada
+
+21:32:58,136 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 12
+21:32:58,136 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 12
+21:32:58,244 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 12
+21:32:58,244 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:58,302 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:58,302 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:58,350 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:58,350 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:58,403 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:32:58,404 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:12
+21:32:58,546 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO A_FACTURA(numero, fecha, idcliente, sucursal) values (?, ?, ?, ?)".
+ORA-02291: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) violada - clave principal no encontrada
+
+21:32:58,584 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Pagando compra para el carrito:12hecho.
+21:32:58,584 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:32:58,635 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:32:58,635 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos
+21:32:58,696 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todas las transacciones por una factura de la base de datos: Listo!
+21:32:58,697 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:32:58,755 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:32:58,755 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:32:58,817 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:32:58,817 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:32:58,872 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:34:09,538 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre abandonarCarrito
+21:34:09,637 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:34:12,620 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:34:12,620 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:34:13,167 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:34:13,167 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:13,264 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:34:13,264 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:13,264 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:13,463 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:13,502 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre recolectarProductos
+21:34:13,503 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:34:13,842 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:34:13,842 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:34:14,233 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:34:14,234 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:34:14,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:34:14,389 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:34:14,511 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:34:14,511 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 1
+21:34:14,618 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 3 al carrito: 1
+21:34:14,618 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:34:14,677 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:34:14,677 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1
+21:34:14,737 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 2 de la sucursal: 1: listo!
+21:34:14,737 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1
+21:34:14,816 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 3 de la sucursal: 1: listo!
+21:34:14,817 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:14,875 (main) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : La contraseña del carrito es incorrecta
+
+21:34:14,876 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:14,876 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:15,090 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:15,090 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias
+21:34:15,309 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Recolectando productos de carritos abandonados y restableciendo existencias: Listo!
+21:34:15,309 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito
+21:34:16,070 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los contiene por carrito: listo!
+21:34:16,121 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre adicionarProducto
+21:34:16,121 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:34:16,499 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:34:16,499 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:34:16,939 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:34:16,939 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:34:16,993 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:34:16,993 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:34:17,110 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 1 al carrito: 1
+21:34:17,110 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:34:17,179 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:34:17,179 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1
+21:34:17,252 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo estante con producto: 1 de la sucursal: 1: listo!
+21:34:17,252 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:34:18,146 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Adicionando producto: 2 al carrito: 1
+21:34:18,146 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:18,333 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:18,373 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre asignarCarrito
+21:34:18,373 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:34:19,134 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:34:19,134 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+21:34:19,520 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Carrito [id=1, estado=en uso, clave=1, sucursal=1]
+21:34:19,520 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:19,746 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Abandonando carrito: 1
+21:34:19,798 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Probando las operaciones CRD sobre devolverProducto
+21:34:19,799 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
+21:34:20,452 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
+21:34:20,452 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
