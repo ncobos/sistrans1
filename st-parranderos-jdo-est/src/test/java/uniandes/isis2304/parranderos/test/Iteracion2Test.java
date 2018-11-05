@@ -141,6 +141,126 @@ public class Iteracion2Test {
    	}
     
     /**
+     * Metodo que testea el requerimiento funcional RF16
+     */
+    @Test
+   	public void CRDAbandonarCarritoTest() 
+   	{
+       	// Probar primero la conexión a la base de datos
+   		try
+   		{
+   			log.info ("Probando las operaciones CRD sobre abandonarCarrito");
+   			parranderos = new Parranderos (openConfig (CONFIG_TABLAS_A));
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			log.info ("Prueba de CRD de RF16 incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
+   			log.info ("La causa es: " + e.getCause ().toString ());
+
+   			String msg = "Prueba de CRD de RF16 incompleta. No se pudo conectar a la base de datos !!.\n";
+   			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+   			fail (msg);
+   		}
+   		
+   		// Ahora si se pueden probar las operaciones
+       	try
+   		{
+   			Carrito asignar = parranderos.asignarCarrito(1, 1);
+   			
+   			Carrito abandonarMal = parranderos.abandonarCarrito(asignar.getId(), 123456789);
+   			
+   			assertNull(abandonarMal);
+   			
+   			Carrito abandonar = parranderos.abandonarCarrito(asignar.getId(), 1);
+   			
+   			assertEquals("El estado debería ser abandonado", "abandonado", abandonar.getEstado());
+       		
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			String msg = "Error en la ejecución de las pruebas de operaciones sobre el requerimiento de RF14.\n";
+   			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+
+       		fail ("Error en las pruebas sobre el RF12");
+   		}
+   		finally
+   		{
+//   			parranderos.limpiarParranderos ();
+       		parranderos.cerrarUnidadPersistencia ();    		
+   		}
+   	}
+    
+    /**
+     * Metodo que testea el requerimiento funcional RF14
+     */
+    @Test
+   	public void CRDDevolverProductoTest() 
+   	{
+       	// Probar primero la conexión a la base de datos
+   		try
+   		{
+   			log.info ("Probando las operaciones CRD sobre devolverProducto");
+   			parranderos = new Parranderos (openConfig (CONFIG_TABLAS_A));
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			log.info ("Prueba de CRD de RF14 incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
+   			log.info ("La causa es: " + e.getCause ().toString ());
+
+   			String msg = "Prueba de CRD de RF14 incompleta. No se pudo conectar a la base de datos !!.\n";
+   			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+   			fail (msg);
+   		}
+   		
+   		// Ahora si se pueden probar las operaciones
+       	try
+   		{
+   			
+       		Carrito carrito = parranderos.asignarCarrito(1, 1);
+   			assertNotNull("El carrito no puede ser nulo", carrito);
+   			Almacenamiento almacenamiento1 = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+
+   			Contiene contiene = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 1, 5);
+   			
+   			Almacenamiento almacenamientoMal = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+   			
+   			assertNotEquals(almacenamiento1.getExistencias(), almacenamientoMal.getExistencias());
+   			
+   			Contiene contiene2 = parranderos.devolverProducto(carrito.getId(), 1, 1, 1);
+   			
+   			//No debería ser null (si lo es, significa que existió algún error).
+   			assertNotNull(contiene2);
+   			
+   			Almacenamiento almacenamiento2 = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
+   			
+   			assertEquals("Deberían ser iguales", almacenamiento1.getExistencias(), almacenamiento2.getExistencias());
+   		
+   			Carrito abandonar = parranderos.abandonarCarrito(carrito.getId(), 1);
+
+   		}
+   		catch (Exception e)
+   		{
+   			e.printStackTrace();
+   			String msg = "Error en la ejecución de las pruebas de operaciones sobre el requerimiento de RF14.\n";
+   			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
+   			System.out.println (msg);
+
+       		fail ("Error en las pruebas sobre el RF12");
+   		}
+   		finally
+   		{
+//   			parranderos.limpiarParranderos ();
+       		parranderos.cerrarUnidadPersistencia ();    		
+   		}
+   	}
+    
+    /**
      * Metodo que testea el requerimiento funcional RF13
      */
     @Test
@@ -212,69 +332,7 @@ public class Iteracion2Test {
     
     
     
-    /**
-     * Metodo que testea el requerimiento funcional RF14
-     */
-    @Test
-   	public void CRDDevolverProductoTest() 
-   	{
-       	// Probar primero la conexión a la base de datos
-   		try
-   		{
-   			log.info ("Probando las operaciones CRD sobre devolverProducto");
-   			parranderos = new Parranderos (openConfig (CONFIG_TABLAS_A));
-   		}
-   		catch (Exception e)
-   		{
-   			e.printStackTrace();
-   			log.info ("Prueba de CRD de RF14 incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
-   			log.info ("La causa es: " + e.getCause ().toString ());
-
-   			String msg = "Prueba de CRD de RF14 incompleta. No se pudo conectar a la base de datos !!.\n";
-   			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
-   			System.out.println (msg);
-   			fail (msg);
-   		}
-   		
-   		// Ahora si se pueden probar las operaciones
-       	try
-   		{
-   			
-       		Carrito carrito = parranderos.asignarCarrito(1, 1);
-   			assertNotNull("El carrito no puede ser nulo", carrito);
-   			Almacenamiento almacenamiento1 = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
-
-   			Contiene contiene = parranderos.adicionarProductoCarrito(carrito.getId(), 1, 1, 5);
-   			
-   			Almacenamiento almacenamientoMal = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
-   			
-   			assertNotEquals(almacenamiento1.getExistencias(), almacenamientoMal.getExistencias());
-   			
-   			Contiene contiene2 = parranderos.devolverProducto(carrito.getId(), 1, 1, 1);
-   			
-   			//No debería ser null (si lo es, significa que existió algún error).
-   			assertNotNull(contiene2);
-   			
-   			Almacenamiento almacenamiento2 = parranderos.obtenerEstanteSucursalIdProducto(1, 1);
-   			
-   			assertEquals("Deberían ser iguales", almacenamiento1.getExistencias(), almacenamiento2.getExistencias());
-   		
-   		}
-   		catch (Exception e)
-   		{
-   			e.printStackTrace();
-   			String msg = "Error en la ejecución de las pruebas de operaciones sobre el requerimiento de RF14.\n";
-   			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
-   			System.out.println (msg);
-
-       		fail ("Error en las pruebas sobre el RF12");
-   		}
-   		finally
-   		{
-//   			parranderos.limpiarParranderos ();
-       		parranderos.cerrarUnidadPersistencia ();    		
-   		}
-   	}
+   
     
     /**
      * Metodo que testea el requerimiento funcional RF15
@@ -369,59 +427,7 @@ public class Iteracion2Test {
    	}
     
     
-    /**
-     * Metodo que testea el requerimiento funcional RF16
-     */
-    @Test
-   	public void CRDAbandonarCarritoTest() 
-   	{
-       	// Probar primero la conexión a la base de datos
-   		try
-   		{
-   			log.info ("Probando las operaciones CRD sobre abandonarCarrito");
-   			parranderos = new Parranderos (openConfig (CONFIG_TABLAS_A));
-   		}
-   		catch (Exception e)
-   		{
-   			e.printStackTrace();
-   			log.info ("Prueba de CRD de RF16 incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: " + e.getClass ().getName ());
-   			log.info ("La causa es: " + e.getCause ().toString ());
-
-   			String msg = "Prueba de CRD de RF16 incompleta. No se pudo conectar a la base de datos !!.\n";
-   			msg += "Revise el log de superandes y el de datanucleus para conocer el detalle de la excepción";
-   			System.out.println (msg);
-   			fail (msg);
-   		}
-   		
-   		// Ahora si se pueden probar las operaciones
-       	try
-   		{
-   			Carrito asignar = parranderos.asignarCarrito(1, 1);
-   			
-   			Carrito abandonarMal = parranderos.abandonarCarrito(asignar.getId(), 123456789);
-   			
-   			assertNull(abandonarMal);
-   			
-   			Carrito abandonar = parranderos.abandonarCarrito(asignar.getId(), 1);
-   			
-   			assertEquals("El estado debería ser abandonado", "abandonado", abandonar.getEstado());
-       		
-   		}
-   		catch (Exception e)
-   		{
-   			e.printStackTrace();
-   			String msg = "Error en la ejecución de las pruebas de operaciones sobre el requerimiento de RF14.\n";
-   			msg += "Revise el log de parranderos y el de datanucleus para conocer el detalle de la excepción";
-   			System.out.println (msg);
-
-       		fail ("Error en las pruebas sobre el RF12");
-   		}
-   		finally
-   		{
-//   			parranderos.limpiarParranderos ();
-       		parranderos.cerrarUnidadPersistencia ();    		
-   		}
-   	}
+   
 
     
     /**
