@@ -15633,3 +15633,55 @@ ORA-02291: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) viola
 17:48:54,238 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
 17:49:05,523 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes frecuentes
 17:49:05,748 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes frecuentes: listo!
+20:18:50,869 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+20:18:50,870 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+20:18:50,892 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:19:06,869 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:19:08,292 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+20:33:42,296 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+20:33:42,297 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+20:33:42,315 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:33:56,916 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:33:57,467 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT mes, año, MAX(cantidadtotal) as cantidadMaxima  FROM(SELECT  mes, año, sum(cantidad) as cantidadtotal  FROM(SELECT       t.idproducto idproducto,       t.cantidad cantidad,       t.numerofactura factura,       t.costo costo,       EXTRACT(MONTH FROM f.fecha) as mes,       EXTRACT(YEAR FROM f.fecha) as anio   FROM       a_transaccion t,       a_producto p,       a_factura f   WHERE       t.idproducto = p.id       AND p.tipo = ?            AND t.numerofactura = f.numero) group by mes, año           ORDER BY cantidadtotal DESC) group by mes, año".
+ORA-00904: "AÑO": identificador no válido
+
+20:33:57,488 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+20:36:37,345 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+20:36:37,346 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+20:36:37,369 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:36:57,226 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:36:57,651 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : El Query tenia que devolver objetos de tipo "uniandes.isis2304.parranderos.negocio.AyudaRFC7" pero era imposible crear nueva instancia de este tipo! La clase de resultado necesita un constructor sin argumentos.
+
+20:36:57,683 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+20:37:51,907 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+20:37:51,907 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+20:37:51,927 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:38:06,553 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:38:07,165 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+20:41:18,638 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+20:41:18,638 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+20:41:18,658 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:41:29,264 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:41:30,817 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+20:43:48,162 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+20:43:48,163 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+20:43:48,182 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:44:10,261 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:44:10,879 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+20:58:53,321 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+20:58:53,322 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+20:58:53,348 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:59:04,543 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:59:05,418 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+20:59:05,418 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+20:59:05,461 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "SELECT mes, anio, MAX(costototal) as costomaximo  FROM(SELECT  mes, anio, sum(costo) as costototal  FROM(SELECT       t.idproducto idproducto,       t.cantidad cantidad,       t.numerofactura factura,       t.costo costo,       EXTRACT(MONTH FROM f.fecha) as mes,       EXTRACT(YEAR FROM f.fecha) as anio   FROM       a_transaccion t,       a_producto p,       a_factura f   WHERE       t.idproducto = p.id       AND p.tipo = ?            AND t.numerofactura = f.numero) group by mes, anio           ORDER BY costototal DESC) group by mes, anio;".
+ORA-00933: comando SQL no terminado correctamente
+
+20:59:05,473 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+21:00:32,279 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+21:00:32,279 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+21:00:32,299 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+21:00:46,983 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+21:00:47,390 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.
+21:00:47,390 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analizando la operación para:  y para lacteos
+21:00:47,429 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Analisis la operación para:  y para lacteos hecho.

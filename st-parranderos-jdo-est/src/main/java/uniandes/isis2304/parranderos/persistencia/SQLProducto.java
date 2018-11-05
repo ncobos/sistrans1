@@ -5,6 +5,8 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.parranderos.negocio.AyudaRFC7;
+import uniandes.isis2304.parranderos.negocio.AyudaRFC72;
 import uniandes.isis2304.parranderos.negocio.Producto;
 import uniandes.isis2304.parranderos.negocio.Producto;
 import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
@@ -145,6 +147,68 @@ class SQLProducto
 		q.setResultClass(Producto.class);
 		q.setParameters(ciudad);
 		return (List<Producto>) q.executeList();
+	}
+	
+	/**
+	 * Método que obtiene un la fecha de más ventas de un tipo de producto
+	 * @param pm manejador de persistencia
+	 * @param tipo de producto que se quiere revisar
+	 * @return objeto de tipo AyudaRFC7 que tiene una fecha y una cantidad total de productos vendidos
+	 */
+	public AyudaRFC7 reqSiete(PersistenceManager pm, String tipo)
+	{
+		Query q = pm.newQuery(SQL, "SELECT mes, anio, MAX(cantidadtotal) as cantidadMaxima\r\n" + 
+				"FROM(SELECT  mes, anio, sum(cantidad) as cantidadtotal\r\n" + 
+				"FROM(SELECT\r\n" + 
+				"     t.idproducto idproducto,\r\n" + 
+				"     t.cantidad cantidad,\r\n" + 
+				"     t.numerofactura factura,\r\n" + 
+				"     t.costo costo,\r\n" + 
+				"     EXTRACT(MONTH FROM f.fecha) as mes,\r\n" + 
+				"     EXTRACT(YEAR FROM f.fecha) as anio\r\n" + 
+				" FROM\r\n" + 
+				"     a_transaccion t,\r\n" + 
+				"     a_producto p,\r\n" + 
+				"     a_factura f\r\n" + 
+				" WHERE\r\n" + 
+				"     t.idproducto = p.id\r\n" + 
+				"     AND p.tipo = ? \r\n" + 
+				"         AND t.numerofactura = f.numero) group by mes, anio\r\n" + 
+				"         ORDER BY cantidadtotal DESC) group by mes, anio");
+		q.setResultClass(AyudaRFC7.class);
+		q.setParameters(tipo);
+		return (AyudaRFC7) q.executeUnique();
+	}
+	
+	/**
+	 * Método que obtiene un objeto de tipo AyudaRFC72 
+	 * @param pm manejador de persistencia
+	 * @param tipo de producto que se quiere revisar
+	 * @return objeto de tipo AyudaRFC72 que tiene una fecha y un costo total de productos vendidos
+	 */
+	public AyudaRFC72 reqSiete2(PersistenceManager pm, String tipo)
+	{
+		Query q = pm.newQuery(SQL, "SELECT mes, anio, MAX(costototal) as costomaximo\r\n" + 
+				"FROM(SELECT  mes, anio, sum(costo) as costototal\r\n" + 
+				"FROM(SELECT\r\n" + 
+				"     t.idproducto idproducto,\r\n" + 
+				"     t.cantidad cantidad,\r\n" + 
+				"     t.numerofactura factura,\r\n" + 
+				"     t.costo costo,\r\n" + 
+				"     EXTRACT(MONTH FROM f.fecha) as mes,\r\n" + 
+				"     EXTRACT(YEAR FROM f.fecha) as anio\r\n" + 
+				" FROM\r\n" + 
+				"     a_transaccion t,\r\n" + 
+				"     a_producto p,\r\n" + 
+				"     a_factura f\r\n" + 
+				" WHERE\r\n" + 
+				"     t.idproducto = p.id\r\n" + 
+				"     AND p.tipo = ? \r\n" + 
+				"         AND t.numerofactura = f.numero) group by mes, anio\r\n" + 
+				"         ORDER BY costototal DESC) group by mes, anio");
+		q.setResultClass(AyudaRFC72.class);
+		q.setParameters(tipo);
+		return (AyudaRFC72) q.executeUnique();
 	}
 }
 

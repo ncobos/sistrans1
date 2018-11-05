@@ -35,6 +35,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import uniandes.isis2304.parranderos.negocio.Almacenamiento;
+import uniandes.isis2304.parranderos.negocio.AyudaRFC7;
+import uniandes.isis2304.parranderos.negocio.AyudaRFC72;
 import uniandes.isis2304.parranderos.negocio.Bodega;
 import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Estante;
@@ -2893,13 +2895,14 @@ public class PersistenciaParranderos
 		}
 
 	}
+	
 	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Promocion, dado el identificador de la promocion
-	 * Adiciona entradas al log de la aplicación
-	 * @param idProm - El identificador de la promoción
-	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 * Metodo que analiza la operacion de superandes
+	 * @param fecha unidad de tiempo a revisar
+	 * @param producto tipo de producto a revisar
+	 * @return objeto con fecha, y cantidad de productos comprados
 	 */
-	public long analizarOperacion(String fecha, String producto) 
+	public AyudaRFC7 analizarOperacion1(String fecha, String producto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		List<Transaccion> rta = new LinkedList<>();
@@ -2907,29 +2910,51 @@ public class PersistenciaParranderos
 		try
 		{
 			tx.begin();
-			List<Transaccion> tran = sqlTransaccion.darTransacciones(pm);
-			for (Transaccion actual:tran)
-			{
-				long idProducto = actual.getIdProducto();
-				Producto prod = sqlProducto.darProductoPorId(pm, idProducto);
-				if(prod.getTipo().equals(producto))
-				{
-					rta.add(actual);
-				}
-			}
-
-
-
-
+			log.trace("Se intenta obtener algo con el producto: " + producto);
+			AyudaRFC7 respuesta = sqlProducto.reqSiete(pm, producto);
 			tx.commit();
-			long respuesta = (long) rta.size();
 			return respuesta;
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return -1;
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	/**
+	 * Metodo que analiza la operacion de superandes
+	 * @param fecha unidad de tiempo a revisar
+	 * @param producto tipo de producto a revisar
+	 * @return objeto con fecha, y costo total de productos comprados
+	 */
+	public AyudaRFC72 analizarOperacion2(String fecha, String producto) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		List<Transaccion> rta = new LinkedList<>();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			log.trace("Se intenta obtener algo con el producto: " + producto);
+			AyudaRFC72 respuesta = sqlProducto.reqSiete2(pm, producto);
+			tx.commit();
+			return respuesta;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
 		}
 		finally
 		{
