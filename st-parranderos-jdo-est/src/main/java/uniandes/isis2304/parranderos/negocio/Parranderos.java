@@ -1559,10 +1559,24 @@ public class Parranderos
 	 * @param clave del carrito seleccionado.
 	 * @return numero de tuplas 
 	 */
-	public Long analizarOperacion(String fecha, String producto)
+	public AyudaRFC7 analizarOperacion1(String fecha, String producto)
 	{
 		log.info ("Analizando la operación para: " + " y para " + producto) ;
-        Long oper = pp.analizarOperacion(fecha, producto);
+        AyudaRFC7 oper = pp.analizarOperacion1(fecha, producto);
+		log.info ("Analisis la operación para: " + " y para " + producto + " hecho.") ;
+        return oper;
+	}
+	
+	/**
+	 * Proceso de abandonar un carrito de compras.
+	 * @param idCarrito del cual se quiere sacar el producto
+	 * @param clave del carrito seleccionado.
+	 * @return numero de tuplas 
+	 */
+	public AyudaRFC72 analizarOperacion2(String fecha, String producto)
+	{
+		log.info ("Analizando la operación para: " + " y para " + producto) ;
+        AyudaRFC72 oper = pp.analizarOperacion2(fecha, producto);
 		log.info ("Analisis la operación para: " + " y para " + producto + " hecho.") ;
         return oper;
 	}

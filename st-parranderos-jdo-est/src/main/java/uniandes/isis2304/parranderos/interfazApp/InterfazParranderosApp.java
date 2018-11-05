@@ -50,6 +50,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import uniandes.isis2304.parranderos.negocio.AyudaRFC7;
+import uniandes.isis2304.parranderos.negocio.AyudaRFC72;
 import uniandes.isis2304.parranderos.negocio.Carrito;
 import uniandes.isis2304.parranderos.negocio.Contiene;
 import uniandes.isis2304.parranderos.negocio.Factura;
@@ -1161,7 +1163,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 	 */
 	public String analizarOperacion()
 	{
-		String resp = "Resumen de la operación de SuperAndes según el rango dado : ";
+		String resp = "Resumen de la operación de SuperAndes según el rango dado : \n";
 		Boolean hola = false;
 		try 
 		{
@@ -1174,14 +1176,17 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 			{
 				
 
-				Long car = parranderos.analizarOperacion(fecha, producto);
-				if(car == null)
+				AyudaRFC7 car = parranderos.analizarOperacion1(fecha, producto);
+				AyudaRFC72 car2 = parranderos.analizarOperacion2(fecha, producto);
+				if(car == null || car2 == null)
 				{
-					throw new Exception ("Los datos del carrito no son correctos");
+					throw new Exception ("El objeto resultó siendo null");
 				}
 				System.out.println(car);
-//				long id2 = car.getId();
-//				resp+=id2;
+				
+				resp+=fecha + " con más productos vendidos: "+"  año: "+  + car.getAnio() + ", mes:" + car.getMes()+ ", cantidad total de unidades vendidas: " + car.getCantidadmaxima() + "\n";
+				resp+=fecha + " con más dinero recaudado: "+"  año: "+  + car2.getAnio() + ", mes:" + car2.getMes()+ ", costo total de unidades vendidas: " + car2.getCostomaximo() + "\n";
+
 				panelDatos.actualizarInterfaz(resp);
 				return resp;
 			}
