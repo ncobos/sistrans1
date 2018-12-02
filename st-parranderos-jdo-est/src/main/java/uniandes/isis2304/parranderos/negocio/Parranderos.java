@@ -1600,6 +1600,30 @@ public class Parranderos
 		return clientes;
 	}
 	
+	public List<long[]> clienteMasFrecuente2()
+	{
+		log.info ("Obteniendo todos los clientes frecuentes p.2") ;
+		List<long []> clientes = pp.clienteMasFrecuente2();
+		log.info ("Obteniendo todos los clientes frecuentes p.2: listo!") ;
+		return clientes;
+	}
+	
+	public List<String[]> clienteMasFrecuente3()
+	{
+		log.info ("Obteniendo todos los clientes frecuentes p.3") ;
+		List<String []> clientes = pp.clienteMasFrecuente3();
+		log.info ("Obteniendo todos los clientes frecuentes p.3s: listo!") ;
+		return clientes;
+	}
+	
+	public List<String[]> clienteMasFrecuente4()
+	{
+		log.info ("Obteniendo todos los clientes frecuentes p.4") ;
+		List<String []> clientes = pp.clienteMasFrecuente4();
+		log.info ("Obteniendo todos los clientes frecuentes p.4: listo!") ;
+		return clientes;
+	}
+	
 	/**
 	 * Retorna una lista con los carritos existentes
 	 * @return carritos en la base de datos

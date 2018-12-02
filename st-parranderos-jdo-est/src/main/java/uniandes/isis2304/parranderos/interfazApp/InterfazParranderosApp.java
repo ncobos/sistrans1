@@ -1436,5 +1436,104 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 		return resp;
 	}
+	
+	public String clienteMasFrecuente2()
+	{
+		String resp = "Los clientes más frecuentes que compran productos de mas de $100,000 son:\n";
+
+		try 
+		{	
+			List<long[]> lista = parranderos.clienteMasFrecuente2();
+
+			int i = 1;
+			for ( long [] tupla : lista)
+			{
+				long [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "idCliente: " + datos [0] + ", ";
+				resp1 += "Producto: " + datos [1] + ", ";
+				resp1 += "Precio:" + datos[2];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+	
+	public String clienteMasFrecuente3()
+	{
+		String resp = "Los clientes más frecuentes que compran productos de tipo herramientas son:\n";
+
+		try 
+		{	
+			List<String[]> lista = parranderos.clienteMasFrecuente3();
+
+			int i = 1;
+			for ( String [] tupla : lista)
+			{
+				String [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "idCliente: " + datos [0] + ", ";
+				resp1 += "Producto: " + datos [1] + ", ";
+				resp1 += "Precio: " + datos [2] + ", ";
+				resp1 += "Categoria:" + datos[3];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+	
+	public String clienteMasFrecuente4()
+	{
+		String resp = "Los clientes más frecuentes que compran productos de tipo electrodomésticos son:\n";
+
+		try 
+		{	
+			List<String[]> lista = parranderos.clienteMasFrecuente4();
+
+			int i = 1;
+			for ( String [] tupla : lista)
+			{
+				String [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "idCliente: " + datos [0] + ", ";
+				resp1 += "Producto: " + datos [1] + ", ";
+				resp1 += "Precio: " + datos [2] + ", ";
+				resp1 += "Categoria:" + datos[3];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+
 
 }

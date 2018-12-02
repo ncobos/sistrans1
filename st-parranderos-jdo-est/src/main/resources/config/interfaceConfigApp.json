@@ -100,6 +100,18 @@
 				{
 					"label": "Consultar los buenos clientes criterio 1",
 					"event": "clienteMasFrecuente1"
+				},
+				{
+					"label": "Consultar los buenos clientes criterio 2",
+					"event": "clienteMasFrecuente2"
+				},
+				{
+					"label": "Consultar los buenos clientes criterio 3",
+					"event": "clienteMasFrecuente3"
+				},
+				{
+					"label": "Consultar los buenos clientes criterio 4",
+					"event": "clienteMasFrecuente4"
 				}
 			]
 		},

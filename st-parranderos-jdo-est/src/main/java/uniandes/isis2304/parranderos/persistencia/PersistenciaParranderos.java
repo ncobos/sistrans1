@@ -3040,6 +3040,59 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
+	
+	public List<long[]> clienteMasFrecuente2()
+	{
+		List<long []> resp = new LinkedList<long []> ();
+		List<Object []> tuplas = sqlCliente.clienteMasFrecuente2(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			long [] datosResp = new long [3];
+
+			datosResp [0] = Long.parseLong(((String) tupla [0])); // id cliente
+			datosResp [1] = ((BigDecimal) tupla [1]).longValue (); // producto
+			datosResp [2] = ((BigDecimal) tupla [2]).longValue (); // precio
+			resp.add (datosResp);
+		}
+		return resp;
+	}
+	
+	public List<String[]> clienteMasFrecuente3()
+	{
+		List<String []> resp = new LinkedList<String []> ();
+		List<Object []> tuplas = sqlCliente.clienteMasFrecuente3(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			String [] datosResp = new String[4];
+
+			datosResp [0] = tupla [0].toString(); // id cliente
+			datosResp [1] = tupla [1].toString(); // producto
+			datosResp [2] = tupla [2].toString(); // precio
+			datosResp [3] = tupla [3].toString(); // categoria
+			resp.add(datosResp);
+		}
+		return resp;
+	}
+	
+	public List<String[]> clienteMasFrecuente4()
+	{
+		List<String []> resp = new LinkedList<String []> ();
+		List<Object []> tuplas = sqlCliente.clienteMasFrecuente4(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			String [] datosResp = new String[4];
+
+			datosResp [0] = tupla [0].toString(); // id cliente
+			datosResp [1] = tupla [1].toString(); // producto
+			datosResp [2] = tupla [2].toString(); // precio
+			datosResp [3] = tupla [3].toString(); // categoria
+			resp.add(datosResp);
+		}
+		return resp;
+	}
 
 	/**
 	 * Método que consulta todas las tuplas en la tabla Carrito

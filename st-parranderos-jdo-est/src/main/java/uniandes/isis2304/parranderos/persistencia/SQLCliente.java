@@ -255,4 +255,37 @@ class SQLCliente {
 		Query q = pm.newQuery(SQL, sql);
 		return q.executeList();
 	}
+	
+	public List<Object[]> clienteMasFrecuente2(PersistenceManager pm)
+	{
+		String sql = " select f.idcliente as cliente, t.idproducto as producto, (t.costo/t.cantidad) as precio";
+		sql += " from " + pp.darTablaFactura() + " f, " + pp.darTablaTransaccion() + " t ";
+		sql += " where f.numero = t.numerofactura and (t.costo/t.cantidad) > 100000";
+		sql += " order by cliente asc";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
+	
+	public List<Object[]> clienteMasFrecuente3(PersistenceManager pm)
+	{
+		String sql = " select f.idcliente as cliente, t.idproducto as producto, t.costo as precio, p.categoria as categoria";
+		sql += " from " +  pp.darTablaFactura() + " f," +  pp.darTablaTransaccion() + " t," + pp.darTablaProducto() + " p";
+		sql += " where f.numero = t.numerofactura and t.idproducto = p.id and p.categoria = 'herramientas'";
+		sql += " order by cliente asc";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
+	
+	public List<Object[]> clienteMasFrecuente4(PersistenceManager pm)
+	{
+		String sql = " select f.idcliente as cliente, t.idproducto as producto, t.costo as precio, p.categoria as categoria";
+		sql += " from " +  pp.darTablaFactura() + " f," +  pp.darTablaTransaccion() + " t," + pp.darTablaProducto() + " p";
+		sql += " where f.numero = t.numerofactura and t.idproducto = p.id and p.categoria = 'electrodomésticos'";
+		sql += " order by cliente asc";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
 }
