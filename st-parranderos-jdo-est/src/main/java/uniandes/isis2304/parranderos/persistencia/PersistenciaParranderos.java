@@ -1653,7 +1653,7 @@ public class PersistenciaParranderos
 	 * 			Métodos para manejar los CLIENTES
 	 *****************************************************************/
 
-	
+
 
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla Cliente, dado el identificador del cliente
@@ -2759,7 +2759,7 @@ public class PersistenciaParranderos
 
 				Almacenamiento estante = sqlAlmacenamiento.darAlmacenamientoPorSucursalIdProducto(pm, sucursal, producto, "Estante");
 				Almacenamiento bodega = sqlAlmacenamiento.darAlmacenamientoPorSucursalIdProducto(pm, sucursal, producto, "Bodega");
-				
+
 				boolean hola = false;
 				double costoTotalPedido = 0;
 				long idPedido = nextval();
@@ -2767,7 +2767,7 @@ public class PersistenciaParranderos
 				{
 					int cantidadRe = (estante.getCapacidadProductos()-estante.getExistencias()-1);
 
-					
+
 					if(cantidadRe>= bodega.getExistencias())
 					{
 						cantidadRe = bodega.getExistencias();
@@ -2777,16 +2777,16 @@ public class PersistenciaParranderos
 						List<Ofrecen> ofrecen = sqlOfrecen.darOfrecenPorProducto(pm, producto);
 						Ofrecen ofrecenbien = ofrecen.get(0);
 						long proveedor = ofrecenbien.getIdProveedor();
-						
+
 						if(!hola)
 						{
-							
-						hola = true;
-						Long pedido = sqlPedido.adicionarPedido(pm, idPedido, proveedor, sucursal, fecha, "pendiente", 1, costoTotalPedido);
+
+							hola = true;
+							Long pedido = sqlPedido.adicionarPedido(pm, idPedido, proveedor, sucursal, fecha, "pendiente", 1, costoTotalPedido);
 						}
-						
+
 						Long sub = sqlSubPedido.adicionarSubPedido(pm, idPedido, producto, bodega.getCapacidadProductos()-1, ofrecenbien.getCosto()*bodega.getCapacidadProductos());
-						
+
 					}
 
 					else {
@@ -2856,7 +2856,7 @@ public class PersistenciaParranderos
 		}
 
 	}
-	
+
 	/**
 	 * Metodo que analiza la operacion de superandes
 	 * @param fecha unidad de tiempo a revisar
@@ -2891,7 +2891,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	/**
 	 * Metodo que analiza la operacion de superandes
 	 * @param fecha unidad de tiempo a revisar
@@ -2926,12 +2926,12 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	public List<long []> darClientesFrecuentes(long sucursal)
 	{
 		List<long []> resp = new LinkedList<long []> ();
 		List<Object []> tuplas = sqlCliente.darClientesFrecuentes(pmf.getPersistenceManager(), sucursal);
-		
+
 		for ( Object [] tupla : tuplas)
 		{
 			long [] datosResp = new long [4];
@@ -2944,7 +2944,7 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	/**
 	 * Metodo que analiza el consumo de SuperAndes en los casos en que un cliente ha consumido el producto dado por el usuario.
 	 * @param fechainicio fecha de inicio consulta
@@ -2960,7 +2960,7 @@ public class PersistenciaParranderos
 		PersistenceManager pm = pmf.getPersistenceManager();
 		List<Transaccion> rta = new LinkedList<>();
 		Transaction tx=pm.currentTransaction();
-		
+
 		try
 		{
 			tx.begin();
@@ -2984,7 +2984,7 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	/**
 	 * Metodo que analiza el consumo de SuperAndes en los casos en que un cliente no ha consumido el producto dado por el usuario.
 	 * @param fechainicio fecha de inicio consulta
@@ -2999,7 +2999,7 @@ public class PersistenciaParranderos
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
-		
+
 		try
 		{
 			tx.begin();
@@ -3023,12 +3023,12 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
-	
+
 	public List<long[]> clienteMasFrecuente1()
 	{
 		List<long []> resp = new LinkedList<long []> ();
 		List<Object []> tuplas = sqlCliente.clienteMasFrecuente1(pmf.getPersistenceManager());
-		
+
 		for ( Object [] tupla : tuplas)
 		{
 			long [] datosResp = new long [3];
@@ -3040,12 +3040,12 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	public List<long[]> clienteMasFrecuente2()
 	{
 		List<long []> resp = new LinkedList<long []> ();
 		List<Object []> tuplas = sqlCliente.clienteMasFrecuente2(pmf.getPersistenceManager());
-		
+
 		for ( Object [] tupla : tuplas)
 		{
 			long [] datosResp = new long [3];
@@ -3057,12 +3057,12 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	public List<String[]> clienteMasFrecuente3()
 	{
 		List<String []> resp = new LinkedList<String []> ();
 		List<Object []> tuplas = sqlCliente.clienteMasFrecuente3(pmf.getPersistenceManager());
-		
+
 		for ( Object [] tupla : tuplas)
 		{
 			String [] datosResp = new String[4];
@@ -3075,12 +3075,12 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	public List<String[]> clienteMasFrecuente4()
 	{
 		List<String []> resp = new LinkedList<String []> ();
 		List<Object []> tuplas = sqlCliente.clienteMasFrecuente4(pmf.getPersistenceManager());
-		
+
 		for ( Object [] tupla : tuplas)
 		{
 			String [] datosResp = new String[4];
@@ -3093,12 +3093,18 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	public List<String[]> consultarFuncionamiento1()
 	{
 		List<String []> resp = new LinkedList<String []> ();
+		long startTime = System.nanoTime();
+
 		List<Object []> tuplas = sqlProducto.consultarFuncionamiento1(pmf.getPersistenceManager());
-		
+		long endTime = System.nanoTime();
+
+		long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
+
+		System.out.println(duration/1000000);
 		for ( Object [] tupla : tuplas)
 		{
 			String [] datosResp = new String[4];
@@ -3110,12 +3116,18 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	public List<String[]> consultarFuncionamiento2()
 	{
 		List<String []> resp = new LinkedList<String []> ();
+		long startTime = System.nanoTime();
+
 		List<Object []> tuplas = sqlProducto.consultarFuncionamiento2(pmf.getPersistenceManager());
-		
+		long endTime = System.nanoTime();
+
+		long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
+
+		System.out.println(duration/1000000);
 		for ( Object [] tupla : tuplas)
 		{
 			String [] datosResp = new String[4];
@@ -3127,12 +3139,17 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	public List<String[]> consultarFuncionamiento3()
 	{
 		List<String []> resp = new LinkedList<String []> ();
+		long startTime = System.nanoTime();
 		List<Object []> tuplas = sqlProveedor.consultarFuncionamiento3(pmf.getPersistenceManager());
-		
+		long endTime = System.nanoTime();
+
+		long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
+
+		System.out.println(duration/1000000);
 		for ( Object [] tupla : tuplas)
 		{
 			String [] datosResp = new String[4];
@@ -3143,12 +3160,17 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
-	
+
 	public List<String[]> consultarFuncionamiento4()
 	{
 		List<String []> resp = new LinkedList<String []> ();
+		long startTime = System.nanoTime();
+
 		List<Object []> tuplas = sqlProveedor.consultarFuncionamiento4(pmf.getPersistenceManager());
-		
+		long endTime = System.nanoTime();
+
+		long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
+		System.out.println(duration /1000000);
 		for ( Object [] tupla : tuplas)
 		{
 			String [] datosResp = new String[4];
@@ -3168,12 +3190,12 @@ public class PersistenciaParranderos
 	{
 		return sqlCarrito.darCarritos(pmf.getPersistenceManager());
 	}
-	
+
 	public List<Contiene> darContienePorCarrito(long idCarrito)
 	{
 		return sqlContiene.darContienePorCarrito(pmf.getPersistenceManager(), idCarrito);
 	}
-	
+
 	public Contiene darContienePorCarritoProducto(long idCarrito, long idProducto)
 	{
 		return sqlContiene.darContienePorCarritoProducto(pmf.getPersistenceManager(), idCarrito, idProducto);

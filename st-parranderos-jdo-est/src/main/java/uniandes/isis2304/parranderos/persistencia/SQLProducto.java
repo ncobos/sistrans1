@@ -216,10 +216,10 @@ class SQLProducto
 		String sql = "SELECT\r\n" + 
 				"     distinct nombre,\r\n" + 
 				"     ventas,\r\n" + 
-				"     mes\r\n" + 
+				"     semana\r\n" + 
 				" FROM\r\n" + 
 				"     ( (SELECT\r\n" + 
-				"             MAX(cantidad) AS ventas, extract(month from fecha) as mes\r\n" + 
+				"             MAX(cantidad) AS ventas, to_char(to_date(fecha), 'IW') as semana\r\n" + 
 				"         FROM\r\n" + 
 				"             (\r\n" + 
 				"                 SELECT DISTINCT\r\n" + 
@@ -236,11 +236,11 @@ class SQLProducto
 				"                 GROUP BY\r\n" + 
 				"                     p.nombre, t.idproducto, f.fecha\r\n" + 
 				"                 ORDER BY\r\n" + 
-				"                     cantidad DESC) group by extract(month from fecha)\r\n" + 
+				"                     cantidad DESC) group by to_char(to_date(fecha), 'IW') order by semana asc\r\n" + 
 				"     ) t1),\r\n" + 
 				"     (\r\n" + 
 				"         SELECT DISTINCT\r\n" + 
-				"                     SUM(t.cantidad) AS cantidad,\r\n" + 
+				"                     sum(t.cantidad) AS cantidad,\r\n" + 
 				"                     t.idproducto   AS id,\r\n" + 
 				"                     p.nombre       AS nombre,\r\n" + 
 				"                     f.fecha AS fecha\r\n" + 
@@ -257,9 +257,16 @@ class SQLProducto
 				"     ) t2\r\n" + 
 				"\r\n" + 
 				"where t1.ventas = t2.cantidad\r\n" + 
-				"order by mes asc";
+				"order by semana asc";
 		
+		long startTime = System.nanoTime();
 		Query q = pm.newQuery(SQL, sql);
+		
+		long endTime = System.nanoTime();
+
+		long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
+
+		System.out.println(duration/1000000);
 		return q.executeList();
 	}
 	
@@ -268,10 +275,10 @@ class SQLProducto
 		String sql = "SELECT\r\n" + 
 				"     distinct nombre,\r\n" + 
 				"     ventas,\r\n" + 
-				"     mes\r\n" + 
+				"     semana\r\n" + 
 				" FROM\r\n" + 
 				"     ( (SELECT\r\n" + 
-				"             MIN(cantidad) AS ventas, extract(month from fecha) as mes\r\n" + 
+				"             MIN(cantidad) AS ventas, to_char(to_date(fecha), 'IW') as semana\r\n" + 
 				"         FROM\r\n" + 
 				"             (\r\n" + 
 				"                 SELECT DISTINCT\r\n" + 
@@ -288,11 +295,11 @@ class SQLProducto
 				"                 GROUP BY\r\n" + 
 				"                     p.nombre, t.idproducto, f.fecha\r\n" + 
 				"                 ORDER BY\r\n" + 
-				"                     cantidad DESC) group by extract(month from fecha)\r\n" + 
+				"                     cantidad DESC) group by to_char(to_date(fecha), 'IW') order by semana asc\r\n" + 
 				"     ) t1),\r\n" + 
 				"     (\r\n" + 
 				"         SELECT DISTINCT\r\n" + 
-				"                     SUM(t.cantidad) AS cantidad,\r\n" + 
+				"                     sum(t.cantidad) AS cantidad,\r\n" + 
 				"                     t.idproducto   AS id,\r\n" + 
 				"                     p.nombre       AS nombre,\r\n" + 
 				"                     f.fecha AS fecha\r\n" + 
@@ -309,7 +316,7 @@ class SQLProducto
 				"     ) t2\r\n" + 
 				"\r\n" + 
 				"where t1.ventas = t2.cantidad\r\n" + 
-				"order by mes asc";
+				"order by semana asc";
 		
 		Query q = pm.newQuery(SQL, sql);
 		return q.executeList();

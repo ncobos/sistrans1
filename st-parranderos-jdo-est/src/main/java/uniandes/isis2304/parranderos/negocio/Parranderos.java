@@ -1627,7 +1627,12 @@ public class Parranderos
 	public List<String[]> consultarFuncionamiento1()
 	{
 		log.info ("Obteniendo el funcionamiento de SuperAndes") ;
+		long startTime = System.nanoTime();
+		
 		List<String []> funcionamiento = pp.consultarFuncionamiento1();
+		long endTime = System.nanoTime();
+
+		long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds
 		log.info ("Obteniendo el funcionamiento de SuperAndes: listo!") ;
 		return funcionamiento;
 	}

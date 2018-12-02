@@ -1551,7 +1551,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 				String resp1 = i++ + ". " + "[";
 				resp1 += "Nombre del producto: " + datos [0] + ", ";
 				resp1 += "Ventas del producto: " + datos [1] + ", ";
-				resp1 += "Mes: " + datos [2];
+				resp1 += "Semana: " + datos [2];
 				resp1 += "]";
 				resp += resp1 + "\n";
 			}
@@ -1583,7 +1583,7 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 				String resp1 = i++ + ". " + "[";
 				resp1 += "Nombre del producto: " + datos [0] + ", ";
 				resp1 += "Ventas del producto: " + datos [1] + ", ";
-				resp1 += "Mes: " + datos [2];
+				resp1 += "Semana: " + datos [2];
 				resp1 += "]";
 				resp += resp1 + "\n";
 			}
