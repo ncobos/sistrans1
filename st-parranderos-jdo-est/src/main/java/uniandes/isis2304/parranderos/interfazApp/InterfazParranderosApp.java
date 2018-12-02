@@ -53,6 +53,7 @@ import com.google.gson.stream.JsonReader;
 import uniandes.isis2304.parranderos.negocio.AyudaRFC7;
 import uniandes.isis2304.parranderos.negocio.AyudaRFC72;
 import uniandes.isis2304.parranderos.negocio.Carrito;
+import uniandes.isis2304.parranderos.negocio.Cliente;
 import uniandes.isis2304.parranderos.negocio.Contiene;
 import uniandes.isis2304.parranderos.negocio.Factura;
 import uniandes.isis2304.parranderos.negocio.Parranderos;
@@ -1281,9 +1282,9 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		try 
 		{
 			String sucursal2 = JOptionPane.showInputDialog (this, "Ingrese la sucursal:", "Clientes frecuentes", JOptionPane.QUESTION_MESSAGE);
-			
 			long sucursal = Long.parseLong(sucursal2);
 
+			
 			List<long[]> lista = parranderos.darClientesFrecuentes(sucursal);
 
 			int i = 1;
@@ -1311,4 +1312,50 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	
+	public String consumo1()
+	{
+		String resp = "Los clientes que consumieron ese producto son:\n";
+
+		try 
+		{
+			String producto2 = JOptionPane.showInputDialog (this, "Ingrese el identificador del producto:", "Consumo en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			long producto = Long.parseLong(producto2);
+
+			String fechainicio = JOptionPane.showInputDialog (this, "Fecha de inicio de la consulta. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Consumo en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			Date date = dateFormat.parse(fechainicio);
+			long time = date.getTime();
+			Timestamp fechaInicio = new Timestamp(time);
+
+			String fechafin = JOptionPane.showInputDialog (this, "Fecha de fin de la consulta. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Consumo en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			Date date2 = dateFormat.parse(fechafin);
+			long time2 = date2.getTime();
+			Timestamp fechaFin = new Timestamp(time2);
+			
+			String criterio = JOptionPane.showInputDialog (this, "Ingrese el criterio de ordenamiento (ejemplo: identificación del cliente, fecha, numero de unidades compradas):", "Consumo en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			String criterio2 = JOptionPane.showInputDialog (this, "Ingrese el criterio de ordenamiento, ascendente (ASC) y descendente (DESC):", "Consumo en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+
+			
+			List<Cliente> lista = parranderos.consumo1(producto, fechainicio, fechafin, criterio, criterio2);
+
+			if (lista != null){
+			for (Cliente cliente: lista) {
+				resp+=cliente.toString();
+				 resp+="\n";
+				
+			}
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
 }

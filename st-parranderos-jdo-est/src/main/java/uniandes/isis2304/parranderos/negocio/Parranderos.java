@@ -21,13 +21,14 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonObject;
+
 import uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos;
 
 /**
  * Clase principal del negocio
  * Sarisface todos los requerimientos funcionales del negocio
  *
- * @author Germán Bravo
+ * @author n.cobos, jf.torresp
  */
 public class Parranderos 
 {
@@ -1039,23 +1040,7 @@ public class Parranderos
 	 * 			M�todos para manejar los CLIENTES
 	 *****************************************************************/
 	
-	/**
-	 * Adiciona de manera persistente un cliente
-	 * Adiciona entradas al log de la aplicación 
-	 * @param nombre - El nombre del cliente
-	 * @param correo - El correo del cliente
-	 * @param tipo - El tipo de cliente(PERSONA, EMPRESA)
-	 * @param direccion - La direccion del cliente
-	 * @param unidadesdisponibles de la promocion
-	 * @return El objeto Cliente adicionado. null si ocurre alguna Excepción
-	 */
-	public Cliente adicionarCliente(String nombre, String correo, String tipo, String direccion)
-	{
-        log.info ("Adicionando producto: " + nombre);
-        Cliente cliente = pp.adicionarCliente(nombre, correo, tipo, direccion);
-        log.info ("Adicionando cliente: " + cliente);
-        return cliente;
-	}
+
 	
 	/**
 	 * Elimina un cliente por su identificador
@@ -1586,6 +1571,15 @@ public class Parranderos
 		log.info ("Obteniendo todos los clientes frecuentes") ;
 		List<long []> clientes = pp.darClientesFrecuentes(sucursal);
 		log.info ("Obteniendo todos los clientes frecuentes: listo!") ;
+		return clientes;
+	}
+	
+	public List<Cliente> consumo1(long producto, String fechainicio, String fechafin,
+			String criterio, String criterio2)
+	{
+		log.info ("Obteniendo todos los clientes que consumieron un producto") ;
+		List<Cliente> clientes = pp.consumo1(producto, fechainicio, fechafin, criterio, criterio2);
+		log.info ("Obteniendo todos los clientes que consumieron un producto: listo!") ;
 		return clientes;
 	}
 	

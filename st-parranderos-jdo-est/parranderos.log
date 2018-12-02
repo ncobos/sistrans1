@@ -1265,3 +1265,32 @@ ORA-02291: restricción de integridad (ISIS2304A101820.FK_FACTURA_CLIENTE) viola
 21:34:19,799 (main) INFO  [uniandes.isis2304.parranderos.test.Iteracion2Test] - Se encontró un archivo de configuración de tablas válido
 21:34:20,452 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de un carrito con id: 1
 21:34:20,452 (main) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Asignación de clave: 1
+18:33:02,852 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+18:33:02,854 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+18:33:02,875 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:33:28,532 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+19:33:28,533 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+19:33:28,559 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:34:31,757 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes que consumieron un producto
+19:34:34,370 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "select c.id, c.nombre, c.correo, c.direccion, c.tipo from a_transaccion t, a_factura f, a_cliente c where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)ORDER BY ? ?".
+ORA-01745: nombre de variable del host/ligada no válido
+
+19:34:34,555 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes que consumieron un producto: listo!
+19:40:26,187 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes frecuentes
+19:40:26,272 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes frecuentes: listo!
+19:43:29,877 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+19:43:29,879 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+19:43:29,901 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:43:39,043 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+19:43:39,043 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+19:43:39,069 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:44:14,857 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes que consumieron un producto
+19:44:15,410 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaParranderos] - Exception : Error con la ejecucion de Query de SQL "select c.id, c.nombre, c.correo, c.direccion, c.tipo from a_transaccion t, a_factura f, a_cliente c where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)ORDER BY ? ?".
+ORA-01745: nombre de variable del host/ligada no válido
+
+19:44:15,430 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes que consumieron un producto: listo!
+19:48:13,363 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Interfaz
+19:48:13,365 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se aplica configuración indicada en el archivo de configuración
+19:48:13,388 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazParranderosApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:48:47,032 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes que consumieron un producto
+19:48:47,560 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Parranderos] - Obteniendo todos los clientes que consumieron un producto: listo!

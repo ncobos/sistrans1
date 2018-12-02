@@ -1,5 +1,6 @@
 package uniandes.isis2304.parranderos.persistencia;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -159,5 +160,45 @@ class SQLCliente {
 		Query q = pm.newQuery(SQL, sql);
 		    q.setParameters(sucursal);
 			return q.executeList();
+	}
+	
+	public List<Cliente> consumo1(PersistenceManager pm, long producto, String fechainicio, String fechafin,
+			String criterio, String criterio2)
+	{
+		
+		if(criterio.equals("id"))
+		{
+			criterio = "c.id";
+		}
+		
+		if(criterio.equals("fecha"))
+		{
+			criterio = "f.fecha";
+		}
+		
+		if(criterio.equals("cantidad"))
+		{
+			criterio = "t.cantidad";
+		}
+		
+		if(criterio2.equals("DESC")) {
+		String sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
+		sql += " from a_transaccion t, a_factura f, a_cliente c";  
+		sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
+		sql += " ORDER BY ? DESC";
+		}
+		
+		if(criterio2.equals("ASC"))
+		{
+			String sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
+			sql += " from a_transaccion t, a_factura f, a_cliente c";  
+			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
+			sql += " ORDER BY ? ASC";
+		}
+		
+		Query q = pm.newQuery(SQL, sql);
+		q.setResultClass(Cliente.class);
+		    q.setParameters(producto, fechainicio, fechafin, criterio);
+			return (List<Cliente>) q.executeList();
 	}
 }

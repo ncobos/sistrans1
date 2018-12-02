@@ -15,7 +15,7 @@ public interface VOCliente {
 	/**
 	 * @return El id del Cliente
 	 */
-	public long getId();
+	public String getId();
 
 	/**
 	 * @return El nombre del Cliente

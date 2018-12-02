@@ -16,7 +16,7 @@ public class Cliente implements VOCliente {
 	/**
 	 * El identificador �NICO de los clientes
 	 */
-	private long id;
+	private String id;
 
 	/**
 	 * El nombre del cliente
@@ -45,7 +45,7 @@ public class Cliente implements VOCliente {
 	 * Constructor por defecto
 	 */
 	public Cliente() {
-		this.id = 0;
+		this.id = "";
 		this.nombre = "";
 		this.correo = "";
 		this.direccion = "";
@@ -61,7 +61,7 @@ public class Cliente implements VOCliente {
   	 * @param correo - El tipo del cliente (empresa, persona)
 
 	 */
-	public Cliente(long id, String nombre, String direccion, String correo, String tipo) 
+	public Cliente(String id, String nombre, String direccion, String correo, String tipo) 
 	{
 		this.id = id;
 		this.nombre = nombre;
@@ -70,11 +70,11 @@ public class Cliente implements VOCliente {
 		this.tipo = tipo;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

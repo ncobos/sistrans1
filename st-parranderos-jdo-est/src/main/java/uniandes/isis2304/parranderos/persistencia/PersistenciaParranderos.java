@@ -1653,46 +1653,7 @@ public class PersistenciaParranderos
 	 * 			Métodos para manejar los CLIENTES
 	 *****************************************************************/
 
-	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla CLIENTE
-	 * Adiciona entradas al log de la aplicación
-	 * @param nombre - El nombre del cliente
-	 * @param correo - El correo del cliente
-	 * @param tipo - El tipo de cliente(PERSONA, EMPRESA)
-	 * @param direccion - La direccion del cliente
-	 * @return El objeto Cliente adicionado. null si ocurre alguna Excepción
-	 */
-	public Cliente adicionarCliente(String nombre, String correo, String tipo, String direccion)
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-
-			tx.begin();
-			long idCliente = nextval();
-			long tuplasInsertadas = sqlCliente.adicionarCliente(pm, idCliente, nombre, correo, tipo, direccion);
-			tx.commit();
-
-			log.trace ("Inserción del cliente: " + idCliente + ": " + tuplasInsertadas + " tuplas insertadas");
-
-			return new Cliente(idCliente, nombre, direccion, correo, tipo);
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return null;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}
+	
 
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla Cliente, dado el identificador del cliente
@@ -2982,6 +2943,37 @@ public class PersistenciaParranderos
 			resp.add (datosResp);
 		}
 		return resp;
+	}
+	
+	public List<Cliente> consumo1(long producto, String fechainicio, String fechafin,
+			String criterio, String criterio2)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		List<Transaccion> rta = new LinkedList<>();
+		Transaction tx=pm.currentTransaction();
+		
+		try
+		{
+			tx.begin();
+			log.trace("Se intenta obtener los clientes que han comprado el producto: " + producto);
+			List<Cliente> tuplas = sqlCliente.consumo1(pm, producto, fechainicio, fechafin, criterio, criterio2);
+			tx.commit();
+			return tuplas;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
 	}
 
 	/**
