@@ -165,6 +165,7 @@ class SQLCliente {
 	public List<Cliente> consumo1(PersistenceManager pm, long producto, String fechainicio, String fechafin,
 			String criterio, String criterio2)
 	{
+		String sql = "";
 		
 		if(criterio.equals("id"))
 		{
@@ -182,7 +183,7 @@ class SQLCliente {
 		}
 		
 		if(criterio2.equals("DESC")) {
-		String sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
+		sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
 		sql += " from a_transaccion t, a_factura f, a_cliente c";  
 		sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
 		sql += " ORDER BY ? DESC";
@@ -190,7 +191,7 @@ class SQLCliente {
 		
 		if(criterio2.equals("ASC"))
 		{
-			String sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
+			sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
 			sql += " from a_transaccion t, a_factura f, a_cliente c";  
 			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
 			sql += " ORDER BY ? ASC";

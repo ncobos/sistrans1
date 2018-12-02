@@ -41,7 +41,7 @@
 					"event": "devolverProductoCarrito"
 				},
 				{
-					"label": "Abandonar un carrito de compras =(",
+					"label": "Abandonar un carrito de compras",
 					"event": "abandonarCarrito"
 				},
 				{
@@ -84,6 +84,22 @@
 				{
 					"label": "Analizar la operación de SuperAndes",
 					"event": "analizarOperacion"
+				},
+				{
+					"label": "Consultar consumo en SuperAndes V1",
+					"event": "consumo1"
+				},
+				{
+					"label": "Consultar consumo en SuperAndes V2",
+					"event": "consumo2"
+				},
+				{
+					"label": "Consultar funcionamiento de SuperAndes",
+					"event": "consultarFuncionamiento"
+				},
+				{
+					"label": "Consultar los buenos clientes",
+					"event": "buenosClientes"
 				}
 			]
 		},
