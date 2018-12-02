@@ -114,6 +114,89 @@ class SQLProveedor
 		return (List<Proveedor>) q.executeList();
 	}
 	
+	public List<Object[]> consultarFuncionamiento3(PersistenceManager pm)
+	{
+		String sql = "SELECT\r\n" + 
+				"     t2.idproveedor,\r\n" + 
+				"     t1.cantidad1\r\n" + 
+				" FROM\r\n" + 
+				"     (\r\n" + 
+				"         SELECT\r\n" + 
+				"             MAX(quantity2) AS cantidad1\r\n" + 
+				"         FROM\r\n" + 
+				"             (\r\n" + 
+				"                 SELECT\r\n" + 
+				"                     p.idproveedor,\r\n" + 
+				"                     SUM(s.cantidad) AS quantity2\r\n" + 
+				"                 FROM\r\n" + 
+				"                     a_pedido p,\r\n" + 
+				"                     a_subpedido s\r\n" + 
+				"                 WHERE\r\n" + 
+				"                     p.id = s.idpedido\r\n" + 
+				"                 GROUP BY\r\n" + 
+				"                     p.idproveedor\r\n" + 
+				"             )\r\n" + 
+				"     ) t1,\r\n" + 
+				"     (\r\n" + 
+				"         SELECT\r\n" + 
+				"             p.idproveedor,\r\n" + 
+				"             SUM(s.cantidad) AS quantity\r\n" + 
+				"         FROM\r\n" + 
+				"             a_pedido p,\r\n" + 
+				"             a_subpedido s\r\n" + 
+				"         WHERE\r\n" + 
+				"             p.id = s.idpedido\r\n" + 
+				"         GROUP BY\r\n" + 
+				"             p.idproveedor\r\n" + 
+				"     ) t2\r\n" + 
+				" WHERE\r\n" + 
+				"     t2.quantity = t1.cantidad1";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
+	
+	public List<Object[]> consultarFuncionamiento4(PersistenceManager pm)
+	{
+		String sql = "SELECT\r\n" + 
+				"     t2.idproveedor,\r\n" + 
+				"     t1.cantidad1 as cantidadPedidos\r\n" + 
+				" FROM\r\n" + 
+				"     (\r\n" + 
+				"         SELECT\r\n" + 
+				"             MIN(quantity2) AS cantidad1\r\n" + 
+				"         FROM\r\n" + 
+				"             (\r\n" + 
+				"                 SELECT\r\n" + 
+				"                     p.idproveedor,\r\n" + 
+				"                     SUM(s.cantidad) AS quantity2\r\n" + 
+				"                 FROM\r\n" + 
+				"                     a_pedido p,\r\n" + 
+				"                     a_subpedido s\r\n" + 
+				"                 WHERE\r\n" + 
+				"                     p.id = s.idpedido\r\n" + 
+				"                 GROUP BY\r\n" + 
+				"                     p.idproveedor\r\n" + 
+				"             )\r\n" + 
+				"     ) t1,\r\n" + 
+				"     (\r\n" + 
+				"         SELECT\r\n" + 
+				"             p.idproveedor,\r\n" + 
+				"             SUM(s.cantidad) AS quantity\r\n" + 
+				"         FROM\r\n" + 
+				"             a_pedido p,\r\n" + 
+				"             a_subpedido s\r\n" + 
+				"         WHERE\r\n" + 
+				"             p.id = s.idpedido\r\n" + 
+				"         GROUP BY\r\n" + 
+				"             p.idproveedor\r\n" + 
+				"     ) t2\r\n" + 
+				" WHERE\r\n" + 
+				"     t2.quantity = t1.cantidad1";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
 	
 }
 

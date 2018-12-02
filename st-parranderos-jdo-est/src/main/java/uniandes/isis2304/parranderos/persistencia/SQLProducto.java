@@ -210,5 +210,109 @@ class SQLProducto
 		q.setParameters(tipo);
 		return (AyudaRFC72) q.executeUnique();
 	}
+	
+	public List<Object[]> consultarFuncionamiento1(PersistenceManager pm)
+	{
+		String sql = "SELECT\r\n" + 
+				"     distinct nombre,\r\n" + 
+				"     ventas,\r\n" + 
+				"     mes\r\n" + 
+				" FROM\r\n" + 
+				"     ( (SELECT\r\n" + 
+				"             MAX(cantidad) AS ventas, extract(month from fecha) as mes\r\n" + 
+				"         FROM\r\n" + 
+				"             (\r\n" + 
+				"                 SELECT DISTINCT\r\n" + 
+				"                     SUM(t.cantidad) AS cantidad,\r\n" + 
+				"                     t.idproducto   AS id,\r\n" + 
+				"                     p.nombre       AS nombre,\r\n" + 
+				"                     f.fecha AS fecha\r\n" + 
+				"                 FROM\r\n" + 
+				"                     a_transaccion t,\r\n" + 
+				"                     a_producto p,\r\n" + 
+				"                     a_factura f\r\n" + 
+				"                 WHERE\r\n" + 
+				"                     t.idproducto = p.id and t.numerofactura = f.numero and f.fecha between '01/01/2018' and '01/08/2018'\r\n" + 
+				"                 GROUP BY\r\n" + 
+				"                     p.nombre, t.idproducto, f.fecha\r\n" + 
+				"                 ORDER BY\r\n" + 
+				"                     cantidad DESC) group by extract(month from fecha)\r\n" + 
+				"     ) t1),\r\n" + 
+				"     (\r\n" + 
+				"         SELECT DISTINCT\r\n" + 
+				"                     SUM(t.cantidad) AS cantidad,\r\n" + 
+				"                     t.idproducto   AS id,\r\n" + 
+				"                     p.nombre       AS nombre,\r\n" + 
+				"                     f.fecha AS fecha\r\n" + 
+				"                 FROM\r\n" + 
+				"                     a_transaccion t,\r\n" + 
+				"                     a_producto p,\r\n" + 
+				"                     a_factura f\r\n" + 
+				"                 WHERE\r\n" + 
+				"                     t.idproducto = p.id and t.numerofactura = f.numero and f.fecha between '01/01/2018' and '01/08/2018'\r\n" + 
+				"                 GROUP BY\r\n" + 
+				"                     p.nombre, t.idproducto, f.fecha\r\n" + 
+				"                 ORDER BY\r\n" + 
+				"                     cantidad DESC\r\n" + 
+				"     ) t2\r\n" + 
+				"\r\n" + 
+				"where t1.ventas = t2.cantidad\r\n" + 
+				"order by mes asc";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
+	
+	public List<Object[]> consultarFuncionamiento2(PersistenceManager pm)
+	{
+		String sql = "SELECT\r\n" + 
+				"     distinct nombre,\r\n" + 
+				"     ventas,\r\n" + 
+				"     mes\r\n" + 
+				" FROM\r\n" + 
+				"     ( (SELECT\r\n" + 
+				"             MIN(cantidad) AS ventas, extract(month from fecha) as mes\r\n" + 
+				"         FROM\r\n" + 
+				"             (\r\n" + 
+				"                 SELECT DISTINCT\r\n" + 
+				"                     SUM(t.cantidad) AS cantidad,\r\n" + 
+				"                     t.idproducto   AS id,\r\n" + 
+				"                     p.nombre       AS nombre,\r\n" + 
+				"                     f.fecha AS fecha\r\n" + 
+				"                 FROM\r\n" + 
+				"                     a_transaccion t,\r\n" + 
+				"                     a_producto p,\r\n" + 
+				"                     a_factura f\r\n" + 
+				"                 WHERE\r\n" + 
+				"                     t.idproducto = p.id and t.numerofactura = f.numero and f.fecha between '01/01/2018' and '01/08/2018'\r\n" + 
+				"                 GROUP BY\r\n" + 
+				"                     p.nombre, t.idproducto, f.fecha\r\n" + 
+				"                 ORDER BY\r\n" + 
+				"                     cantidad DESC) group by extract(month from fecha)\r\n" + 
+				"     ) t1),\r\n" + 
+				"     (\r\n" + 
+				"         SELECT DISTINCT\r\n" + 
+				"                     SUM(t.cantidad) AS cantidad,\r\n" + 
+				"                     t.idproducto   AS id,\r\n" + 
+				"                     p.nombre       AS nombre,\r\n" + 
+				"                     f.fecha AS fecha\r\n" + 
+				"                 FROM\r\n" + 
+				"                     a_transaccion t,\r\n" + 
+				"                     a_producto p,\r\n" + 
+				"                     a_factura f\r\n" + 
+				"                 WHERE\r\n" + 
+				"                     t.idproducto = p.id and t.numerofactura = f.numero and f.fecha between '01/01/2018' and '01/08/2018'\r\n" + 
+				"                 GROUP BY\r\n" + 
+				"                     p.nombre, t.idproducto, f.fecha\r\n" + 
+				"                 ORDER BY\r\n" + 
+				"                     cantidad DESC\r\n" + 
+				"     ) t2\r\n" + 
+				"\r\n" + 
+				"where t1.ventas = t2.cantidad\r\n" + 
+				"order by mes asc";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
 }
 

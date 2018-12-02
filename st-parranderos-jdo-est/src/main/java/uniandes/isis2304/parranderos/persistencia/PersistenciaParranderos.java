@@ -3093,6 +3093,72 @@ public class PersistenciaParranderos
 		}
 		return resp;
 	}
+	
+	public List<String[]> consultarFuncionamiento1()
+	{
+		List<String []> resp = new LinkedList<String []> ();
+		List<Object []> tuplas = sqlProducto.consultarFuncionamiento1(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			String [] datosResp = new String[4];
+
+			datosResp [0] = tupla [0].toString(); // nombre producto
+			datosResp [1] = tupla [1].toString(); // ventas
+			datosResp [2] = tupla [2].toString(); // mes
+			resp.add(datosResp);
+		}
+		return resp;
+	}
+	
+	public List<String[]> consultarFuncionamiento2()
+	{
+		List<String []> resp = new LinkedList<String []> ();
+		List<Object []> tuplas = sqlProducto.consultarFuncionamiento2(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			String [] datosResp = new String[4];
+
+			datosResp [0] = tupla [0].toString(); // nombre producto
+			datosResp [1] = tupla [1].toString(); // ventas
+			datosResp [2] = tupla [2].toString(); // mes
+			resp.add(datosResp);
+		}
+		return resp;
+	}
+	
+	public List<String[]> consultarFuncionamiento3()
+	{
+		List<String []> resp = new LinkedList<String []> ();
+		List<Object []> tuplas = sqlProveedor.consultarFuncionamiento3(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			String [] datosResp = new String[4];
+
+			datosResp [0] = tupla [0].toString(); // idproveedor
+			datosResp [1] = tupla [1].toString(); // cantidadpedidos
+			resp.add(datosResp);
+		}
+		return resp;
+	}
+	
+	public List<String[]> consultarFuncionamiento4()
+	{
+		List<String []> resp = new LinkedList<String []> ();
+		List<Object []> tuplas = sqlProveedor.consultarFuncionamiento4(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			String [] datosResp = new String[4];
+
+			datosResp [0] = tupla [0].toString(); // idproveedor
+			datosResp [1] = tupla [1].toString(); // cantidadpedidos
+			resp.add(datosResp);
+		}
+		return resp;
+	}
 
 	/**
 	 * Método que consulta todas las tuplas en la tabla Carrito

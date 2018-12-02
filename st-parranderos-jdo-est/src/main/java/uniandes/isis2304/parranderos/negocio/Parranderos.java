@@ -1624,6 +1624,38 @@ public class Parranderos
 		return clientes;
 	}
 	
+	public List<String[]> consultarFuncionamiento1()
+	{
+		log.info ("Obteniendo el funcionamiento de SuperAndes") ;
+		List<String []> funcionamiento = pp.consultarFuncionamiento1();
+		log.info ("Obteniendo el funcionamiento de SuperAndes: listo!") ;
+		return funcionamiento;
+	}
+	
+	public List<String[]> consultarFuncionamiento2()
+	{
+		log.info ("Obteniendo el funcionamiento de SuperAndes") ;
+		List<String []> funcionamiento = pp.consultarFuncionamiento2();
+		log.info ("Obteniendo el funcionamiento de SuperAndes: listo!") ;
+		return funcionamiento;
+	}
+	
+	public List<String[]> consultarFuncionamiento3()
+	{
+		log.info ("Obteniendo el funcionamiento de SuperAndes") ;
+		List<String []> funcionamiento = pp.consultarFuncionamiento3();
+		log.info ("Obteniendo el funcionamiento de SuperAndes: listo!") ;
+		return funcionamiento;
+	}
+	
+	public List<String[]> consultarFuncionamiento4()
+	{
+		log.info ("Obteniendo el funcionamiento de SuperAndes") ;
+		List<String []> funcionamiento = pp.consultarFuncionamiento4();
+		log.info ("Obteniendo el funcionamiento de SuperAndes: listo!") ;
+		return funcionamiento;
+	}
+	
 	/**
 	 * Retorna una lista con los carritos existentes
 	 * @return carritos en la base de datos

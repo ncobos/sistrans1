@@ -1535,5 +1535,132 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		return resp;
 	}
 
+	
+	public String consultarFuncionamiento1()
+	{
+		String resp = "El (los) productos más vendido(s) es (son):\n";
+
+		try 
+		{	
+			List<String[]> lista = parranderos.consultarFuncionamiento1();
+
+			int i = 1;
+			for ( String [] tupla : lista)
+			{
+				String [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "Nombre del producto: " + datos [0] + ", ";
+				resp1 += "Ventas del producto: " + datos [1] + ", ";
+				resp1 += "Mes: " + datos [2];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+	
+	public String consultarFuncionamiento2()
+	{
+		String resp = "El (los) producto(s) menos vendido(s) es (son):\n";
+
+		try 
+		{	
+			List<String[]> lista = parranderos.consultarFuncionamiento2();
+
+			int i = 1;
+			for ( String [] tupla : lista)
+			{
+				String [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "Nombre del producto: " + datos [0] + ", ";
+				resp1 += "Ventas del producto: " + datos [1] + ", ";
+				resp1 += "Mes: " + datos [2];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+	
+	
+	public String consultarFuncionamiento3()
+	{
+		String resp = "El (los) proveedor(es) más solicitado(s) es (son):\n";
+
+		try 
+		{	
+			List<String[]> lista = parranderos.consultarFuncionamiento3();
+
+			int i = 1;
+			for ( String [] tupla : lista)
+			{
+				String [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "Identificador del proveedor: " + datos [0] + ", ";
+				resp1 += "Cantidad de pedidos a su nombre: " + datos [1];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
+	
+	public String consultarFuncionamiento4()
+	{
+		String resp = "El (los) proveedor(es) menos solicitado(s) es (son):\n";
+
+		try 
+		{	
+			List<String[]> lista = parranderos.consultarFuncionamiento4();
+
+			int i = 1;
+			for ( String [] tupla : lista)
+			{
+				String [] datos = tupla;
+				String resp1 = i++ + ". " + "[";
+				resp1 += "Identificador del proveedor: " + datos [0] + ", ";
+				resp1 += "Cantidad de pedidos a su nombre: " + datos [1];
+				resp1 += "]";
+				resp += resp1 + "\n";
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
 
 }
