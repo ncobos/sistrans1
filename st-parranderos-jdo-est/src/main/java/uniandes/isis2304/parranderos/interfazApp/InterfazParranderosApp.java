@@ -1358,4 +1358,50 @@ public class InterfazParranderosApp extends JFrame implements ActionListener
 		}
 		return resp;
 	}
+	
+	public String consumo2()
+	{
+		String resp = "Los clientes que no consumieron ese producto son:\n";
+
+		try 
+		{
+			String producto2 = JOptionPane.showInputDialog (this, "Ingrese el identificador del producto:", "Consumo en SuperAndes V2", JOptionPane.QUESTION_MESSAGE);
+			long producto = Long.parseLong(producto2);
+
+			String fechainicio = JOptionPane.showInputDialog (this, "Fecha de inicio de la consulta. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Consumo V2 en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+			Date date = dateFormat.parse(fechainicio);
+			long time = date.getTime();
+			Timestamp fechaInicio = new Timestamp(time);
+
+			String fechafin = JOptionPane.showInputDialog (this, "Fecha de fin de la consulta. Escribir dia/mes/año sin espacios (ej: 14/09/2018)", "Consumo V2 en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			Date date2 = dateFormat.parse(fechafin);
+			long time2 = date2.getTime();
+			Timestamp fechaFin = new Timestamp(time2);
+			
+			String criterio = JOptionPane.showInputDialog (this, "Ingrese el criterio de ordenamiento (ejemplo: identificación del cliente, fecha):", "Consumo V2 en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+			String criterio2 = JOptionPane.showInputDialog (this, "Ingrese el criterio de ordenamiento, ascendente (ASC) y descendente (DESC):", "Consumo V2 en SuperAndes", JOptionPane.QUESTION_MESSAGE);
+
+			
+			List<Cliente> lista = parranderos.consumo1(producto, fechainicio, fechafin, criterio, criterio2);
+
+			if (lista != null){
+			for (Cliente cliente: lista) {
+				resp+=cliente.toString();
+				 resp+="\n";
+				
+			}
+			}
+			panelDatos.actualizarInterfaz(resp);
+			return resp;
+		}
+
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+		return resp;
+	}
 }

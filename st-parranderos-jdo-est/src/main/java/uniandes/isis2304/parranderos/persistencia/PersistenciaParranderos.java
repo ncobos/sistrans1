@@ -2945,6 +2945,15 @@ public class PersistenciaParranderos
 		return resp;
 	}
 	
+	/**
+	 * Metodo que analiza el consumo de SuperAndes en los casos en que un cliente ha consumido el producto dado por el usuario.
+	 * @param fechainicio fecha de inicio consulta
+	 * @param fechafin fecha de final consulta
+	 * @param producto tipo de producto a revisar
+	 * @param criterio descripción del criterio de búsqueda (ASC)
+	 * @param criterio2 descripción del criterio de búsqueda (DESC)
+	 * @return la información del cliente/s encontrado/s.
+	 */
 	public List<Cliente> consumo1(long producto, String fechainicio, String fechafin,
 			String criterio, String criterio2)
 	{
@@ -2957,6 +2966,45 @@ public class PersistenciaParranderos
 			tx.begin();
 			log.trace("Se intenta obtener los clientes que han comprado el producto: " + producto);
 			List<Cliente> tuplas = sqlCliente.consumo1(pm, producto, fechainicio, fechafin, criterio, criterio2);
+			tx.commit();
+			return tuplas;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+	
+	/**
+	 * Metodo que analiza el consumo de SuperAndes en los casos en que un cliente no ha consumido el producto dado por el usuario.
+	 * @param fechainicio fecha de inicio consulta
+	 * @param fechafin fecha de final consulta
+	 * @param producto tipo de producto a revisar
+	 * @param criterio descripción del criterio de búsqueda (ASC)
+	 * @param criterio2 descripción del criterio de búsqueda (DESC)
+	 * @return la información del cliente/s encontrado/s.
+	 */
+	public List<Cliente> consumo2 (long producto, String fechainicio, String fechafin,
+			String criterio, String criterio2)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		
+		try
+		{
+			tx.begin();
+			log.trace("Se intenta obtener los clientes que no han comprado alguna vez el producto: " + producto);
+			List<Cliente> tuplas = sqlCliente.consumo2(pm, producto, fechainicio, fechafin, criterio, criterio2);
 			tx.commit();
 			return tuplas;
 		}

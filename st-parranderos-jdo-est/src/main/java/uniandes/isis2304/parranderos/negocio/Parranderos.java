@@ -1583,6 +1583,15 @@ public class Parranderos
 		return clientes;
 	}
 	
+	public List<Cliente> consumo2(long producto, String fechainicio, String fechafin,
+			String criterio, String criterio2)
+	{
+		log.info ("Obteniendo todos los clientes que no consumieron un producto dado") ;
+		List<Cliente> clientes = pp.consumo2(producto, fechainicio, fechafin, criterio, criterio2);
+		log.info ("Obteniendo todos los clientes que no consumieron un producto dado: listo!") ;
+		return clientes;
+	}
+	
 	/**
 	 * Retorna una lista con los carritos existentes
 	 * @return carritos en la base de datos

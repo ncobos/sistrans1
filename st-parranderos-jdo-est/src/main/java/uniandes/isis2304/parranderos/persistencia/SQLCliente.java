@@ -15,7 +15,7 @@ import uniandes.isis2304.parranderos.negocio.Cliente;
  * @author n.cobos, jf.torresp
  */
 class SQLCliente {
-	
+
 	/* ****************************************************************
 	 * 			Constantes
 	 *****************************************************************/
@@ -32,7 +32,7 @@ class SQLCliente {
 	 * El manejador de persistencia general de la aplicación
 	 */
 	private PersistenciaParranderos pp;
-	
+
 	/* ****************************************************************
 	 * 			Métodos
 	 *****************************************************************/
@@ -45,7 +45,7 @@ class SQLCliente {
 	{
 		this.pp = pp;
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un CLIENTE a la base de datos de parranderos
 	 * @param pm - El manejador de persistencia
@@ -58,11 +58,11 @@ class SQLCliente {
 	 */
 	public long adicionarCliente (PersistenceManager pm, long idCliente, String nombre, String correo, String tipo, String direccion) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCliente () + "(id, nombre, correo, tipo, direccion) values (?, ?, ?, ?, ?)");
-        q.setParameters(idCliente, nombre, correo, tipo, direccion);
-        return (long) q.executeUnique();
+		Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCliente () + "(id, nombre, correo, tipo, direccion) values (?, ?, ?, ?, ?)");
+		q.setParameters(idCliente, nombre, correo, tipo, direccion);
+		return (long) q.executeUnique();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar CLIENTES de la base de datos de parranderos, por su nombre
 	 * @param pm - El manejador de persistencia
@@ -71,11 +71,11 @@ class SQLCliente {
 	 */
 	public long eliminarClientePorNombre (PersistenceManager pm, String nombreCliente)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente () + " WHERE nombre = ?");
-        q.setParameters(nombreCliente);
-        return (long) q.executeUnique();
+		Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente () + " WHERE nombre = ?");
+		q.setParameters(nombreCliente);
+		return (long) q.executeUnique();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar UN CLIENTE de la base de datos de parranderos, por su identificador
 	 * @param pm - El manejador de persistencia
@@ -84,11 +84,11 @@ class SQLCliente {
 	 */
 	public long eliminarClientePorId (PersistenceManager pm, long idCliente)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente () + " WHERE id = ?");
-        q.setParameters(idCliente);
-        return (long) q.executeUnique();
+		Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaCliente () + " WHERE id = ?");
+		q.setParameters(idCliente);
+		return (long) q.executeUnique();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de UN CLIENTE de la 
 	 * base de datos de parranderos, por su identificador
@@ -103,7 +103,7 @@ class SQLCliente {
 		q.setParameters(idCliente);
 		return (Cliente) q.executeUnique();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS CLIENTES de la 
 	 * base de datos de parranderos, por su nombre
@@ -118,7 +118,7 @@ class SQLCliente {
 		q.setParameters(nombreCliente);
 		return (List<Cliente>) q.executeList();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS CLIENTES de la 
 	 * base de datos de parranderos
@@ -131,7 +131,7 @@ class SQLCliente {
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de LOS CLIENTES de la 
 	 * base de datos de parranderos, por su tipo
@@ -146,7 +146,7 @@ class SQLCliente {
 		q.setParameters(tipoCliente);
 		return (List<Cliente>) q.executeList();
 	}
-	
+
 	public List<Object[]> darClientesFrecuentes(PersistenceManager pm, long sucursal)
 	{
 		String sql = "SELECT IDCLIENTE, MES, ANIO, COUNT(*) AS COMPRAS";
@@ -156,39 +156,39 @@ class SQLCliente {
 		sql += " GROUP BY IDCLIENTE, MES, ANIO ";
 		sql += " HAVING COUNT(*) >= 2 ";
 		sql += " ORDER BY MES ASC, ANIO ASC ";
-		
+
 		Query q = pm.newQuery(SQL, sql);
-		    q.setParameters(sucursal);
-			return q.executeList();
+		q.setParameters(sucursal);
+		return q.executeList();
 	}
-	
+
 	public List<Cliente> consumo1(PersistenceManager pm, long producto, String fechainicio, String fechafin,
 			String criterio, String criterio2)
 	{
 		String sql = "";
-		
+
 		if(criterio.equals("id"))
 		{
 			criterio = "c.id";
 		}
-		
+
 		if(criterio.equals("fecha"))
 		{
 			criterio = "f.fecha";
 		}
-		
+
 		if(criterio.equals("cantidad"))
 		{
 			criterio = "t.cantidad";
 		}
-		
+
 		if(criterio2.equals("DESC")) {
-		sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
-		sql += " from a_transaccion t, a_factura f, a_cliente c";  
-		sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
-		sql += " ORDER BY ? DESC";
+			sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
+			sql += " from a_transaccion t, a_factura f, a_cliente c";  
+			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
+			sql += " ORDER BY ? DESC";
 		}
-		
+
 		if(criterio2.equals("ASC"))
 		{
 			sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
@@ -196,10 +196,51 @@ class SQLCliente {
 			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
 			sql += " ORDER BY ? ASC";
 		}
-		
+
 		Query q = pm.newQuery(SQL, sql);
 		q.setResultClass(Cliente.class);
-		    q.setParameters(producto, fechainicio, fechafin, criterio);
-			return (List<Cliente>) q.executeList();
+		q.setParameters(producto, fechainicio, fechafin, criterio);
+		return (List<Cliente>) q.executeList();
+	}
+
+	public List<Cliente> consumo2(PersistenceManager pm, long producto, String fechainicio, String fechafin,
+		String pcriterio, String pcriterio2)
+	{
+		String sql = "";
+
+		if(pcriterio.equals("id"))
+		{
+			pcriterio = "c.id";
+		}
+
+		if(pcriterio.equals("fecha"))
+		{
+			pcriterio = "f.fecha";
+		}
+
+		if(pcriterio.equals("cantidad"))
+		{
+			pcriterio = "t.cantidad";
+		}
+
+		if(pcriterio2.equals("DESC")) {
+			sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
+			sql += " from a_transaccion t, a_factura f, a_cliente c";  
+			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
+			sql += " ORDER BY ? DESC";
+		}
+
+		if(pcriterio2.equals("ASC"))
+		{
+			sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
+			sql += " from a_transaccion t, a_factura f, a_cliente c";  
+			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto != ? AND f.fecha BETWEEN (?) AND (?)";
+			sql += " ORDER BY ? ASC";
+		}
+
+		Query q = pm.newQuery(SQL, sql);
+		q.setResultClass(Cliente.class);
+		q.setParameters(producto, fechainicio, fechafin, pcriterio);
+		return (List<Cliente>) q.executeList();
 	}
 }
