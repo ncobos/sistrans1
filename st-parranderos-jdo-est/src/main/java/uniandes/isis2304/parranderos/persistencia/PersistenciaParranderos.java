@@ -3023,6 +3023,23 @@ public class PersistenciaParranderos
 			pm.close();
 		}
 	}
+	
+	public List<long[]> clienteMasFrecuente1()
+	{
+		List<long []> resp = new LinkedList<long []> ();
+		List<Object []> tuplas = sqlCliente.clienteMasFrecuente1(pmf.getPersistenceManager());
+		
+		for ( Object [] tupla : tuplas)
+		{
+			long [] datosResp = new long [3];
+
+			datosResp [0] = Long.parseLong(((String) tupla [0])); // id cliente
+			datosResp [1] = ((BigDecimal) tupla [1]).longValue (); // mes
+			datosResp [2] = ((BigDecimal) tupla [2]).longValue (); // compras
+			resp.add (datosResp);
+		}
+		return resp;
+	}
 
 	/**
 	 * Método que consulta todas las tuplas en la tabla Carrito

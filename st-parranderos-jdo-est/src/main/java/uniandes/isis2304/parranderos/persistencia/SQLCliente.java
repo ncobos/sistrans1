@@ -243,4 +243,16 @@ class SQLCliente {
 		q.setParameters(producto, fechainicio, fechafin, pcriterio);
 		return (List<Cliente>) q.executeList();
 	}
+	
+	public List<Object[]> clienteMasFrecuente1(PersistenceManager pm)
+	{
+		String sql = "SELECT distinct IDCLIENTE AS CLIENTE , EXTRACT(MONTH FROM FECHA) AS MES, COUNT(*) AS COMPRAS";
+		sql += " FROM " + pp.darTablaFactura();
+		sql += " GROUP BY IDCLIENTE, EXTRACT(MONTH FROM FECHA)";
+		sql += " HAVING COUNT(*) >= 1";
+		sql += " ORDER BY MES ASC";
+		
+		Query q = pm.newQuery(SQL, sql);
+		return q.executeList();
+	}
 }

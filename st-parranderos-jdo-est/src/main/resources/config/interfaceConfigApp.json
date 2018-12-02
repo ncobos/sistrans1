@@ -98,8 +98,8 @@
 					"event": "consultarFuncionamiento"
 				},
 				{
-					"label": "Consultar los buenos clientes",
-					"event": "buenosClientes"
+					"label": "Consultar los buenos clientes criterio 1",
+					"event": "clienteMasFrecuente1"
 				}
 			]
 		},
