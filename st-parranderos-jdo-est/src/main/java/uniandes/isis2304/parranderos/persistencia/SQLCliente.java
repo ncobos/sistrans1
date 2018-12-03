@@ -226,7 +226,7 @@ class SQLCliente {
 		if(pcriterio2.equals("DESC")) {
 			sql = "select c.id, c.nombre, c.correo, c.direccion, c.tipo";
 			sql += " from a_transaccion t, a_factura f, a_cliente c";  
-			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto = ? AND f.fecha BETWEEN (?) AND (?)";
+			sql += " where t.numerofactura = f.numero AND f.idcliente = c.id AND t.idproducto != ? AND f.fecha BETWEEN (?) AND (?)";
 			sql += " ORDER BY ? DESC";
 		}
 
