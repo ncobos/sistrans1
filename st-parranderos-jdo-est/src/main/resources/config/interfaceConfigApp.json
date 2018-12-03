@@ -94,10 +94,6 @@
 					"event": "consumo2"
 				},
 				{
-					"label": "Consultar funcionamiento de SuperAndes",
-					"event": "consultarFuncionamiento"
-				},
-				{
 					"label": "Consultar los buenos clientes criterio 1",
 					"event": "clienteMasFrecuente1"
 				},
